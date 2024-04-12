@@ -1,0 +1,29 @@
+.progress {
+  filter: drop-shadow(0 0 0.3rem rgba(0, 0, 0, 0.2));
+  height: 1.85rem;
+}
+@media screen and (min-width: 1024px) {
+  #child-name {
+    display: none !important;
+  }
+  #child-no-name {
+    display: block !important;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #child-name {
+    display: block !important;
+  }
+  #child-no-name {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  .progress {
+    height: 1.5rem;
+  }
+  .progress-bar-text {
+    font-size: 1rem;
+  }
+}

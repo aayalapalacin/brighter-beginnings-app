@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -21,6 +17,9 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
-  ]
+    "src/front/js/**/*.ts" /* Include TypeScript files under src/front/js directory */,
+    "src/front/js/**/*.tsx" /* Include TypeScript files under src/front/js directory */,
+    "src/index.tsx"
+  ],
+  "exclude": ["node_modules" /* Exclude node_modules directory */]
 }

@@ -1,0 +1,36 @@
+.navbar-brand {
+  width: 30%;
+  height: auto;
+}
+
+.nav-link {
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 0, 0, 0.17);
+  padding-bottom: 0.5rem;
+}
+
+.navbar-logo {
+  width: 60%;
+  filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.3));
+}
+
+.navbar-toggler-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.paragraph-container {
+  transform: skew(-10deg);
+}
+
+.navbar-nav {
+  padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-brand {
+    width: 69%;
+    height: auto;
+    margin-right: 0px;
+  }
+}
