@@ -34,26 +34,19 @@ input {
 }
 
 .backpack-image {
-  width: 50%;
+  width: 44%;
 }
 .find-program-container {
   margin: 7rem;
 }
 
-@media screen and (min-width: 768px) and (max-width: 992px) {
-  #backpack-image-help-choose {
-    display: none !important;
-  }
-}
+
 
 @media screen and (max-width: 1024px) {
   .programs-info-content-continer {
     width: 100%;
   }
 
-  .backpack-image {
-    width: 85%;
-  }
 
   .programs-button {
     width: 9rem;
@@ -74,6 +67,67 @@ input {
     margin: 0px;
   }
 }
+
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  #backpack-image-help-choose {
+    display: none !important;
+  }
+  .programs-button {
+    width: 8rem;
+    font-size: .8rem;
+    margin-right: 0px !important;
+    margin-left: .3rem !important;
+}
+
+.backpack-image {
+  width: 55%;
+}
+}
+@media screen and (min-width: 1015px) and (max-width: 1030px) {
+  .programs-button {
+    width: 9rem;
+    font-size: 1rem;
+    margin-right: 0px !important;
+    margin-left: 1rem !important;
+  }
+  
+  .backpack-image {
+    width: 44%;
+  }
+  #backpack-image-help-choose{
+    width: 109%;
+  }
+}
+
+@media screen and (min-width: 1435px) and (max-width: 1450px) {
+
+  
+  .backpack-image {
+    width: 44%;
+  }
+
+  #backpack-image-help-choose{
+    width: 74%;
+  }
+}
+@media screen and (min-width: 315px) and (max-width: 330px) {
+  .backpack-image {
+    width: 112%;
+  }
+  .programs-title-all {
+    font-size: 1.3rem;
+  }
+
+}
+
+@media screen and (min-width: 335px) and (max-width: 767px) {
+  .backpack-image {
+    width: 85%;
+  }
+
+}
+
 
 @media screen and (max-width: 320px) {
   .programs-button {

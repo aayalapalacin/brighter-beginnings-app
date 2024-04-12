@@ -20,14 +20,14 @@ const ProgramsInfo = () => {
               </h1>
             </div>
             <div className="programs-info-content-container  m-auto pt-1 row justify-content-center">
-              <div className="col d-flex justify-content-center">
+              <div className="col d-flex justify-content-end ">
                 <img
-                  className=" image-shadow backpack-image"
+                  className=" image-shadow backpack-image me-md-5"
                   src="/home_images/backpack.webp"
                   alt="Backpack"
                 />
               </div>
-              <div className="col mx-auto mt-5 text-center">
+              <div className="col mx-auto mt-5 text-start">
                 <Link to="/programs">
                   <button
                     type="button"
@@ -59,7 +59,7 @@ const ProgramsInfo = () => {
             <div className="w-100  m-auto pt-3 row ">
               <div className="col-3 ">
                 <img
-                  className=" w-75 m-auto d-md-block d-none text-end image-shadow backpack-image"
+                  className="  m-auto d-md-block d-none text-end image-shadow backpack-image"
                   id="backpack-image-help-choose"
                   src="/home_images/backpack.webp"
                   alt="Backpack"
