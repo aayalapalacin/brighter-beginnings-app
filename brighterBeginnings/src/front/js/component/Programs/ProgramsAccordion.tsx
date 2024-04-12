@@ -5,6 +5,8 @@ import { Context } from "../../store/appContext";
 export interface KidType {
   category: string;
   age: string;
+  start: number;
+  end: number;
   img: string;
   color: string;
   price: string | number;

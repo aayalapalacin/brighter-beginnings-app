@@ -1,17 +1,18 @@
 import React, { useContext } from "react";
 // import { Link } from "react-router-dom";
 import { Context } from "../../store/appContext";
+import { KidType } from "./ProgramsAccordion";
 
-export interface KidType {
-  category: string;
-  age: string;
-  img: string;
-  color: string;
-  price: string | number;
-  description: string;
-  schedule: string;
-  staff: string;
-}
+// export interface KidType {
+//   category: string;
+//   age: string;
+//   img: string;
+//   color: string;
+//   price: string | number;
+//   description: string;
+//   schedule: string;
+//   staff: string;
+// }
 
 interface ProgramsAccordionProps {
   kid: KidType | null;

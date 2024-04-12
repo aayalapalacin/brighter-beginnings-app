@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Context } from "../../store/appContext";
 import ProgramsAccordion from "./Accordion";
 import "../../../styles/programs.css";
-import { KidType } from "./Accordion";
+import { KidType } from "./ProgramsAccordion";
 
 const ProgramType = () => {
   const [clickedProgram, setClickedProgram] = useState<KidType | null>(null);

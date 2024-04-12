@@ -14,6 +14,8 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         {
           category: "Infant",
           age: "4 Weeks - 15 Months",
+          start: 1,
+          end: 15,
           img: "/programs_images/infant.png",
           color: "grass",
           price: "15.00/hr",
