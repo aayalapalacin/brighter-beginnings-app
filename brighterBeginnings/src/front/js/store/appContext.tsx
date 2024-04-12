@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from "react";
 import getState from "./flux";
-import { KidType } from "../component/Programs/Accordion";
-
-export interface ContextValue {
-  store: Store;
-  actions: Actions;
-}
+import { KidType } from "../component/Programs/ProgramsAccordion";
 
 interface Store {
   test: string;
@@ -15,6 +10,7 @@ interface Store {
     yearsOld: string;
     monthsOld: string;
   };
+  inputKidProgram: KidType;
   availablePrograms: KidType[];
 }
 interface Actions {
@@ -23,9 +19,13 @@ interface Actions {
     | ((
         e: React.FormEvent<HTMLFormElement>,
         firstName: string,
-        yearsOld: string,
-        monthsOld: string
+        yearsOld: string | number,
+        monthsOld: string | number
       ) => void);
+}
+export interface ContextValue {
+  store: Store;
+  actions: Actions;
 }
 
 export const Context = React.createContext<ContextValue | null>(null);
@@ -52,9 +52,6 @@ const injectContext = (PassedComponent: PassedComponentType) => {
       });
 
       setState(initialState);
-
-      if (state) {
-      }
     }, []);
 
     // The initial value for the context is not null anymore, but the current state of this component,

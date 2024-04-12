@@ -1,11 +1,12 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../../store/appContext";
-import ProgramsAccordion from "./Accordion";
+import ProgramsAccordion from "./ProgramsAccordion";
 import "../../../styles/programs.css";
 import { KidType } from "./ProgramsAccordion";
 
 const ProgramType = () => {
   const [clickedProgram, setClickedProgram] = useState<KidType | null>(null);
+  // const [isProgramClicked, setIsProgramClicked] = useState(false);
   const contextValue = useContext(Context);
 
   if (!contextValue) {
@@ -13,16 +14,16 @@ const ProgramType = () => {
   }
 
   const { store } = contextValue;
-  const availablePrograms = store.availablePrograms;
 
   const handleClick = (kid: KidType) => {
     setClickedProgram(kid);
+    // setIsProgramClicked(true);
     console.log(clickedProgram);
   };
   return (
     <div className="program-types-container row text-center mx-auto border-bottom border-3">
-      {availablePrograms.map((kid, index) => (
-        <div className="program-info-container col-5 m-auto p-4" key={index}>
+      {store.availablePrograms.map((kid, index) => (
+        <div className={`program-info-container col-5 m-auto p-4`} key={index}>
           <div
             className={`w-100 btn bg-${kid.color}`}
             onClick={() => handleClick(kid)}>
@@ -36,7 +37,9 @@ const ProgramType = () => {
           </div>
         </div>
       ))}
-      <ProgramsAccordion kid={clickedProgram} />
+      <div className={``}>
+        <ProgramsAccordion clickedProgram={clickedProgram} />
+      </div>
     </div>
   );
 };
