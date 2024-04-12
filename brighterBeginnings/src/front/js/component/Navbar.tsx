@@ -30,8 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({ pages }) => {
           data-bs-target="#navbarNav"
           aria-controls="navbarNav"
           aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+          aria-label="Toggle navigation">
           <span className="navbar-toggler-icon "></span>
         </button>
 
@@ -40,10 +39,9 @@ const Navbar: React.FC<NavbarProps> = ({ pages }) => {
             <ul className="navbar-nav">
               {pages.map((page, index) => (
                 <Link
-                  to={`/${page}`}
+                  to={`/${page.toLowerCase()}`}
                   key={index}
-                  className="nav-link fs-4 mx-3 text-start"
-                >
+                  className="nav-link fs-4 mx-3 text-start">
                   <li className={`col color-${colors[index % colors.length]}`}>
                     {page}
                   </li>
