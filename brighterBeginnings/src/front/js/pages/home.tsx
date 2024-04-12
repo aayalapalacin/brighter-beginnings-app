@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
 import Carousel from "../component/Home/Carousel";
 import ProgramsInfo from "../component/Home/ProgramsInfo/ProgramsInfo";
 import CareersContent from "../component/Home/CareersContent";
@@ -6,6 +7,14 @@ import "../../styles/home.css";
 import ClassDojo from "../component/ClassDojo";
 
 const Home = () => {
+  const contextValue = useContext(Context);
+
+  if (!contextValue) {
+    return <div>Loading...</div>;
+  }
+
+  const { store, actions } = contextValue;
+  console.log(store.availablePrograms);
   return (
     <div className="">
       <Carousel />
