@@ -31,7 +31,7 @@ const Carousel = () => {
             src="/home_images/playground_photo.jpeg"
             className="h-100 w-100"
             style={{ transform: "scale(1)" }}
-            alt="playground photo"
+            alt="playground"
           />
           <span id="playground-caption" className="carousel-caption   ">
             <h1 className="text-white text-bold ">Playground paradise</h1>
@@ -59,7 +59,7 @@ const Carousel = () => {
             id="staff_photo"
             src="/home_images/staff.jpeg"
             className="w-100 h-100"
-            alt="staff photo"
+            alt="staff"
           />
           <span id="staff-caption" className="carousel-caption   ">
             <h1 className="text-white text-bold d-none d-md-block  ">
