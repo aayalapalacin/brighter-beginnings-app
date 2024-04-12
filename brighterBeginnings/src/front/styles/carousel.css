@@ -1,0 +1,147 @@
+.carousel-item {
+  width: 100%;
+  height: 600px;
+}
+
+#staff_photo {
+  position: relative;
+  object-position: top;
+  object-fit: cover;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  opacity: 1;
+  height: min-content;
+}
+
+.fa-arrow-left:before,
+.fa-arrow-right:before {
+  font-size: 3.2rem;
+}
+
+#playground-caption {
+  text-align: start;
+  bottom: 8rem;
+  left: 27rem;
+  width: 21%;
+}
+
+#staff-caption {
+  text-align: start;
+  bottom: 19rem;
+  left: 40rem;
+  width: 21%;
+}
+
+@media screen and (max-width: 768px) {
+  .carousel-item {
+    width: 100%;
+    height: 300px;
+  }
+
+  #playground-caption {
+    text-align: start;
+    bottom: 0rem;
+    left: 12rem;
+    width: 42%;
+  }
+
+  #staff-caption {
+    text-align: center;
+    bottom: 11rem;
+    left: 6rem;
+    width: 56%;
+  }
+
+  .fa-arrow-left:before,
+  .fa-arrow-right:before {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #playground-caption {
+    text-align: start;
+    bottom: 1rem;
+    left: 4rem;
+    width: 51%;
+  }
+
+  #staff-caption {
+    text-align: center;
+    bottom: 11rem;
+    left: 4rem;
+    width: 64%;
+  }
+}
+
+@media screen and (min-width: 370px) and (max-width: 375px) {
+  #staff-caption {
+    text-align: center;
+    bottom: 11rem;
+    left: 6rem;
+    width: 54%;
+  }
+}
+
+@media screen and (min-width: 420px) and (max-width: 425px) {
+  #staff-caption {
+    text-align: center;
+    bottom: 11rem;
+    left: 7rem;
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 760px) and (max-width: 770px) {
+  #staff-caption {
+    text-align: center;
+    bottom: 6rem;
+    left: 17rem;
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 1020px) and (max-width: 1030px) {
+  #staff-caption {
+    text-align: start;
+    bottom: 25rem;
+    left: 21rem;
+    width: 36%;
+  }
+}
+
+@media screen and (min-width: 1435px) and (max-width: 1445px) {
+  #staff-caption {
+    text-align: start;
+    bottom: 25rem;
+    left: 35rem;
+    width: 26%;
+  }
+}
+
+@media screen and (min-width: 2560px) and (max-width: 2565px) {
+  #staff-caption {
+    text-align: start;
+    bottom: 25rem;
+    left: 65rem;
+    width: 26%;
+  }
+}
+
+@media screen and (min-width: 370px) and (max-width: 425px) {
+  #playground-caption {
+    text-align: start;
+    bottom: 1rem;
+    left: 5rem;
+    width: 40%;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  #playground-caption {
+    text-align: start;
+    bottom: 9rem;
+    left: 16rem;
+    width: 36%;
+  }
+}

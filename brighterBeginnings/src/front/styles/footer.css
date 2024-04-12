@@ -1,0 +1,10 @@
+.footer-container {
+  flex-shrink: 0;
+}
+
+.footer-descriptions {
+  color: black;
+  text-decoration: none;
+  margin-top: auto;
+  margin-bottom: auto;
+}

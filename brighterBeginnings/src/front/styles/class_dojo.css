@@ -1,0 +1,31 @@
+.class-dojo-video-container {
+  box-shadow: 12px 12px 16px 2px rgb(0 0 0 / 60%);
+}
+
+.class-dojo-video {
+  box-shadow: 12px 12px 16px 2px rgb(0 0 0 / 60%);
+  height: 20rem;
+}
+
+.class-dojo-container {
+  margin: 5rem 0px;
+}
+
+@media screen and (max-width: 768px) {
+  .class-dojo-description-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .class-dojo-video {
+    box-shadow: 12px 12px 16px 2px rgb(0 0 0 / 60%);
+    height: 12rem;
+  }
+  .class-dojo-description {
+    margin-left: 2rem;
+  }
+
+  .class-dojo-description-text {
+    font-size: 1rem !important;
+  }
+}

@@ -1,0 +1,64 @@
+/* GLOBAL STYLING FOR PROJECT */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.m-6 {
+  margin: 7rem;
+}
+
+.image-shadow {
+  filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.4));
+}
+.bg-grass {
+  background-color: #7db93f;
+}
+.color-grass {
+  color: #7db93f;
+}
+
+/* Add new styles */
+/* END */
+
+.bg-sun {
+  background-color: #f0d849;
+}
+.color-sun {
+  color: #f0d849;
+}
+
+/* Add new styles */
+/* END */
+
+.bg-sky {
+  background-color: #89c9d0;
+}
+.color-sky {
+  color: #89c9d0;
+}
+
+/* Add new styles */
+/* END */
+
+.bg-carrot {
+  background-color: #eb7526;
+}
+.color-carrot {
+  color: #eb7526;
+}
+
+/* Add new styles */
+/* END */
+
+.bg-tree {
+  background-color: #6d4722;
+}
+.color-tree {
+  color: #6d4722;
+}
+
+/* Add new styles */
+/* END */
