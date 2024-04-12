@@ -36,6 +36,10 @@ input {
 .backpack-image {
   width: 44%;
 }
+
+ #backpack-image-help-choose{
+  width: 75%;
+}
 .find-program-container {
   margin: 7rem;
 }
