@@ -29,7 +29,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
       availablePrograms: [
         {
           category: "Infant",
-          age: "4 Weeks - 15 Months",
+          age: "4 Weeks - 15 Mo",
           start: 1,
           end: 15,
           img: "/programs_images/infant.png",
@@ -41,7 +41,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         },
         {
           category: "Toddler",
-          age: "16 Months - 2 Yrs",
+          age: "16 Mo - 2 Yrs",
           start: 16,
           end: 24,
 

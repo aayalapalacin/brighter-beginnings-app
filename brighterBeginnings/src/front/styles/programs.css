@@ -12,7 +12,15 @@
   margin: 1rem;
 }
 
-.program-types-img {
+.program-info-card-title {
+  margin-bottom: 0;
+}
+
+.program-info-card-age {
+  font-size: 1.4rem;
+}
+
+.program-info-card-img {
   width: 40%;
 }
 
