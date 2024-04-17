@@ -29,11 +29,13 @@ const ProgramType = () => {
             className={`program-info-cards btn bg-gradient-${kid.color} col-md-5`}
             key={index}
             onClick={() => handleClick(kid)}>
-            <h3>{kid.category}</h3>
-            <p>{kid.age}</p>
+            <h3 className="program-info-card-title">
+              <strong>{kid.category}</strong>
+            </h3>
+            <p className="program-info-card-age">{kid.age}</p>
             <img
               src={kid.img}
-              className="program-types-img pb-4"
+              className="program-info-card-img pb-4"
               alt="programs type"
             />
           </div>
