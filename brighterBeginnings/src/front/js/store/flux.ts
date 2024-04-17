@@ -89,6 +89,10 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         const store = getStore();
         e.preventDefault();
 
+        if (!store || !store.availablePrograms) {
+          return console.error("Store or availablePrograms is undefined");
+        }
+
         // PARSING INPUTS TO INTEGERS
         const parsedYearsOld = parseInt(yearsOld);
         const parsedMonthsOld = parseInt(monthsOld);
@@ -100,7 +104,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         };
         // verifying kid's age
         const kidAgeInMonths = parsedMonthsOld + parsedYearsOld * 12;
-        console.log(kidAgeInMonths);
+        console.log(store.availablePrograms);
         const matchingProgram = store.availablePrograms.find(
           (program: KidType) => {
             return (

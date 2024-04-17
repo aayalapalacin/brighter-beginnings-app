@@ -13,6 +13,11 @@ body {
 .image-shadow {
   filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.4));
 }
+.bg-gradient-grass {
+  background-color: #a8d07e;
+  background-image: linear-gradient(to bottom, #d8f9d9, #a8d07e);
+}
+
 .bg-grass {
   background-color: #7db93f;
 }
@@ -23,6 +28,11 @@ body {
 /* Add new styles */
 /* END */
 
+.bg-gradient-sun {
+  background-color: #e8d145;
+  background-image: linear-gradient(to bottom, #f8f9a2, #e8d145);
+}
+
 .bg-sun {
   background-color: #f0d849;
 }
@@ -32,6 +42,11 @@ body {
 
 /* Add new styles */
 /* END */
+
+.bg-gradient-sky {
+  background-color: #89c9d0;
+  background-image: linear-gradient(to bottom, #c6f9f6, #89c9d0);
+}
 
 .bg-sky {
   background-color: #89c9d0;

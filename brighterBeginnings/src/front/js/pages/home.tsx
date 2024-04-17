@@ -14,7 +14,6 @@ const Home = () => {
   }
 
   const { store, actions } = contextValue;
-  console.log(store.availablePrograms);
   return (
     <div className="">
       <Carousel />

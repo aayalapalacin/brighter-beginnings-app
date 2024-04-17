@@ -14,7 +14,7 @@ const SubmitForm = () => {
     return null;
   }
 
-  const { actions } = contextValue;
+  const { store, actions } = contextValue;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     if (actions) {
@@ -40,14 +40,12 @@ const SubmitForm = () => {
             <div className="col-4 name-title pe-0">
               <p
                 id="child-name"
-                className="  my-auto text-end d-md-block d-none text-nowrap"
-              >
+                className="  my-auto text-end d-md-block d-none text-nowrap">
                 Child's first name:
               </p>
               <p
                 id="child-no-name"
-                className="my-auto d-md-none d-block text-end text-nowrap"
-              >
+                className="my-auto d-md-none d-block text-end text-nowrap">
                 Child:
               </p>
             </div>
@@ -100,8 +98,7 @@ const SubmitForm = () => {
 
           <button
             className="programs-button col-lg-3  my-auto  btn bg-grass rounded-pill text-white ms-4"
-            type="submit"
-          >
+            type="submit">
             Submit
           </button>
         </div>
@@ -111,8 +108,7 @@ const SubmitForm = () => {
         style={{
           width: `${calculateProgressBar()}%`,
           transition: "ease-in 0.37s",
-        }}
-      >
+        }}>
         <strong className="ms-2">{Math.round(calculateProgressBar())}%</strong>
       </div>
       <div
@@ -122,8 +118,7 @@ const SubmitForm = () => {
         aria-label="Completion Progress"
         aria-valuenow={calculateProgressBar()}
         aria-valuemin={0}
-        aria-valuemax={100}
-      >
+        aria-valuemax={100}>
         <div
           className="progress-bar color-tree"
           style={{ width: `${calculateProgressBar()}%` }}
