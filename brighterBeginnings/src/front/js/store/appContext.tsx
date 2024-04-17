@@ -39,19 +39,22 @@ const injectContext = (PassedComponent: PassedComponentType) => {
     const [state, setState] = useState<ContextValue | null>(null);
 
     useEffect(() => {
-      // Fetch initial state using getState function
-      const initialState = getState({
-        getStore: () => state?.store,
-        getActions: () => state?.actions,
-        setStore: (updatedStore) =>
-          setState((prevState) => ({
-            ...prevState!,
-            store: { ...prevState!.store, ...updatedStore },
-            actions: { ...prevState!.actions },
-          })),
-      });
+      const fetchInitialState = async () => {
+        // Fetch initial state using getState function
+        const initialState = await getState({
+          getStore: () => state?.store,
+          getActions: () => state?.actions,
+          setStore: (updatedStore) =>
+            setState((prevState) => ({
+              ...prevState!,
+              store: { ...prevState!.store, ...updatedStore },
+              actions: { ...prevState!.actions },
+            })),
+        });
 
-      setState(initialState);
+        setState(initialState);
+      };
+      fetchInitialState();
     }, []);
 
     // The initial value for the context is not null anymore, but the current state of this component,

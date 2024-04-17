@@ -30,18 +30,23 @@ const ProgramsAccordion = ({ clickedProgram }: ProgramsAccordionProps) => {
 
   const { store } = contextValue;
 
+  // Displaying accordion when Cards are CLICKED
   if (clickedProgram) {
     return (
       <div>
         <CreateAccordion program={clickedProgram} />
       </div>
     );
+
+    // Displaying accordion if they submitted info through the SubmitForm Component
   } else if (store.childProgram) {
     return (
       <div>
         <CreateAccordion program={store.inputKidProgram} />
       </div>
     );
+
+    // Handling when nothing has happened
   } else return null;
 };
 

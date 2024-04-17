@@ -21,11 +21,13 @@ const ProgramType = () => {
     console.log(clickedProgram);
   };
   return (
-    <div className="program-types-container row text-center mx-auto border-bottom border-3">
-      {store.availablePrograms.map((kid, index) => (
-        <div className={`program-info-container col-5 m-auto p-4`} key={index}>
+    <div className="program-types-container">
+      <div
+        className={`program-info-container row border-bottom border-3 w-50 mx-auto justify-content-center`}>
+        {store.availablePrograms.map((kid, index) => (
           <div
-            className={`w-100 btn bg-${kid.color}`}
+            className={`program-info-cards btn bg-gradient-${kid.color} col-md-5`}
+            key={index}
             onClick={() => handleClick(kid)}>
             <h3>{kid.category}</h3>
             <p>{kid.age}</p>
@@ -35,8 +37,9 @@ const ProgramType = () => {
               alt="programs type"
             />
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
+
       <div className={``}>
         <ProgramsAccordion clickedProgram={clickedProgram} />
       </div>
