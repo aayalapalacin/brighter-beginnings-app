@@ -33,7 +33,7 @@ const ProgramType = () => {
             <p>{kid.age}</p>
             <img
               src={kid.img}
-              className="program-types-img p-2"
+              className="program-types-img pb-4"
               alt="programs type"
             />
           </div>
