@@ -8,3 +8,9 @@
   margin-top: auto;
   margin-bottom: auto;
 }
+
+@media screen and (max-width: 768px) {
+  .footer-descriptions {
+    font-size: 0.7rem;
+  }
+}
