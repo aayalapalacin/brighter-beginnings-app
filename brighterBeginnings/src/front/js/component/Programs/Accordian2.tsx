@@ -14,7 +14,7 @@ interface Accordion2Props {
 const Accordion2 = ({ program, icon, program_name }: Accordion2Props) => {
   if (program)
     return (
-      <div className="accordion" id="accordionExample">
+      <div className="accordion" id="accordion2">
         <div className="accordion-item">
           <div className="d-flex">
             <img src={icon} className="w-25" alt={icon} />
@@ -38,8 +38,8 @@ const Accordion2 = ({ program, icon, program_name }: Accordion2Props) => {
           </h2>
           <div
             id="collapseOne"
-            className="accordion-collapse collapse show"
-            data-bs-parent="#accordionExample">
+            className="accordion-collapse collapse "
+            data-bs-parent="#accordion2">
             <div className="accordion-body">{programData.description}</div>
           </div>
                 </>
