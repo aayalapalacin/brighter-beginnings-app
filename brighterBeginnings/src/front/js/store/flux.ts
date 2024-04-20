@@ -33,11 +33,23 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
           start: 1,
           end: 15,
           img: "/programs_images/infant.png",
-          color: "grass",
-          price: "15.00/hr",
-          description: "We'll take care",
-          schedule: "Someday thru someday",
-          staff: "Andres and alex",
+          dropdownData:[
+            {
+              title:"Price",
+              description: "$15/hr",
+              color: "grass"
+            },
+            {
+              title:"Schedule",
+              description: "Monday - Friday, 7:40am - 5pm",
+              color: "sun"
+            },
+            {
+              title:"Staff",
+              description: "infant staff",
+              color: "sun"
+            }
+          ]
         },
         {
           category: "Toddler",
