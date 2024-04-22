@@ -1,11 +1,13 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../../store/appContext";
 import ProgramsAccordion from "./ProgramsAccordion";
+import Accordian2 from "./Accordian2";
+
 import "../../../styles/programs.css";
 import { KidType } from "./ProgramsAccordion";
 
 const ProgramType = () => {
-  const [clickedProgram, setClickedProgram] = useState<KidType | null>(null);
+  const [accordianData, setAccordianData] = useState<KidType | null>(null);
   // const [isProgramClicked, setIsProgramClicked] = useState(false);
   const contextValue = useContext(Context);
 
@@ -16,9 +18,9 @@ const ProgramType = () => {
   const { store } = contextValue;
 
   const handleClick = (kid: KidType) => {
-    setClickedProgram(kid);
+    setAccordianData(kid);
     // setIsProgramClicked(true);
-    console.log(clickedProgram);
+    console.log(accordianData);
   };
   return (
     <div className="program-types-container">
@@ -26,11 +28,11 @@ const ProgramType = () => {
         className={`program-info-container row border-bottom border-3 w-50 mx-auto justify-content-center`}>
         {store.availablePrograms.map((kid, index) => (
           <div
-            className={`program-info-cards btn bg-gradient-${kid.color} col-md-5`}
+            className={`program-info-cards btn bg-gradient-${kid.bg_color} col-md-5`}
             key={index}
             onClick={() => handleClick(kid)}>
             <h3 className="program-info-card-title">
-              <strong>{kid.category}</strong>
+              <strong>{kid.accordion_title}</strong>
             </h3>
             <p className="program-info-card-age">{kid.age}</p>
             <img
@@ -43,7 +45,8 @@ const ProgramType = () => {
       </div>
 
       <div className={``}>
-        <ProgramsAccordion clickedProgram={clickedProgram} />
+        <Accordian2 accordianData={accordianData} />
+        {/* <ProgramsAccordion clickedProgram={clickedProgram} /> */}
       </div>
     </div>
   );

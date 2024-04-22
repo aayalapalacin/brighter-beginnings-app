@@ -1,30 +1,23 @@
 import React from "react";
+import { KidType } from "./ProgramsAccordion";
 
 interface Accordion2Props {
-  dropdownData: {
-    title: string;
-    description: string;
-    color: string;
-  }[] | null;
-  img: string ;
-  category: string;
-
-
+  accordianData: KidType | null;
 }
 
-const Accordion2 = ({ dropdownData ,img , category}: Accordion2Props) => {
-  if (dropdownData)
+const Accordion2 = ({ accordianData}: Accordion2Props) => {
+  if (accordianData)
     return (
       <div className="accordion" id="accordion2">
         <div className="accordion-item">
 
           <div className=" accordion-img-title-container d-flex">
-            <img src={img} className=" accordion-img w-25" alt={img} />
-            <h1 className="accordion-category">
-              {category}
+            <img src={accordianData.img} className=" accordion-img w-25" alt={accordianData.img} />
+            <h1 className="accordion-title">
+              {accordianData.accordion_title}
             </h1>
           </div>
-          {dropdownData.map((accordionContent , accordionContentIndex) =>{
+          {accordianData.dropdownData.map((accordionContent , accordionContentIndex) =>{
             return(
               <>
                   <h2 className="accordion-header">
@@ -54,7 +47,7 @@ const Accordion2 = ({ dropdownData ,img , category}: Accordion2Props) => {
         </div>
  
     );
-  else return <div>Nothing has clicked</div>;
+  else return <div>Content not showing, refresh the page.</div>;
 };
 
 export default Accordion2;

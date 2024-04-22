@@ -3,19 +3,21 @@ import { Context } from "../../store/appContext";
 import CreateAccordion from "./CreateAccordion";
 
 export interface KidType {
-  name?: string;
-  kidsAge?: number;
-  category: string;
+  accordion_title: string;
   age: string;
   start: any | number;
   end: any | number;
   img: string;
-  color: string;
-  price: string | number;
-  description: string;
-  schedule: string;
-  staff: string;
+  bg_color: string;
+  dropdownData:{
+    title: string;
+    description: string;
+    color: string;
+  }[]
+
 }
+
+
 
 interface ProgramsAccordionProps {
   clickedProgram: KidType | null;

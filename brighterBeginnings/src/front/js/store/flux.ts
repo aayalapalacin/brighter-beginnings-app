@@ -28,53 +28,94 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
       },
       availablePrograms: [
         {
-          category: "Infant",
+          accordion_title: "Infant",
           age: "4 Weeks - 15 Mo",
           start: 1,
           end: 15,
           img: "/programs_images/infant.png",
+          bg_color:"grass",
           dropdownData:[
             {
               title:"Price",
               description: "$15/hr",
-              color: "grass"
+              color: "carrot"
+            },
+            {
+              title:"Description",
+              description: "We take care of infants",
+              color: "sky"
             },
             {
               title:"Schedule",
               description: "Monday - Friday, 7:40am - 5pm",
-              color: "sun"
+              color: "grass"
             },
             {
               title:"Staff",
               description: "infant staff",
-              color: "sun"
+              color: "tree"
             }
           ]
         },
         {
-          category: "Toddler",
+          accordion_title: "Toddler",
           age: "16 Mo - 2 Yrs",
           start: 16,
           end: 24,
-
           img: "/programs_images/toddler.png",
-          color: "sky",
-          price: "15.00/hr",
-          description: "We'll take care",
-          schedule: "Someday thru someday",
-          staff: "Andres and alex",
+          bg_color:"sky",
+          dropdownData:[
+            {
+              title:"Price",
+              description: "$17/hr",
+              color: "carrot"
+            },
+            {
+              title:"Description",
+              description: "We take care of toddlers",
+              color: "sky"
+            },
+            {
+              title:"Schedule",
+              description: "Monday - Friday, 7:40am - 5pm",
+              color: "grass"
+            },
+            {
+              title:"Staff",
+              description: "toddler staff",
+              color: "tree"
+            }
+          ],
         },
         {
-          category: "Pre-School",
+          accordion_title: "Pre-School",
           age: "2 Yrs - 5 Yrs",
           start: 24,
           end: 60,
           img: "/programs_images/pre_school.png",
-          color: "sun",
-          price: "15.00/hr",
-          description: "We'll take care",
-          schedule: "Someday thru someday",
-          staff: "Andres and alex",
+          bg_color:"sun",
+          dropdownData:[
+            {
+              title:"Price",
+              description: "$18/hr",
+              color: "carrot"
+            },
+            {
+              title:"Description",
+              description: "We take care of pre-schoolers",
+              color: "sky"
+            },
+            {
+              title:"Schedule",
+              description: "Monday - Friday, 7:40am - 5pm",
+              color: "grass"
+            },
+            {
+              title:"Staff",
+              description: "pre-schooler staff",
+              color: "tree"
+            }
+          ],
         },
       ],
     },
