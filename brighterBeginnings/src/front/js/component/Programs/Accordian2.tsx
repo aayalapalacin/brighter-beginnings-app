@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { KidType } from "./ProgramsAccordion";
 import "../../../styles/accordian.css";
 
@@ -27,15 +27,15 @@ const Accordion2 = ({ accordianData}: Accordion2Props) => {
                       className={`accordion-button bg-white border-${accordionContent.color}-1 color-${accordionContent.color} `}
                       type="button"
                       data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne"
+                      data-bs-target={`#collapse${accordionContentIndex}`}
                       aria-expanded="true"
-                      aria-controls="collapseOne">
+                      aria-controls={`collapse${accordionContentIndex}`}>
                       {accordionContent.title}
                       </button>
                 </h2>
                 <div
-                  id="collapseOne"
-                  className="accordion-collapse collapse "
+                  id={`collapse${accordionContentIndex}`}
+                  className={`accordion-collapse collapse `}
                   data-bs-parent="#accordion2">
                   <div className="accordion-body">{accordionContent.description}</div>
                 </div>
