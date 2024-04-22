@@ -14,65 +14,82 @@ body {
   filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.4));
 }
 .bg-gradient-grass {
-  background-color: #a8d07e;
-  background-image: linear-gradient(to bottom, #d8f9d9, #a8d07e);
+  background-color: #a8d07e !important;
+  background-image: linear-gradient(to bottom, #d8f9d9, #a8d07e) !important;
 }
 
 .bg-grass {
-  background-color: #7db93f;
+  background-color: #7db93f !important;
 }
 .color-grass {
-  color: #7db93f;
+  color: #7db93f !important;
 }
 
+.border-grass-1 {
+  border: #7db93f 1px solid !important;
+}
 /* Add new styles */
 /* END */
 
 .bg-gradient-sun {
-  background-color: #e8d145;
-  background-image: linear-gradient(to bottom, #f8f9a2, #e8d145);
+  background-color: #e8d145 !important;
+  background-image: linear-gradient(to bottom, #f8f9a2, #e8d145) !important;
 }
 
 .bg-sun {
-  background-color: #f0d849;
+  background-color: #f0d849 !important;
 }
 .color-sun {
-  color: #f0d849;
+  color: #f0d849 !important; 
+}
+
+.border-sun-1 {
+  border: #f0d849 1px solid !important;
 }
 
 /* Add new styles */
 /* END */
 
 .bg-gradient-sky {
-  background-color: #89c9d0;
-  background-image: linear-gradient(to bottom, #c6f9f6, #89c9d0);
+  background-color: #89c9d0 !important;
+  background-image: linear-gradient(to bottom, #c6f9f6, #89c9d0) !important;
 }
 
 .bg-sky {
-  background-color: #89c9d0;
+  background-color: #89c9d0 !important;
 }
 .color-sky {
-  color: #89c9d0;
+  color: #89c9d0 !important;
+}
+
+.border-sky-1 {
+  border: #89c9d0 1px solid !important;
 }
 
 /* Add new styles */
 /* END */
 
 .bg-carrot {
-  background-color: #eb7526;
+  background-color: #eb7526 !important;
 }
 .color-carrot {
-  color: #eb7526;
+  color: #eb7526 !important;
 }
 
+.border-carrot-1 {
+  border: #eb7526 1px solid !important;
+}
 /* Add new styles */
 /* END */
 
 .bg-tree {
-  background-color: #6d4722;
+  background-color: #6d4722 !important;
 }
 .color-tree {
-  color: #6d4722;
+  color: #6d4722 !important;
+}
+.border-tree-1 {
+  border: #6d4722 1px solid !important;
 }
 
 /* Add new styles */
