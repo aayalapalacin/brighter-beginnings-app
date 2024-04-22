@@ -12,7 +12,9 @@ interface Store {
   };
   inputKidProgram: KidType;
   availablePrograms: KidType[];
+  philosophyData: KidType[]; // Add philosophyData to the Store interface
 }
+
 interface Actions {
   [key: string]:
     | (() => void)
@@ -23,31 +25,31 @@ interface Actions {
         monthsOld: string | number
       ) => void);
 }
+
 export interface ContextValue {
   store: Store;
   actions: Actions;
 }
 
 export const Context = React.createContext<ContextValue | null>(null);
+
 type PassedComponentType = React.ComponentType<any>;
 
 const injectContext = (PassedComponent: PassedComponentType) => {
   type PropsType = React.ComponentProps<PassedComponentType>;
 
   const StoreWrapper: React.FC<PropsType> = (props) => {
-    //this will be passed as the contenxt value
     const [state, setState] = useState<ContextValue | null>(null);
 
     useEffect(() => {
       const fetchInitialState = async () => {
-        // Fetch initial state using getState function
         const initialState = await getState({
           getStore: () => state?.store,
           getActions: () => state?.actions,
           setStore: (updatedStore) =>
             setState((prevState) => ({
               ...prevState!,
-              store: { ...prevState!.store, ...updatedStore },
+              store: { ...prevState!.store, ...updatedStore, philosophyData: updatedStore.philosophyData || [] },
               actions: { ...prevState!.actions },
             })),
         });
@@ -57,9 +59,6 @@ const injectContext = (PassedComponent: PassedComponentType) => {
       fetchInitialState();
     }, []);
 
-    // The initial value for the context is not null anymore, but the current state of this component,
-    // the context will now have a getStore, getActions and setStore functions available, because they were declared
-    // on the state of this component
     return (
       <Context.Provider value={state}>
         <PassedComponent {...props} />

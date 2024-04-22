@@ -118,6 +118,34 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
           ],
         },
       ],
+      philosophyData: [
+        {
+          accordion_title: "Philospohy",
+          age: "",
+          start: 0,
+          end: 0,
+          img: "/about_images/scroll.png",
+          bg_color:"",
+          dropdownData:[
+            {
+              title:"All Children are created equal",
+              description: "all kids are equal no matter what",
+              color: "carrot"
+            },
+            {
+              title:"Love is the most important",
+              description: "Where is the love, Love?",
+              color: "sky"
+            },
+            {
+              title:"It takes a village",
+              description: "We are a community, yeah!",
+              color: "grass"
+            }
+          ]
+        },
+
+      ],
     },
     actions: {
       getUser: async () => {
