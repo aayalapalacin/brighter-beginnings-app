@@ -1,10 +1,24 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../../store/appContext";
-import ProgramsAccordion from "./ProgramsAccordion";
 import Accordian2 from "./Accordian2";
 
 import "../../../styles/programs.css";
-import { KidType } from "./ProgramsAccordion";
+
+export interface KidType {
+  accordion_title: string;
+  childName?: string;
+  kidsAge?: number;
+  age: string;
+  start: any | number;
+  end: any | number;
+  img: string;
+  bg_color: string;
+  dropdownData: {
+    title: string;
+    description: string;
+    color: string;
+  }[];
+}
 
 const ProgramType = () => {
   const [accordianData, setAccordianData] = useState<KidType | null>(null);

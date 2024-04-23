@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import getState from "./flux";
-import { KidType } from "../component/Programs/ProgramsAccordion";
+import { KidType } from "../component/Programs/ProgramType";
 
 interface Store {
   test: string;
@@ -49,7 +49,11 @@ const injectContext = (PassedComponent: PassedComponentType) => {
           setStore: (updatedStore) =>
             setState((prevState) => ({
               ...prevState!,
-              store: { ...prevState!.store, ...updatedStore, philosophyData: updatedStore.philosophyData || [] },
+              store: {
+                ...prevState!.store,
+                ...updatedStore,
+                philosophyData: updatedStore.philosophyData || [],
+              },
               actions: { ...prevState!.actions },
             })),
         });

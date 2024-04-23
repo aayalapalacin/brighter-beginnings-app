@@ -1,4 +1,4 @@
-import { KidType } from "../component/Programs/ProgramsAccordion";
+import { KidType } from "../component/Programs/ProgramType";
 
 interface GetStateParams {
   getStore: () => any;
@@ -13,108 +13,115 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
       users: [],
       childProgram: { firstName: "", yearsOld: "", monthsOld: "" },
       inputKidProgram: {
-        name: "",
+        accordion_title: "",
+        childName: "",
         kidsAge: 0,
-        category: "",
         age: "",
         start: 0,
         end: 0,
         img: "",
-        color: "",
-        price: "",
-        description: "",
-        schedule: "",
-        staff: "",
+        bg_color: "",
+        dropdownData: [
+          {
+            title: "",
+            description: "",
+            color: "",
+          },
+        ],
       },
+
       availablePrograms: [
+        // Infant
         {
-          accordion_title: "Infant",
+          accordion_title: "Infant Program Details",
           age: "4 Weeks - 15 Mo",
           start: 1,
           end: 15,
           img: "/programs_images/infant.png",
-          bg_color:"grass",
-          dropdownData:[
+          bg_color: "grass",
+          dropdownData: [
             {
-              title:"Price",
+              title: "Price",
               description: "$15/hr",
-              color: "carrot"
+              color: "carrot",
             },
             {
-              title:"Description",
+              title: "Description",
               description: "We take care of infants",
-              color: "sky"
+              color: "sky",
             },
             {
-              title:"Schedule",
+              title: "Schedule",
               description: "Monday - Friday, 7:40am - 5pm",
-              color: "grass"
+              color: "grass",
             },
             {
-              title:"Staff",
+              title: "Staff",
               description: "infant staff",
-              color: "tree"
-            }
-          ]
+              color: "tree",
+            },
+          ],
         },
+        // Toddler
         {
-          accordion_title: "Toddler",
+          accordion_title: "Toddler Program Details",
           age: "16 Mo - 2 Yrs",
           start: 16,
           end: 24,
           img: "/programs_images/toddler.png",
-          bg_color:"sky",
-          dropdownData:[
+          bg_color: "sky",
+          dropdownData: [
             {
-              title:"Price",
+              title: "Price",
               description: "$17/hr",
-              color: "carrot"
+              color: "carrot",
             },
             {
-              title:"Description",
+              title: "Description",
               description: "We take care of toddlers",
-              color: "sky"
+              color: "sky",
             },
             {
-              title:"Schedule",
+              title: "Schedule",
               description: "Monday - Friday, 7:40am - 5pm",
-              color: "grass"
+              color: "grass",
             },
             {
-              title:"Staff",
+              title: "Staff",
               description: "toddler staff",
-              color: "tree"
-            }
+              color: "tree",
+            },
           ],
         },
+        // Pre-schooler
         {
-          accordion_title: "Pre-School",
+          accordion_title: "Pre-School Program Details",
           age: "2 Yrs - 5 Yrs",
           start: 24,
           end: 60,
           img: "/programs_images/pre_school.png",
-          bg_color:"sun",
-          dropdownData:[
+          bg_color: "sun",
+          dropdownData: [
             {
-              title:"Price",
+              title: "Price",
               description: "$18/hr",
-              color: "carrot"
+              color: "carrot",
             },
             {
-              title:"Description",
+              title: "Description",
               description: "We take care of pre-schoolers",
-              color: "sky"
+              color: "sky",
             },
             {
-              title:"Schedule",
+              title: "Schedule",
               description: "Monday - Friday, 7:40am - 5pm",
-              color: "grass"
+              color: "grass",
             },
             {
-              title:"Staff",
+              title: "Staff",
               description: "pre-schooler staff",
-              color: "tree"
-            }
+              color: "tree",
+            },
           ],
         },
       ],
@@ -125,26 +132,25 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
           start: 0,
           end: 0,
           img: "/about_images/scroll.png",
-          bg_color:"",
-          dropdownData:[
+          bg_color: "",
+          dropdownData: [
             {
-              title:"All Children are created equal",
+              title: "All Children are created equal",
               description: "all kids are equal no matter what",
-              color: "carrot"
+              color: "carrot",
             },
             {
-              title:"Love is the most important",
+              title: "Love is the most important",
               description: "Where is the love, Love?",
-              color: "sky"
+              color: "sky",
             },
             {
-              title:"It takes a village",
+              title: "It takes a village",
               description: "We are a community, yeah!",
-              color: "grass"
-            }
-          ]
+              color: "grass",
+            },
+          ],
         },
-
       ],
     },
     actions: {
@@ -186,6 +192,8 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         // verifying kid's age
         const kidAgeInMonths = parsedMonthsOld + parsedYearsOld * 12;
         console.log(store.availablePrograms);
+
+        //
         const matchingProgram = store.availablePrograms.find(
           (program: KidType) => {
             return (
@@ -203,6 +211,12 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         // Updating inputkidprogram
         const updatedInputKidProgram = {
           ...matchingProgram,
+          // DATA TO CHANGE:
+
+          // accordion_title: "Toddler Program Details", -> "Ashley's Program Details (Toddler)"
+
+          // dropdownData.description: "We take care of infants", -> "We take care of Ashley"
+          // dropdownData.title: "Staff", -> "Staff caring for Ashley"
           name: firstName,
           kidsAge: kidAgeInMonths,
         };
