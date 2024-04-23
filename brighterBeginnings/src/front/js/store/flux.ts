@@ -33,7 +33,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
       availablePrograms: [
         // Infant
         {
-          accordion_title: "Infant Program Details",
+          accordion_title: "Infant",
           age: "4 Weeks - 15 Mo",
           start: 1,
           end: 15,
@@ -64,7 +64,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         },
         // Toddler
         {
-          accordion_title: "Toddler Program Details",
+          accordion_title: "Toddler",
           age: "16 Mo - 2 Yrs",
           start: 16,
           end: 24,
@@ -95,9 +95,9 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         },
         // Pre-schooler
         {
-          accordion_title: "Pre-School Program Details",
+          accordion_title: "Pre-School",
           age: "2 Yrs - 5 Yrs",
-          start: 24,
+          start: 25,
           end: 60,
           img: "/programs_images/pre_school.png",
           bg_color: "sun",
@@ -176,8 +176,11 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         const store = getStore();
         e.preventDefault();
 
-        if (!store || !store.availablePrograms) {
-          return console.error("Store or availablePrograms is undefined");
+        // HANDLING WHEN INPUT FIELDS ARE EMPTY
+        if (yearsOld === "") {
+          yearsOld = 0;
+        } else if (monthsOld === "") {
+          monthsOld = 0;
         }
 
         // PARSING INPUTS TO INTEGERS
@@ -204,20 +207,14 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
 
         // Matching age to no program
         if (!matchingProgram) {
-          console.error("No program found for the given age.");
+          alert("No program found for the given age.");
           return;
         }
 
         // Updating inputkidprogram
         const updatedInputKidProgram = {
           ...matchingProgram,
-          // DATA TO CHANGE:
-
-          // accordion_title: "Toddler Program Details", -> "Ashley's Program Details (Toddler)"
-
-          // dropdownData.description: "We take care of infants", -> "We take care of Ashley"
-          // dropdownData.title: "Staff", -> "Staff caring for Ashley"
-          name: firstName,
+          childName: firstName,
           kidsAge: kidAgeInMonths,
         };
 
@@ -226,7 +223,6 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
           childProgram: updatedChildProgram,
           inputKidProgram: updatedInputKidProgram,
         };
-
         setStore(updatedStore);
       },
     },

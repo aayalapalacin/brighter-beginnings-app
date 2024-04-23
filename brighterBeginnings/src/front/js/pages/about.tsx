@@ -10,10 +10,13 @@ const About = () => {
   }
 
   const { store } = contextValue;
-  return <div>About
-    {/* {store.} */}
-    <Accordion2 accordianData={store.philosophyData[0]} />
-  </div>;
+  return (
+    <div>
+      About
+      {/* {store.} */}
+      <Accordion2 accordianData={store.philosophyData[0]} />
+    </div>
+  );
 };
 
 export default About;

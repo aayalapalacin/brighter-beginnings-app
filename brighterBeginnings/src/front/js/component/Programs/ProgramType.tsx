@@ -5,7 +5,7 @@ import Accordian2 from "./Accordian2";
 import "../../../styles/programs.css";
 
 export interface KidType {
-  accordion_title: string;
+  accordion_title?: string;
   childName?: string;
   kidsAge?: number;
   age: string;
@@ -15,14 +15,14 @@ export interface KidType {
   bg_color: string;
   dropdownData: {
     title: string;
-    description: string;
+    description: string | any;
     color: string;
   }[];
 }
 
 const ProgramType = () => {
   const [accordianData, setAccordianData] = useState<KidType | null>(null);
-  // const [isProgramClicked, setIsProgramClicked] = useState(false);
+  const [isProgramClicked, setIsProgramClicked] = useState(false);
   const contextValue = useContext(Context);
 
   if (!contextValue) {
@@ -33,9 +33,18 @@ const ProgramType = () => {
 
   const handleClick = (kid: KidType) => {
     setAccordianData(kid);
-    // setIsProgramClicked(true);
+    setIsProgramClicked(true);
     console.log(accordianData);
   };
+
+  let renderedAccordian: JSX.Element | null = null;
+
+  if (isProgramClicked) {
+    renderedAccordian = <Accordian2 accordianData={accordianData} />;
+  } else if (store.childProgram) {
+    renderedAccordian = <Accordian2 accordianData={store.inputKidProgram} />;
+  }
+
   return (
     <div className="program-types-container">
       <div
@@ -57,11 +66,7 @@ const ProgramType = () => {
           </div>
         ))}
       </div>
-
-      <div className={``}>
-        <Accordian2 accordianData={accordianData} />
-        {/* <ProgramsAccordion clickedProgram={clickedProgram} /> */}
-      </div>
+      {renderedAccordian}
     </div>
   );
 };
