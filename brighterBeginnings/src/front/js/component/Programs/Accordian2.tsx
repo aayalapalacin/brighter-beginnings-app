@@ -79,7 +79,7 @@ const Accordion2 = ({ accordianData }: Accordion2Props): JSX.Element | null => {
               ? `${accordianData.childName}'s Program Details (${accordianData.accordion_title})`
               : // Conditionally rendering the Program Details if nothing has been clicked nor submitted
               accordianData.img
-              ? `Program Details ${accordianData.accordion_title}`
+              ? `Program Details (${accordianData.accordion_title})`
               : null}
           </h3>
         </div>
