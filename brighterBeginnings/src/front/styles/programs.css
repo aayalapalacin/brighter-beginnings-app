@@ -136,6 +136,11 @@ input {
     width: 85%;
   }
 }
+@media screen and (min-width: 335px) and (max-width: 440px) {
+  .backpack-image {
+    width: 100%;
+  }
+}
 
 @media screen and (max-width: 320px) {
   .programs-button {

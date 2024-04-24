@@ -1,20 +1,27 @@
 import React, { useState } from "react";
 import SubmitForm from "./SubmitForm";
 import { Link } from "react-router-dom";
-
+import "../../../../styles/programs-info.css";
 const ProgramsInfo = () => {
-  const [isClicked, setIsClicked] = useState(false);
+  const [isClicked, setIsClicked] = useState<boolean>(false);
+  const [isShown, setShown] = useState(false);
 
   const handleClick = () => {
     setIsClicked(!isClicked);
+    setShown(true);
+
   };
+
 
   return (
     <>
-      {!isClicked ? (
-        <div className="p-md-5 p-0 container m-md-6 m-5 mx-auto">
-          <div className="w-100 m-auto">
-            <div className="title-container w-100 text-center">
+    <div>
+      <div
+  
+        style={{ display: isShown ? "none" : "inline-block" }}
+        className={`programs-into-container paragraph p-md-5 p-0 container m-md-6 m-5 mx-auto`}
+      >
+        <div className="title-container w-100 text-center">
               <h1 className="color-tree programs-title-all">
                 We provide programs for children from 4 months - 5 yrs
               </h1>
@@ -46,11 +53,10 @@ const ProgramsInfo = () => {
                 </button>
               </div>
             </div>
-          </div>
-        </div>
-      ) : (
-        <div className="p-md-5 p-2 container  find-program-container ">
-          <div className="w-100 mt-md-0 mt-5">
+      </div>
+
+      <div className={`square ${isShown ? "square-full find-program-container  p-md-5 p-2 container programs" : ""}  `}>
+      <div className="w-100 mt-md-0 mt-5" style={{height: isShown ? "" : "20px"}}>
             <div className="title-container mt-md-0 mt-3 w-100 mx-auto text-center">
               <h1 className="color-sky programs-title text-md-start text-center ps-2 ms-md-5 ms-0">
                 Let’s Find the Program for Your Child!
@@ -70,8 +76,10 @@ const ProgramsInfo = () => {
               </div>
             </div>
           </div>
-        </div>
-      )}
+      </div>
+    </div>
+   
+
     </>
   );
 };
