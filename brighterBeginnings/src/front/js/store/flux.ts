@@ -33,7 +33,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
       availablePrograms: [
         // Infant
         {
-          accordion_title: "Infant",
+          accordion_title: "Infant Program Details",
           age: "4 Weeks - 15 Mo",
           start: 1,
           end: 15,
@@ -64,7 +64,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         },
         // Toddler
         {
-          accordion_title: "Toddler",
+          accordion_title: "Toddler Program Details",
           age: "16 Mo - 2 Yrs",
           start: 16,
           end: 24,
@@ -95,7 +95,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         },
         // Pre-schooler
         {
-          accordion_title: "Pre-School",
+          accordion_title: "Pre-School Program Details",
           age: "2 Yrs - 5 Yrs",
           start: 25,
           end: 60,
@@ -127,7 +127,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
       ],
       philosophyData: [
         {
-          accordion_title: "Philospohy",
+          accordion_title: "Philosophy",
           age: "",
           start: 0,
           end: 0,
@@ -167,22 +167,77 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         }
       },
 
-      handleChildProgramSubmit: (
+      // UPDATING KID'S INFORMATION TO GIVE DYNAMIC ACCORDION
+      // updateInputKidInfo: async (updatedInputKidProgram: any) => {
+      //   const store = getStore();
+      //   // Get all descriptions and prices of dropdownData items from all available programs
+      //   const availablePrices: { age: string; price: any }[] =
+      //     store.availablePrograms.map((program: KidType) => {
+      //       const priceItem = program.dropdownData.find(
+      //         (item) => item.title === "Price"
+      //       );
+      //       return {
+      //         age: program.age,
+      //         price: priceItem ? priceItem.description : "",
+      //       };
+      //     });
+
+      //   // FINDING THE PRICE FOR THE CURRENT PROGRAM BASED ON THE AGE
+      //   const currentProgramAge = updatedInputKidProgram.age;
+      //   const currentProgramPrice = availablePrices.find(
+      //     (item: { age: string; price: any }) => item.age === currentProgramAge
+      //   )?.price;
+      //   console.log(updatedInputKidProgram);
+      //   const updatedInputKidProgramWithPrice = {
+      //     ...updatedInputKidProgram,
+      //     accordion_title: `${updatedInputKidProgram.childName}'s Program Details ()`,
+      //     dropdownData: [
+      //       {
+      //         title: "Price",
+      //         description: currentProgramPrice,
+      //         color: "carrot",
+      //       },
+      //       {
+      //         title: `${updatedInputKidProgram.childName}'s Description`,
+      //         description: `We take care of ${updatedInputKidProgram.childName}`,
+      //         color: "sky",
+      //       },
+      //       {
+      //         title: `${updatedInputKidProgram.childName}'s Schedule`,
+      //         description: "Monday - Friday, 7:40am - 5pm",
+      //         color: "grass",
+      //       },
+      //       {
+      //         title: `Staff caring for ${updatedInputKidProgram.childName}`,
+      //         description: `${updatedInputKidProgram.childName}'s staff`,
+      //         color: "tree",
+      //       },
+      //     ],
+      //   };
+      //   const updatedStore = {
+      //     ...store,
+      //     inputKidProgram: updatedInputKidProgramWithPrice,
+      //   };
+
+      //   setStore(updatedStore);
+      // },
+
+      handleChildProgramSubmit: async (
         e: React.FormEvent<HTMLFormElement>,
         firstName: string,
         yearsOld: string | any,
         monthsOld: string | any
       ) => {
         const store = getStore();
-        e.preventDefault();
+        const actions = getActions();
 
+        e.preventDefault();
         // HANDLING WHEN INPUT FIELDS ARE EMPTY
         if (yearsOld === "") {
           yearsOld = 0;
         } else if (monthsOld === "") {
           monthsOld = 0;
         }
-
         // PARSING INPUTS TO INTEGERS
         const parsedYearsOld = parseInt(yearsOld);
         const parsedMonthsOld = parseInt(monthsOld);
@@ -194,7 +249,6 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         };
         // verifying kid's age
         const kidAgeInMonths = parsedMonthsOld + parsedYearsOld * 12;
-        console.log(store.availablePrograms);
 
         //
         const matchingProgram = store.availablePrograms.find(
@@ -210,7 +264,6 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
           alert("No program found for the given age.");
           return;
         }
-
         // Updating inputkidprogram
         const updatedInputKidProgram = {
           ...matchingProgram,
@@ -218,11 +271,63 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
           kidsAge: kidAgeInMonths,
         };
 
+        const availablePrices: { age: string; price: any }[] =
+          store.availablePrograms.map((program: KidType) => {
+            const priceItem = program.dropdownData.find(
+              (item) => item.title === "Price"
+            );
+            return {
+              age: program.age,
+              price: priceItem ? priceItem.description : "",
+            };
+          });
+
+        // FINDING THE PRICE FOR THE CURRENT PROGRAM BASED ON THE AGE
+        const currentProgramAge = updatedInputKidProgram.age;
+        const currentProgramPrice = availablePrices.find(
+          (item: { age: string; price: any }) => item.age === currentProgramAge
+        )?.price;
+        console.log(updatedInputKidProgram);
+        const updatedInputKidProgramWithPrice = {
+          ...updatedInputKidProgram,
+          accordion_title: `${
+            updatedInputKidProgram.childName
+          }'s Program Details (${
+            updatedInputKidProgram.accordion_title.includes("Toddler")
+              ? "Toddler"
+              : updatedInputKidProgram.accordion_title.includes("Infant")
+              ? "Infant"
+              : "Pre-School"
+          })`,
+          dropdownData: [
+            {
+              title: "Price",
+              description: currentProgramPrice,
+              color: "carrot",
+            },
+            {
+              title: `${updatedInputKidProgram.childName}'s Description`,
+              description: `We take care of ${updatedInputKidProgram.childName}`,
+              color: "sky",
+            },
+            {
+              title: `${updatedInputKidProgram.childName}'s Schedule`,
+              description: "Monday - Friday, 7:40am - 5pm",
+              color: "grass",
+            },
+            {
+              title: `Staff caring for ${updatedInputKidProgram.childName}`,
+              description: `${updatedInputKidProgram.childName}'s staff`,
+              color: "tree",
+            },
+          ],
+        };
+
         const updatedStore = {
           ...store,
-          childProgram: updatedChildProgram,
-          inputKidProgram: updatedInputKidProgram,
+          inputKidProgram: updatedInputKidProgramWithPrice,
         };
+
         setStore(updatedStore);
       },
     },
