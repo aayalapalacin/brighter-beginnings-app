@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Context, ContextValue } from "../../../store/appContext";
 import "../../../../styles/submit-form.css";
@@ -16,8 +16,9 @@ const SubmitForm = () => {
 
   const { store, actions } = contextValue;
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     actions.handleChildProgramSubmit(e, firstName, yearsOld, monthsOld);
+
     navigate("/programs");
   };
 
@@ -52,7 +53,6 @@ const SubmitForm = () => {
                 value={firstName}
                 onChange={(e) => {
                   setFirstName(e.target.value);
-                  console.log(firstName);
                 }}
                 type="text"
                 className=" my-auto form-control"
@@ -69,7 +69,6 @@ const SubmitForm = () => {
                 value={yearsOld}
                 onChange={(e) => {
                   setYearsOld(e.target.value);
-                  console.log(yearsOld);
                 }}
                 className="w-100 form-control"
                 type="number"

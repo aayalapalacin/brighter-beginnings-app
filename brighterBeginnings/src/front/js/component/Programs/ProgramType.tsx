@@ -29,12 +29,11 @@ const ProgramType = () => {
     return <div>Loading...</div>;
   }
 
-  const { store } = contextValue;
+  const { store, actions } = contextValue;
 
   const handleClick = (kid: KidType) => {
     setAccordianData(kid);
     setIsProgramClicked(true);
-    console.log(accordianData);
   };
 
   let renderedAccordian: JSX.Element | null = null;

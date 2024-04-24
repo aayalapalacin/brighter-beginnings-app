@@ -17,7 +17,7 @@ const Accordion2 = ({ accordianData }: Accordion2Props): JSX.Element | null => {
   const { store } = contextValue;
 
   if (!accordianData) {
-    return null; // or any other fallback JSX
+    return null;
   }
   return (
     <div className="accordion" id="accordion2">
@@ -36,7 +36,7 @@ const Accordion2 = ({ accordianData }: Accordion2Props): JSX.Element | null => {
         {accordianData.dropdownData.map(
           (accordionContent, accordionContentIndex) => {
             return (
-              <div className="accordion-item">
+              <div className="accordion-item" key={accordionContentIndex}>
                 <h2 className="accordion-header">
                   <button
                     className={`accordion-button bg-white border-${accordionContent.color}-1 color-${accordionContent.color} `}

@@ -127,7 +127,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
       ],
       philosophyData: [
         {
-          accordion_title: "Philospohy",
+          accordion_title: "Philosophy",
           age: "",
           start: 0,
           end: 0,
@@ -166,70 +166,61 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
           console.log("Error loading users from backend", error);
         }
       },
-      updateInputKidInfo: (updatedInputKidProgram: any) => {
-        const store = getStore();
-        // Get all descriptions and prices of dropdownData items from all available programs
-        const availablePrices: { age: string; price: any }[] =
-          store.availablePrograms.map((program: KidType) => {
-            const priceItem = program.dropdownData.find(
-              (item) => item.title === "Price"
-            );
-            return {
-              age: program.age,
-              price: priceItem ? priceItem.description : "",
-            };
-          });
 
-        // FINDING THE PRICE FOR THE CURRENT PROGRAM BASED ON THE AGE
-        const currentProgramAge = updatedInputKidProgram.age;
-        const currentProgramPrice = availablePrices.find(
-          (item: { age: string; price: any }) => item.age === currentProgramAge
-        )?.price;
+      // UPDATING KID'S INFORMATION TO GIVE DYNAMIC ACCORDION
+      // updateInputKidInfo: async (updatedInputKidProgram: any) => {
+      //   const store = getStore();
+      //   // Get all descriptions and prices of dropdownData items from all available programs
+      //   const availablePrices: { age: string; price: any }[] =
+      //     store.availablePrograms.map((program: KidType) => {
+      //       const priceItem = program.dropdownData.find(
+      //         (item) => item.title === "Price"
+      //       );
+      //       return {
+      //         age: program.age,
+      //         price: priceItem ? priceItem.description : "",
+      //       };
+      //     });
 
-        let programType = "";
-        if (updatedInputKidProgram.accordion_title.includes("Toddler")) {
-          programType = "Toddler";
-        } else if (updatedInputKidProgram.accordion_title.includes("Infant")) {
-          programType = "Infant";
-        } else {
-          programType = "Pre-School";
-        }
+      //   // FINDING THE PRICE FOR THE CURRENT PROGRAM BASED ON THE AGE
+      //   const currentProgramAge = updatedInputKidProgram.age;
+      //   const currentProgramPrice = availablePrices.find(
+      //     (item: { age: string; price: any }) => item.age === currentProgramAge
+      //   )?.price;
+      //   console.log(updatedInputKidProgram);
+      //   const updatedInputKidProgramWithPrice = {
+      //     ...updatedInputKidProgram,
+      //     accordion_title: `${updatedInputKidProgram.childName}'s Program Details ()`,
+      //     dropdownData: [
+      //       {
+      //         title: "Price",
+      //         description: currentProgramPrice,
+      //         color: "carrot",
+      //       },
+      //       {
+      //         title: `${updatedInputKidProgram.childName}'s Description`,
+      //         description: `We take care of ${updatedInputKidProgram.childName}`,
+      //         color: "sky",
+      //       },
+      //       {
+      //         title: `${updatedInputKidProgram.childName}'s Schedule`,
+      //         description: "Monday - Friday, 7:40am - 5pm",
+      //         color: "grass",
+      //       },
+      //       {
+      //         title: `Staff caring for ${updatedInputKidProgram.childName}`,
+      //         description: `${updatedInputKidProgram.childName}'s staff`,
+      //         color: "tree",
+      //       },
+      //     ],
+      //   };
+      //   const updatedStore = {
+      //     ...store,
+      //     inputKidProgram: updatedInputKidProgramWithPrice,
+      //   };
 
-        const updatedInputKidProgramWithPrice = {
-          ...updatedInputKidProgram,
-          accordion_title: `${updatedInputKidProgram.childName}'s Program Details (${programType})`,
-          dropdownData: [
-            {
-              title: "Price",
-              description: currentProgramPrice,
-              color: "carrot",
-            },
-            {
-              title: `${updatedInputKidProgram.childName}'s Description`,
-              description: `We take care of ${updatedInputKidProgram.childName}`,
-              color: "sky",
-            },
-            {
-              title: `${updatedInputKidProgram.childName}'s Schedule`,
-              description: "Monday - Friday, 7:40am - 5pm",
-              color: "grass",
-            },
-            {
-              title: `Staff caring for ${updatedInputKidProgram.childName}`,
-              description: `${updatedInputKidProgram.childName}'s staff`,
-              color: "tree",
-            },
-          ],
-        };
-        const updatedStore = {
-          ...store,
-          inputKidProgram: updatedInputKidProgramWithPrice,
-        };
-
-        setStore(updatedStore);
-        console.log(updatedStore);
-        console.log("updateInputKidInfo ran");
-      },
+      //   setStore(updatedStore);
+      // },
 
       handleChildProgramSubmit: async (
         e: React.FormEvent<HTMLFormElement>,
@@ -239,7 +230,6 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
       ) => {
         const store = getStore();
         const actions = getActions();
-        console.log("handleChildProgramSubmit ran");
 
         e.preventDefault();
         // HANDLING WHEN INPUT FIELDS ARE EMPTY
@@ -281,15 +271,64 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
           kidsAge: kidAgeInMonths,
         };
 
+        const availablePrices: { age: string; price: any }[] =
+          store.availablePrograms.map((program: KidType) => {
+            const priceItem = program.dropdownData.find(
+              (item) => item.title === "Price"
+            );
+            return {
+              age: program.age,
+              price: priceItem ? priceItem.description : "",
+            };
+          });
+
+        // FINDING THE PRICE FOR THE CURRENT PROGRAM BASED ON THE AGE
+        const currentProgramAge = updatedInputKidProgram.age;
+        const currentProgramPrice = availablePrices.find(
+          (item: { age: string; price: any }) => item.age === currentProgramAge
+        )?.price;
+        console.log(updatedInputKidProgram);
+        const updatedInputKidProgramWithPrice = {
+          ...updatedInputKidProgram,
+          accordion_title: `${
+            updatedInputKidProgram.childName
+          }'s Program Details (${
+            updatedInputKidProgram.accordion_title.includes("Toddler")
+              ? "Toddler"
+              : updatedInputKidProgram.accordion_title.includes("Infant")
+              ? "Infant"
+              : "Pre-School"
+          })`,
+          dropdownData: [
+            {
+              title: "Price",
+              description: currentProgramPrice,
+              color: "carrot",
+            },
+            {
+              title: `${updatedInputKidProgram.childName}'s Description`,
+              description: `We take care of ${updatedInputKidProgram.childName}`,
+              color: "sky",
+            },
+            {
+              title: `${updatedInputKidProgram.childName}'s Schedule`,
+              description: "Monday - Friday, 7:40am - 5pm",
+              color: "grass",
+            },
+            {
+              title: `Staff caring for ${updatedInputKidProgram.childName}`,
+              description: `${updatedInputKidProgram.childName}'s staff`,
+              color: "tree",
+            },
+          ],
+        };
+
         const updatedStore = {
           ...store,
-          childProgram: updatedChildProgram,
-          inputKidProgram: updatedInputKidProgram,
+          inputKidProgram: updatedInputKidProgramWithPrice,
         };
-        setStore(updatedStore);
 
-        // Call updateInputKidInfo after setting the store
-        actions.updateInputKidInfo(updatedInputKidProgram);
+        setStore(updatedStore);
       },
     },
   };
