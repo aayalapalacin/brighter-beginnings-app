@@ -1,0 +1,11 @@
+.opacity-low {
+  /* Set initial opacity */
+  opacity: 0.25 ;
+  /* Define transition properties */
+  transition: opacity 10s ease;
+}
+
+.opacity-high {
+  /* Change opacity to high */
+  opacity: 1 ;
+}
