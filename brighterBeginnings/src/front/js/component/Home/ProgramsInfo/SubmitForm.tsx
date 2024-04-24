@@ -16,11 +16,9 @@ const SubmitForm = () => {
 
   const { store, actions } = contextValue;
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    if (actions) {
-      actions.handleChildProgramSubmit(e, firstName, yearsOld, monthsOld);
-      navigate("/programs");
-    }
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    actions.handleChildProgramSubmit(e, firstName, yearsOld, monthsOld);
+    navigate("/programs");
   };
 
   const calculateProgressBar = () => {

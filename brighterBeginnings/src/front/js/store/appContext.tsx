@@ -16,14 +16,7 @@ interface Store {
 }
 
 interface Actions {
-  [key: string]:
-    | (() => void)
-    | ((
-        e: React.FormEvent<HTMLFormElement>,
-        firstName: string,
-        yearsOld: string | number,
-        monthsOld: string | number
-      ) => void);
+  [key: string]: (...args: any[]) => void;
 }
 
 export interface ContextValue {
