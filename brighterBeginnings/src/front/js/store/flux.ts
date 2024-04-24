@@ -287,8 +287,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         const currentProgramPrice = availablePrices.find(
           (item: { age: string; price: any }) => item.age === currentProgramAge
         )?.price;
-        console.log(updatedInputKidProgram);
-        const updatedInputKidProgramWithPrice = {
+        const updatedInputKidProgramData = {
           ...updatedInputKidProgram,
           accordion_title: `${
             updatedInputKidProgram.childName
@@ -325,7 +324,8 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
 
         const updatedStore = {
           ...store,
-          inputKidProgram: updatedInputKidProgramWithPrice,
+          childProgram: updatedChildProgram,
+          inputKidProgram: updatedInputKidProgramData,
         };
 
         setStore(updatedStore);
