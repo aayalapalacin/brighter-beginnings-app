@@ -20,8 +20,8 @@ const Accordion2 = ({ accordianData }: Accordion2Props): JSX.Element | null => {
     return null;
   }
   return (
-    <div className="accordion" id="accordion2">
-      <div className="accordion-item w-50 mx-auto">
+    <div className="accordion w-75 mx-auto text-center" id="accordion2">
+      <div className="accordion-item w-100 ">
         <div className=" accordion-img-title-container d-flex">
           <img
             style={{ width: "20%" }}
