@@ -82,6 +82,13 @@ input {
   }
 }
 
+
+@media screen and (min-width: 1000px) and (max-width: 1040px) {
+  .find-program-container {
+    margin-left: 8rem;
+  }
+}
+
 @media screen and (min-width: 768px) and (max-width: 992px) {
   #backpack-image-help-choose {
     display: none !important;
@@ -146,5 +153,15 @@ input {
   .programs-info-button {
     width: 8rem;
     font-size: 0.9rem;
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+
   }
+
+@media screen and (min-width: 335px) and (max-width: 378px) {
+  .programs-info-button {
+    margin-left: 0.5rem !important;
+
+  }
+}
 }
