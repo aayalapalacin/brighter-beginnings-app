@@ -47,7 +47,7 @@ const ProgramType = () => {
   return (
     <div className="program-types-container">
       <div
-        className={`program-info-container row border-bottom border-3 w-50 mx-auto justify-content-center`}>
+        className={`program-info-container row w-50 mx-auto justify-content-center pb-5`}>
         {store.availablePrograms.map((kid, index) => {
           const splitAccordionTitle =
             kid.accordion_title.split("Program Details");

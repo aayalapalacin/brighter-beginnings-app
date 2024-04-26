@@ -16,27 +16,34 @@ const Accordion2 = ({ accordianData }: Accordion2Props): JSX.Element | null => {
 
   const { store } = contextValue;
 
+  // This is needed because accordionData may be null
   if (!accordianData) {
     return null;
   }
+
+  // Not rendering any accordion
+  if (accordianData.accordion_title === "") return null;
+
+  // Rendering dessired accordion
   return (
-    <div className="accordion w-75 mx-auto text-center" id="accordion2">
-      <div className="accordion-item w-100 ">
-        <div className=" accordion-img-title-container d-flex">
-          <img
-            style={{ width: "20%" }}
-            src={accordianData.img}
-            className=" accordion-img "
-            alt={accordianData.img}
-          />
-          <h3 className="accordion-title m-auto">
-            {accordianData.accordion_title}
-          </h3>
+    <div className="accordion w-75 mx-auto text-center pt-5" id="accordion2">
+      <div className="accordion-item w-75 mx-auto">
+        <div className="accordion-img-title-content d-flex">
+          <div className="accordion-img-content col-3 justify-content-end ms-5">
+            <img
+              src={accordianData.img}
+              className="accordion-img w-75 pb-2"
+              alt={accordianData.img}
+            />
+          </div>
+          <div className="accordion-title-content col-8 m-auto text-start ms-4">
+            <h3 className="accordion-title">{accordianData.accordion_title}</h3>
+          </div>
         </div>
         {accordianData.dropdownData.map(
           (accordionContent, accordionContentIndex) => {
             return (
-              <div className="accordion-item" key={accordionContentIndex}>
+              <div className="accordion-item p-1" key={accordionContentIndex}>
                 <h2 className="accordion-header">
                   <button
                     className={`accordion-button bg-white border-${accordionContent.color}-1 color-${accordionContent.color} `}
