@@ -18,7 +18,7 @@ const SubmitForm = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     actions.handleChildProgramSubmit(e, firstName, yearsOld, monthsOld);
-
+    // CONDITION THE NAVIGATE WHEN SOMETHING'S OFF
     navigate("/programs");
   };
 
