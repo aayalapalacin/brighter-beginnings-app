@@ -18,11 +18,11 @@ const About = () => {
       </div>
       <hr className="w-75 mx-auto" />
 
-      <div className="meet-staff-container">
+      <div className="meet-staff-content">
         <div className="meet-staff-img-container w-75 mx-auto">
           <img
             src="/staff_images/smilling_staff.png"
-            className="w-100 mx-auto"
+            className="meet-staff-img w-100 mx-auto"
             style={{ transform: "scale(1)" }}
             alt="staff"
           />
