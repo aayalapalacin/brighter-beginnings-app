@@ -24,7 +24,7 @@
   width: 40%;
 }
 
-.programs-title-all {
+.programs-info-title-all {
   filter: drop-shadow(0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.35));
 }
 
@@ -32,7 +32,7 @@
   filter: drop-shadow(0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.25));
 }
 
-.programs-button {
+.programs-info-button {
   font-size: 1.4rem;
   width: 12rem;
   margin-bottom: 1rem !important;
@@ -46,7 +46,7 @@ input {
   width: 75%;
 }
 
-.backpack-image {
+.programs-info-img{
   width: 44%;
 }
 
@@ -62,18 +62,18 @@ input {
     width: 100%;
   }
 
-  .programs-button {
+  .programs-info-button {
     width: 9rem;
     font-size: 1rem;
     margin-right: 0px !important;
     margin-left: 0px !important;
   }
 
-  .programs-title-all {
+  .programs-info-title-all {
     font-size: 1.5rem;
   }
 
-  .programs-title {
+  .find-program-programs-title{
     font-size: 1.6rem;
   }
 
@@ -82,30 +82,37 @@ input {
   }
 }
 
+
+@media screen and (min-width: 1000px) and (max-width: 1040px) {
+  .find-program-container {
+    margin-left: 8rem;
+  }
+}
+
 @media screen and (min-width: 768px) and (max-width: 992px) {
   #backpack-image-help-choose {
     display: none !important;
   }
-  .programs-button {
+  .programs-info-button {
     width: 8rem;
     font-size: 0.8rem;
     margin-right: 0px !important;
     margin-left: 0.3rem !important;
   }
 
-  .backpack-image {
+  .programs-info-img{
     width: 55%;
   }
 }
 @media screen and (min-width: 1015px) and (max-width: 1030px) {
-  .programs-button {
+  .programs-info-button {
     width: 9rem;
     font-size: 1rem;
     margin-right: 0px !important;
     margin-left: 1rem !important;
   }
 
-  .backpack-image {
+  .programs-info-img{
     width: 44%;
   }
   #backpack-image-help-choose {
@@ -114,7 +121,7 @@ input {
 }
 
 @media screen and (min-width: 1435px) and (max-width: 1450px) {
-  .backpack-image {
+  .programs-info-img{
     width: 44%;
   }
 
@@ -123,28 +130,38 @@ input {
   }
 }
 @media screen and (min-width: 315px) and (max-width: 330px) {
-  .backpack-image {
+  .programs-info-img{
     width: 112%;
   }
-  .programs-title-all {
+  .programs-info-title-all {
     font-size: 1.3rem;
   }
 }
 
 @media screen and (min-width: 335px) and (max-width: 767px) {
-  .backpack-image {
+  .programs-info-img{
     width: 85%;
   }
 }
 @media screen and (min-width: 335px) and (max-width: 440px) {
-  .backpack-image {
+  .programs-info-img{
     width: 100%;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .programs-button {
+  .programs-info-button {
     width: 8rem;
     font-size: 0.9rem;
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+
   }
+
+@media screen and (min-width: 335px) and (max-width: 378px) {
+  .programs-info-button {
+    margin-left: 0.5rem !important;
+
+  }
+}
 }

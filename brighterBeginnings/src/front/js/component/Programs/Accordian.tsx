@@ -1,20 +1,19 @@
 import React, { useContext } from "react";
 import { Context } from "../../store/appContext";
-import { KidType } from "./ProgramType";
+import { AccordionDataType } from "./ProgramType";
 import "../../../styles/accordian.css";
 
-interface Accordion2Props {
-  accordianData: KidType | null;
+interface AccordionProps {
+  accordianData: AccordionDataType | null;
 }
 
-const Accordion2 = ({ accordianData }: Accordion2Props): JSX.Element | null => {
+const Accordion = ({ accordianData }: AccordionProps): JSX.Element | null => {
   const contextValue = useContext(Context);
 
   if (!contextValue) {
     return <div>Loading...</div>;
   }
 
-  const { store } = contextValue;
 
   // This is needed because accordionData may be null
   if (!accordianData) {
@@ -26,7 +25,7 @@ const Accordion2 = ({ accordianData }: Accordion2Props): JSX.Element | null => {
 
   // Rendering dessired accordion
   return (
-    <div className="accordion w-75 mx-auto text-center pt-5" id="accordion2">
+    <div className="accordion w-75 mx-auto text-center pt-5" id="accordion">
       <div className="accordion-item w-75 mx-auto">
         <div className="accordion-img-title-content d-flex">
           <div className="accordion-img-content col-3 justify-content-end ms-5">
@@ -58,7 +57,7 @@ const Accordion2 = ({ accordianData }: Accordion2Props): JSX.Element | null => {
                 <div
                   id={`collapse${accordionContentIndex}`}
                   className={`accordion-collapse collapse `}
-                  data-bs-parent="#accordion2">
+                  data-bs-parent="#accordion">
                   <div className="accordion-body">
                     {accordionContent.description}
                   </div>
@@ -72,4 +71,4 @@ const Accordion2 = ({ accordianData }: Accordion2Props): JSX.Element | null => {
   );
 };
 
-export default Accordion2;
+export default Accordion;

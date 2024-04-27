@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import getState from "./flux";
-import { KidType } from "../component/Programs/ProgramType";
+import { AccordionDataType } from "../component/Programs/ProgramType";
 
 interface Store {
   test: string;
@@ -10,9 +10,9 @@ interface Store {
     yearsOld: string;
     monthsOld: string;
   };
-  inputKidProgram: KidType;
-  availablePrograms: KidType[];
-  philosophyData: KidType[]; // Add philosophyData to the Store interface
+  inputKidProgram: AccordionDataType;
+  availablePrograms: AccordionDataType[];
+  philosophyData: AccordionDataType[]; // Add philosophyData to the Store interface
 }
 
 interface Actions {
