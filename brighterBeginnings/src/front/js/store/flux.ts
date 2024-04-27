@@ -1,4 +1,4 @@
-import { KidType } from "../component/Programs/ProgramType";
+import { AccordionDataType } from "../component/Programs/ProgramType";
 
 interface GetStateParams {
   getStore: () => any;
@@ -172,7 +172,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
       //   const store = getStore();
       //   // Get all descriptions and prices of dropdownData items from all available programs
       //   const availablePrices: { age: string; price: any }[] =
-      //     store.availablePrograms.map((program: KidType) => {
+      //     store.availablePrograms.map((program: AccordionDataType) => {
       //       const priceItem = program.dropdownData.find(
       //         (item) => item.title === "Price"
       //       );
@@ -252,7 +252,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
 
         //
         const matchingProgram = store.availablePrograms.find(
-          (program: KidType) => {
+          (program: AccordionDataType) => {
             return (
               kidAgeInMonths <= program.end && kidAgeInMonths >= program.start
             );
@@ -272,7 +272,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         };
 
         const availablePrices: { age: string; price: any }[] =
-          store.availablePrograms.map((program: KidType) => {
+          store.availablePrograms.map((program: AccordionDataType) => {
             const priceItem = program.dropdownData.find(
               (item) => item.title === "Price"
             );
