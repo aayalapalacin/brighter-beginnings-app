@@ -11,10 +11,29 @@ const About = () => {
 
   const { store } = contextValue;
   return (
-    <div>
-      About
+    <div className="mx-auto">
       {/* {store.} */}
-      <Accordion2 accordianData={store.philosophyData[0]} />
+      <div className="about-page-accordion-container p-5">
+        <Accordion2 accordianData={store.philosophyData[0]} />
+      </div>
+      <hr className="w-75 mx-auto" />
+
+      <div className="meet-staff-container">
+        <div className="meet-staff-img-container w-75 mx-auto">
+          <img
+            src="/staff_images/smilling_staff.png"
+            className="w-100 mx-auto"
+            style={{ transform: "scale(1)" }}
+            alt="staff"
+          />
+        </div>
+        <span id="meet-staff-caption" className="">
+          <h1 className="text-white text-bold ">Meet our staff</h1>
+          <h6 className="btn border border-2 rounded-pill text-white float-end me-5">
+            Go!
+          </h6>
+        </span>
+      </div>
     </div>
   );
 };

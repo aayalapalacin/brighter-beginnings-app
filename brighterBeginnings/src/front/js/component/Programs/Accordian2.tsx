@@ -16,77 +16,34 @@ const Accordion2 = ({ accordianData }: Accordion2Props): JSX.Element | null => {
 
   const { store } = contextValue;
 
+  // This is needed because accordionData may be null
   if (!accordianData) {
-    return null; // or any other fallback JSX
+    return null;
   }
 
-  // Get all descriptions and prices of dropdownData items from all available programs
-  const availablePrices = store.availablePrograms.map((program) => {
-    const priceItem = program.dropdownData.find(
-      (item) => item.title === "Price"
-    );
-    return { age: program.age, price: priceItem ? priceItem.description : "" };
-  });
+  // Not rendering any accordion
+  if (accordianData.accordion_title === "") return null;
 
-  // FINDING THE PRICE FOR THE CURRENT PROGRAM BASED ON THE AGE
-  const currentProgramAge = store.inputKidProgram.age;
-  const currentProgramPrice = availablePrices.find(
-    (item) => item.age === currentProgramAge
-  )?.price;
-
-  if (accordianData?.childName) {
-    // Check if there's a childName in the accordianData and modify accordianData
-    accordianData = {
-      ...accordianData,
-      childName: store.inputKidProgram.childName,
-      dropdownData: [
-        {
-          title: "Price",
-          description: currentProgramPrice,
-          color: "carrot",
-        },
-        {
-          title: `${store.inputKidProgram.childName}'s Description`,
-          description: `We take care of ${store.inputKidProgram.childName}`,
-          color: "sky",
-        },
-        {
-          title: `${store.inputKidProgram.childName}'s Schedule`,
-          description: "Monday - Friday, 7:40am - 5pm",
-          color: "grass",
-        },
-        {
-          title: `Staff caring for ${store.inputKidProgram.childName}`,
-          description: `${store.inputKidProgram.childName}'s staff`,
-          color: "tree",
-        },
-      ],
-    };
-  }
+  // Rendering dessired accordion
   return (
-    <div className="accordion" id="accordion2">
-      <div className="accordion-item w-50 mx-auto">
-        <div className=" accordion-img-title-container d-flex">
-          <img
-            style={{ width: "20%" }}
-            src={accordianData.img}
-            className=" accordion-img "
-            alt={accordianData.img}
-          />
-          <h3 className="accordion-title m-auto">
-            {/* Conditionally rendering dynamic program details */}
-            {accordianData && accordianData.childName
-              ? `${accordianData.childName}'s Program Details (${accordianData.accordion_title})`
-              : // Conditionally rendering the Program Details if nothing has been clicked nor submitted
-              accordianData.img
-              ? `Program Details (${accordianData.accordion_title})`
-              : null}
-          </h3>
+    <div className="accordion w-75 mx-auto text-center pt-5" id="accordion2">
+      <div className="accordion-item w-75 mx-auto">
+        <div className="accordion-img-title-content d-flex">
+          <div className="accordion-img-content col-3 justify-content-end ms-5">
+            <img
+              src={accordianData.img}
+              className="accordion-img w-75 pb-2"
+              alt={accordianData.img}
+            />
+          </div>
+          <div className="accordion-title-content col-8 m-auto text-start ms-4">
+            <h3 className="accordion-title">{accordianData.accordion_title}</h3>
+          </div>
         </div>
         {accordianData.dropdownData.map(
           (accordionContent, accordionContentIndex) => {
             return (
-              <div className="accordion-item">
+              <div className="accordion-item p-1" key={accordionContentIndex}>
                 <h2 className="accordion-header">
                   <button
                     className={`accordion-button bg-white border-${accordionContent.color}-1 color-${accordionContent.color} `}

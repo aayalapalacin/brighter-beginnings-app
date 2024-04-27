@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Context, ContextValue } from "../../../store/appContext";
 import "../../../../styles/submit-form.css";
@@ -17,10 +17,9 @@ const SubmitForm = () => {
   const { store, actions } = contextValue;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    if (actions) {
-      actions.handleChildProgramSubmit(e, firstName, yearsOld, monthsOld);
-      navigate("/programs");
-    }
+    actions.handleChildProgramSubmit(e, firstName, yearsOld, monthsOld);
+    // CONDITION THE NAVIGATE WHEN SOMETHING'S OFF
+    navigate("/programs");
   };
 
   const calculateProgressBar = () => {
@@ -55,7 +54,6 @@ const SubmitForm = () => {
                 value={firstName}
                 onChange={(e) => {
                   setFirstName(e.target.value);
-                  console.log(firstName);
                 }}
                 type="text"
                 className="submit-form-name-input my-auto form-control"
@@ -72,7 +70,6 @@ const SubmitForm = () => {
                 value={yearsOld}
                 onChange={(e) => {
                   setYearsOld(e.target.value);
-                  console.log(yearsOld);
                 }}
                 className="submit-form-age-input-years w-100 form-control"
                 type="number"
