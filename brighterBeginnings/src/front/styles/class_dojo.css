@@ -29,6 +29,30 @@
     font-size: 1rem !important;
   }
 }
+@media screen and (min-width: 315px) and (max-width: 325px) {
+  .class-dojo-description-title {
+    font-size: 1.27rem;
+   
+  }
+  .class-dojo-description-container {
+    padding-bottom:1.5rem !important;
+  }
+}
+
+@media screen and (min-width: 760px) and (max-width: 775px) {
+.class-dojo-video-container{
+  margin-bottom:3rem;
+}
+
+.class-dojo-container {
+  margin: 10rem 0px;
+}
+}
+@media screen and (min-width: 1020px){
+.class-dojo-container {
+  margin: 13rem 0px;
+}
+}
 @media screen and (min-width: 1020px) and (max-width: 1030px) {
   .class-dojo-description-title {
     font-size: 2rem;
