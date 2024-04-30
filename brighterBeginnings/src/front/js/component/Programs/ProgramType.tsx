@@ -39,9 +39,13 @@ const ProgramType = () => {
   let renderedAccordian: JSX.Element | null = null;
 
   if (isProgramClicked) {
-    renderedAccordian = <Accordian2 accordianData={accordianData} />;
+    renderedAccordian = (
+      <Accordian2 accordianData={accordianData} imgFirst={true} />
+    );
   } else if (store.childProgram) {
-    renderedAccordian = <Accordian2 accordianData={store.inputKidProgram} />;
+    renderedAccordian = (
+      <Accordian2 accordianData={store.inputKidProgram} imgFirst={true} />
+    );
   }
 
   return (

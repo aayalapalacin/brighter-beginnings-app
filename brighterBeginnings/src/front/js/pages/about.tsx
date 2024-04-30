@@ -14,7 +14,7 @@ const About = () => {
     <div className="mx-auto">
       {/* {store.} */}
       <div className="about-page-accordion-container p-5">
-        <Accordion2 accordianData={store.philosophyData[0]} />
+        <Accordion2 accordianData={store.philosophyData[0]} imgFirst={false} />
       </div>
       <hr className="w-75 mx-auto" />
 
