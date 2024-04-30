@@ -26,12 +26,12 @@ const About = () => {
       </div>
       <hr className="w-75 mx-auto" />
 
-      <div className="about-staff-container">
-        <div className="about-staff-img-container w-100 m-auto text-center">
+      <div className="about-staff-container pt-5">
+        <div className="about-staff-img-container w-100 m-auto text-center pt-5">
           <img
             src="/home_images/staff.jpeg"
-            className="about-staff-img w-75 m-auto "
-            style={{ transform: "scale(1)" }}
+            className="about-staff-img m-auto "
+            style={{ height: "400px" }}
             alt="staff"
           />
         </div>
