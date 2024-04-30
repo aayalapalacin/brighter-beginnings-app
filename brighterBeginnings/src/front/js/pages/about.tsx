@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
-
 import Accordion from "../component/Programs/Accordian";
+
 const About = () => {
   const contextValue = useContext(Context);
 
@@ -13,7 +13,7 @@ const About = () => {
   return (
     <div className="about-container mx-auto">
       <div className="about-accordion-container p-5">
-        <Accordion accordianData={store.philosophyData[0]} />
+        <Accordion accordianData={store.philosophyData[0]} imgFirst={false} />
       </div>
       <hr className="w-75 mx-auto" />
 
@@ -27,7 +27,9 @@ const About = () => {
           />
         </div>
         <span id="meet-staff-caption" className="about-staff-caption-container">
-          <h1 className="about-staff-caption text-white text-bold ">Meet our staff</h1>
+          <h1 className="about-staff-caption text-white text-bold ">
+            Meet our staff
+          </h1>
           <h6 className="about-staff-caption-btn btn border border-2 rounded-pill text-white float-end me-5">
             Go!
           </h6>
