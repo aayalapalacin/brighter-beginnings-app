@@ -1,5 +1,6 @@
 import React from "react";
 import "../../../styles/carousel.css";
+import { Link } from "react-router-dom";
 const Carousel = () => {
   return (
     <div id="carouselExample" className="carousel slide">
@@ -38,9 +39,11 @@ const Carousel = () => {
             <h6 className=" d-none d-md-block">
               5 large fenced in play areas designated for different age groups
             </h6>
-            <h6 className="btn border border-2 rounded-pill text-white float-end me-5">
-              See More!
-            </h6>
+            <Link to={"/about"}>
+              <h6 className="btn border border-2 rounded-pill text-white float-end me-5">
+                See More!
+              </h6>
+            </Link>
           </span>
         </div>
         <div className="carousel-item curriculum-container">
@@ -73,9 +76,11 @@ const Carousel = () => {
               Get to know a little more about our highly qualified and caring
               staff!
             </h6>
-            <h6 className="btn border border-2 rounded-pill text-white float-end me-5">
-              Learn More!
-            </h6>
+            <Link to={"/staff"}>
+              <h6 className="btn border border-2 rounded-pill text-white float-end me-5">
+                Learn More!
+              </h6>
+            </Link>
           </span>
         </div>
       </div>

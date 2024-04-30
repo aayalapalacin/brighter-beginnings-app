@@ -1,2 +1,35 @@
-#meet-staff-caption {
+.about-page-img {
+  height: 90vh;
+}
+
+.about-staff-container {
+  position: relative;
+}
+
+#about-staff-caption {
+  position: absolute;
+  top: 42%;
+  left: 35%;
+}
+.about-staff-caption-btn {
+  font-size: 1.4rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .about-staff-caption-btn {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-page-img {
+    height: auto;
+  }
+
+  .about-staff-caption {
+    font-size: 1rem;
+  }
+  .about-staff-caption-btn {
+    font-size: 0.7rem;
+  }
 }
