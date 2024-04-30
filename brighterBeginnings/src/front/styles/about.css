@@ -1,9 +1,14 @@
 .about-page-img {
-  height: 90vh;
+  height: 66vh;
 }
 
 .about-staff-container {
   position: relative;
+  margin-bottom: 5rem !important;
+}
+
+.about-staff-img {
+  width: 70%;
 }
 
 #about-staff-caption {
