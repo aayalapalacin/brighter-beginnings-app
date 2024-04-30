@@ -1,11 +1,12 @@
 import React from "react";
 import CareersContent from "../component/Home/CareersContent";
-
+import "../../styles/careers-page.css";
 const Careers = () => {
   return (
     <div>
-      {" "}
-      <CareersContent />
+      <div className=" careers-page-component-container w-75 m-auto">
+      <CareersContent mobileButtonCenter={true} innerContainerMx5={true} blockImage={false}/>
+      </div>
     </div>
   );
 };
