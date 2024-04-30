@@ -50,7 +50,7 @@ const Accordion = ({
           </div>
         ) : (
           // TITLE FIRST
-          <div className="accordion-img-title-content w-75 m-auto d-flex justify-content-start">
+          <div className="accordion-img-title-content w-75 d-flex m-auto">
             <div className="accordion-title-content text-start my-auto">
               <h3 className="accordion-title fs-1">
                 {accordianData.accordion_title}
@@ -65,7 +65,7 @@ const Accordion = ({
             </div>
           </div>
         )}
-        <div className="accordion-items-container m-auto">
+        <div className="accordion-items-container">
           {accordianData.dropdownData.map(
             (accordionContent, accordionContentIndex) => {
               return (
