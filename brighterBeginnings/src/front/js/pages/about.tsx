@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import Accordion from "../component/Programs/Accordian";
 import "../../styles/about.css";
+import "../../styles/accordian.css";
 
 const About = () => {
   const contextValue = useContext(Context);
@@ -41,8 +42,8 @@ const About = () => {
             Meet our staff
           </h1>
           <Link to="/staff">
-            <h6 className="about-staff-caption-btn btn border border-2 rounded-pill text-white float-start ms-5">
-              Go!
+            <h6 className="about-staff-caption-btn btn border border-3 rounded-pill text-white float-start ms-5">
+              <strong>Go!</strong>
             </h6>
           </Link>
         </span>
