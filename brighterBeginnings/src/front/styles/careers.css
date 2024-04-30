@@ -61,7 +61,23 @@
       font-size: 1.29rem !important;
   }
 }
+@media screen and (min-width: 315px) and (max-width: 330px) {
+  .careers-btn-container {
+      width: 79% !important;
+  }
+}
 
+@media screen and (min-width: 370px) and (max-width: 380px) {
+  .careers-btn-container {
+      width: 73% !important;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 430px) {
+  .careers-btn-container {
+      width: 69% !important;
+  }
+}
 @media screen and (min-width: 760px) {
 
   .careers-content {
