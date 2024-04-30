@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import Accordion from "../component/Programs/Accordian";
 import "../../styles/about.css";
@@ -25,21 +26,25 @@ const About = () => {
       <hr className="w-75 mx-auto" />
 
       <div className="about-staff-container">
-        <div className="about-staff-img-container w-75 mx-auto">
+        <div className="about-staff-img-container w-100 m-auto text-center">
           <img
-            src="/staff_images/smilling_staff.png"
-            className="about-staff-img w-100 mx-auto"
+            src="/home_images/staff.jpeg"
+            className="about-staff-img w-75 m-auto "
             style={{ transform: "scale(1)" }}
             alt="staff"
           />
         </div>
-        <span id="meet-staff-caption" className="about-staff-caption-container">
+        <span
+          id="about-staff-caption"
+          className="about-staff-caption-container">
           <h1 className="about-staff-caption text-white text-bold ">
             Meet our staff
           </h1>
-          <h6 className="about-staff-caption-btn btn border border-2 rounded-pill text-white float-end me-5">
-            Go!
-          </h6>
+          <Link to="/staff">
+            <h6 className="about-staff-caption-btn btn border border-2 rounded-pill text-white float-start ms-5">
+              Go!
+            </h6>
+          </Link>
         </span>
       </div>
     </div>
