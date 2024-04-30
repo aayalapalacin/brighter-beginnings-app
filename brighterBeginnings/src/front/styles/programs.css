@@ -131,7 +131,7 @@ input {
 }
 @media screen and (min-width: 315px) and (max-width: 330px) {
   .programs-info-img{
-    width: 112%;
+    width: 126%;
   }
   .programs-info-title-all {
     font-size: 1.3rem;
