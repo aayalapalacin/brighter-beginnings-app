@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../../store/appContext";
-import Accordian2 from "./Accordian2";
+import Accordian2 from "./Accordian";
 
 import "../../../styles/programs.css";
 
-export interface KidType {
+export interface AccordionDataType {
   accordion_title: string;
   childName?: string;
   kidsAge?: number;
@@ -21,7 +21,7 @@ export interface KidType {
 }
 
 const ProgramType = () => {
-  const [accordianData, setAccordianData] = useState<KidType | null>(null);
+  const [accordianData, setAccordianData] = useState<AccordionDataType | null>(null);
   const [isProgramClicked, setIsProgramClicked] = useState(false);
   const contextValue = useContext(Context);
 
@@ -31,7 +31,7 @@ const ProgramType = () => {
 
   const { store, actions } = contextValue;
 
-  const handleClick = (kid: KidType) => {
+  const handleClick = (kid: AccordionDataType) => {
     setAccordianData(kid);
     setIsProgramClicked(true);
   };

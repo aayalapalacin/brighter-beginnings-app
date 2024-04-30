@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import { Context } from "../../store/appContext";
-import { KidType } from "./ProgramType";
+import { AccordionDataType } from "./ProgramType";
 import "../../../styles/accordian.css";
 
 interface Accordion2Props {
-  accordianData: KidType | null;
+  accordianData: AccordionDataType | null;
   imgFirst?: boolean;
 }
 
-const Accordion2 = ({
+const Accordion = ({
   accordianData,
   imgFirst,
 }: Accordion2Props): JSX.Element | null => {
@@ -17,8 +17,6 @@ const Accordion2 = ({
   if (!contextValue) {
     return <div>Loading...</div>;
   }
-
-  const { store } = contextValue;
 
   // This is needed because accordionData may be null
   if (!accordianData) {
@@ -101,4 +99,4 @@ const Accordion2 = ({
   );
 };
 
-export default Accordion2;
+export default Accordion;
