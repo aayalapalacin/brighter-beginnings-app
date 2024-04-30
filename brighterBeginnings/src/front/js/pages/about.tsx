@@ -1,6 +1,7 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import Accordion from "../component/Programs/Accordian";
+import "../../styles/about.css";
 
 const About = () => {
   const contextValue = useContext(Context);
@@ -11,7 +12,13 @@ const About = () => {
 
   const { store } = contextValue;
   return (
-    <div className="about-container mx-auto">
+    <div className="about-container w-100 mx-auto">
+      <div className="w-100">
+        <img
+          src="/about_images/children-reading-books.webp"
+          className="w-100 about-page-img"
+        />
+      </div>
       <div className="about-accordion-container p-5">
         <Accordion accordianData={store.philosophyData[0]} imgFirst={false} />
       </div>

@@ -1,2 +1,9 @@
-#meet-staff-caption {
+.about-page-img {
+  height: 90vh;
+}
+
+@media screen and (max-width: 768px) {
+  .about-page-img {
+    height: auto;
+  }
 }
