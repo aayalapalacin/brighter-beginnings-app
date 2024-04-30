@@ -5,15 +5,15 @@ function CareersContent() {
   return (
     <div className="careers-container container">
       <div className="career-inner-container">
-        <div className="w-100 careers-title-container color-carrot text-bold mt-5 mb-3">
+        <div className="careers-title-container w-100  color-carrot text-bold mt-5 mb-3">
           <h1 className="careers-title-text">
             Join the Brighter Beginnings family!
           </h1>
         </div>
         <div className="careers-content">
-          <div className="careers-icon">
+          <div className="careers-icon-container">
             <img
-              className="block-img w-75 text-center image-shadow"
+              className="careers-icon block-img w-75 text-center image-shadow"
               src="/home_images/abc_block.webp"
               alt="blocks"
             />
@@ -26,7 +26,7 @@ function CareersContent() {
             <a
               href="https://www.google.com/forms/about/"
               target="_blank"
-              className="text-decoration-none"
+              className="careers-google-forms text-decoration-none"
               rel="noreferrer">
               <div className="careers-btn-container bg-secondary w-75 ">
                 <button

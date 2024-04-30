@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../../store/appContext";
-import Accordian2 from "./Accordian2";
+import Accordian2 from "./Accordian";
 
 import "../../../styles/programs.css";
 
-export interface KidType {
+export interface AccordionDataType {
   accordion_title: string;
   childName?: string;
   kidsAge?: number;
@@ -21,7 +21,7 @@ export interface KidType {
 }
 
 const ProgramType = () => {
-  const [accordianData, setAccordianData] = useState<KidType | null>(null);
+  const [accordianData, setAccordianData] = useState<AccordionDataType | null>(null);
   const [isProgramClicked, setIsProgramClicked] = useState(false);
   const contextValue = useContext(Context);
 
@@ -31,7 +31,7 @@ const ProgramType = () => {
 
   const { store, actions } = contextValue;
 
-  const handleClick = (kid: KidType) => {
+  const handleClick = (kid: AccordionDataType) => {
     setAccordianData(kid);
     setIsProgramClicked(true);
   };
@@ -39,15 +39,19 @@ const ProgramType = () => {
   let renderedAccordian: JSX.Element | null = null;
 
   if (isProgramClicked) {
-    renderedAccordian = <Accordian2 accordianData={accordianData} />;
+    renderedAccordian = (
+      <Accordian2 accordianData={accordianData} imgFirst={true} />
+    );
   } else if (store.childProgram) {
-    renderedAccordian = <Accordian2 accordianData={store.inputKidProgram} />;
+    renderedAccordian = (
+      <Accordian2 accordianData={store.inputKidProgram} imgFirst={true} />
+    );
   }
 
   return (
     <div className="program-types-container">
       <div
-        className={`program-info-container row border-bottom border-3 w-50 mx-auto justify-content-center`}>
+        className={`program-info-container row w-50 mx-auto justify-content-center pb-5`}>
         {store.availablePrograms.map((kid, index) => {
           const splitAccordionTitle =
             kid.accordion_title.split("Program Details");

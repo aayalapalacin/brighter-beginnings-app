@@ -13,6 +13,11 @@ body {
 .image-shadow {
   filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.4));
 }
+
+.accordion-item {
+  border: none;
+}
+
 .bg-gradient-grass {
   background-color: #a8d07e !important;
   background-image: linear-gradient(to bottom, #d8f9d9, #a8d07e) !important;
@@ -40,7 +45,7 @@ body {
   background-color: #f0d849 !important;
 }
 .color-sun {
-  color: #f0d849 !important; 
+  color: #f0d849 !important;
 }
 
 .border-sun-1 {
