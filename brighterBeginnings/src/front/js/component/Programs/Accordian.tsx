@@ -33,6 +33,7 @@ const Accordion = ({
       id="accordion2">
       <div className="accordion-item w-100 mx-auto">
         {imgFirst ? (
+          // IMAGE FIRST
           <div className="accordion-img-title-content w-75 mx-auto d-flex">
             <div className="accordion-img-content m-auto col-3 text-end">
               <img
@@ -48,9 +49,10 @@ const Accordion = ({
             </div>
           </div>
         ) : (
-          <div className="accordion-img-title-content w-75 mx-auto d-flex justify-content-start">
+          // TITLE FIRST
+          <div className="accordion-img-title-content w-75 m-auto d-flex justify-content-start">
             <div className="accordion-title-content text-start my-auto">
-              <h3 className="accordion-title">
+              <h3 className="accordion-title fs-1">
                 {accordianData.accordion_title}
               </h3>
             </div>
@@ -77,7 +79,7 @@ const Accordion = ({
                       aria-expanded="true"
                       aria-controls={`collapse${accordionContentIndex}`}>
                       <p className="accordion-item-title my-auto">
-                        {accordionContent.title}
+                        <strong>{accordionContent.title}</strong>
                       </p>
                     </button>
                   </h2>
