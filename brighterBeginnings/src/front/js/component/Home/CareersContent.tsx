@@ -1,19 +1,24 @@
 import React from "react";
 import "../../../styles/careers.css";
 
-function CareersContent() {
+interface CareersContentProps {
+  mobileButtonCenter: boolean;
+  innerContainerMx5: boolean;
+  blockImage: boolean;
+}
+function CareersContent({mobileButtonCenter, innerContainerMx5, blockImage }:CareersContentProps) {
   return (
     <div className="careers-container container">
-      <div className="career-inner-container">
-        <div className="w-100 careers-title-container color-carrot text-bold mt-5 mb-3">
+      <div className={`career-inner-container ${innerContainerMx5 ? "mobile-margin" : ""}`}>
+        <div className="careers-title-container w-100  color-carrot text-bold mt-5 mb-3">
           <h1 className="careers-title-text">
             Join the Brighter Beginnings family!
           </h1>
         </div>
         <div className="careers-content">
-          <div className="careers-icon">
+          <div className="careers-icon-container">
             <img
-              className="block-img w-75 text-center image-shadow"
+              className={`careers-icon ${blockImage ? "block-img" : ""} w-75 text-center image-shadow`}
               src="/home_images/abc_block.webp"
               alt="blocks"
             />
@@ -26,9 +31,9 @@ function CareersContent() {
             <a
               href="https://www.google.com/forms/about/"
               target="_blank"
-              className="text-decoration-none"
+              className="careers-google-forms text-decoration-none"
               rel="noreferrer">
-              <div className="careers-btn-container bg-secondary w-75 ">
+              <div className={`careers-btn-container ${mobileButtonCenter ? "mobile-center" : "w-75"} `}>
                 <button
                   className="careers-btn text-white rounded-pill btn bg-carrot fs-5 float-end px-4"
                   style={{ boxShadow: "0px 4px 12px -2px black" }}>

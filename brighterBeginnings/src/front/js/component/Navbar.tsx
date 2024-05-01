@@ -12,8 +12,8 @@ const Navbar: React.FC<NavbarProps> = ({ pages }) => {
   const colors = ["grass", "sky", "tree", "sun", "carrot"];
 
   return (
-    <div className="container mt-md-5 mt-4">
-      <nav className="navbar navbar-expand-lg align-items-start navbar-light">
+    <div className="navbar-container container mt-md-5 mt-4">
+      <nav className="navbar-content navbar navbar-expand-lg align-items-start navbar-light">
         <div className="navbar-logo-container pb-5 pe-md-3 pe-0 navbar-brand my-auto btn">
           <img
             onClick={() => navigate("/")}
@@ -48,7 +48,7 @@ const Navbar: React.FC<NavbarProps> = ({ pages }) => {
                 </Link>
               ))}
             </ul>
-            <div className="paragraph-container fs-5 ms-2 mt-2  text-start">
+            <div className="navbar-paragraph-container fs-5 ms-2 mt-2  text-start">
               <p>"Quality Child Care at Affordable Prices"</p>
             </div>
           </div>

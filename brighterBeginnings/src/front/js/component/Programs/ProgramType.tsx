@@ -1,42 +1,84 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../../store/appContext";
-import ProgramsAccordion from "./Accordion";
+import Accordian2 from "./Accordian";
+
 import "../../../styles/programs.css";
-import { KidType } from "./Accordion";
+
+export interface AccordionDataType {
+  accordion_title: string;
+  childName?: string;
+  kidsAge?: number;
+  age: string;
+  start: any | number;
+  end: any | number;
+  img: string;
+  bg_color: string;
+  dropdownData: {
+    title: string;
+    description: string | any;
+    color: string;
+  }[];
+}
 
 const ProgramType = () => {
-  const [clickedProgram, setClickedProgram] = useState<KidType | null>(null);
+  const [accordianData, setAccordianData] = useState<AccordionDataType | null>(null);
+  const [isProgramClicked, setIsProgramClicked] = useState(false);
   const contextValue = useContext(Context);
 
   if (!contextValue) {
     return <div>Loading...</div>;
   }
 
-  const { store } = contextValue;
-  const availablePrograms = store.availablePrograms;
+  const { store, actions } = contextValue;
 
-  const handleClick = (kid: KidType) => {
-    setClickedProgram(kid);
-    console.log(clickedProgram);
+  const handleClick = (kid: AccordionDataType) => {
+    setAccordianData(kid);
+    setIsProgramClicked(true);
   };
+
+  let renderedAccordian: JSX.Element | null = null;
+
+  if (isProgramClicked) {
+    renderedAccordian = (
+      <Accordian2 accordianData={accordianData} imgFirst={true} />
+    );
+  } else if (store.childProgram) {
+    renderedAccordian = (
+      <Accordian2 accordianData={store.inputKidProgram} imgFirst={true} />
+    );
+  }
+
   return (
-    <div className="program-types-container row text-center mx-auto border-bottom border-3">
-      {availablePrograms.map((kid, index) => (
-        <div className="program-info-container col-5 m-auto p-4" key={index}>
-          <div
-            className={`w-100 btn bg-${kid.color}`}
-            onClick={() => handleClick(kid)}>
-            <h3>{kid.category}</h3>
-            <p>{kid.age}</p>
-            <img
-              src={kid.img}
-              className="program-types-img p-2"
-              alt="programs type"
-            />
-          </div>
-        </div>
-      ))}
-      <ProgramsAccordion kid={clickedProgram} />
+    <div className="program-types-container">
+      <div
+        className={`program-info-container row w-50 mx-auto justify-content-center pb-5`}>
+        {store.availablePrograms.map((kid, index) => {
+          const splitAccordionTitle =
+            kid.accordion_title.split("Program Details");
+          console.log(
+            splitAccordionTitle,
+            "splitted string from accordion title"
+          );
+
+          return (
+            <div
+              className={`program-info-cards btn bg-gradient-${kid.bg_color} col-md-5`}
+              key={index}
+              onClick={() => handleClick(kid)}>
+              <h3 className="program-info-card-title">
+                <strong>{splitAccordionTitle[0]}</strong>
+              </h3>
+              <p className="program-info-card-age">{kid.age}</p>
+              <img
+                src={kid.img}
+                className="program-info-card-img pb-4"
+                alt="programs type"
+              />
+            </div>
+          );
+        })}
+      </div>
+      {renderedAccordian}
     </div>
   );
 };
