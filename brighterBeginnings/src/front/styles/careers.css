@@ -1,6 +1,6 @@
 .careers-container {
-  margin-top: 7rem;
-  margin-bottom: 7rem;
+  margin-top: 9rem;
+  margin-bottom: 9rem;
 }
 
 .careers-icon-container {
@@ -11,9 +11,6 @@
 @media screen and (min-width: 992px) {
   .careers-container {
     width: 75%;
-  }
-  .careers-content {
-    display: flex;
   }
 
   .career-inner-container {
@@ -57,4 +54,35 @@
   .careers-title-text {
     font-size: 1.5rem !important;
   }
+}
+
+@media screen and (min-width: 315px) and (max-width: 380px) {
+  .careers-title-text {
+      font-size: 1.29rem !important;
+  }
+}
+@media screen and (min-width: 315px) and (max-width: 330px) {
+  .careers-btn-container {
+      width: 79% !important;
+  }
+}
+
+@media screen and (min-width: 370px) and (max-width: 380px) {
+  .careers-btn-container {
+      width: 73% !important;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 430px) {
+  .careers-btn-container {
+      width: 69% !important;
+  }
+}
+@media screen and (min-width: 760px) {
+
+  .careers-content {
+    display: flex;
+  }
+
+  
 }
