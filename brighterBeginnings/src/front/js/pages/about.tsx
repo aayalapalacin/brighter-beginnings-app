@@ -35,6 +35,7 @@ const About = () => {
             alt="staff"
           />
         </div>
+    
         <span
           id="about-staff-caption"
           className="about-staff-caption-container">
