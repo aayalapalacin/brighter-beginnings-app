@@ -13,16 +13,20 @@
   position: relative;
   margin-bottom: 5rem !important;
 }
-
+.about-staff-img-container{
+    height: 47vh;
+    overflow: hidden;
+    position: relative;
+}
 .about-staff-img {
-  width: 65%;
-  height: 600px;
+  width: 51%;
+ 
 }
 
 #about-staff-caption {
   position: absolute;
-  top: 50%;
-  left: 32%;
+  top: 25%;
+  left: 50%;
 }
 .about-staff-caption-btn {
   font-size: 1.4rem;
