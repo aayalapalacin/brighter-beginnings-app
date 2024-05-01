@@ -16,7 +16,7 @@ const About = () => {
   const { store } = contextValue;
   return (
     <div className="about-container w-100 mx-auto">
-      <div className="w-100">
+      <div className="about-page-img-container w-100">
         <img
           src="/about_images/children-reading-books.webp"
           className="w-100 about-page-img"
