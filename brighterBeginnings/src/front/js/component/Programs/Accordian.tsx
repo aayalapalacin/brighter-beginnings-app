@@ -44,7 +44,7 @@ const Accordion = ({
                 className="accordion-img-first pb-2"
                 alt={accordianData.img}
               />
-              <h3 className="accordion-title m-auto text-center">
+              <h3 className="accordion-title my-auto ps-3">
                 {accordianData.accordion_title}
               </h3>
             </div>

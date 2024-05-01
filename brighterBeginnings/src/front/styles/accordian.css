@@ -53,7 +53,7 @@
     width: 100%;
   }
   .accordion-img-first {
-    width: 30%;
+    width: 70%;
   }
 
   .accordion-items-container {
@@ -78,15 +78,12 @@
     width: 40%;
   }
   .accordion-img-first {
-    width: 60%;
+    margin-left: 2rem;
+    width: 20%;
   }
 }
 
 @media screen and (min-width: 1300px) {
-  .accordion-img-content {
-    margin-left: 2rem;
-  }
-
   .accordion-img {
     width: 35%;
   }
@@ -100,6 +97,6 @@
     font-size: 1.2rem !important;
   }
   .accordion-img-first {
-    width: 50%;
+    width: 70%;
   }
 }
