@@ -60,7 +60,7 @@ const ProgramType = () => {
 
           return (
             <div
-              className={`program-info-cards btn bg-gradient-${kid.bg_color} col-sm-5 col-md-5`}
+              className={`program-info-cards btn bg-gradient-${kid.bg_color} col-sm-5`}
               key={index}
               onClick={() => handleClick(kid)}
               style={{ display: isProgramClicked ? "none" : "inline-block" }}>
