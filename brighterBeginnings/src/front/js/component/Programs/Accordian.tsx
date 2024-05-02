@@ -31,14 +31,12 @@ const Accordion = ({
 
   // Rendering dessired accordion
   return (
-    <div
-      className="accordion w-75 mx-auto text-center pt-5 pb-5"
-      id="accordion2">
+    <div className="accordion mx-auto text-center pt-5 pb-5" id="accordion2">
       <div className="accordion-item w-100 mx-auto text-center">
         {imgFirst ? (
           // IMAGE FIRST
           <div className="accordion-img-title-content w-100 mx-auto d-flex text-center justify-content-center">
-            <div className="accordion-img-content w-75 d-flex justify-content-center">
+            <div className="accordion-img-content d-flex justify-content-center">
               <img
                 src={accordianData.img}
                 className="accordion-img-first pb-2"
@@ -51,16 +49,16 @@ const Accordion = ({
           </div>
         ) : (
           // TITLE FIRST
-          <div className="accordion-img-title-content d-flex my-auto justify-content-start">
+          <div className="accordion-img-title-first-content w-75 d-flex my-auto justify-content-start">
             <div className="accordion-title-content  my-auto">
               <h3 className="accordion-title fs-1">
                 {accordianData.accordion_title}
               </h3>
             </div>
-            <div className="accordion-img-content w-25 text-start my-auto">
+            <div className="accordion-img-content text-start my-auto">
               <img
                 src={accordianData.img}
-                className="accordion-img w-75 pb-2"
+                className="accordion-img pb-2"
                 alt={accordianData.img}
               />
             </div>
