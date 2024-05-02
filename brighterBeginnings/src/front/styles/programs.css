@@ -165,3 +165,16 @@ input {
   }
 }
 }
+
+.square.square-full {
+  opacity: 1;
+  transition: opacity 1.25s ease-out;
+  -moz-transition: opacity 1.25s ease-out;
+  -webkit-transition: opacity 1.25s ease-out;
+  -o-transition: opacity 1.25s ease-out;
+}
+
+.square {
+
+  opacity: 0;
+}
