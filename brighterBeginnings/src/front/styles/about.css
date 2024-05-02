@@ -1,34 +1,62 @@
 .about-page-img {
-  height: 66vh;
+  position: absolute;
+  top: -10rem;
+}
+
+.about-page-img-container{
+  height: 56vh;
+  overflow: hidden;
+  position: relative;
 }
 
 .about-staff-container {
   position: relative;
   margin-bottom: 5rem !important;
 }
-
+.about-staff-img-container{
+    height: 47vh;
+    overflow: hidden;
+    position: relative;
+}
 .about-staff-img {
-  width: 70%;
+  width: 51%;
+ 
 }
 
 #about-staff-caption {
   position: absolute;
-  top: 50%;
-  left: 32%;
+  top: 25%;
+  left: 50%;
 }
 .about-staff-caption-btn {
   font-size: 1.4rem;
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+  .about-page-img {
+    height: 80vh;
+  }
 }
 
 @media screen and (max-width: 1024px) {
   .about-staff-caption-btn {
     font-size: 1.4rem;
   }
+
+  .about-staff-img {
+    width: 75%;
+    height: 400px;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  .about-page-img {
-    height: auto;
+  .about-page-img,
+  .about-staff-img {
+    height: auto !important;
+  }
+
+  .about-staff-img {
+    width: 75%;
   }
 
   .about-staff-caption {

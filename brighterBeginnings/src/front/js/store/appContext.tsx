@@ -59,7 +59,7 @@ const injectContext = (PassedComponent: PassedComponentType) => {
           // Infant
           {
             accordion_title: "Infant Program Details",
-            age: "4 Weeks - 15 Mo",
+            age: "6 Weeks - 15 Mo",
             start: 1,
             end: 15,
             img: "/programs_images/infant.png",
@@ -90,7 +90,7 @@ const injectContext = (PassedComponent: PassedComponentType) => {
           // Toddler
           {
             accordion_title: "Toddler Program Details",
-            age: "16 Mo - 2 Yrs",
+            age: "16 Mo - 2.9 Yrs",
             start: 16,
             end: 24,
             img: "/programs_images/toddler.png",
@@ -121,7 +121,7 @@ const injectContext = (PassedComponent: PassedComponentType) => {
           // Pre-schooler
           {
             accordion_title: "Pre-School Program Details",
-            age: "2 Yrs - 5 Yrs",
+            age: "2.9 Yrs - 5 Yrs",
             start: 24,
             end: 60,
             img: "/programs_images/pre_school.png",

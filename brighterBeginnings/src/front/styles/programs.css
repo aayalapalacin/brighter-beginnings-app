@@ -54,7 +54,7 @@ input {
   width: 75%;
 }
 .find-program-container {
-  margin: 7rem;
+  margin: 1rem 0rem 7rem 7rem;
 }
 
 @media screen and (max-width: 1024px) {
@@ -164,4 +164,17 @@ input {
 
   }
 }
+}
+
+.square.square-full {
+  opacity: 1;
+  transition: opacity 1.25s ease-out;
+  -moz-transition: opacity 1.25s ease-out;
+  -webkit-transition: opacity 1.25s ease-out;
+  -o-transition: opacity 1.25s ease-out;
+}
+
+.square {
+
+  opacity: 0;
 }

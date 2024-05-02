@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import Accordion from "../component/Programs/Accordian";
+import Space from "../component/About/Space";
 import "../../styles/about.css";
 import "../../styles/accordian.css";
 
@@ -15,7 +16,7 @@ const About = () => {
   const { store } = contextValue;
   return (
     <div className="about-container w-100 mx-auto">
-      <div className="w-100">
+      <div className="about-page-img-container w-100">
         <img
           src="/about_images/children-reading-books.webp"
           className="w-100 about-page-img"
@@ -31,10 +32,10 @@ const About = () => {
           <img
             src="/home_images/staff.jpeg"
             className="about-staff-img m-auto "
-            style={{ height: "400px" }}
             alt="staff"
           />
         </div>
+    
         <span
           id="about-staff-caption"
           className="about-staff-caption-container">
@@ -47,6 +48,9 @@ const About = () => {
             </h6>
           </Link>
         </span>
+      </div>
+      <div>
+        <Space />
       </div>
     </div>
   );
