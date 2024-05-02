@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "../../../styles/space.css"
 
 const spaceCarouselData = [
@@ -43,11 +43,34 @@ carouselDescrtiption:
       },
 ]
 
+
 const Space = () => {
+
+  const [carouselSlide, setCarouselSlide] = useState<number>(0);
+
+  const handleCarouselSlide =(carouselDataIndex: number) =>{
+    // function to make sure carousel slide index stays within 0-3
+    if( carouselDataIndex + carouselSlide >=0 && carouselDataIndex + carouselSlide < 4){
+      return carouselDataIndex + carouselSlide;
+    }
+    else if(carouselDataIndex + carouselSlide < 0){
+      return 3;
+    }
+    else if(carouselDataIndex + carouselSlide > 3){
+      return 0;
+    }
+}
+
   return <div className=" carousel-container  position-relative">
     {spaceCarouselData.map((carouselData,carouselDataIndex)=>{
       return(
-        <div className={`carousel-card-container position-absolute carousel-${carouselDataIndex}`}>
+        <div className={`carousel-card-container position-absolute carousel-${
+          carouselDataIndex + carouselSlide >=0 && carouselDataIndex + carouselSlide < 4 ?
+            carouselDataIndex + carouselSlide : 
+            carouselDataIndex + carouselSlide < 0 ? 3 :
+            carouselDataIndex + carouselSlide > 3 ? 0 : carouselDataIndex
+          }
+        }`}>
             <div className="carousel-card-content card " >
                 <img src={carouselData.carouselImg}className="card-img-top" alt="..."/>
                 <div className="card-body">
@@ -59,8 +82,15 @@ const Space = () => {
       )
     })}
             <div className="carousel-btn-container" >
-              <button type="button" className="carousel-btn-left btn btn-primary">left</button>     
-              <button type="button" className=" carousel-btn-right btn btn-primary">right</button>     
+              <button type="button" className="carousel-btn-left btn btn-primary"
+               onClick={()=> {
+                setCarouselSlide( carouselSlide-1)
+              
+              }}
+                >
+                  left
+                  </button>     
+              <button type="button" className=" carousel-btn-right btn btn-primary" onClick={()=> setCarouselSlide(carouselSlide+1)} >right</button>     
             </div>
 
         </div>;
