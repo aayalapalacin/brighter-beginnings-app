@@ -26,3 +26,8 @@ z-index:3;
     z-index: 0;
 }
 
+.carousel-btn-container{
+    position: relative;
+    top: 29rem;
+    margin-bottom: 5rem;
+}
