@@ -49,7 +49,7 @@ const About = () => {
           </Link>
         </span>
       </div>
-      <div>
+      <div className="about-page-space-container d-flex m-6">
         <Space />
       </div>
     </div>
