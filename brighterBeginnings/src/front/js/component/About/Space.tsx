@@ -44,11 +44,11 @@ carouselDescrtiption:
 ]
 
 const Space = () => {
-  return <div className=" carousel-container m-auto position-relative">
+  return <div className=" carousel-container  position-relative">
     {spaceCarouselData.map((carouselData,carouselDataIndex)=>{
       return(
         <div className={`carousel-card-container position-absolute carousel-${carouselDataIndex}`}>
-            <div className="card " style={{width: "18rem"}}>
+            <div className="carousel-card-content card " >
                 <img src={carouselData.carouselImg}className="card-img-top" alt="..."/>
                 <div className="card-body">
                   <h5 className="card-title">{carouselData.carouselTitle}</h5>

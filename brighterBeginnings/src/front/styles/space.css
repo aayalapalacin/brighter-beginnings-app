@@ -26,8 +26,17 @@ z-index:3;
     z-index: 0;
 }
 
+.carousel-container{
+    margin-left: auto;
+    margin-right: 68rem;
+}
 .carousel-btn-container{
     position: relative;
-    top: 29rem;
-    margin-bottom: 5rem;
+    top: 33rem;
+    left: 11rem;
+    margin-bottom: 7rem;
+}
+
+.carousel-card-content{
+    width: 28rem;
 }
