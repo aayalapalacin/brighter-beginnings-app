@@ -32,6 +32,11 @@
   font-size: 1.4rem;
 }
 
+.about-page-space-container{
+  margin-top: 13rem ;
+  margin-bottom: 30rem ;
+}
+
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
   .about-page-img {
     height: 80vh;
