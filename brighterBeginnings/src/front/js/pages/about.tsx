@@ -22,7 +22,7 @@ const About = () => {
           className="w-100 about-page-img"
         />
       </div>
-      <div className="about-accordion-container p-5">
+      <div className="about-accordion-container">
         <Accordion accordianData={store.philosophyData[0]} imgFirst={false} />
       </div>
       <hr className="w-75 mx-auto" />
@@ -35,7 +35,7 @@ const About = () => {
             alt="staff"
           />
         </div>
-    
+
         <span
           id="about-staff-caption"
           className="about-staff-caption-container">
