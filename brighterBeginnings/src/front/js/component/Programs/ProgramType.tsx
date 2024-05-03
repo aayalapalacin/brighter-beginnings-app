@@ -21,7 +21,9 @@ export interface AccordionDataType {
 }
 
 const ProgramType = () => {
-  const [accordianData, setAccordianData] = useState<AccordionDataType | null>(null);
+  const [accordianData, setAccordianData] = useState<AccordionDataType | null>(
+    null
+  );
   const [isProgramClicked, setIsProgramClicked] = useState(false);
   const contextValue = useContext(Context);
 
@@ -35,7 +37,7 @@ const ProgramType = () => {
     setAccordianData(kid);
     setIsProgramClicked(true);
   };
- 
+
   let renderedAccordian: JSX.Element | null = null;
 
   if (isProgramClicked) {
@@ -50,7 +52,6 @@ const ProgramType = () => {
 
   return (
     <div className="program-types-container">
-
       <div
         className={`program-info-container row w-50 mx-auto justify-content-center pb-5`}>
         {store.availablePrograms.map((kid, index) => {
@@ -59,11 +60,10 @@ const ProgramType = () => {
 
           return (
             <div
-              className={`program-info-cards btn bg-gradient-${kid.bg_color} col-md-5`}
+              className={`program-info-cards btn bg-gradient-${kid.bg_color} col-sm-5`}
               key={index}
               onClick={() => handleClick(kid)}
-              style={{ display: isProgramClicked ? "none" : "inline-block" }}
-              >
+              style={{ display: isProgramClicked ? "none" : "inline-block" }}>
               <h3 className="program-info-card-title">
                 <strong>{splitAccordionTitle[0]}</strong>
               </h3>
@@ -78,24 +78,27 @@ const ProgramType = () => {
         })}
       </div>
 
-        
-          <div 
-          className={` programs-info-program-clicked_container  square ${isProgramClicked ? "square-full   " : ""}  `}
-          style={{marginBottom:"6rem"}}
-          >
-            <div className="programs-info-program-clicked-content text-center">
-            <div className="programs-info-program-clicked-accordion-container">
-              {renderedAccordian} 
-            </div>
-              <div className="programs-info-program-clicked-btn-container ">
-                  <button type="button" className="btn bg-sky text-white  fs-3 program-info-all-programs-btn" onClick={()=>setIsProgramClicked(false)}>All programs</button>
-              </div>
-            </div>
+      <div
+        className={` programs-info-program-clicked_container  square ${
+          isProgramClicked ? "square-full   " : ""
+        }  `}
+        style={{ marginBottom: "6rem" }}>
+        <div className="programs-info-program-clicked-content text-center">
+          <div className="programs-info-program-clicked-accordion-container">
+            {renderedAccordian}
           </div>
-
+          <div className="programs-info-program-clicked-btn-container ">
+            <button
+              type="button"
+              className="btn bg-sky text-white  fs-3 program-info-all-programs-btn"
+              onClick={() => setIsProgramClicked(false)}>
+              All programs
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
 
 export default ProgramType;
- 

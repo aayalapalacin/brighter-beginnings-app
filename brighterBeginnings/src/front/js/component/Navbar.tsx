@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/navbar.css";
 import { useNavigate } from "react-router-dom";
@@ -8,15 +8,30 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ pages }) => {
+  const [toggleIcon, setToggleIcon] = useState(false);
+  // const [toggleNavbar, setToggleNavbar] = useState(false);
   const navigate = useNavigate();
   const colors = ["grass", "sky", "tree", "sun", "carrot"];
+
+  const handleToggleNavbar = () => {
+    setToggleIcon(!toggleIcon);
+    const navbar = document.querySelector(".navbar-collapse");
+    if (navbar?.classList.contains("show")) {
+      navbar.classList.remove("show");
+    }
+  };
 
   return (
     <div className="navbar-container container mt-md-5 mt-4">
       <nav className="navbar-content navbar navbar-expand-lg align-items-start navbar-light">
         <div className="navbar-logo-container pb-5 pe-md-3 pe-0 navbar-brand my-auto btn">
           <img
-            onClick={() => navigate("/")}
+            onClick={() => {
+              navigate("/");
+              if (toggleIcon) {
+                handleToggleNavbar();
+              }
+            }}
             src="/home_images/brighterLogo.png"
             alt="Brighter Beginnings"
             className="navbar-logo w-100"
@@ -24,14 +39,19 @@ const Navbar: React.FC<NavbarProps> = ({ pages }) => {
         </div>
 
         <button
-          className="navbar-toggler mt-2 me-1 mx-auto"
+          onClick={() => setToggleIcon(!toggleIcon)}
+          className="navbar-toggler my-auto mx-auto"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
           aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon "></span>
+          {toggleIcon ? (
+            <i className="fa-solid fa-x" style={{ fontSize: "2.5rem" }}></i>
+          ) : (
+            <span className={`navbar-toggler-icon`}></span>
+          )}
         </button>
 
         <div className="nav-links-container pt-4">
@@ -39,6 +59,9 @@ const Navbar: React.FC<NavbarProps> = ({ pages }) => {
             <ul className="navbar-nav">
               {pages.map((page, index) => (
                 <Link
+                  onClick={() => {
+                    handleToggleNavbar();
+                  }}
                   to={`/${page.toLowerCase()}`}
                   key={index}
                   className="nav-link fs-4 mx-3 text-start">

@@ -1,9 +1,9 @@
 .about-page-img {
   position: absolute;
-  top: -10rem;
+  top: -17rem;
 }
 
-.about-page-img-container{
+.about-page-img-container {
   height: 56vh;
   overflow: hidden;
   position: relative;
@@ -13,14 +13,13 @@
   position: relative;
   margin-bottom: 5rem !important;
 }
-.about-staff-img-container{
-    height: 47vh;
-    overflow: hidden;
-    position: relative;
+.about-staff-img-container {
+  height: 47vh;
+  overflow: hidden;
+  position: relative;
 }
 .about-staff-img {
   width: 51%;
- 
 }
 
 #about-staff-caption {
@@ -32,15 +31,27 @@
   font-size: 1.4rem;
 }
 
+.about-page-space-container{
+  margin-top: 13rem ;
+  margin-bottom: 30rem ;
+}
+
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
   .about-page-img {
-    height: 80vh;
+    height: 115vh;
+  }
+  .about-page-img {
+    top: -7rem;
   }
 }
 
 @media screen and (max-width: 1024px) {
   .about-staff-caption-btn {
     font-size: 1.4rem;
+  }
+
+  .about-page-img {
+    top: -5rem;
   }
 
   .about-staff-img {
@@ -54,6 +65,13 @@
   .about-staff-img {
     height: auto !important;
   }
+  .about-page-img {
+    top: 0rem;
+  }
+
+  .about-page-img-container {
+    height: 50vh;
+  }
 
   .about-staff-img {
     width: 75%;
@@ -64,5 +82,11 @@
   }
   .about-staff-caption-btn {
     font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .about-page-img-container {
+    height: 30vh !important;
   }
 }

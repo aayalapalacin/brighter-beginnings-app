@@ -46,7 +46,7 @@ input {
   width: 75%;
 }
 
-.programs-info-img{
+.programs-info-img {
   width: 44%;
 }
 
@@ -73,7 +73,7 @@ input {
     font-size: 1.5rem;
   }
 
-  .find-program-programs-title{
+  .find-program-programs-title {
     font-size: 1.6rem;
   }
 
@@ -81,7 +81,6 @@ input {
     margin: 0px;
   }
 }
-
 
 @media screen and (min-width: 1000px) and (max-width: 1040px) {
   .find-program-container {
@@ -100,7 +99,7 @@ input {
     margin-left: 0.3rem !important;
   }
 
-  .programs-info-img{
+  .programs-info-img {
     width: 55%;
   }
 }
@@ -112,7 +111,7 @@ input {
     margin-left: 1rem !important;
   }
 
-  .programs-info-img{
+  .programs-info-img {
     width: 44%;
   }
   #backpack-image-help-choose {
@@ -121,7 +120,7 @@ input {
 }
 
 @media screen and (min-width: 1435px) and (max-width: 1450px) {
-  .programs-info-img{
+  .programs-info-img {
     width: 44%;
   }
 
@@ -129,22 +128,19 @@ input {
     width: 74%;
   }
 }
-@media screen and (min-width: 315px) and (max-width: 330px) {
-  .programs-info-img{
-    width: 126%;
-  }
-  .programs-info-title-all {
-    font-size: 1.3rem;
-  }
-}
 
-@media screen and (min-width: 335px) and (max-width: 767px) {
-  .programs-info-img{
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .program-info-container {
+    width: 75% !important;
+  }
+
+  .programs-info-img {
     width: 85%;
   }
 }
 @media screen and (min-width: 335px) and (max-width: 440px) {
-  .programs-info-img{
+  .programs-info-img {
     width: 100%;
   }
 }
@@ -155,15 +151,22 @@ input {
     font-size: 0.9rem;
     margin-left: 0.5rem !important;
     margin-right: 0.5rem !important;
-
   }
 
-@media screen and (min-width: 335px) and (max-width: 378px) {
-  .programs-info-button {
-    margin-left: 0.5rem !important;
-
+  @media screen and (min-width: 335px) and (max-width: 378px) {
+    .programs-info-button {
+      margin-left: 0.5rem !important;
+    }
   }
 }
+
+@media screen and (min-width: 315px) and (max-width: 330px) {
+  .programs-info-img {
+    width: 126%;
+  }
+  .programs-info-title-all {
+    font-size: 1.3rem;
+  }
 }
 
 .square.square-full {
@@ -175,6 +178,6 @@ input {
 }
 
 .square {
-
   opacity: 0;
 }
+
