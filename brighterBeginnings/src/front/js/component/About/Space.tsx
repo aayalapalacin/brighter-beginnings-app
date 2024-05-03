@@ -71,21 +71,24 @@ const handleCarouselSlideLeft =() =>{
 
 
 
-const carouselSlideValue = {
-  "-3": 1,
-  "-2": 2,
-  "-1": 3,
-  "0": 0,
-  "1": 1,
-  "2": 2,
-  "3": 3,
-  "4": 0,
-  "5": 1,
-  "6": 2
-}
+
   return <div className=" carousel-container  position-relative">
     {spaceCarouselData.map((carouselData,carouselDataIndex :number)=>{
-      let conditions = carouselDataIndex + carouselSlide >= 0 && carouselDataIndex + carouselSlide < 4 ?
+// if carouselDataIndex together with the value of carouselSlide if X, the converted value should be Y:
+
+//    X    Y
+//   -3 |  1
+//   -2 |  2
+//   -1 |  3
+//    0 |  0
+//    1 |  1
+//    2 |  2
+//    3 |  3
+//    4 |  0
+//    5 |  1
+//    6 |  2
+// 
+      let carouselClassConversion = carouselDataIndex + carouselSlide >= 0 && carouselDataIndex + carouselSlide < 4 ?
       carouselDataIndex + carouselSlide : 
       carouselDataIndex + carouselSlide === 4 ? 0 :
        carouselDataIndex + carouselSlide === 5 ? 1 : 
@@ -93,13 +96,12 @@ const carouselSlideValue = {
        carouselDataIndex + carouselSlide === (-1) ? 3 : 
        carouselDataIndex + carouselSlide === (-2) ? 2 : 
        carouselDataIndex + carouselSlide === (-3) ? 1 : carouselDataIndex + carouselSlide;
-      console.log("conditions: ", conditions, "index: ",carouselDataIndex, "slide: ", carouselSlide);
 
       return(
-        <div className={`carousel-card-container position-absolute carousel-${conditions}
+        <div className={`carousel-card-container position-absolute carousel-${carouselClassConversion}
         }`}>
             <div className="carousel-card-content card " >
-                <img src={carouselData.carouselImg}className="card-img-top" alt="..."/>
+                <img src={carouselData.carouselImg}className="card-img-top" alt={carouselData.carouselTitle}/>
                 <div className="card-body">
                   <h5 className="card-title">{carouselData.carouselTitle}</h5>
                   <p className="card-text">{carouselData.carouselDescrtiption}</p>
@@ -109,14 +111,22 @@ const carouselSlideValue = {
       )
     })}
             <div className="carousel-btn-container" >
-              <button type="button" className="carousel-btn-left btn btn-primary"
-               onClick={()=> {
+              <button 
+                  type="button" 
+                  className="carousel-btn-left btn btn-primary"
+                  onClick={()=> {
                 setCarouselSlide( handleCarouselSlideLeft())
               }}
                 >
-                  carouselSlide {carouselSlide}
-                  </button>     
-              <button type="button" className=" carousel-btn-right btn btn-primary" onClick={()=> setCarouselSlide(handleCarouselSlideRight())} >right</button>     
+                  Left
+              </button>     
+              <button 
+                type="button" 
+                className=" carousel-btn-right btn btn-primary" 
+                onClick={()=> setCarouselSlide(handleCarouselSlideRight())} 
+              >
+                right
+              </button>     
             </div>
 
         </div>;
