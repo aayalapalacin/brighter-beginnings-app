@@ -38,14 +38,11 @@
 @media screen and (min-width: 420px) and (max-width: 700px) {
   .navbar-logo {
     width: 80% !important;
-
   }
 }
-
 
 @media screen and (min-width: 705px) and (max-width: 775px) {
   .navbar-logo {
     width: 63% !important;
-
   }
 }
