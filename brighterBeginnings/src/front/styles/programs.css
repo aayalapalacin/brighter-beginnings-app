@@ -128,14 +128,7 @@ input {
     width: 74%;
   }
 }
-@media screen and (min-width: 315px) and (max-width: 330px) {
-  .programs-info-img {
-    width: 126%;
-  }
-  .programs-info-title-all {
-    font-size: 1.3rem;
-  }
-}
+
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
   .program-info-container {
@@ -167,6 +160,15 @@ input {
   }
 }
 
+@media screen and (min-width: 315px) and (max-width: 330px) {
+  .programs-info-img {
+    width: 126%;
+  }
+  .programs-info-title-all {
+    font-size: 1.3rem;
+  }
+}
+
 .square.square-full {
   opacity: 1;
   transition: opacity 1.25s ease-out;
@@ -178,3 +180,4 @@ input {
 .square {
   opacity: 0;
 }
+
