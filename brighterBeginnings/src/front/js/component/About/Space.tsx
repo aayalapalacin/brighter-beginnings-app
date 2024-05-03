@@ -48,31 +48,60 @@ const Space = () => {
 
   const [carouselSlide, setCarouselSlide] = useState<number>(0);
 
-  const handleCarouselSlide =(carouselDataIndex: number) =>{
-    // function to make sure carousel slide index stays within 0-3
-    if( carouselDataIndex + carouselSlide >=0 && carouselDataIndex + carouselSlide < 4){
-      return carouselDataIndex + carouselSlide;
+  const handleCarouselSlideRight =() =>{
+    // function to make sure carousel slide index stays within [0] and [3]
+      if(  carouselSlide + 1 < 4){
+        return carouselSlide + 1;
+      }
+      else {
+        return 0;
+      }
     }
-    else if(carouselDataIndex + carouselSlide < 0){
-      return 3;
-    }
-    else if(carouselDataIndex + carouselSlide > 3){
-      return 0;
-    }
+
+
+const handleCarouselSlideLeft =() =>{
+  // function to make sure carousel slide index stays within [0] and [-3]
+  if( carouselSlide - 1 > (-4) ){
+    return carouselSlide -1;
+  }
+  else {
+    return 0;
+  }
 }
 
+
+
+
   return <div className=" carousel-container  position-relative">
-    {spaceCarouselData.map((carouselData,carouselDataIndex)=>{
+    {spaceCarouselData.map((carouselData,carouselDataIndex :number)=>{
+// if carouselDataIndex together with the value of carouselSlide if X, the converted value should be Y:
+
+//    X    Y
+//   -3 |  1
+//   -2 |  2
+//   -1 |  3
+//    0 |  0
+//    1 |  1
+//    2 |  2
+//    3 |  3
+//    4 |  0
+//    5 |  1
+//    6 |  2
+// 
+      let carouselClassConversion = carouselDataIndex + carouselSlide >= 0 && carouselDataIndex + carouselSlide < 4 ?
+      carouselDataIndex + carouselSlide : 
+      carouselDataIndex + carouselSlide === 4 ? 0 :
+       carouselDataIndex + carouselSlide === 5 ? 1 : 
+       carouselDataIndex + carouselSlide === 6 ? 2 : 
+       carouselDataIndex + carouselSlide === (-1) ? 3 : 
+       carouselDataIndex + carouselSlide === (-2) ? 2 : 
+       carouselDataIndex + carouselSlide === (-3) ? 1 : carouselDataIndex + carouselSlide;
+
       return(
-        <div className={`carousel-card-container position-absolute carousel-${
-          carouselDataIndex + carouselSlide >=0 && carouselDataIndex + carouselSlide < 4 ?
-            carouselDataIndex + carouselSlide : 
-            carouselDataIndex + carouselSlide < 0 ? 3 :
-            carouselDataIndex + carouselSlide > 3 ? 0 : carouselDataIndex
-          }
+        <div className={`carousel-card-container position-absolute carousel-${carouselClassConversion}
         }`}>
             <div className="carousel-card-content card " >
-                <img src={carouselData.carouselImg}className="card-img-top" alt="..."/>
+                <img src={carouselData.carouselImg}className="card-img-top" alt={carouselData.carouselTitle}/>
                 <div className="card-body">
                   <h5 className="card-title">{carouselData.carouselTitle}</h5>
                   <p className="card-text">{carouselData.carouselDescrtiption}</p>
@@ -82,15 +111,22 @@ const Space = () => {
       )
     })}
             <div className="carousel-btn-container" >
-              <button type="button" className="carousel-btn-left btn btn-primary"
-               onClick={()=> {
-                setCarouselSlide( carouselSlide-1)
-              
+              <button 
+                  type="button" 
+                  className="carousel-btn-left btn btn-primary"
+                  onClick={()=> {
+                setCarouselSlide( handleCarouselSlideLeft())
               }}
                 >
-                  left
-                  </button>     
-              <button type="button" className=" carousel-btn-right btn btn-primary" onClick={()=> setCarouselSlide(carouselSlide+1)} >right</button>     
+                  Left
+              </button>     
+              <button 
+                type="button" 
+                className=" carousel-btn-right btn btn-primary" 
+                onClick={()=> setCarouselSlide(handleCarouselSlideRight())} 
+              >
+                right
+              </button>     
             </div>
 
         </div>;
