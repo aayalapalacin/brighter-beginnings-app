@@ -26,13 +26,21 @@ const ProgramType = () => {
   );
   const [isProgramClicked, setIsProgramClicked] = useState(false);
 
-  const contextValue = useContext(Context);
+  
 
-  useEffect(() => {
-    if (contextValue && contextValue.store.childProgram.firstName !== "") {
-      setIsProgramClicked(true);
-    }
-  }, [contextValue]);
+  const contextValue = useContext(Context);
+  if (!contextValue) {
+    return <div>Loading...</div>;
+  }
+  const { store } = contextValue;
+
+  // useEffect(()=>{
+  //   if(store.childProgram.firstName !== ""){
+  //    setIsProgramClicked(true);
+  //   }
+  //  },[store.childProgram])
+
+
 
 
 
@@ -47,11 +55,11 @@ const ProgramType = () => {
     renderedAccordian = (
       <Accordian accordianData={accordianData} imgFirst={true} />
     );
-  } else if (contextValue?.store.childProgram) {
+  } else if (store.childProgram) {
     renderedAccordian = (
-      <Accordian accordianData={contextValue?.store.inputKidProgram} imgFirst={true} />
+      <Accordian accordianData={store.inputKidProgram} imgFirst={true} />
     );
-    console.log(contextValue?.store.childProgram.firstName === "","children")
+    console.log(store.childProgram.firstName === "","children")
   }
 
 
@@ -61,7 +69,7 @@ const ProgramType = () => {
     <div className="program-types-container">
       <div
         className={`program-info-container row w-50 mx-auto justify-content-center pb-5`}>
-        {contextValue?.store.availablePrograms.map((kid, index) => {
+        {store.availablePrograms.map((kid, index) => {
           const splitAccordionTitle =
             kid.accordion_title.split("Program Details");
 
@@ -87,7 +95,7 @@ const ProgramType = () => {
 
       <div
         className={` programs-info-program-clicked_container  square ${
-          isProgramClicked || contextValue?.store.childProgram ? "square-full   " : ""
+          isProgramClicked || store.childProgram ? "square-full   " : ""
         }  `}
         style={{ marginBottom: "6rem" }}>
         <div className="programs-info-program-clicked-content text-center">
