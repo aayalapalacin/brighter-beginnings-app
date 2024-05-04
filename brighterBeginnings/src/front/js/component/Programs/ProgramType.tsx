@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../../store/appContext";
 import Accordian from "./Accordian";
 
@@ -25,13 +25,16 @@ const ProgramType = () => {
     null
   );
   const [isProgramClicked, setIsProgramClicked] = useState(false);
+
   const contextValue = useContext(Context);
 
-  if (!contextValue) {
-    return <div>Loading...</div>;
-  }
+  useEffect(() => {
+    if (contextValue && contextValue.store.childProgram.firstName !== "") {
+      setIsProgramClicked(true);
+    }
+  }, [contextValue]);
 
-  const { store } = contextValue;
+
 
   const handleClick = (kid: AccordionDataType) => {
     setAccordianData(kid);
@@ -44,17 +47,21 @@ const ProgramType = () => {
     renderedAccordian = (
       <Accordian accordianData={accordianData} imgFirst={true} />
     );
-  } else if (store.childProgram) {
+  } else if (contextValue?.store.childProgram) {
     renderedAccordian = (
-      <Accordian accordianData={store.inputKidProgram} imgFirst={true} />
+      <Accordian accordianData={contextValue?.store.inputKidProgram} imgFirst={true} />
     );
+    console.log(contextValue?.store.childProgram.firstName === "","children")
   }
+
+
+
 
   return (
     <div className="program-types-container">
       <div
         className={`program-info-container row w-50 mx-auto justify-content-center pb-5`}>
-        {store.availablePrograms.map((kid, index) => {
+        {contextValue?.store.availablePrograms.map((kid, index) => {
           const splitAccordionTitle =
             kid.accordion_title.split("Program Details");
 
@@ -80,14 +87,14 @@ const ProgramType = () => {
 
       <div
         className={` programs-info-program-clicked_container  square ${
-          isProgramClicked ? "square-full   " : ""
+          isProgramClicked || contextValue?.store.childProgram ? "square-full   " : ""
         }  `}
         style={{ marginBottom: "6rem" }}>
         <div className="programs-info-program-clicked-content text-center">
           <div className="programs-info-program-clicked-accordion-container">
             {renderedAccordian}
           </div>
-          <div className="programs-info-program-clicked-btn-container ">
+          <div className={`programs-info-program-clicked-btn-container CLICKED: ${isProgramClicked} ${!isProgramClicked ? "d-none" : ""}`}>
             <button
               type="button"
               className="btn bg-sky text-white  fs-3 program-info-all-programs-btn"
