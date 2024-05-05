@@ -1,17 +1,17 @@
-.carousel-0{
-top: 0rem;
-left: 0rem;
-z-index:3;
+.carousel-0 {
+    top: 0rem;
+    left: 0rem;
+    z-index: 3;
 }
 
-.carousel-1{
+.carousel-1 {
     top: -1.15rem;
     left: 2.2rem;
     opacity: .4;
     z-index: 2;
 }
 
-.carousel-2{
+.carousel-2 {
     top: -2.5rem;
     left: 4rem;
     opacity: 0.3;
@@ -19,24 +19,38 @@ z-index:3;
 
 }
 
-.carousel-3{
+.carousel-3 {
     top: -3.5rem;
     left: 6rem;
     opacity: 0.2;
     z-index: 0;
 }
 
-.carousel-container{
-    margin-left: auto;
-    margin-right: 68rem;
-}
-.carousel-btn-container{
-    position: relative;
-    top: 33rem;
-    left: 11rem;
-    margin-bottom: 7rem;
+.carousel-container {
+    margin: 8rem 0;
 }
 
-.carousel-card-content{
+.carousel-btn-container {
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-80%);
+
+}
+
+.carousel-card-content {
     width: 28rem;
+}
+
+.carousel-card-container {
+    width: 35rem;
+    height: 35rem;
+}
+
+.carousel-btn {
+    color: #89c9d0;
+    border: #89c9d0 2px solid;
+    padding: 0 1.5rem;
+    border-radius: 1rem;
+    background-color: white;
 }

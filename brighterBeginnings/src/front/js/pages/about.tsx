@@ -49,7 +49,7 @@ const About = () => {
           </Link>
         </span>
       </div>
-      <div className="about-page-space-container d-flex ">
+      <div className=" d-flex w-100 justify-content-center">
         <Space />
       </div>
     </div>
