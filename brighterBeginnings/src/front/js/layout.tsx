@@ -13,9 +13,11 @@ import About from "./pages/about";
 import Reviews from "./pages/reviews";
 import Photos from "./pages/photos";
 import Careers from "./pages/careers";
+import '../styles/layout.css';
+
 const Layout = () => {
   return (
-    <div>
+    <div className="layout">
       <BrowserRouter>
         <Navbar
           pages={["About", "Programs", "Staff", "Reviews", "Photos", "Careers"]}
