@@ -1,71 +1,110 @@
 .carousel-0 {
-    top: 0rem;
-    left: 0rem;
-    z-index: 3;
+  top: 0rem;
+  left: 0rem;
+  z-index: 3;
 }
 
 .carousel-1 {
-    top: -1.15rem;
-    left: 2.2rem;
-    opacity: .4;
-    z-index: 2;
+  top: -1.15rem;
+  left: 2.2rem;
+  opacity: 0.4;
+  z-index: 2;
 }
 
 .carousel-2 {
-    top: -2.5rem;
-    left: 4rem;
-    opacity: 0.3;
-    z-index: 1;
-
+  top: -2.5rem;
+  left: 4rem;
+  opacity: 0.3;
+  z-index: 1;
 }
 
 .carousel-3 {
-    top: -3.5rem;
-    left: 6rem;
-    opacity: 0.2;
-    z-index: 0;
+  top: -3.5rem;
+  left: 6rem;
+  opacity: 0.2;
+  z-index: 0;
 }
 
 .carousel-container {
-    margin: 8rem 0;
+  margin: 8rem 0;
 }
 
 .carousel-btn-container {
-    position: relative;
-    display: inline-block;
-    left: 50%;
-    transform: translateX(-60%);
-
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-60%);
 }
 
 .carousel-card-content {
-    width: 28rem;
+  width: 28rem;
 }
 
 .carousel-card-container {
-    width: 35rem;
-    height: 35rem;
+  width: 35rem;
+  height: 35rem;
 }
 
 .carousel-btn {
-   
-    /* border: #89c9d0 2px solid; */
-    padding: 0 1.5rem;
-    border-radius: 1rem;
-    background-color: white;
+  /* border: #89c9d0 2px solid; */
+  padding: 0 1.5rem;
+  border-radius: 1rem;
+  background-color: white;
 }
 
 @media screen and (min-width: 315px) and (max-width: 800px) {
-    .carousel-card-content {
-        width: 17rem;
-    }
+  .carousel-card-content {
+    width: 17rem;
+  }
 
-    .carousel-card-container {
-        width: 21rem;
-        height: 31rem;
-    }
+  .carousel-card-container {
+    width: 21rem;
+    height: 31rem;
+  }
 
-    .carousel-container {
-        margin: 5rem 0;
-    }
+  .carousel-container {
+    margin: 5rem 0;
+  }
+}
+
+@media screen and (min-width: 315px) and (max-width: 519px) {
+  .carousel-container {
+    width: 17rem;
+  }
+
+  .carousel-card-content {
+    width: 100%;
+  }
+
+  .carousel-card-container {
+    width: 100%;
+  }
+
+  .carousel-0 {
+    width: 100% !important;
+    top: 0rem;
+    left: 0rem;
+  }
+
+  .carousel-1 {
+    width: 100% !important;
+    top: -1.15rem !important;
+    left: 0rem;
+  }
+
+  .carousel-2 {
+    width: 100% !important;
+    top: -2.5rem !important;
+    left: 0rem;
+  }
+
+  .carousel-3 {
+    width: 100% !important;
+    top: -3.5rem !important;
+    left: 0rem;
+  }
+
+  .carousel-btn-container {
+    left: 60%;
+  }
 }
