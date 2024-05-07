@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import PhotoAlbum from "react-photo-album";
 
 let index = 0;
@@ -73,29 +73,8 @@ const photos = [
 ];
 
 const Gallery = () => {
-  const photoAlbumContainerRef = useRef(null);
-  useEffect(() => {
-    // Check if ResizeObserver is supported by the browser
-    if (window.ResizeObserver) {
-      const resizeObserver = new ResizeObserver(() => {
-        // ResizeObserver callback function
-        // You can handle resize events here if needed
-      });
-
-      // Start observing the container element
-
-      // Return cleanup function to unobserve the container element when component unmounts
-      return () => {
-        if (photoAlbumContainerRef.current) {
-          resizeObserver.unobserve(photoAlbumContainerRef.current);
-        }
-      };
-    }
-  }, []); // Only run this effect once, when the component mounts
   return (
-    <div
-      ref={photoAlbumContainerRef}
-      className="bg-secondary photo-album-container w-75 mx-auto">
+    <div className="bg-secondary photo-album-container w-75 mx-auto">
       <PhotoAlbum
         layout="columns"
         padding={5}
