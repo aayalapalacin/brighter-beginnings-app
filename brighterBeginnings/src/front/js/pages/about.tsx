@@ -51,7 +51,7 @@ const About = () => {
       </div>
       <div className=" about-space-container d-flex w-100 justify-content-center">
       <div className="carousel-title-container">
-      <h1 className="carousel-title text-shadow">The Space</h1>
+      <h1 className="carousel-title text-shadow ">The Space</h1>
     </div>
         <Space />
       </div>
