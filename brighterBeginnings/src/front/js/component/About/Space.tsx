@@ -73,6 +73,7 @@ const Space = () => {
 
 
   return <div className=" carousel-container  position-relative">
+
     <div className="position-relative carousel-card-container">
       {spaceCarouselData.map((carouselData, carouselDataIndex: number) => {
         // if carouselDataIndex together with the value of carouselSlide if X, the converted value should be Y:
