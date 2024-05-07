@@ -21,7 +21,7 @@ const ProgramsInfo = () => {
         className={`programs-into-container paragraph p-md-5 p-0 container m-md-6 m-5 mx-auto`}
       >
         <div className="programs-info-title-container w-100 text-center">
-              <h1 className="color-tree programs-info-title-all">
+              <h1 className="programs-info-title-all color-tree  text-shadow">
                 We provide programs for children from 4 months - 5 yrs
               </h1>
             </div>
@@ -57,7 +57,10 @@ const ProgramsInfo = () => {
       <div className={`find-program-container square ${isShown ? "square-full   p-md-5 p-2 container " : ""}  `}>
       <div className="w-100 mt-md-0 mt-5" style={{height: isShown ? "" : "20px"}}>
             <div className="find-program-title-container mt-md-0 mt-3 w-100 mx-auto text-center">
-              <h1 className="color-sky find-program-programs-title text-md-start text-center ps-2 ms-md-5 ms-0">
+              <h1 
+              className="find-program-programs-title color-sky  text-md-start text-center ps-2 ms-md-5 ms-0"
+              style={{filter:"drop-shadow(0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.3))"}}
+              >
                 Let’s Find the Program for Your Child!
               </h1>
             </div>

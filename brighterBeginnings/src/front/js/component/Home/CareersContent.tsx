@@ -11,7 +11,7 @@ function CareersContent({mobileButtonCenter, innerContainerMx5, blockImage }:Car
     <div className="careers-container container">
       <div className={`career-inner-container ${innerContainerMx5 ? "mobile-margin" : ""}`}>
         <div className="careers-title-container w-100  color-carrot text-bold mt-5 mb-3">
-          <h1 className="careers-title-text">
+          <h1 className="careers-title-text text-shadow">
             Join the Brighter Beginnings family!
           </h1>
         </div>

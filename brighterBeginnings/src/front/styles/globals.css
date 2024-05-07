@@ -14,6 +14,9 @@ body {
   filter: drop-shadow(0 0 0.5rem rgba(0, 0, 0, 0.4));
 }
 
+.text-shadow{
+  filter: drop-shadow(0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.35));
+}
 .accordion-item {
   border: none;
 }
