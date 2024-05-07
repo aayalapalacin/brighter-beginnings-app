@@ -26,7 +26,6 @@ const Accordion = ({
 
   // Not rendering any accordion
   if (accordianData.accordion_title === "") return null;
-
   // handleRotate from arrow
 
   // Rendering dessired accordion

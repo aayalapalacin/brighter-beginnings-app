@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../../store/appContext";
 import Accordian from "./Accordian";
 
@@ -25,13 +25,24 @@ const ProgramType = () => {
     null
   );
   const [isProgramClicked, setIsProgramClicked] = useState(false);
-  const contextValue = useContext(Context);
 
+  
+
+  const contextValue = useContext(Context);
   if (!contextValue) {
     return <div>Loading...</div>;
   }
-
   const { store } = contextValue;
+
+  // useEffect(()=>{
+  //   if(store.childProgram.firstName !== ""){
+  //    setIsProgramClicked(true);
+  //   }
+  //  },[store.childProgram])
+
+
+
+
 
   const handleClick = (kid: AccordionDataType) => {
     setAccordianData(kid);
@@ -48,7 +59,11 @@ const ProgramType = () => {
     renderedAccordian = (
       <Accordian accordianData={store.inputKidProgram} imgFirst={true} />
     );
+    console.log(store.childProgram.firstName === "","children")
   }
+
+
+
 
   return (
     <div className="program-types-container">
@@ -80,14 +95,14 @@ const ProgramType = () => {
 
       <div
         className={` programs-info-program-clicked_container  square ${
-          isProgramClicked ? "square-full   " : ""
+          isProgramClicked || store.childProgram ? "square-full   " : ""
         }  `}
         style={{ marginBottom: "6rem" }}>
         <div className="programs-info-program-clicked-content text-center">
           <div className="programs-info-program-clicked-accordion-container">
             {renderedAccordian}
           </div>
-          <div className="programs-info-program-clicked-btn-container ">
+          <div className={`programs-info-program-clicked-btn-container CLICKED: ${isProgramClicked} ${!isProgramClicked ? "d-none" : ""}`}>
             <button
               type="button"
               className="btn bg-sky text-white  fs-3 program-info-all-programs-btn"
