@@ -116,7 +116,7 @@ const Space = () => {
     <span className="carousel-btn-container" >
       <button
         type="button"
-        className="carousel-btn me-5"
+        className="carousel-btn color-sky border-sky-2 me-5"
         onClick={() => {
           setCarouselSlide(handleCarouselSlideLeft())
         }}
@@ -125,7 +125,7 @@ const Space = () => {
       </button>
       <button
         type="button"
-        className="carousel-btn"
+        className="carousel-btn color-sky border-sky-2 "
         onClick={() => setCarouselSlide(handleCarouselSlideRight())}
       >
         <i className="fa-solid fa-arrow-right"></i>

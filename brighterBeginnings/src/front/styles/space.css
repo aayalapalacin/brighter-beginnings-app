@@ -48,9 +48,24 @@
 }
 
 .carousel-btn {
-    color: #89c9d0;
-    border: #89c9d0 2px solid;
+   
+    /* border: #89c9d0 2px solid; */
     padding: 0 1.5rem;
     border-radius: 1rem;
     background-color: white;
+}
+
+@media screen and (min-width: 315px) and (max-width: 800px) {
+    .carousel-card-content {
+        width: 17rem;
+    }
+
+    .carousel-card-container {
+        width: 21rem;
+        height: 31rem;
+    }
+
+    .carousel-container {
+        margin: 5rem 0;
+    }
 }
