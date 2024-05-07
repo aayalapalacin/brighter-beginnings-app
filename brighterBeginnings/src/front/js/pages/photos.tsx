@@ -1,7 +1,12 @@
 import React from "react";
+import Gallery from "../component/Photo/Gallery";
 
 const Photos = () => {
-  return <div>Photos</div>;
+  return (
+    <div>
+      <Gallery />
+    </div>
+  );
 };
 
 export default Photos;
