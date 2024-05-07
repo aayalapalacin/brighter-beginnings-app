@@ -24,13 +24,8 @@
   width: 40%;
 }
 
-.programs-info-title-all {
-  filter: drop-shadow(0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.35));
-}
 
-.programs-title-submit {
-  filter: drop-shadow(0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.25));
-}
+
 
 .programs-info-button {
   font-size: 1.4rem;

@@ -49,8 +49,13 @@ const About = () => {
           </Link>
         </span>
       </div>
-      <div className=" about-space-container d-flex w-100 justify-content-center">
-        <Space />
+      <div className=" about-space-container  w-100">
+        <div className="carousel-title-container w-50 mx-auto">
+          <h1 className="carousel-title text-shadow text-start">The Space</h1>
+        </div>
+        <div className="space-carousel-container d-flex justify-content-center">
+          <Space />
+        </div>
       </div>
     </div>
   );

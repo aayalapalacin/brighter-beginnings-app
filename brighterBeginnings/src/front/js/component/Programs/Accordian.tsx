@@ -41,7 +41,7 @@ const Accordion = ({
                 className="accordion-img-first pb-2"
                 alt={accordianData.img}
               />
-              <h3 className="accordion-title my-auto ps-3">
+              <h3 className="accordion-title text-shadow my-auto ps-3 fs-1">
                 {accordianData.accordion_title}
               </h3>
             </div>
@@ -50,8 +50,8 @@ const Accordion = ({
           // TITLE FIRST
           <div className="accordion-img-title-first-content w-75 d-flex my-auto justify-content-start">
             <div className="accordion-title-content  my-auto">
-              <h3 className="accordion-title fs-1">
-                {accordianData.accordion_title}
+              <h3 className="accordion-title text-shadow fs-1">
+                {accordianData.accordion_title} 
               </h3>
             </div>
             <div className="accordion-img-content text-start my-auto">

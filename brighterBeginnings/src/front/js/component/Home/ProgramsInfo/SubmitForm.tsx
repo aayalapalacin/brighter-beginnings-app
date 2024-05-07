@@ -40,12 +40,12 @@ const SubmitForm = () => {
               {/* depending on screen size have two options to render to save space when needed */}
               <p
                 id="child-name"
-                className="  my-auto text-end d-md-block d-none text-nowrap">
+                className="  my-auto text-shadow text-end d-md-block d-none text-nowrap">
                 Child's first name:
               </p>
               <p
                 id="child-no-name"
-                className="my-auto d-md-none d-block text-end text-nowrap">
+                className="my-auto text-shadow d-md-none d-block text-end text-nowrap">
                 Child:
               </p>
             </div>
@@ -63,7 +63,7 @@ const SubmitForm = () => {
           </div>
           <div className="submit-form-age-container row ">
             <div className="submit-form-age-title-container col-4  pe-0">
-              <p className="submit-form-age-title my-auto text-end ">Age:</p>
+              <p className="submit-form-age-title text-shadow my-auto text-end ">Age:</p>
             </div>
             <div className="submit-form-age-input-years-container col-4  d-flex">
               <input

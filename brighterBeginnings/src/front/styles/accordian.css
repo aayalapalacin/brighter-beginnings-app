@@ -3,7 +3,7 @@
 }
 
 .accordion-title {
-  filter: drop-shadow(0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.35));
+  /* filter: drop-shadow(0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.35)); */
   font-size: 2rem;
 }
 
