@@ -3,7 +3,7 @@ import Gallery from "../component/Photo/Gallery";
 
 const Photos = () => {
   return (
-    <div>
+    <div className="gallery-component-container mb-5">
       <Gallery />
     </div>
   );

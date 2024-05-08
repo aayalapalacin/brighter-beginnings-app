@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import PhotoAlbum from "react-photo-album";
 import "../../../styles/photo-album.css";
-
-let index = 0;
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 const photos = [
   {
@@ -74,15 +74,48 @@ const photos = [
 ];
 
 const Gallery = () => {
+  const [open, setOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setOpen(true);
+  };
+
+  console.log(lightboxIndex);
   return (
     <div className="photo-album-container mx-auto">
       <PhotoAlbum
-        layout="columns"
+        layout="rows"
         padding={5}
         photos={photos}
-        // onClick={({ index }) => {
-        //   openLightbox(index);
-        // }}
+        onClick={({ index }) => {
+          openLightbox(index);
+        }}
+      />
+      <Lightbox
+        className="lightbox-container"
+        open={open}
+        close={() => setOpen(false)}
+        slides={photos}
+        index={lightboxIndex}
+        render={{
+          slideFooter: () => {
+            return (
+              <div className="custom-slide-footer">
+                {photos.map((photo, index) => (
+                  <img
+                    className="lightbox-thumbnail"
+                    src={photo.src}
+                    key={photo.key}
+                    alt={`Thumbnail ${index + 1}`}
+                    onClick={() => setLightboxIndex(index)}
+                  />
+                ))}
+              </div>
+            );
+          },
+        }}
       />
     </div>
   );
