@@ -1,7 +1,8 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import PhotoAlbum from "react-photo-album";
-
-let index = 0;
+import "../../../styles/photo-album.css";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 const photos = [
   {
@@ -73,36 +74,48 @@ const photos = [
 ];
 
 const Gallery = () => {
-  const photoAlbumContainerRef = useRef(null);
-  useEffect(() => {
-    // Check if ResizeObserver is supported by the browser
-    if (window.ResizeObserver) {
-      const resizeObserver = new ResizeObserver(() => {
-        // ResizeObserver callback function
-        // You can handle resize events here if needed
-      });
+  const [open, setOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
-      // Start observing the container element
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setOpen(true);
+  };
 
-      // Return cleanup function to unobserve the container element when component unmounts
-      return () => {
-        if (photoAlbumContainerRef.current) {
-          resizeObserver.unobserve(photoAlbumContainerRef.current);
-        }
-      };
-    }
-  }, []); // Only run this effect once, when the component mounts
+  console.log(lightboxIndex);
   return (
-    <div
-      ref={photoAlbumContainerRef}
-      className="bg-secondary photo-album-container w-75 mx-auto">
+    <div className="photo-album-container mx-auto">
       <PhotoAlbum
-        layout="columns"
+        layout="rows"
         padding={5}
         photos={photos}
-        // onClick={({ index }) => {
-        //   openLightbox(index);
-        // }}
+        onClick={({ index }) => {
+          openLightbox(index);
+        }}
+      />
+      <Lightbox
+        className="lightbox-container"
+        open={open}
+        close={() => setOpen(false)}
+        slides={photos}
+        index={lightboxIndex}
+        render={{
+          slideFooter: () => {
+            return (
+              <div className="custom-slide-footer">
+                {photos.map((photo, index) => (
+                  <img
+                    className="lightbox-thumbnail"
+                    src={photo.src}
+                    key={photo.key}
+                    alt={`Thumbnail ${index + 1}`}
+                    onClick={() => setLightboxIndex(index)}
+                  />
+                ))}
+              </div>
+            );
+          },
+        }}
       />
     </div>
   );
