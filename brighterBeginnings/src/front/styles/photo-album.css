@@ -1,0 +1,14 @@
+.photo-album-container {
+  width: 85%;
+}
+
+.react-photo-album {
+  width: 85%;
+  margin: auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.react-photo-album--photo {
+  box-shadow: 12px 12px 16px 2px rgb(0 0 0 / 60%);
+}

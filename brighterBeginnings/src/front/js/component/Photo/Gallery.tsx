@@ -1,5 +1,6 @@
 import React from "react";
 import PhotoAlbum from "react-photo-album";
+import "../../../styles/photo-album.css";
 
 let index = 0;
 
@@ -74,7 +75,7 @@ const photos = [
 
 const Gallery = () => {
   return (
-    <div className="bg-secondary photo-album-container w-75 mx-auto">
+    <div className="photo-album-container mx-auto">
       <PhotoAlbum
         layout="columns"
         padding={5}
