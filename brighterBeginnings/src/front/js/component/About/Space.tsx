@@ -108,6 +108,7 @@ const Space = () => {
 
           return (
             <div
+              key={carouselDataIndex}
               className={`carousel-card-container position-absolute carousel-${carouselClassConversion}
         }`}>
               <div className="carousel-card-content card ">
@@ -118,9 +119,9 @@ const Space = () => {
                 />
                 <div className="card-body">
                   <h5 className="card-title">{carouselData.carouselTitle}</h5>
-                  <p className="card-text">
+                  <div className="card-text">
                     {carouselData.carouselDescrtiption}
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>
