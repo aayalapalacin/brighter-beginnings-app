@@ -3,6 +3,8 @@ import PhotoAlbum from "react-photo-album";
 import "../../../styles/photo-album.css";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 
 const photos = [
   {
@@ -14,8 +16,8 @@ const photos = [
   {
     key: `photo-1`,
     src: "/staff_images/smilling_staff.png",
-    width: 1600,
-    height: 900,
+    width: 1800,
+    height: 1000,
   },
   {
     key: `photo-10`,
@@ -26,8 +28,8 @@ const photos = [
   {
     key: `photo-2`,
     src: "/staff_images/smilling_staff.png",
-    width: 1600,
-    height: 900,
+    width: 1800,
+    height: 1000,
   },
   {
     key: `photo-3`,
@@ -38,8 +40,8 @@ const photos = [
   {
     key: `photo-4`,
     src: "/staff_images/smilling_staff.png",
-    width: 1600,
-    height: 900,
+    width: 1800,
+    height: 1000,
   },
   {
     key: `photo-5`,
@@ -50,8 +52,8 @@ const photos = [
   {
     key: `photo-6`,
     src: "/staff_images/smilling_staff.png",
-    width: 1600,
-    height: 900,
+    width: 1800,
+    height: 1000,
   },
   {
     key: `photo-7`,
@@ -62,8 +64,8 @@ const photos = [
   {
     key: `photo-8`,
     src: "/staff_images/smilling_staff.png",
-    width: 1600,
-    height: 900,
+    width: 1800,
+    height: 1000,
   },
   {
     key: `photo-9`,
@@ -76,6 +78,7 @@ const photos = [
 const Gallery = () => {
   const [open, setOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const thumbnailsRef = useRef(null);
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
@@ -99,6 +102,7 @@ const Gallery = () => {
         close={() => setOpen(false)}
         slides={photos}
         index={lightboxIndex}
+        plugins={[Thumbnails]}
         render={{
           slideFooter: () => {
             return (
