@@ -30,7 +30,7 @@ const ProgramType = () => {
   if (!contextValue) {
     return <div>Loading...</div>;
   }
-  const { store } = contextValue;
+  const { store, actions } = contextValue;
 
   // useEffect(()=>{
   //   if(store.childProgram.firstName !== ""){
@@ -49,13 +49,14 @@ const ProgramType = () => {
     renderedAccordian = (
       <Accordian accordianData={accordianData} imgFirst={true} />
     );
+  } else if (store.childProgram.firstName == "") {
+    // DELETE IF YOU WOULDN'T LIKE THIS FUNCTIONALITY IN THE PAGE
+    renderedAccordian = null;
   } else if (store.childProgram) {
     renderedAccordian = (
       <Accordian accordianData={store.inputKidProgram} imgFirst={true} />
     );
-    console.log(store.childProgram.firstName === "", "children");
   }
-
   return (
     <div className="program-types-container">
       <div
@@ -93,17 +94,21 @@ const ProgramType = () => {
           <div className="programs-info-program-clicked-accordion-container">
             {renderedAccordian}
           </div>
-          <div
-            className={`programs-info-program-clicked-btn-container CLICKED: ${isProgramClicked} ${
-              !isProgramClicked ? "d-none" : ""
-            }`}>
-            <button
-              type="button"
-              className="btn bg-sky text-white  fs-3 program-info-all-programs-btn"
-              onClick={() => setIsProgramClicked(false)}>
-              All programs
-            </button>
-          </div>
+          {(isProgramClicked || store.childProgram.firstName.length >= 3) && (
+            <div
+              className={`programs-info-program-clicked-btn-container CLICKED: ${isProgramClicked} 
+            `}>
+              <button
+                type="button"
+                className="btn bg-sky text-white  fs-3 program-info-all-programs-btn"
+                onClick={() => {
+                  setIsProgramClicked(false);
+                  actions.deleteChildProgramInfo(); // DELETING childProgram information from the store.
+                }}>
+                All programs
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>
