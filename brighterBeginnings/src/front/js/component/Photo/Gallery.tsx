@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import PhotoAlbum from "react-photo-album";
 import "../../../styles/photo-album.css";
-import Lightbox from "yet-another-react-lightbox";
+import Lightbox, { ThumbnailsRef } from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
@@ -78,7 +78,7 @@ const photos = [
 const Gallery = () => {
   const [open, setOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
-  const thumbnailsRef = useRef(null);
+  const thumbnailsRef = useRef<ThumbnailsRef>(null);
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
@@ -103,21 +103,19 @@ const Gallery = () => {
         slides={photos}
         index={lightboxIndex}
         plugins={[Thumbnails]}
-        render={{
-          slideFooter: () => {
-            return (
-              <div className="custom-slide-footer">
-                {photos.map((photo, index) => (
-                  <img
-                    className="lightbox-thumbnail"
-                    src={photo.src}
-                    key={photo.key}
-                    alt={`Thumbnail ${index + 1}`}
-                    onClick={() => setLightboxIndex(index)}
-                  />
-                ))}
-              </div>
-            );
+        thumbnails={{
+          ref: thumbnailsRef,
+          imageFit: "contain",
+          borderRadius: 15,
+          showToggle: true,
+          position: "bottom",
+          borderStyle: "",
+        }}
+        on={{
+          click: () => {
+            (thumbnailsRef.current?.visible
+              ? thumbnailsRef.current?.hide
+              : thumbnailsRef.current?.show)?.();
           },
         }}
       />

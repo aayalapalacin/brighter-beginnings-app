@@ -4,7 +4,6 @@
 }
 
 .react-photo-album {
-  /* box-shadow: 12px 12px 16px 2px rgb(0 0 0 / 60%); */
   width: 90%;
   margin: auto;
   padding-top: 1rem;
@@ -12,10 +11,9 @@
 }
 
 .react-photo-album--photo {
-  /* box-shadow: 12px 12px 16px 2px rgb(0 0 0 / 60%); */
-  /* box-shadow: 4px 4px 8px 1px rgba(0, 0, 0, 0.1); */
-
   box-shadow: 0px -1px 9px 0px rgb(0 0 0 / 53%);
+  /* width: 100% !important;
+  height: auto !important; */
   object-fit: cover;
 }
 
@@ -26,20 +24,9 @@
   text-align: center;
 }
 
-.lightbox-thumbnail {
-  width: 6%;
-  height: 50px;
-  margin: 1rem;
-  border: 1px solid white;
-}
-
 .lightbox-thumbnail:hover {
   transition: ease-in-out 1s;
   transform: scale(1.1);
-}
-
-.yarl__slide_image {
-  border: white 1px solid;
 }
 
 @media screen and (min-width: 320px) and (max-width: 500px) {
