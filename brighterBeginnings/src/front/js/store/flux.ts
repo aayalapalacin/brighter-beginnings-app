@@ -35,7 +35,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         {
           accordion_title: "Infant Program Details",
           age: "6 Weeks - 15 Mo",
-          start: 1,
+          start: 2,
           end: 15,
           img: "/programs_images/infant.png",
           bg_color: "grass",
@@ -154,19 +154,6 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
       ],
     },
     actions: {
-      getUser: async () => {
-        try {
-          // fetching data from the backend
-          const resp = await fetch(process.env.BACKEND_URL + "api/user");
-          const data = await resp.json();
-          setStore({ users: data });
-          // don't forget to return something, that is how the async resolves
-          return data;
-        } catch (error) {
-          console.log("Error loading users from backend", error);
-        }
-      },
-
       handleChildProgramSubmit: async (
         e: React.FormEvent<HTMLFormElement>,
         firstName: string,
@@ -174,7 +161,6 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         monthsOld: string | any
       ) => {
         const store = getStore();
-        const actions = getActions();
 
         e.preventDefault();
         // HANDLING WHEN INPUT FIELDS ARE EMPTY
@@ -189,8 +175,8 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
           alert("Please provide full name");
         } else {
           // PARSING INPUTS TO INTEGERS
-          const parsedYearsOld = parseInt(yearsOld);
-          const parsedMonthsOld = parseInt(monthsOld);
+          const parsedYearsOld = Math.round(parseFloat(yearsOld));
+          const parsedMonthsOld = Math.round(parseFloat(monthsOld));
 
           const updatedChildProgram = {
             firstName: firstName,
@@ -199,7 +185,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
           };
           // verifying kid's age
           const kidAgeInMonths = parsedMonthsOld + parsedYearsOld * 12;
-
+          console.log(kidAgeInMonths, "kidsAge");
           //
           const matchingProgram = store.availablePrograms.find(
             (program: AccordionDataType) => {
@@ -208,7 +194,6 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
               );
             }
           );
-
           // Matching age to no program
           if (!matchingProgram) {
             alert("No program found for the given age.");

@@ -60,7 +60,7 @@ const injectContext = (PassedComponent: PassedComponentType) => {
           {
             accordion_title: "Infant Program Details",
             age: "6 Weeks - 15 Mo",
-            start: 1,
+            start: 2,
             end: 15,
             img: "/programs_images/infant.png",
             bg_color: "grass",
