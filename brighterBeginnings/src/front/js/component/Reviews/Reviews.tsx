@@ -38,6 +38,10 @@ const Reviews: React.FC<ReviewsProps> = ({ reviewLinks }) => {
       <img src="/reviews_images/yelp.webp" alt="Yelp Reviews" className="review-image" />
       <button onClick={() => window.open("https://www.yelp.com/biz/yourbusiness", "_blank")} className="review-button">View on Yelp</button>
     </div>
+    <div className="review-item">
+      <img src="/reviews_images/care.PNG" alt="Care Reviews" className="review-image" />
+      <button onClick={() => window.open("https://www.care.com/biz/yourbusiness", "_blank")} className="review-button">View on Care</button>
+    </div>
   </div>
 </div>
 
