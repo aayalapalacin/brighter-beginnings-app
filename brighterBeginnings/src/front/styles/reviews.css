@@ -1,0 +1,58 @@
+.reviews-page-img {
+    position: absolute;
+    top: -17rem;
+  }
+  
+  .reviews-page-img-container {
+    height: 56vh;
+    overflow: hidden;
+    position: relative;
+  }
+
+.reviews-paragraph-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 100%; 
+    margin-top: 6vh;
+  }
+  
+  .reviews-paragraphs {
+    text-align: left;
+    max-width: 800px; 
+    width: 100%; 
+  }
+  .reviews-scroll-container {
+    overflow-x: auto; 
+    overflow-y: hidden; 
+  }
+  
+  .reviews-scroll {
+    display: flex; 
+    align-items: center;
+    gap: 20px; 
+  }
+  
+  .review-item {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+  }
+  
+  .review-image {
+    flex: 0 0 auto; 
+    width: auto; 
+    height: 200px; 
+    margin-bottom: 10px; 
+  }
+  
+  .review-button {
+    padding: 8px 16px; 
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    text-align: center; 
+  }
+  
