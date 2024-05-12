@@ -1,4 +1,5 @@
-.reviews-page-img-container, .reviews-page-img {
+.reviews-page-img-container,
+.reviews-page-img {
     margin: 0;
     padding: 0;
 }
@@ -13,11 +14,10 @@
     width: 100%;
     position: absolute;
     top: 0;
-    left: 0; 
-    height: 100%; 
-    object-fit: cover; 
+    left: 0;
+    height: 100%;
+    object-fit: cover;
 }
-
 
 .reviews-paragraph-container {
     display: flex;
@@ -29,42 +29,94 @@
 
 .reviews-paragraphs {
     text-align: left;
-    max-width: 800px;
+    max-width: 600px;
     width: 100%;
+    margin: 0 auto;
 }
 
 .reviews-scroll-container {
     overflow-x: auto; 
     overflow-y: hidden;
-    padding: 20px 0;  
+    padding: 20px 0;
+    position: relative;
+    max-width: 600px;
+    width: 100%; 
+    margin: 0 auto; 
 }
 
 .reviews-scroll {
     display: flex;
     align-items: center;
     gap: 20px;
-    justify-content: center; 
+    justify-content: center;
+    width: 100%; 
+    padding: 0 20px;
 }
 
 .review-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 150px;  
+    min-width: 120px; 
 }
 
 .review-image {
-    width: 100px;  
+    width: 80px;
     height: auto;
-    margin-bottom: 10px;
+    margin-bottom: 5px; 
 }
 
 .review-button {
-    padding: 8px 16px;
-    background-color: white;
-    color: black;
+    padding: 6px 12px;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #007bff; 
+    border-radius: 15px;
+    cursor: pointer; 
+    text-align: center; 
+    font-size: 14px; 
+    margin-top: 10px;
+}
+
+.scroll-btn {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
     border: 2px solid #007bff;
-    border-radius: 20px; 
+    border-radius: 50%;
     cursor: pointer;
-    text-align: center;
+}
+
+.scroll-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    position: relative; 
+    z-index: 1; 
+}
+
+.scroll-buttons button {
+    margin: 0 5px;
+}
+@media only screen and (max-width: 768px) {
+    .reviews-paragraphs {
+        max-width: 400px; 
+    }
+    
+    .reviews-scroll-container {
+        max-width: 400px;
+        margin: 0 20px; 
+    }
+    
+    .review-item {
+        min-width: 100px; 
+    }
+    
+    .review-image {
+        width: 60px;
+    }
+    
+    .review-button {
+        font-size: 12px; 
+    }
 }

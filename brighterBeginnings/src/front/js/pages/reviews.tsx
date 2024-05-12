@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Reviews from "../component/Reviews/Reviews"
 
 const App = () => {
@@ -9,6 +8,7 @@ const App = () => {
         google: "https://www.google.com/search?q=your+business+reviews",
         facebook: "https://www.facebook.com/yourbusiness/reviews",
         yelp: "https://www.yelp.com/biz/yourbusiness"
+        // care: "https://www.care.com/biz/yourbusiness"
       }}
     />
   );
