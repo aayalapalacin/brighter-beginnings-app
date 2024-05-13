@@ -19,7 +19,7 @@ const SubmitForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     actions.handleChildProgramSubmit(e, firstName, yearsOld, monthsOld);
     // CONDITION THE NAVIGATE WHEN SOMETHING'S OFF
-    navigate("/programs");
+    if (firstName.length > 1) navigate("/programs");
   };
 
   const calculateProgressBar = () => {
@@ -33,7 +33,9 @@ const SubmitForm = () => {
 
   return (
     <div className=" submit-form-container color-tree text-start fs-4">
-      <form className=" submit-form-tag-container w-100" onSubmit={(e) => handleSubmit(e)}>
+      <form
+        className=" submit-form-tag-container w-100"
+        onSubmit={(e) => handleSubmit(e)}>
         <div className="submit-form-input-container w-100  ">
           <div className="submit-form-name-cointainer row  mb-3">
             <div className="submit-form-name-title col-4  pe-0">
@@ -63,7 +65,9 @@ const SubmitForm = () => {
           </div>
           <div className="submit-form-age-container row ">
             <div className="submit-form-age-title-container col-4  pe-0">
-              <p className="submit-form-age-title text-shadow my-auto text-end ">Age:</p>
+              <p className="submit-form-age-title text-shadow my-auto text-end ">
+                Age:
+              </p>
             </div>
             <div className="submit-form-age-input-years-container col-4  d-flex">
               <input
@@ -107,7 +111,9 @@ const SubmitForm = () => {
           width: `${calculateProgressBar()}%`,
           transition: "ease-in 0.37s",
         }}>
-        <strong className="submit-form-progress-bar-percent ms-2">{Math.round(calculateProgressBar())}%</strong>
+        <strong className="submit-form-progress-bar-percent ms-2">
+          {Math.round(calculateProgressBar())}%
+        </strong>
       </div>
       <div
         className="progress bg-white p-0 w-100"

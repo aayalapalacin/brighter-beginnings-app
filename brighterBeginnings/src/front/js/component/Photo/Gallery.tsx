@@ -1,8 +1,10 @@
 import React, { useRef, useState } from "react";
 import PhotoAlbum from "react-photo-album";
 import "../../../styles/photo-album.css";
-import Lightbox from "yet-another-react-lightbox";
+import Lightbox, { ThumbnailsRef } from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 
 const photos = [
   {
@@ -13,61 +15,61 @@ const photos = [
   },
   {
     key: `photo-1`,
-    src: "/staff_images/smilling_staff.png",
-    width: 1600,
-    height: 900,
+    src: "/about_images/the_space/infant_classroom.jpeg",
+    width: 1800,
+    height: 1000,
   },
   {
     key: `photo-10`,
-    src: "/staff_images/smilling_staff.jpg",
+    src: "/about_images/the_space/outdoor.jpeg",
     width: 800,
     height: 600,
   },
   {
     key: `photo-2`,
-    src: "/staff_images/smilling_staff.png",
-    width: 1600,
-    height: 900,
+    src: "/about_images/the_space/preschool_classroom.jpeg",
+    width: 1800,
+    height: 1000,
   },
   {
     key: `photo-3`,
-    src: "/staff_images/smilling_staff.jpg",
+    src: "/about_images/the_space/toddler_classroom.jpeg",
     width: 800,
     height: 600,
   },
   {
     key: `photo-4`,
-    src: "/staff_images/smilling_staff.png",
-    width: 1600,
-    height: 900,
+    src: "/about_images/children-reading-books.webp",
+    width: 1800,
+    height: 1000,
   },
   {
     key: `photo-5`,
-    src: "/staff_images/smilling_staff.jpg",
+    src: "/home_images/playground_photo.jpeg",
     width: 800,
     height: 600,
   },
   {
     key: `photo-6`,
-    src: "/staff_images/smilling_staff.png",
-    width: 1600,
-    height: 900,
+    src: "/home_images/staff.jpeg",
+    width: 1800,
+    height: 1000,
   },
   {
     key: `photo-7`,
-    src: "/staff_images/smilling_staff.jpg",
+    src: "/staff_images/smilling_staff.png",
     width: 800,
     height: 600,
   },
   {
     key: `photo-8`,
-    src: "/staff_images/smilling_staff.png",
-    width: 1600,
-    height: 900,
+    src: "/staff_images/employee_1.jpeg",
+    width: 1800,
+    height: 1000,
   },
   {
     key: `photo-9`,
-    src: "/staff_images/smilling_staff.jpg",
+    src: "/staff_images/employee_2.png",
     width: 800,
     height: 600,
   },
@@ -76,6 +78,7 @@ const photos = [
 const Gallery = () => {
   const [open, setOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const thumbnailsRef = useRef<ThumbnailsRef>(null);
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
@@ -99,21 +102,20 @@ const Gallery = () => {
         close={() => setOpen(false)}
         slides={photos}
         index={lightboxIndex}
-        render={{
-          slideFooter: () => {
-            return (
-              <div className="custom-slide-footer">
-                {photos.map((photo, index) => (
-                  <img
-                    className="lightbox-thumbnail"
-                    src={photo.src}
-                    key={photo.key}
-                    alt={`Thumbnail ${index + 1}`}
-                    onClick={() => setLightboxIndex(index)}
-                  />
-                ))}
-              </div>
-            );
+        plugins={[Thumbnails]}
+        thumbnails={{
+          ref: thumbnailsRef,
+          imageFit: "contain",
+          borderRadius: 15,
+          showToggle: true,
+          position: "bottom",
+          borderStyle: "",
+        }}
+        on={{
+          click: () => {
+            (thumbnailsRef.current?.visible
+              ? thumbnailsRef.current?.hide
+              : thumbnailsRef.current?.show)?.();
           },
         }}
       />
