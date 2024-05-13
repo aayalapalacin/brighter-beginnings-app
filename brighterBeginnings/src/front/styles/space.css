@@ -83,7 +83,7 @@
   .carousel-0 {
     width: 100% !important;
     top: 0rem;
-    left: 0rem;
+    left: -1rem;
   }
 
   .carousel-1 {
@@ -95,13 +95,13 @@
   .carousel-2 {
     width: 100% !important;
     top: -2.5rem !important;
-    left: 0rem;
+    left: 1rem;
   }
 
   .carousel-3 {
     width: 100% !important;
     top: -3.5rem !important;
-    left: 0rem;
+    left: 2rem;
   }
 
   .carousel-btn-container {
