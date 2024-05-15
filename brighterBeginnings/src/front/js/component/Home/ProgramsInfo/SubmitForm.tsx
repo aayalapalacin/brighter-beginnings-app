@@ -44,7 +44,7 @@ const SubmitForm = () => {
     } else if (firstName.length <= 2) {
       return <p className="validation-text col">*Name required</p>;
     } else if (sumAge < 2 || sumAge > 60) {
-      return <p className="validation-text col">*No program for given age</p>;
+      return <p className="validation-text col">*No program for given age (if 6 weeks enter 2 months)</p>;
     }
     return null;
   };
