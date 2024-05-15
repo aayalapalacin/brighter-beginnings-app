@@ -24,9 +24,6 @@
   width: 40%;
 }
 
-
-
-
 .programs-info-button {
   font-size: 1.4rem;
   width: 12rem;
@@ -79,7 +76,7 @@ input {
 
 @media screen and (min-width: 1000px) and (max-width: 1040px) {
   .find-program-container {
-    margin-left: 8rem;
+    padding-left: 10rem !important;
   }
 }
 
@@ -123,7 +120,6 @@ input {
     width: 74%;
   }
 }
-
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
   .program-info-container {
@@ -175,4 +171,3 @@ input {
 .square {
   opacity: 0;
 }
-

@@ -7,18 +7,17 @@ const SubmitForm = () => {
   const [firstName, setFirstName] = useState("");
   const [yearsOld, setYearsOld] = useState("");
   const [monthsOld, setMonthsOld] = useState("");
-  const [validFormAge, setValidFormAge] = useState(false);
-  const [validFormName, setValidFormName] = useState(false);
   const navigate = useNavigate();
 
   let sumAge = 0;
-  if (yearsOld === "") {
-    sumAge = 0 + Math.round(parseFloat(monthsOld));
-  } else if (monthsOld === "") {
-    sumAge = parseFloat(yearsOld) * 12 + 0;
-  } else {
-    sumAge = Math.round(parseFloat(yearsOld) * 12 + parseFloat(monthsOld));
+  if (yearsOld !== "") {
+    sumAge += parseFloat(yearsOld) * 12;
   }
+  if (monthsOld !== "") {
+    sumAge += Math.round(parseFloat(monthsOld));
+  }
+  console.log(sumAge);
+
   const contextValue: ContextValue | null = useContext(Context);
   if (!contextValue) {
     return null;
@@ -27,23 +26,11 @@ const SubmitForm = () => {
   const { actions } = contextValue;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    validateFields();
     e.preventDefault();
-    if (validFormAge && sumAge > 2) {
+    if (sumAge >= 2 && firstName.length > 2) {
       actions.handleChildProgramSubmit(e, firstName, yearsOld, monthsOld);
       navigate("/programs");
-    } else {
-      setValidFormAge(false);
     }
-  };
-
-  const validateFields = () => {
-    if (sumAge > 60 || sumAge < 1.5) {
-      setValidFormAge(false);
-    } else setValidFormAge(true);
-    if (firstName.length < 3) {
-      setValidFormName(false);
-    } else setValidFormName(true);
   };
 
   const calculateProgressBar = () => {
@@ -54,6 +41,8 @@ const SubmitForm = () => {
 
     return completionPercentage;
   };
+
+  const isFormValid = sumAge >= 1.5 && firstName.length > 2;
 
   return (
     <div className=" submit-form-container color-tree text-start fs-4">
@@ -116,18 +105,18 @@ const SubmitForm = () => {
                 value={monthsOld}
                 min={0}
                 max={60}
-                onChange={(e) => setMonthsOld(e.target.value)}
+                onChange={(e) => {
+                  setMonthsOld(e.target.value);
+                }}
                 className="submit-form-age-input-years w-100 form-control"
                 type="text"
                 placeholder="Months"
               />
             </div>
           </div>
-          {sumAge < 1.5 || sumAge > 60 ? (
-            <p className="validation-text text-center">
-              Age range: 6 Weeks - 5 Years
-            </p>
-          ) : null}
+          {sumAge > 0.1 && sumAge < 1.5 && (
+            <p className="validation-text col">Age range: 6 Weeks - 5 Years</p>
+          )}
         </div>
         <div className="submit-form-btn-container w-100 text-end mt-5 d-flex justify-content-end">
           <Link to="/programs">
@@ -137,6 +126,7 @@ const SubmitForm = () => {
           </Link>
 
           <button
+            disabled={!isFormValid}
             className="programs-info-button col-lg-3  my-auto  btn bg-grass rounded-pill text-white ms-4"
             type="submit">
             Submit
