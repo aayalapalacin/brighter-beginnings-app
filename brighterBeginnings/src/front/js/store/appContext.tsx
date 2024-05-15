@@ -60,7 +60,7 @@ const injectContext = (PassedComponent: PassedComponentType) => {
           {
             accordion_title: "Infant Program Details",
             age: "6 Weeks - 15 Mo",
-            start: 2,
+            start: 1.5,
             end: 15,
             img: "/programs_images/infant.png",
             bg_color: "grass",
@@ -92,7 +92,7 @@ const injectContext = (PassedComponent: PassedComponentType) => {
             accordion_title: "Toddler Program Details",
             age: "16 Mo - 2.9 Yrs",
             start: 16,
-            end: 24,
+            end: 34,
             img: "/programs_images/toddler.png",
             bg_color: "sky",
             dropdownData: [
@@ -122,7 +122,7 @@ const injectContext = (PassedComponent: PassedComponentType) => {
           {
             accordion_title: "Pre-School Program Details",
             age: "2.9 Yrs - 5 Yrs",
-            start: 24,
+            start: 34.1,
             end: 60,
             img: "/programs_images/pre_school.png",
             bg_color: "sun",

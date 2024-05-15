@@ -3,20 +3,23 @@ import { useNavigate, Link } from "react-router-dom";
 import { Context, ContextValue } from "../../../store/appContext";
 import "../../../../styles/submit-form.css";
 
-const SubmitForm = () => {
-  const [firstName, setFirstName] = useState("");
-  const [yearsOld, setYearsOld] = useState("");
-  const [monthsOld, setMonthsOld] = useState("");
-  const navigate = useNavigate();
+type FormState = {
+  firstName: string;
+  yearsOld: string;
+  monthsOld: string;
+};
 
-  let sumAge = 0;
-  if (yearsOld !== "") {
-    sumAge += parseFloat(yearsOld) * 12;
-  }
-  if (monthsOld !== "") {
-    sumAge += Math.round(parseFloat(monthsOld));
-  }
-  console.log(sumAge);
+const SubmitForm = () => {
+  const [formState, setFormState] = useState<FormState>({
+    firstName: "",
+    yearsOld: "",
+    monthsOld: "",
+  });
+  const [formValid, setFormValid] = useState<boolean>(true);
+  const navigate = useNavigate();
+  const { firstName, yearsOld, monthsOld } = formState;
+  let sumAge = (parseFloat(yearsOld) || 0) * 12 + (parseFloat(monthsOld) || 0);
+  console.log(sumAge, "sumAge value");
 
   const contextValue: ContextValue | null = useContext(Context);
   if (!contextValue) {
@@ -25,15 +28,39 @@ const SubmitForm = () => {
 
   const { actions } = contextValue;
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormState((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleValidationMessage = (): JSX.Element | null => {
+    if (sumAge < 2 && firstName.length < 3) {
+      return <p className="validation-text col">*Age and Name Required</p>;
+    } else if (sumAge === 0) {
+      return <p className="validation-text col">*Age Required</p>;
+    } else if (firstName.length <= 2) {
+      return <p className="validation-text col">*Name required</p>;
+    } else if (sumAge < 2 || sumAge > 60) {
+      return <p className="validation-text col">*No program for given age</p>;
+    }
+    return null;
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (sumAge >= 2 && firstName.length > 2) {
+    if (sumAge <= 1.4 || firstName.length < 2 || sumAge > 60) {
+      setFormValid(false);
+    } else {
+      setFormValid(true);
       actions.handleChildProgramSubmit(e, firstName, yearsOld, monthsOld);
       navigate("/programs");
     }
   };
 
-  const calculateProgressBar = () => {
+  const calculateProgressBar = (): number => {
     const filledInputs =
       (firstName ? 1 : 0) + (yearsOld ? 1 : 0) + (monthsOld ? 1 : 0);
 
@@ -41,8 +68,6 @@ const SubmitForm = () => {
 
     return completionPercentage;
   };
-
-  const isFormValid = sumAge >= 1.5 && firstName.length > 2;
 
   return (
     <div className=" submit-form-container color-tree text-start fs-4">
@@ -68,17 +93,13 @@ const SubmitForm = () => {
             </div>
             <div className="submit-form-name-input-container col-8 ">
               <input
+                name="firstName"
                 value={firstName}
-                onChange={(e) => {
-                  setFirstName(e.target.value);
-                }}
+                onChange={handleInputChange}
                 type="text"
                 className="submit-form-name-input my-auto form-control"
                 placeholder="Write here"
               />
-              {firstName.length < 3 && firstName.length >= 1 && (
-                <p className="validation-text">Please provide full name</p>
-              )}
             </div>
           </div>
           <div className="submit-form-age-container row ">
@@ -89,34 +110,30 @@ const SubmitForm = () => {
             </div>
             <div className="submit-form-age-input-years-container col-4  d-flex">
               <input
+                name="yearsOld"
                 min={0}
                 max={5}
                 value={yearsOld}
-                onChange={(e) => {
-                  setYearsOld(e.target.value);
-                }}
+                onChange={handleInputChange}
                 className="submit-form-age-input-years w-100 form-control"
-                type="text"
+                type="number"
                 placeholder="Years"
               />
             </div>
             <div className="submit-form-age-input-years-container col-4 ">
               <input
+                name="monthsOld"
                 value={monthsOld}
                 min={0}
                 max={60}
-                onChange={(e) => {
-                  setMonthsOld(e.target.value);
-                }}
+                onChange={handleInputChange}
                 className="submit-form-age-input-years w-100 form-control"
-                type="text"
+                type="number"
                 placeholder="Months"
               />
             </div>
           </div>
-          {sumAge > 0.1 && sumAge < 1.5 && (
-            <p className="validation-text col">Age range: 6 Weeks - 5 Years</p>
-          )}
+          {!formValid && handleValidationMessage()}
         </div>
         <div className="submit-form-btn-container w-100 text-end mt-5 d-flex justify-content-end">
           <Link to="/programs">
@@ -126,7 +143,6 @@ const SubmitForm = () => {
           </Link>
 
           <button
-            disabled={!isFormValid}
             className="programs-info-button col-lg-3  my-auto  btn bg-grass rounded-pill text-white ms-4"
             type="submit">
             Submit

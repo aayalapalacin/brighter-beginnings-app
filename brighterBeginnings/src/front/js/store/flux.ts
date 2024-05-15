@@ -35,7 +35,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         {
           accordion_title: "Infant Program Details",
           age: "6 Weeks - 15 Mo",
-          start: 2,
+          start: 1.5,
           end: 15,
           img: "/programs_images/infant.png",
           bg_color: "grass",
@@ -67,7 +67,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
           accordion_title: "Toddler Program Details",
           age: "16 Mo - 2.9 Yrs",
           start: 16,
-          end: 24,
+          end: 34,
           img: "/programs_images/toddler.png",
           bg_color: "sky",
           dropdownData: [
@@ -97,7 +97,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         {
           accordion_title: "Pre-School Program Details",
           age: "2.9 Yrs - 5 Yrs",
-          start: 25,
+          start: 34.1,
           end: 60,
           img: "/programs_images/pre_school.png",
           bg_color: "sun",
@@ -172,9 +172,8 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         }
 
         // PARSING INPUTS TO INTEGERS
-        console.log(monthsOld, "monthsOld before parsing");
         const parsedYearsOld = parseFloat(yearsOld);
-        const parsedMonthsOld = Math.round(parseFloat(monthsOld));
+        const parsedMonthsOld = parseFloat(monthsOld);
 
         const updatedChildProgram = {
           firstName: firstName,
@@ -186,11 +185,13 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         //
         const matchingProgram = store.availablePrograms.find(
           (program: AccordionDataType) => {
+            console.log(kidAgeInMonths, "kidsAge");
             return (
               kidAgeInMonths <= program.end && kidAgeInMonths >= program.start
             );
           }
         );
+        console.log(matchingProgram, "matchedProgram to kidsAgeInMonths");
 
         // Updating inputkidprogram
         const updatedInputKidProgram = {
