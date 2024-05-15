@@ -2,6 +2,12 @@
   filter: drop-shadow(0 0 0.3rem rgba(0, 0, 0, 0.2));
   height: 1.85rem;
 }
+
+.validation-text {
+  text-align: end;
+  font-size: 1rem;
+  color: red;
+}
 @media screen and (min-width: 1024px) {
   #child-name {
     display: none !important;
@@ -25,5 +31,8 @@
   }
   .progress-bar-text {
     font-size: 1rem;
+  }
+  .validation-text {
+    font-size: 0.7rem;
   }
 }

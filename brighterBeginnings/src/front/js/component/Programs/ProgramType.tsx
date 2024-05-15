@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { Context } from "../../store/appContext";
 import Accordian from "./Accordian";
 
@@ -49,7 +49,7 @@ const ProgramType = () => {
     renderedAccordian = (
       <Accordian accordianData={accordianData} imgFirst={true} />
     );
-  } else if (store.childProgram.firstName == "") {
+  } else if (store.childProgram.firstName === "") {
     // DELETE IF YOU WOULDN'T LIKE THIS FUNCTIONALITY IN THE PAGE
     renderedAccordian = null;
   } else if (store.childProgram) {
