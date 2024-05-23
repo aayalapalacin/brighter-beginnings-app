@@ -185,3 +185,14 @@
         max-width: 56%;
     }
 }
+@media only screen and (min-width: 1020px)  and (max-width: 1030px) {
+    .reviews-paragraphs {
+        max-width: 65%;
+    }
+
+    .reviews-scroll-container {
+        max-width: 63%;
+    }
+}
+
+
