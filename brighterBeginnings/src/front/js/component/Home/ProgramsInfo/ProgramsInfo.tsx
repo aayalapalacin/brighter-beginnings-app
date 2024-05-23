@@ -22,7 +22,7 @@ const ProgramsInfo = () => {
       >
         <div className="programs-info-title-container w-100 text-center">
               <h1 className="programs-info-title-all color-tree  text-shadow">
-                We provide programs for children from 4 months - 5 yrs
+                We provide programs for children from 6 Weeks - 5 yrs
               </h1>
             </div>
             <div className="programs-info-content-container  m-auto pt-1 row justify-content-center">

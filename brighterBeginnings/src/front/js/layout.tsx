@@ -28,6 +28,7 @@ const Layout = () => {
           <Route element={<Programs />} path="/programs" />
           <Route element={<Staff />} path="/staff" />
           {/* <Route element={<Contact />} path="/contact" /> */}
+          {/* route with props for reviews */}
           <Route element={<Reviews />} path="/reviews" />
           <Route element={<Photos />} path="/photos" />
           <Route element={<Careers />} path="/careers" />
