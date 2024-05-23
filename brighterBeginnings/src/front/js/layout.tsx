@@ -29,16 +29,7 @@ const Layout = () => {
           <Route element={<Staff />} path="/staff" />
           {/* <Route element={<Contact />} path="/contact" /> */}
           {/* route with props for reviews */}
-          <Route 
-            element={<Reviews 
-                        reviewLinks={{
-                          google: "https://www.google.com/search?q=your+business+reviews",
-                          facebook: "https://www.facebook.com/yourbusiness/reviews",
-                          yelp: "https://www.yelp.com/biz/yourbusiness"
-                        }}
-                      />} 
-            path="/reviews" 
-          />
+          <Route element={<Reviews />} path="/reviews" />
           <Route element={<Photos />} path="/photos" />
           <Route element={<Careers />} path="/careers" />
         </Routes>
