@@ -22,7 +22,11 @@ const Home = () => {
         <hr />
         <ClassDojo />
         <hr />
-        <CareersContent mobileButtonCenter={false} innerContainerMx5={false} blockImage={true} />
+        <CareersContent
+          mobileButtonCenter={false}
+          innerContainerMx5={false}
+          blockImage={true}
+        />
       </div>
     </div>
   );

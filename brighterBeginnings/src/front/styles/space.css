@@ -1,7 +1,15 @@
+
+.carousel-card-container {
+  width: 35rem;
+  height: 35rem;
+  transition: opacity 0.7s, top 0.7s, left 0.7s; 
+}
+
 .carousel-0 {
   top: 0rem;
   left: 0rem;
   z-index: 3;
+  opacity: 1;
 }
 
 .carousel-1 {
@@ -83,7 +91,7 @@
   .carousel-0 {
     width: 100% !important;
     top: 0rem;
-    left: 0rem;
+    left: -1rem;
   }
 
   .carousel-1 {
@@ -95,13 +103,13 @@
   .carousel-2 {
     width: 100% !important;
     top: -2.5rem !important;
-    left: 0rem;
+    left: 1rem;
   }
 
   .carousel-3 {
     width: 100% !important;
     top: -3.5rem !important;
-    left: 0rem;
+    left: 2rem;
   }
 
   .carousel-btn-container {

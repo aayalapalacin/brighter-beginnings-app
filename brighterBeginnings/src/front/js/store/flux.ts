@@ -35,7 +35,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         {
           accordion_title: "Infant Program Details",
           age: "6 Weeks - 15 Mo",
-          start: 1,
+          start: 1.5,
           end: 15,
           img: "/programs_images/infant.png",
           bg_color: "grass",
@@ -67,7 +67,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
           accordion_title: "Toddler Program Details",
           age: "16 Mo - 2.9 Yrs",
           start: 16,
-          end: 24,
+          end: 34,
           img: "/programs_images/toddler.png",
           bg_color: "sky",
           dropdownData: [
@@ -97,7 +97,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         {
           accordion_title: "Pre-School Program Details",
           age: "2.9 Yrs - 5 Yrs",
-          start: 25,
+          start: 34.1,
           end: 60,
           img: "/programs_images/pre_school.png",
           bg_color: "sun",
@@ -154,74 +154,6 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
       ],
     },
     actions: {
-      getUser: async () => {
-        try {
-          // fetching data from the backend
-          const resp = await fetch(process.env.BACKEND_URL + "api/user");
-          const data = await resp.json();
-          setStore({ users: data });
-          // don't forget to return something, that is how the async resolves
-          return data;
-        } catch (error) {
-          console.log("Error loading users from backend", error);
-        }
-      },
-
-      // UPDATING KID'S INFORMATION TO GIVE DYNAMIC ACCORDION
-      // updateInputKidInfo: async (updatedInputKidProgram: any) => {
-      //   const store = getStore();
-      //   // Get all descriptions and prices of dropdownData items from all available programs
-      //   const availablePrices: { age: string; price: any }[] =
-      //     store.availablePrograms.map((program: AccordionDataType) => {
-      //       const priceItem = program.dropdownData.find(
-      //         (item) => item.title === "Price"
-      //       );
-      //       return {
-      //         age: program.age,
-      //         price: priceItem ? priceItem.description : "",
-      //       };
-      //     });
-
-      //   // FINDING THE PRICE FOR THE CURRENT PROGRAM BASED ON THE AGE
-      //   const currentProgramAge = updatedInputKidProgram.age;
-      //   const currentProgramPrice = availablePrices.find(
-      //     (item: { age: string; price: any }) => item.age === currentProgramAge
-      //   )?.price;
-      //   console.log(updatedInputKidProgram);
-      //   const updatedInputKidProgramWithPrice = {
-      //     ...updatedInputKidProgram,
-      //     accordion_title: `${updatedInputKidProgram.childName}'s Program Details ()`,
-      //     dropdownData: [
-      //       {
-      //         title: "Price",
-      //         description: currentProgramPrice,
-      //         color: "carrot",
-      //       },
-      //       {
-      //         title: `${updatedInputKidProgram.childName}'s Description`,
-      //         description: `We take care of ${updatedInputKidProgram.childName}`,
-      //         color: "sky",
-      //       },
-      //       {
-      //         title: `${updatedInputKidProgram.childName}'s Schedule`,
-      //         description: "Monday - Friday, 7:40am - 5pm",
-      //         color: "grass",
-      //       },
-      //       {
-      //         title: `Staff caring for ${updatedInputKidProgram.childName}`,
-      //         description: `${updatedInputKidProgram.childName}'s staff`,
-      //         color: "tree",
-      //       },
-      //     ],
-      //   };
-      //   const updatedStore = {
-      //     ...store,
-      //     inputKidProgram: updatedInputKidProgramWithPrice,
-      //   };
-
-      //   setStore(updatedStore);
-      // },
-
       handleChildProgramSubmit: async (
         e: React.FormEvent<HTMLFormElement>,
         firstName: string,
@@ -229,18 +161,19 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         monthsOld: string | any
       ) => {
         const store = getStore();
-        const actions = getActions();
 
         e.preventDefault();
         // HANDLING WHEN INPUT FIELDS ARE EMPTY
         if (yearsOld === "") {
           yearsOld = 0;
-        } else if (monthsOld === "") {
+        }
+        if (monthsOld === "") {
           monthsOld = 0;
         }
+
         // PARSING INPUTS TO INTEGERS
-        const parsedYearsOld = parseInt(yearsOld);
-        const parsedMonthsOld = parseInt(monthsOld);
+        const parsedYearsOld = parseFloat(yearsOld);
+        const parsedMonthsOld = parseFloat(monthsOld);
 
         const updatedChildProgram = {
           firstName: firstName,
@@ -249,21 +182,17 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         };
         // verifying kid's age
         const kidAgeInMonths = parsedMonthsOld + parsedYearsOld * 12;
-
         //
         const matchingProgram = store.availablePrograms.find(
           (program: AccordionDataType) => {
+            console.log(kidAgeInMonths, "kidsAge");
             return (
               kidAgeInMonths <= program.end && kidAgeInMonths >= program.start
             );
           }
         );
+        console.log(matchingProgram, "matchedProgram to kidsAgeInMonths");
 
-        // Matching age to no program
-        if (!matchingProgram) {
-          alert("No program found for the given age.");
-          return;
-        }
         // Updating inputkidprogram
         const updatedInputKidProgram = {
           ...matchingProgram,
@@ -326,6 +255,17 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
           ...store,
           childProgram: updatedChildProgram,
           inputKidProgram: updatedInputKidProgramData,
+        };
+
+        setStore(updatedStore);
+      },
+
+      deleteChildProgramInfo: () => {
+        const store = getStore;
+
+        const updatedStore = {
+          ...store,
+          childProgram: { firstName: "", yearsOld: "", monthsOld: "" },
         };
 
         setStore(updatedStore);
