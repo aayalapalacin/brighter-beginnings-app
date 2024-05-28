@@ -86,6 +86,12 @@
   .about-staff-caption-btn {
     font-size: 0.7rem;
   }
+
+  .about-staff-container {
+    margin-bottom: 0rem !important;
+    padding-top: 0.7rem !important;
+    height: 22rem;
+}
 }
 
 

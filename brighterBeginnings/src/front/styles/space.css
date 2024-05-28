@@ -97,19 +97,19 @@
   .carousel-1 {
     width: 100% !important;
     top: -1.15rem !important;
-    left: 0rem;
+    left: -0.2rem;
   }
 
   .carousel-2 {
     width: 100% !important;
     top: -2.5rem !important;
-    left: 1rem;
+    left: 0.6rem;
   }
 
   .carousel-3 {
     width: 100% !important;
     top: -3.5rem !important;
-    left: 2rem;
+    left: 1.4rem;
   }
 
   .carousel-btn-container {
