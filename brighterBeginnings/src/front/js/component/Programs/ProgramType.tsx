@@ -24,7 +24,9 @@ const ProgramType = () => {
   const [accordianData, setAccordianData] = useState<AccordionDataType | null>(
     null
   );
-  const [isProgramClicked, setIsProgramClicked] = useState(false);
+  const [isProgramClicked, setIsProgramClicked] = useState<boolean>(false);
+  const [enlarged, setEnlarged] = useState<boolean>(false);
+
 
   const contextValue = useContext(Context);
   if (!contextValue) {
@@ -42,6 +44,12 @@ const ProgramType = () => {
     setAccordianData(kid);
     setIsProgramClicked(true);
   };
+
+  const handleBtnAnimation = () => {
+    setEnlarged(true);
+    // setTimeout(() => setEnlarged(false), 300); // Return to normal size after 300ms
+  };
+
 
   let renderedAccordian: JSX.Element | null = null;
 
@@ -100,9 +108,10 @@ const ProgramType = () => {
             `}>
               <button
                 type="button"
-                className="btn bg-sky text-white  fs-3 program-info-all-programs-btn"
+                className={`btn bg-sky text-white  fs-3 program-info-all-programs-btn ${enlarged ? 'enlarged' : ''}`}
                 onClick={() => {
                   setIsProgramClicked(false);
+                  handleBtnAnimation();
                   actions.deleteChildProgramInfo(); // DELETING childProgram information from the store.
                 }}>
                 All programs

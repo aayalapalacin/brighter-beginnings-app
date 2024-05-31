@@ -59,6 +59,19 @@
   border-radius: 1rem;
   background-color: white;
 }
+.carousel-btn{
+  transition: transform 0.3s ease; /* Smooth transition for the transform property */
+
+}
+
+.enlarged1 {
+  transform: scale(1.1); /* Scale the button to 110% of its original size */
+}
+
+
+.enlarged2 {
+  transform: scale(1.1); /* Scale the button to 110% of its original size */
+}
 
 @media screen and (min-width: 315px) and (max-width: 800px) {
   .carousel-card-content {
