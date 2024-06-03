@@ -7,7 +7,7 @@ export const staffData = [
             { state_req: "MA state req - Bachelor's degree in Education", staff_cred: "John - Master's degree in Education" },
             { state_req: "MA state req - 3 years of administrative experience", staff_cred: "John - 5 years of administrative experience" }
         ],
-        img: <img src="staff_images/employee_1.jpeg" alt="employee1"/>
+        img: <img className=" staff-page-img rounded-circle w-100"  src="staff_images/employee_1.jpeg" alt="employee1"/>
     },
     {
         name: "Emily Johnson",
