@@ -1,8 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
 import Accordian from "../component/Programs/Accordian";
-import "../../../styles/programs.css";
-
+import "../../styles/programs.css";
 export interface AccordionDataType {
   accordion_title: string;
   childName?: string;

@@ -20,6 +20,7 @@ const About = () => {
         <img
           src="/about_images/children-reading-books.webp"
           className="w-100 about-page-img"
+          alt="children_reading"
         />
       </div>
       <div className="about-accordion-container">
