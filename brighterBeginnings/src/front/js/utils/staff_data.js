@@ -5,7 +5,9 @@ export const staffData = [
         fun_fact: "Loves hiking and has climbed 5 different mountains.",
         credentials: [
             { state_req: "MA state req - Bachelor's degree in Education", staff_cred: "John - Master's degree in Education" },
-            { state_req: "MA state req - 3 years of administrative experience", staff_cred: "John - 5 years of administrative experience" }
+            { state_req: "MA state req - 3 years of administrative experience", staff_cred: "John - 5 years of administrative experience" },
+            { state_req: "MA state req - 20 hours of supervised hours", staff_cred: "John - 50+ hours of supervised hours" },
+            { state_req: "MA state req - certification in CPR", staff_cred: "John - certified in CPR, first aid, and fire evacuation" },
         ],
         img: <img className=" staff-page-img rounded-circle w-100"  src="staff_images/employee_1.jpeg" alt="employee1"/>
     },

@@ -6,8 +6,8 @@ const Staff = () => {
 
   return <div className="staff-page-container w-50 m-auto">
             <div className="staff-page-dropdown-container">
-                <div className="staff-page-dropdown dropdown">
-                    <a className="btn  dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <div className="staff-page-dropdown dropdown m-5">
+                    <a className="btn border dropdown-toggle fs-5 color-sky" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {dropdownTitle}
                     </a>
 
@@ -73,25 +73,26 @@ const Staff = () => {
                             
                         </div>
                     </div>
-                    <div className="staff-page-profile-footer-container ">
-                      <div className="staff-page-footer-credential-title-container">
-                          <div className="staff-page-footer-credential-title">
+                    <div className="staff-page-profile-footer-container ms-5 mt-4">
+                      <div className="staff-page-footer-credential-title-container mb-5 ">
+                          <div className="staff-page-footer-credential-title fw-bold fs-5 mb-3 ">
                               Credentials:
                           </div>
-                          {staffData[0].credentials.map((credentialData,credentialDataIndex)=>{
-                            return(
-                                <div className="staff-page-footer-credential-data-container">
-                                <ul className="staff-page-footer-credential-data-ul">
-                                  <li className="staff-page-footer-credential-state-li">
-                                      {credentialData.state_req}
-                                  </li>
-                                  <li className="staff-page-footer-credential-staff-li">
-                                      {credentialData.staff_cred}
-                                  </li>
-                                </ul>
+                          <div className="staff-page-footer-credential-data-container ms-4 overflow-auto " style={{height:"9rem"}}>
+                                {staffData[0].credentials.map((credentialData,credentialDataIndex)=>{
+                                    return(
+                                        <ul className="staff-page-footer-credential-data-ul">
+                                        <li className="staff-page-footer-credential-state-li">
+                                            {credentialData.state_req}
+                                        </li>
+                                        <li className="staff-page-footer-credential-staff-li">
+                                            {credentialData.staff_cred}
+                                        </li>
+                                        </ul>
+                                    )
+                                }) }
                           </div>
-                            )
-                          }) }
+
 
                           
                       </div>
