@@ -4,10 +4,19 @@ const Staff = () => {
 
     const[dropdownTitle, setDropdownTitle]= useState<string>("All Staff");
 
+    const filteredStaffData = dropdownTitle === "All Staff" ? staffData : staffData.filter(staff => staff.category === dropdownTitle);
+
+    
   return <div className="staff-page-container w-50 m-auto">
-            <div className="staff-page-dropdown-container">
-                <div className="staff-page-dropdown dropdown m-5">
-                    <a className="btn border dropdown-toggle fs-5 color-sky" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div className="staff-page-dropdown-container ">
+                <div className="staff-page-dropdown dropdown m-5 ">
+                    <a 
+                    className="btn border dropdown-toggle fs-4 fw-bold color-sky px-4 "  
+                    role="button"
+                     data-bs-toggle="dropdown" 
+                     aria-expanded="false"
+                     style={{boxShadow: "0px 2px 3px 0px #000000a3"}}
+                     >
                         {dropdownTitle}
                     </a>
 
@@ -29,17 +38,23 @@ const Staff = () => {
                         > 
                             <a className="dropdown-item" > Toddler</a></li>
                         <li 
-                            onClick={()=> setDropdownTitle("PreSchool")}
+                            onClick={()=> setDropdownTitle("Pre School")}
                         > 
-                            <a className="dropdown-item" > PreSchool</a></li>
+                            <a className="dropdown-item" > Pre School</a></li>
+                            <li 
+                            onClick={()=> setDropdownTitle("Floater")}
+                        > 
+                            <a className="dropdown-item" > Floater</a></li>
                     </ul>
                 </div>
             </div>
             <div className="staff-page-results-container">
-                <div className="staff-page-profile-container">
+              {filteredStaffData.map((staffDataContent,staffDataContentIndex) =>{
+                return(
+                  <div className="staff-page-profile-container " style={{marginBottom:"5.3rem"}}>
                     <div className="staff-page-profile-header-container d-flex">
                         <div className="staff-page-img-container me-2 w-25">
-                                  {staffData[0].img}
+                                  {staffDataContent.img}
                         </div>
                         <div className="staff-page-name-role-fun-container m-4 fs-5">
                             
@@ -48,7 +63,7 @@ const Staff = () => {
                                     Name: 
                                 </div>
                                 <div className="staff-page-name">    
-                                    {staffData[0].name}
+                                    {staffDataContent.name}
                                 </div>
                             </div>
 
@@ -57,7 +72,7 @@ const Staff = () => {
                                     Role: 
                                 </div>
                                 <div className="staff-page-role">    
-                                    {staffData[0].role}
+                                    {staffDataContent.role}
                                 </div>
                             </div>
                             
@@ -66,7 +81,7 @@ const Staff = () => {
                                     Fun Fact: 
                                 </div>
                                 <div className="staff-page-fun">    
-                                    {staffData[0].fun_fact}
+                                    {staffDataContent.fun_fact}
                                 </div>
                             </div>
                            
@@ -79,16 +94,24 @@ const Staff = () => {
                               Credentials:
                           </div>
                           <div className="staff-page-footer-credential-data-container ms-4 overflow-auto " style={{height:"9rem"}}>
-                                {staffData[0].credentials.map((credentialData,credentialDataIndex)=>{
+                                {staffDataContent.credentials.map((credentialData,credentialDataIndex)=>{
                                     return(
-                                        <ul className="staff-page-footer-credential-data-ul">
-                                        <li className="staff-page-footer-credential-state-li">
+                                      <>
+                                      <ul className="staff-page-footer-credential-data-ul mb-1">
+                                        <li className="staff-page-footer-credential-state-li mb-2" >
+                                            <span className="staff-page-footer-credential-txt p-1" style={{backgroundColor:"#8080804d"}}>
                                             {credentialData.state_req}
+                                            </span>
                                         </li>
-                                        <li className="staff-page-footer-credential-staff-li">
-                                            {credentialData.staff_cred}
+                                        <li className="staff-page-footer-credential-staff-li m-1" >
+                                        <span className="staff-page-footer-credential-txt p-1" style={{backgroundColor:"#89c9d0bd"}}>
+                                        {credentialData.staff_cred}
+                                        </span>
                                         </li>
                                         </ul>
+                                        <hr />
+                                      </>
+                                        
                                     )
                                 }) }
                           </div>
@@ -98,6 +121,10 @@ const Staff = () => {
                       </div>
                     </div>
                 </div>
+                )
+
+              })}
+                
             </div>
         </div>;
 };
