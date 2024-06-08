@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../../store/appContext";
-import { AccordionDataType } from "./ProgramType";
+import { AccordionDataType } from "../../pages/programs";
 import "../../../styles/accordian.css";
 
 interface Accordion2Props {
@@ -65,7 +65,7 @@ const Accordion = ({
         )}
         <div className="accordion-items-container">
           {accordianData.dropdownData.map(
-            (accordionContent, accordionContentIndex) => {
+            (accordionContent, accordionContentIndex: number) => {
               return (
                 <div className="accordion-item p-1" key={accordionContentIndex}>
                   <h2 className="accordion-header">

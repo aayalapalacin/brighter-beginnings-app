@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import getState from "./flux";
-import { AccordionDataType } from "../component/Programs/ProgramType";
+import { AccordionDataType } from "../pages/programs";
 
 interface Store {
   test: string;

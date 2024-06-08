@@ -51,6 +51,7 @@ const spaceCarouselData = [
 
 const Space = () => {
   const [carouselSlide, setCarouselSlide] = useState<number>(0);
+  const [enlarged, setEnlarged] = useState<boolean>(false);
 
   const handleCarouselSlideRight = () => {
     // function to make sure carousel slide index stays within [0] and [3]
@@ -69,6 +70,12 @@ const Space = () => {
       return 0;
     }
   };
+
+  const handleBtnAnimation = () => {
+    setEnlarged(true);
+    setTimeout(() => setEnlarged(false), 300); // Return to normal size after 300ms
+  };
+
 
   return (
     <div className="carousel-container  position-relative">
@@ -132,16 +139,24 @@ const Space = () => {
       <span className="carousel-btn-container">
         <button
           type="button"
-          className="carousel-btn color-sky border-sky-2 me-5"
+          className={`carousel-btn ${enlarged ? 'englarged2' : ''} color-sky border-sky-2 me-5`}
           onClick={() => {
             setCarouselSlide(handleCarouselSlideLeft());
+            handleBtnAnimation();
           }}>
           <i className="fa-solid fa-arrow-left"></i>
         </button>
+      
         <button
           type="button"
-          className="carousel-btn color-sky border-sky-2 "
-          onClick={() => setCarouselSlide(handleCarouselSlideRight())}>
+          className={`carousel-btn ${enlarged ? 'englarged1' : ''} color-sky border-sky-2 `}
+          onClick={() => {
+            setCarouselSlide(handleCarouselSlideRight())
+          
+            handleBtnAnimation();
+          }
+            }
+            >
           <i className="fa-solid fa-arrow-right"></i>
         </button>
       </span>

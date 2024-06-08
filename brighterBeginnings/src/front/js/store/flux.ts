@@ -1,4 +1,4 @@
-import { AccordionDataType } from "../component/Programs/ProgramType";
+import { AccordionDataType } from "../pages/programs";
 
 interface GetStateParams {
   getStore: () => any;
