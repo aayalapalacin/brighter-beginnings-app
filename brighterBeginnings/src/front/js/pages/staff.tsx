@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { staffData } from "../utils/staff_data";
+import "../../styles/staff.css";
 const Staff = () => {
 
     const[dropdownTitle, setDropdownTitle]= useState<string>("All Staff");

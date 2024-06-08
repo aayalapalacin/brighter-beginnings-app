@@ -146,7 +146,7 @@ const Space = () => {
           }}>
           <i className="fa-solid fa-arrow-left"></i>
         </button>
-        <p>enlarged: {enlarged ? 'true' : 'false'}</p>
+      
         <button
           type="button"
           className={`carousel-btn ${enlarged ? 'englarged1' : ''} color-sky border-sky-2 `}
