@@ -24,7 +24,7 @@ function CareersContent({mobileButtonCenter, innerContainerMx5, blockImage }:Car
             />
           </div>
           <div className="careers-text-btn-container">
-            <div className="careers-text color-tree fs-4">
+            <div className="careers-text color-tree fs-4 mb-4">
               Help transform lives of children’s and their family while
               receiving professional development and competitive wages.
             </div>
