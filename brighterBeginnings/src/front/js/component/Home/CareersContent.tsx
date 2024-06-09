@@ -29,7 +29,7 @@ function CareersContent({mobileButtonCenter, innerContainerMx5, blockImage }:Car
               receiving professional development and competitive wages.
             </div>
             <a
-              href="https://www.google.com/forms/about/"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdNd-QZ7aDwPNJqG575EkBNh3eUl3Xt3AMUfW7xZE16Ano6Ww/viewform?usp=sf_link"
               target="_blank"
               className="careers-google-forms text-decoration-none"
               rel="noreferrer">
