@@ -13,6 +13,8 @@ import About from "./pages/about";
 import Reviews from "./pages/reviews";
 import Photos from "./pages/photos";
 import Careers from "./pages/careers";
+import Forms from "./pages/forms";
+
 import '../styles/layout.css';
 
 const Layout = () => {
@@ -20,7 +22,7 @@ const Layout = () => {
     <div className="layout">
       <BrowserRouter>
         <Navbar
-          pages={["About", "Programs", "Staff", "Reviews", "Photos", "Careers"]}
+          pages={["About", "Programs", "Staff", "Reviews", "Photos", "Careers", "Forms"]}
         />
         <Routes>
           <Route element={<Home />} path="/" />
@@ -32,6 +34,7 @@ const Layout = () => {
           <Route element={<Reviews />} path="/reviews" />
           <Route element={<Photos />} path="/photos" />
           <Route element={<Careers />} path="/careers" />
+          <Route element={<Forms />} path="/forms" />
         </Routes>
         <Footer />
       </BrowserRouter>

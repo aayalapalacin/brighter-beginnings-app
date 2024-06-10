@@ -6,10 +6,10 @@ export interface AccordionDataType {
   accordion_title: string;
   childName?: string;
   kidsAge?: number;
-  age: string;
-  start: any | number;
-  end: any | number;
-  img: string;
+  age?: string;
+  start?: any | number;
+  end?: any | number;
+  img?: string;
   bg_color: string;
   dropdownData: {
     title: string;
