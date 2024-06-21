@@ -3,7 +3,7 @@ export const staffData = [
         name: "Lillian Krause Ely",
         role: "Owner/Director II",
         category: "Admin",
-        fun_fact: "Associates in Early Childhood Education. Over 40 years of teaching experience.",
+        language: "English",
         credentials: [
             { state_req: "Director II certification", staff_cred: "Meets Director I education requirements plus an additional 2 college credits or 3 CEU’s in other administration topics" },
             { state_req: "No additional work experience requirements for Director II", staff_cred: "Over 40 years of teaching experience" }
@@ -14,7 +14,7 @@ export const staffData = [
         name: "Melissa",
         role: "Director I/Lead Teacher",
         category: "Admin",
-        fun_fact: "BA in Psychology. 25+ years teaching experience.",
+        language: "English",
         credentials: [
             { state_req: "Director I certification", staff_cred: "Meets the requirement for Lead Teacher plus an additional 3 college credits or 4 CEUs in Child Care Administration" },
             { state_req: "Meets work experience requirements of a Lead Teacher plus 6 additional months", staff_cred: "25+ years teaching experience" }
@@ -25,7 +25,7 @@ export const staffData = [
         name: "Lu",
         role: "Preschool Lead Teacher",
         category: "Pre School",
-        fun_fact: "Fluent in English, Ukrainian & Russian.",
+        language: "English, Ukranian, Russian",
         credentials: [
             { state_req: "Preschool Lead Teacher Certification", staff_cred: "12 total Early Childhood Education ECE Credits" },
             { state_req: "36 months of experience with a high school diploma or G.E.D.", staff_cred: "7 years teaching experience" }
@@ -34,9 +34,9 @@ export const staffData = [
     },
     {
         name: "Ruby",
-        role: "Infant/Toddler Lead Teacher",
-        category: "Infant/Toddler",
-        fun_fact: "Fluent in English and Spanish.",
+        role: "Pre School Lead Teacher",
+        category: "Pre School",
+        language: "English, Spanish",
         credentials: [
             { state_req: "Infant/Toddler Lead Teacher Certification", staff_cred: "Associates in Early Childhood Education" },
             { state_req: "36 months of experience with a high school diploma or G.E.D.", staff_cred: "7 years teaching experience" }
@@ -47,7 +47,7 @@ export const staffData = [
         name: "Becky",
         role: "Director/Lead Teacher",
         category: "Admin",
-        fun_fact: "Working towards BA in Early Childhood Education. 15+ years teaching experience.",
+        language: "English",
         credentials: [
             { state_req: "Director I certification", staff_cred: "Meets the requirement for Lead Teacher plus an additional 3 college credits or 4 CEUs in Child Care Administration" },
             { state_req: "Meets work experience requirements of a Lead Teacher plus 6 additional months", staff_cred: "15+ years teaching experience" }
@@ -56,9 +56,9 @@ export const staffData = [
     },
     {
         name: "Nina",
-        role: "Infant/Toddler Teacher",
-        category: "Infant/Toddler",
-        fun_fact: "Graduated from Lower Pioneer Valley Educational Collaborative in Early Education and Care Program.",
+        role: "Toddler Teacher",
+        category: "Toddler",
+        language: "English",
         credentials: [
             { state_req: "Infant/Toddler or Preschool Teacher Certification", staff_cred: "Graduated from Lower Pioneer Valley Educational Collaborative in Early Education and Care Program" },
             { state_req: "9 months of supervised work experience", staff_cred: "4 years teaching experience" }
@@ -67,9 +67,9 @@ export const staffData = [
     },
     {
         name: "Allie",
-        role: "Infant/Toddler Teacher",
-        category: "Infant/Toddler",
-        fun_fact: "BA in History and working towards BA in Psychology.",
+        role: "Toddler Teacher",
+        category: "Toddler",
+        language: "English",
         credentials: [
             { state_req: "Infant/Toddler or Preschool Teacher Certification", staff_cred: "BA in History and working towards BA in Psychology" },
             { state_req: "9 months of supervised work experience", staff_cred: "6 years teaching experience" }
@@ -77,10 +77,10 @@ export const staffData = [
         img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Allie.jpg" alt="Allie"/>
     },
     {
-        name: "Samantha",
-        role: "Lead Teacher",
-        category: "Infant/Toddler",
-        fun_fact: "Associates in Early Childhood Education, working towards BA.",
+        name: "Sam",
+        role: "Lead Toddler Teacher",
+        category: "Toddler",
+        language: "English",
         credentials: [
             { state_req: "Infant/Toddler Lead Teacher Certification", staff_cred: "Associates in Early Childhood Education, working towards BA" },
             { state_req: "36 months of experience with a high school diploma or G.E.D.", staff_cred: "8 years teaching experience" }
@@ -89,9 +89,9 @@ export const staffData = [
     },
     {
         name: "Virgen",
-        role: "Lead Teacher",
-        category: "Infant/Toddler",
-        fun_fact: "Fluent in Spanish and English.",
+        role: "Lead Infant Teacher",
+        category: "Infant",
+        language: "English, Spanish",
         credentials: [
             { state_req: "Infant/Toddler Lead Teacher Certification", staff_cred: "BA in Early Childhood Education" },
             { state_req: "36 months of experience with a high school diploma or G.E.D.", staff_cred: "12 years teaching experience" }
@@ -100,9 +100,9 @@ export const staffData = [
     },
     {
         name: "Sarah",
-        role: "Lead Teacher",
-        category: "Infant/Toddler",
-        fun_fact: "Fluent in Akan, Ga-adangme, and English.",
+        role: "Lead Pre School Teacher",
+        category: "Pre School",
+        language: "English, Akan, Ga-Adangme",
         credentials: [
             { state_req: "Infant/Toddler Lead Teacher Certification", staff_cred: "BA in Early Childhood Education" },
             { state_req: "36 months of experience with a high school diploma or G.E.D.", staff_cred: "10+ years teaching experience" }
@@ -110,10 +110,10 @@ export const staffData = [
         img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Sarah.jpg" alt="Sarah"/>
     },
     {
-        name: "Yamileyshka",
-        role: "Teacher",
-        category: "Infant/Toddler",
-        fun_fact: "Fluent in Spanish and English.",
+        name: "Yami",
+        role: "Floater",
+        category: "Floater",
+        language: "English, Spanish",
         credentials: [
             { state_req: "Infant/Toddler or Preschool Teacher Certification", staff_cred: "Working towards Associates in Early Childhood Education" },
             { state_req: "9 months of supervised work experience", staff_cred: "5 years teaching experience" }
@@ -122,9 +122,9 @@ export const staffData = [
     },
     {
         name: "McKayla",
-        role: "Teacher",
-        category: "Infant/Toddler",
-        fun_fact: "Infant/Toddler CDA.",
+        role: "Toddler Teacher",
+        category: "Toddler",
+        language: "English",
         credentials: [
             { state_req: "Infant/Toddler Teacher Certification", staff_cred: "Infant/Toddler CDA" },
             { state_req: "9 months of supervised work experience", staff_cred: "3 years teaching experience" }
@@ -133,9 +133,9 @@ export const staffData = [
     },
     {
         name: "Nicole",
-        role: "Teacher",
-        category: "Infant/Toddler",
-        fun_fact: "Working towards BA in Early Childhood Education.",
+        role: "Floater",
+        category: "Floater",
+        language: "English",
         credentials: [
             { state_req: "Infant/Toddler Teacher Certification", staff_cred: "Working towards BA in Early Childhood Education" },
             { state_req: "9 months of supervised work experience", staff_cred: "" }
@@ -146,11 +146,11 @@ export const staffData = [
         name: "Zuleyma",
         role: "Teacher",
         category: "Infant/Toddler",
-        fun_fact: "Fluent in Spanish and English.",
+        language: "English, Spanish",
         credentials: [
             { state_req: "Infant/Toddler or Preschool Teacher Certification", staff_cred: "Graduated from Lower Pioneer Valley Educational Collaborative in Early Education and Care Program" },
             { state_req: "9 months of supervised work experience", staff_cred: "4 years teaching experience" }
         ],
-        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Zuleyma.jpg" alt="Zuleyma"/>
+        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/employee_1.jpeg" alt="Zuleyma"/>
     }
 ]
