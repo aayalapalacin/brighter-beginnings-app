@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/navbar.css";
 import { useNavigate } from "react-router-dom";
-
+import Footer from "./Footer";
 interface NavbarProps {
   pages: string[];
 }
@@ -71,9 +71,12 @@ const Navbar: React.FC<NavbarProps> = ({ pages }) => {
                 </Link>
               ))}
             </ul>
-            <div className="navbar-paragraph-container fs-5 ms-2 mt-2  text-start">
-              <p>"Quality Child Care at Affordable Prices"</p>
+            <div className="navbar-footer-container">
+              <Footer />
             </div>
+            {/* <div className="navbar-paragraph-container fs-5 ms-2 mt-2  text-start">
+              <p>"Quality Child Care at Affordable Prices"</p>
+            </div> */}
           </div>
         </div>
       </nav>

@@ -3,9 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Home from "./pages/home";
 import injectContext from "./store/appContext";
-
 import Navbar from "./component/Navbar";
-import Footer from "./component/Footer";
 import Programs from "./pages/programs";
 import Staff from "./pages/staff";
 // import Contact from "./pages/contact";
@@ -36,7 +34,6 @@ const Layout = () => {
           <Route element={<Careers />} path="/careers" />
           <Route element={<Forms />} path="/forms" />
         </Routes>
-        <Footer />
       </BrowserRouter>
     </div>
   );

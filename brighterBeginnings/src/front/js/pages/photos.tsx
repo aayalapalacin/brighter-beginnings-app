@@ -87,39 +87,53 @@ const Photos = () => {
 
   console.log(lightboxIndex);
   return (
-    <div className="photo-album-container mx-auto mb-5 ">
-      <PhotoAlbum
-        layout="rows"
-        padding={5}
-        photos={photos}
-        onClick={({ index }) => {
-          openLightbox(index);
-        }}
-      />
-      <Lightbox
-        className="lightbox-container"
-        open={open}
-        close={() => setOpen(false)}
-        slides={photos}
-        index={lightboxIndex}
-        plugins={[Thumbnails]}
-        thumbnails={{
-          ref: thumbnailsRef,
-          imageFit: "contain",
-          borderRadius: 15,
-          showToggle: true,
-          position: "bottom",
-          borderStyle: "",
-        }}
-        on={{
-          click: () => {
-            (thumbnailsRef.current?.visible
-              ? thumbnailsRef.current?.hide
-              : thumbnailsRef.current?.show)?.();
-          },
-        }}
-      />
+    <div className="photos-container">
+      <div className="photos-description-container w-50 m-auto mb-5 fs-5">
+        <div className="photos-description-title-container mb-3">
+           <h1>Photo Gallery</h1>
+        </div>
+        <div className="photos-description mb-5">
+          <p>
+          With over an acre of land the children have a unique opportunity to experience the open beauty of New England. Fruit, Vegetable, and flower gardens are tended by the children, and provide a natural habitat for wildlife. the small gardens provide a lovely extension of the classroom. Expansive lawns encourage vigorous outdoor activity. play structures are strategically scattered throughout the school grounds, small courtyards, and a bike path encourage imaginative outdoor play
+          </p>
+        </div>
+        <hr/>
+      </div>
+      <div className="photo-album-container mx-auto mt-5 mb-5 ">
+        <PhotoAlbum
+          layout="rows"
+          padding={5}
+          photos={photos}
+          onClick={({ index }) => {
+            openLightbox(index);
+          }}
+        />
+        <Lightbox
+          className="lightbox-container"
+          open={open}
+          close={() => setOpen(false)}
+          slides={photos}
+          index={lightboxIndex}
+          plugins={[Thumbnails]}
+          thumbnails={{
+            ref: thumbnailsRef,
+            imageFit: "contain",
+            borderRadius: 15,
+            showToggle: true,
+            position: "bottom",
+            borderStyle: "",
+          }}
+          on={{
+            click: () => {
+              (thumbnailsRef.current?.visible
+                ? thumbnailsRef.current?.hide
+                : thumbnailsRef.current?.show)?.();
+            },
+          }}
+        />
+      </div>
     </div>
+    
   );
 };
 
