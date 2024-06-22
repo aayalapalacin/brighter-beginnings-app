@@ -16,3 +16,12 @@
   height: auto !important; */
   object-fit: cover;
 }
+
+@media screen and (min-width: 315px) and (max-width: 1000px) {
+
+.photos-description-container{
+  width: 100% !important;
+  padding: 1rem;
+  font-size: 1rem !important;
+}
+}

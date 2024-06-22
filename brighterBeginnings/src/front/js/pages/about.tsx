@@ -23,6 +23,16 @@ const About = () => {
           alt="children_reading"
         />
       </div>
+      <div className=" about-space-container mt-5  w-100">
+        <div className="carousel-title-container w-50 mx-auto">
+          <h1 className="carousel-title text-shadow text-start">The Space</h1>
+        </div>
+        <div className="space-carousel-container d-flex justify-content-center">
+          <Space />
+        </div>
+        <hr className="m-auto w-75"/>
+
+      </div>
       <div className="about-accordion-container">
         <Accordion accordianData={store.philosophyData[0]} imgFirst={false} />
       </div>
@@ -50,14 +60,7 @@ const About = () => {
           </Link>
         </span>
       </div>
-      <div className=" about-space-container  w-100">
-        <div className="carousel-title-container w-50 mx-auto">
-          <h1 className="carousel-title text-shadow text-start">The Space</h1>
-        </div>
-        <div className="space-carousel-container d-flex justify-content-center">
-          <Space />
-        </div>
-      </div>
+      
     </div>
   );
 };
