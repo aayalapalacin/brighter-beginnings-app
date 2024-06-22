@@ -4,3 +4,8 @@
     flex-direction: column;
     justify-content: space-between;
 }
+@media screen and (min-width: 315px) and (max-width: 1000px) {
+.test{
+    display: block !important;
+}
+}
