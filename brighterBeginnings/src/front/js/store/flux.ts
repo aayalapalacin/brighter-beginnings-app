@@ -135,21 +135,22 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
           bg_color: "",
           dropdownData: [
             {
-              title: "All Children are created equal",
-              description: "all kids are equal no matter what",
-              color: "carrot",
+              "title": "Encouraging Individual Growth",
+              "description": "We believe each individual child will unfold his or her personality and abilities in time. Our program encourages this unfolding in an environment that is rich in nurturing, understanding, and learning.",
+              "color": "carrot"
             },
             {
-              title: "Love is the most important",
-              description: "Where is the love, Love?",
-              color: "sky",
+              "title": "Comprehensive Learning Program",
+              "description": "Brighter Beginnings Preschool/Child Care Center offers an independent early childhood program packed with educational experiences for young children. Our program promotes the physical, emotional, and intellectual development of children.",
+              "color": "sky"
             },
             {
-              title: "It takes a village",
-              description: "We are a community, yeah!",
-              color: "grass",
-            },
-          ],
+              "title": "Holistic Child Development",
+              "description": "We carefully planned this program in such a way so as to enhance your child’s total development. Our program is based on monthly themes, webs, and emergent curriculum that encourage a wide variety of experiences and self-expression.",
+              "color": "grass"
+            }
+          ]
+          
         },
       ],
     },

@@ -3,9 +3,17 @@ import { staffData } from "../utils/staff_data";
 import "../../styles/staff.css";
 const Staff = () => {
 
+    interface staffDataInterface  {
+        name: string;
+        role: string;
+        category: string;
+        language: string;
+        credentials: { state_req: string; staff_cred: string; }[]
+        img: JSX.Element;
+    }
     const[dropdownTitle, setDropdownTitle]= useState<string>("All Staff");
 
-    const filteredStaffData = dropdownTitle === "All Staff" ? staffData : staffData.filter(staff => staff.category === dropdownTitle);
+    const filteredStaffData :staffDataInterface[] = dropdownTitle === "All Staff" ? staffData : staffData.filter(staff => staff.category === dropdownTitle);
 
     
   return <div className="staff-page-container w-50 m-auto">
@@ -50,7 +58,7 @@ const Staff = () => {
                 </div>
             </div>
             <div className="staff-page-results-container">
-              {filteredStaffData.map((staffDataContent,staffDataContentIndex) =>{
+              {filteredStaffData.map((staffDataContent: staffDataInterface,staffDataContentIndex: number) =>{
                 return(
                   <div className="staff-page-profile-container " style={{marginBottom:"5.3rem"}}>
                     <div className="staff-page-profile-header-container d-flex">
@@ -82,7 +90,7 @@ const Staff = () => {
                                     Fun Fact: 
                                 </div>
                                 <div className="staff-page-fun">    
-                                    {staffDataContent.fun_fact}
+                                    {staffDataContent.language}
                                 </div>
                             </div>
                            

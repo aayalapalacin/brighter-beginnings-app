@@ -1,92 +1,156 @@
 export const staffData = [
     {
-        name: "Lilly Smith",
-        role: "Director",
+        name: "Lillian Krause Ely",
+        role: "Owner/Director II",
         category: "Admin",
-        fun_fact: "Loves hiking and has climbed 5 different mountains.",
+        language: "English",
         credentials: [
-            { state_req: "MA state req - Bachelor's degree in Education", staff_cred: "John - Master's degree in Education" },
-            { state_req: "MA state req - 3 years of administrative experience", staff_cred: "John - 5 years of administrative experience" },
-            { state_req: "MA state req - 20 hours of supervised hours", staff_cred: "John - 50+ hours of supervised hours" },
-            { state_req: "MA state req - certification in CPR", staff_cred: "John - certified in CPR, first aid, and fire evacuation" },
+            { state_req: " MA State Requirement: Director II certification", staff_cred: " Staff Credential: Meets Director I education requirements plus an additional 2 college credits or 3 CEU’s in other administration topics" },
+            { state_req: " MA State Requirement: No additional work experience requirements for Director II", staff_cred: " Staff Credential: Over 40 years of teaching experience" }
         ],
-        img: <img className=" staff-page-img rounded-circle w-100"  src="staff_images/employee_1.jpeg" alt="employee1"/>
+        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Lilly.jpg" alt="Lillian"/>
     },
     {
-        name: "Emily Johnson",
-        role: "Accountant",
-        category: "Admin",
-        fun_fact: "Enjoys painting and has her own art studio.",
+        name: "Melissa",
+        role: "Pre School Teacher",
+        category: "Pre School",
+        language: "English",
         credentials: [
-            { state_req: "MA state req - Bachelor's degree in Education", staff_cred: "Emily - Master's degree in Education Administration" },
-            { state_req: "MA state req - 3 years of administrative experience", staff_cred: "Emily - 4 years of administrative experience" }
+            { state_req: " MA State Requirement: Director I certification", staff_cred: " Staff Credential: Meets the requirement for Lead Teacher plus an additional 3 college credits or 4 CEUs in Child Care Administration" },
+            { state_req: " MA State Requirement: Meets work experience requirements of a Lead Teacher plus 6 additional months", staff_cred: " Staff Credential: 25+ years teaching experience" }
         ],
-        img: <img className=" staff-page-img rounded-circle w-100" src="staff_images/employee_2.png" alt="employee2"/>
+        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Melissa.jpg" alt="Melissa"/>
     },
     {
-        name: "Michael Brown",
+        name: "Lu",
+        role: "Preschool Teacher",
+        category: "Pre School",
+        language: "English, Ukranian, Russian",
+        credentials: [
+            { state_req: " MA State Requirement: Preschool Lead Teacher Certification", staff_cred: " Staff Credential: 12 total Early Childhood Education ECE Credits" },
+            { state_req: " MA State Requirement: 36 months of experience with a high school diploma or G.E.D.", staff_cred: " Staff Credential: 7 years teaching experience" }
+        ],
+        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Lu.jpg" alt="Lu"/>
+    },
+    {
+        name: "Ruby",
+        role: "Pre School Teacher",
+        category: "Pre School",
+        language: "English, Spanish",
+        credentials: [
+            { state_req: " MA State Requirement: Infant/Toddler Lead Teacher Certification", staff_cred: " Staff Credential: Associates in Early Childhood Education" },
+            { state_req: " MA State Requirement: 36 months of experience with a high school diploma or G.E.D.", staff_cred: " Staff Credential: 7 years teaching experience" }
+        ],
+        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Ruby.jpg" alt="Ruby"/>
+    },
+    {
+        name: "Becky",
         role: "Floater",
         category: "Floater",
-        fun_fact: "Plays guitar in a local band.",
+        language: "English",
         credentials: [
-            { state_req: "MA state req - Bachelor's degree in Education", staff_cred: "Michael - Master's degree in Early Childhood Education" },
-            { state_req: "MA state req - 3 years of administrative experience", staff_cred: "Michael - 6 years of administrative experience" }
+            { state_req: " MA State Requirement: Director I certification", staff_cred: " Staff Credential: Meets the requirement for Lead Teacher plus an additional 3 college credits or 4 CEUs in Child Care Administration" },
+            { state_req: " MA State Requirement: Meets work experience requirements of a Lead Teacher plus 6 additional months", staff_cred: " Staff Credential: 15+ years teaching experience" }
         ],
-        img: <img className=" staff-page-img rounded-circle w-100" src="staff_images/employee_3.png" alt="employee3"/>
+        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Becky.jpg" alt="Becky"/>
     },
     {
-        name: "Sarah Davis",
-        role: "Lead Infant Teacher",
-        category: "Infant",
-        fun_fact: "Is a certified yoga instructor.",
-        credentials: [
-            { state_req: "MA state req - 3 credit child dev course", staff_cred: "Sarah - 6 credits in child development and psychology" },
-            { state_req: "MA state req - 9 months supervised work exp.", staff_cred: "Sarah - 12 months supervised work experience" }
-        ],
-        img: <img className=" staff-page-img rounded-circle w-100" src="staff_images/employee_4.png" alt="employee4"/>
-    },
-    {
-        name: "David Wilson",
-        role: "Lead Toddler Teacher",
+        name: "Nina",
+        role: "Toddler Teacher",
         category: "Toddler",
-        fun_fact: "Speaks three languages fluently.",
+        language: "English",
         credentials: [
-            { state_req: "MA state req - 3 credit child dev course", staff_cred: "David - 5 credits in child development" },
-            { state_req: "MA state req - 9 months supervised work exp.", staff_cred: "David - 18 months supervised work experience" }
+            { state_req: " MA State Requirement: Infant/Toddler or Preschool Teacher Certification", staff_cred: " Staff Credential: Graduated from Lower Pioneer Valley Educational Collaborative in Early Education and Care Program" },
+            { state_req: " MA State Requirement: 9 months of supervised work experience", staff_cred: " Staff Credential: 4 years teaching experience" }
         ],
-        img: <img className=" staff-page-img rounded-circle w-100" src="staff_images/employee_5.png" alt="employee5"/>
+        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Nina.jpeg" alt="Nina"/>
     },
     {
-        name: "Laura Martinez",
-        role: "Lead Pre School Teacher",
+        name: "Allie",
+        role: "Toddler Teacher",
+        category: "Toddler",
+        language: "English",
+        credentials: [
+            { state_req: " MA State Requirement: Infant/Toddler or Preschool Teacher Certification", staff_cred: " Staff Credential: BA in History and working towards BA in Psychology" },
+            { state_req: " MA State Requirement: 9 months of supervised work experience", staff_cred: " Staff Credential: 6 years teaching experience" }
+        ],
+        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Allie.jpg" alt="Allie"/>
+    },
+    {
+        name: "Sam",
+        role: "Toddler Teacher",
+        category: "Toddler",
+        language: "English",
+        credentials: [
+            { state_req: " MA State Requirement: Infant/Toddler Lead Teacher Certification", staff_cred: " Staff Credential: Associates in Early Childhood Education, working towards BA" },
+            { state_req: " MA State Requirement: 36 months of experience with a high school diploma or G.E.D.", staff_cred: " Staff Credential: 8 years teaching experience" }
+        ],
+        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Sam.jpg" alt="Samantha"/>
+    },
+    {
+        name: "Virgen",
+        role: "Infant Teacher",
+        category: "Infant",
+        language: "English, Spanish",
+        credentials: [
+            { state_req: " MA State Requirement: Infant/Toddler Lead Teacher Certification", staff_cred: " Staff Credential: BA in Early Childhood Education" },
+            { state_req: " MA State Requirement: 36 months of experience with a high school diploma or G.E.D.", staff_cred: " Staff Credential: 12 years teaching experience" }
+        ],
+        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Virgen.jpg" alt="Virgen"/>
+    },
+    {
+        name: "Sarah",
+        role: "Pre School Teacher",
         category: "Pre School",
-        fun_fact: "Runs marathons regularly.",
+        language: "English, Akan, Ga-Adangme",
         credentials: [
-            { state_req: "MA state req - 3 credit child dev course", staff_cred: "Laura - 7 credits in child development and psychology" },
-            { state_req: "MA state req - 9 months supervised work exp.", staff_cred: "Laura - 20 months supervised work experience" }
+            { state_req: " MA State Requirement: Infant/Toddler Lead Teacher Certification", staff_cred: " Staff Credential: BA in Early Childhood Education" },
+            { state_req: " MA State Requirement: 36 months of experience with a high school diploma or G.E.D.", staff_cred: " Staff Credential: 10+ years teaching experience" }
         ],
-        img: <img className=" staff-page-img rounded-circle w-100" src="staff_images/employee_6.png" alt="employee6"/>
+        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Sarah.jpg" alt="Sarah"/>
     },
     {
-        name: "James Taylor",
-        role: "Assistant Infant Teacher",
-        category: "Infant",
-        fun_fact: "Is a black belt in karate.",
+        name: "Yami",
+        role: "Floater",
+        category: "Floater",
+        language: "English, Spanish",
         credentials: [
-            { state_req: "MA state req - 3 credit child dev course", staff_cred: "James - 3 credits in child development" },
-            { state_req: "MA state req - 9 months supervised work exp.", staff_cred: "James - 10 months supervised work experience" }
+            { state_req: " MA State Requirement: Infant/Toddler or Preschool Teacher Certification", staff_cred: " Staff Credential: Working towards Associates in Early Childhood Education" },
+            { state_req: " MA State Requirement: 9 months of supervised work experience", staff_cred: " Staff Credential: 5 years teaching experience" }
         ],
-        img: <img className=" staff-page-img rounded-circle w-100" src="staff_images/employee_7.png" alt="employee7"/>
+        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Yami.jpg" alt="Yamileyshka"/>
     },
     {
-        name: "Natalie Lee",
-        role: "Assistant Toddler Teacher",
+        name: "McKayla",
+        role: "Toddler Teacher",
         category: "Toddler",
-        fun_fact: "Enjoys baking and often brings homemade cookies to class.",
+        language: "English",
         credentials: [
-            { state_req: "MA state req - 3 credit child dev course", staff_cred: "Natalie - 4 credits in child development" },
-            { state_req: "MA state req - 9 months supervised work exp.", staff_cred: "Natalie - 9 months supervised work experience" }
+            { state_req: " MA State Requirement: Infant/Toddler Teacher Certification", staff_cred: " Staff Credential: Infant/Toddler CDA" },
+            { state_req: " MA State Requirement: 9 months of supervised work experience", staff_cred: " Staff Credential: 3 years teaching experience" }
         ],
-        img: <img className=" staff-page-img rounded-circle w-100" src="staff_images/employee_8.png" alt="employee8"/>
+        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/McKayla.jpg" alt="McKayla"/>
+    },
+    {
+        name: "Nicole",
+        role: "Infant Teacher",
+        category: "Infant",
+        language: "English",
+        credentials: [
+            { state_req: " MA State Requirement: Infant/Toddler Teacher Certification", staff_cred: " Staff Credential: Working towards BA in Early Childhood Education" },
+            { state_req: " MA State Requirement: 9 months of supervised work experience", staff_cred: " Staff Credential: " }
+        ],
+        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Nicole.jpg" alt="Nicole"/>
+    },
+    {
+        name: "Zuleyma",
+        role: "Floater",
+        category: "Floater",
+        language: "English, Spanish",
+        credentials: [
+            { state_req: " MA State Requirement: Infant/Toddler or Preschool Teacher Certification", staff_cred: " Staff Credential: Graduated from Lower Pioneer Valley Educational Collaborative in Early Education and Care Program" },
+            { state_req: " MA State Requirement: 9 months of supervised work experience", staff_cred: " Staff Credential: 4 years teaching experience" }
+        ],
+        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/employee_1.jpeg" alt="Zuleyma"/>
     }
 ]
