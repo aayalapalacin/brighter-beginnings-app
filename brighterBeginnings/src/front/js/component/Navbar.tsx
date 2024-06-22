@@ -71,7 +71,7 @@ const Navbar: React.FC<NavbarProps> = ({ pages }) => {
                 </Link>
               ))}
             </ul>
-            <div className="navbar-footer-container">
+            <div className="navbar-footer-container d-none d-sm-none d-md-none d-lg-block">
               <Footer />
             </div>
             {/* <div className="navbar-paragraph-container fs-5 ms-2 mt-2  text-start">

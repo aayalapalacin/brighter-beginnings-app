@@ -12,6 +12,7 @@ import Reviews from "./pages/reviews";
 import Photos from "./pages/photos";
 import Careers from "./pages/careers";
 import Forms from "./pages/forms";
+import Footer from "./component/Footer";
 
 import '../styles/layout.css';
 
@@ -22,6 +23,9 @@ const Layout = () => {
         <Navbar
           pages={["About", "Programs", "Staff", "Reviews", "Photos", "Careers", "Forms"]}
         />
+        <div className="test d-none">
+          <Footer />
+        </div>
         <Routes>
           <Route element={<Home />} path="/" />
           <Route element={<About />} path="/about" />
