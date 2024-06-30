@@ -3,6 +3,10 @@
   height: 42rem;
 }
 
+.carousel-caption-bg {
+  background: #80808061;
+  padding: 1rem;
+}
 #staff_photo {
   position: relative;
   object-position: top;

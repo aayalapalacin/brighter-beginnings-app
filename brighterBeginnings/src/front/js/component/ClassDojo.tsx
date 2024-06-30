@@ -18,7 +18,7 @@ const ClassDojo = () => {
       <div className="class-dojo-video-container col-md-6 col-12 ">
         <iframe
           className="class-dojo-video w-100"
-          src="https://www.youtube.com/embed/7XBnlzHpXTQ?si=C-lDGVKDSP59R47U"
+          src="https://www.youtube.com/embed/oufeciODPuo?si=7Bij7d8mLSd03Bus"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
