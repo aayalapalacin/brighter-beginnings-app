@@ -1,5 +1,11 @@
 import { AccordionDataType } from "../pages/programs";
+import { generateDescription } from "../utils/generateProgramData";
 
+let infantDescription :string = "Your infant's experience at Brighter Beginnings Child Care L.L.C. is tailored to their unique needs and development. We provide personalized nap schedules and cozy cribs equipped with your provided sleep sack and bedding (no blankets). Infants typically enjoy two naps a day and have designated times for snacks and breakfast at an infant table with secure seating. You're encouraged to bring your infants's snacks and lunch- keep in mind we don't use microwaves, we do provide fridge space. Whole milk is provided. Your infant will love daily outdoor strolls, engaging books, and stimulating toys. Our caregivers also read to them, fostering early language development in our nurturing environment."
+
+let toddlerDescription :string = "Your toddler builds on the foundations established in our Infant Class, focusing on independence and exploration. After lunch, they take a (1) daily nap on mats where we ask you provide the bedding. Mealtime is structured, with each child having an assigned chair at a table for snacks and lunch. We ask that parents provide all meals- keep in mind we don't have microwaves, we do provide fridge space. Whole milk is available. Your toddler will enjoy sensory activities, including art projects and sensory play with sand, water, and more. They will participate in storytime, sing-alongs, and plenty of outdoor play in our safe play areas, ensuring a stimulating day."
+
+let preschoolDescription: string = " Your preschooler will thrive in our comprehensive educational environment, promoting physical, social, emotional, and language development. Our curriculum revolves around monthly themes and emergent learning concepts, encouraging diverse experiences and self-expression. Weekly activities include English Language Arts, Science and Technology, History and Social Science, Comprehensive Health, The Arts, Music, Creative Movement, Pre-reading, and Mathematics. Indoor and outdoor gross motor play are integral, fostering self-help skills, independence, and self-regulation for your preschooler. Parents provide snacks and lunch- keep in mind we don't have microwaves, we do provide fridge space."
 interface GetStateParams {
   getStore: () => any;
   getActions: () => any;
@@ -47,7 +53,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
             },
             {
               title: "Description",
-              description: "We take care of infants",
+              description: infantDescription,
               color: "sky",
             },
             {
@@ -78,7 +84,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
             },
             {
               title: "Description",
-              description: "We take care of toddlers",
+              description: toddlerDescription,
               color: "sky",
             },
             {
@@ -109,7 +115,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
             },
             {
               title: "Description",
-              description: "We take care of pre-schoolers",
+              description: preschoolDescription,
               color: "sky",
             },
             {
@@ -192,7 +198,6 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
             );
           }
         );
-        console.log(matchingProgram, "matchedProgram to kidsAgeInMonths");
 
         // Updating inputkidprogram
         const updatedInputKidProgram = {
@@ -200,7 +205,6 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
           childName: firstName,
           kidsAge: kidAgeInMonths,
         };
-
         const availablePrices: { age: string; price: any }[] =
           store.availablePrograms.map((program: AccordionDataType) => {
             const priceItem = program.dropdownData.find(
@@ -214,6 +218,8 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
 
         // FINDING THE PRICE FOR THE CURRENT PROGRAM BASED ON THE AGE
         const currentProgramAge = updatedInputKidProgram.age;
+        const updatedDescriptionText :string = updatedInputKidProgram.accordion_title.includes("Infant") ? infantDescription : updatedInputKidProgram.accordion_title.includes("Toddler") ? toddlerDescription : updatedInputKidProgram.accordion_title.includes("Pre") ? preschoolDescription : "";
+
         const currentProgramPrice = availablePrices.find(
           (item: { age: string; price: any }) => item.age === currentProgramAge
         )?.price;
@@ -236,7 +242,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
             },
             {
               title: `${updatedInputKidProgram.childName}'s Description`,
-              description: `We take care of ${updatedInputKidProgram.childName}`,
+              description:  generateDescription(updatedInputKidProgram.childName, updatedDescriptionText),
               color: "sky",
             },
             {
