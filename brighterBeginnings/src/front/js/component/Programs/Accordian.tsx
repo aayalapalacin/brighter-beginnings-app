@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import { Context } from "../../store/appContext";
 import { AccordionDataType } from "../../pages/programs";
 import "../../../styles/accordian.css";
+import ToddlerSchedule from "./ToddlerSchedule";
+import PreSchoolSchedule from "./PreSchoolSchedule";
 
 interface Accordion2Props {
   accordianData: AccordionDataType | null;
@@ -95,7 +97,11 @@ const Accordion = ({
                     className={`accordion-collapse collapse `}
                     data-bs-parent="#accordion2">
                     <div className="accordion-body">
-                      {accordionContent.description}
+                      { accordionContent.description === "toddler schedule" ? 
+                        <ToddlerSchedule />
+                        : accordionContent.description === "preschool schedule" ?
+                        <PreSchoolSchedule /> :
+                        accordionContent.description}
                     </div>
                   </div>
                 </div>
