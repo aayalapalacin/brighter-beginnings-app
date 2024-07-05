@@ -3,10 +3,11 @@
   height: 42rem;
 }
 
-.carousel-caption-bg {
-  background: #80808061;
-  padding: 1rem;
+.carousel-caption-bg{
+  background: #80808063;
+  padding: 0.2rem;
 }
+
 #staff_photo {
   position: relative;
   object-position: top;
@@ -32,9 +33,9 @@
 
 #staff-caption {
   text-align: start;
-  bottom: 19rem;
-  left: 40rem;
-  width: 21%;
+  bottom: 26rem;
+  left: 25rem;
+  width: 34%;
 }
 
 @media screen and (max-width: 768px) {
@@ -138,7 +139,7 @@
     text-align: start;
     bottom: 1rem;
     left: 5rem;
-    width: 40%;
+    width: 44%;
   }
 }
 @media screen and (min-width: 1024px) and (max-width: 1440px) {

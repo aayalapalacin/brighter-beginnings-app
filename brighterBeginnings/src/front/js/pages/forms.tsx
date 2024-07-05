@@ -14,6 +14,7 @@ const accordionContent: AccordionDataType[] = [
         title: "Enrollment and Registration",
         description: <ul>
         <li><a href="https://www.brighterbeginningcc.com/Forms_files/Welcome%20to%20our%20Class.pdf" target="_blank" title="Welcome to our Class.pdf">Welcome to our Class</a></li>
+        <li><a href="https://www.brighterbeginningcc.com/Welcome_files/Student%20Handbook.pdf" target="_blank" title="Student Handbook.pdf">Student Handbook</a></li>
         <li><a href="https://www.brighterbeginningcc.com/Forms_files/Application_1.pdf" target="_blank" title="Application.pdf">Application</a></li>
         <li><a href="https://drive.google.com/file/d/1xTbSMVY4FoE0shvI68h5PufZzADXY8Xt/view?usp=sharing" target="_blank" title="Enrollment Form.pdf">Enrollment Form</a></li>
         <li><a href="https://www.brighterbeginningcc.com/Forms_files/Parent%20Information%20Form%20Page%201.pdf" target="_blank" title="Parent Information Form Page 1.pdf">Parent Information Form Page 1</a></li>

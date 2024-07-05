@@ -50,13 +50,13 @@ const About = () => {
         <span
           id="about-staff-caption"
           className="about-staff-caption-container">
-          <h1 className="about-staff-caption text-white text-bold ">
+          <div className="about-staff-caption text-white text-bold fs-4 ">
             Meet our staff
-          </h1>
+          </div>
           <Link to="/staff">
-            <h6 className="about-staff-caption-btn btn border border-3 rounded-pill text-white float-start ms-5">
+            <div className="about-staff-caption-btn btn border border-3 rounded-pill text-white float-start ms-5 fs-6">
               <strong>Go!</strong>
-            </h6>
+            </div>
           </Link>
         </span>
       </div>

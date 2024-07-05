@@ -1,5 +1,89 @@
 import { AccordionDataType } from "../pages/programs";
+import { generateDescription } from "../utils/generateProgramData";
+import Footer from "../component/Footer";
 
+let infantDescription :string = "Your infant's experience at Brighter Beginnings Child Care L.L.C. is tailored to their unique needs and development. We provide personalized nap schedules and cozy cribs equipped with your provided sleep sack and bedding (no blankets). Infants typically enjoy two naps a day and have designated times for snacks and breakfast at an infant table with secure seating. You're encouraged to bring your infants's snacks and lunch- keep in mind we don't use microwaves, we do provide fridge space. Whole milk is provided. Your infant will love daily outdoor strolls, engaging books, and stimulating toys. Our caregivers also read to them, fostering early language development in our nurturing environment."
+
+let toddlerDescription :string = "Your toddler builds on the foundations established in our Infant Class, focusing on independence and exploration. After lunch, they take a (1) daily nap on mats where we ask you provide the bedding. Mealtime is structured, with each child having an assigned chair at a table for snacks and lunch. We ask that parents provide all meals- keep in mind we don't have microwaves, we do provide fridge space. Whole milk is available. Your toddler will enjoy sensory activities, including art projects and sensory play with sand, water, and more. They will participate in storytime, sing-alongs, and plenty of outdoor play in our safe play areas, ensuring a stimulating day."
+const toddlerSchedule = `<table>
+  <thead>
+    <tr>
+      <th>Time</th>
+      <th>Activity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>6:45 - 7:30</td>
+      <td>Arrival/Quiet Play</td>
+    </tr>
+    <tr>
+      <td>7:30 - 7:45</td>
+      <td>Breakfast</td>
+    </tr>
+    <tr>
+      <td>7:45 - 8:45</td>
+      <td>Free Choice</td>
+    </tr>
+    <tr>
+      <td>8:45 - 9:00</td>
+      <td>Diaper Check/Wash Hands/Toilet Learning</td>
+    </tr>
+    <tr>
+      <td>9:00 - 9:15</td>
+      <td>Circle</td>
+    </tr>
+    <tr>
+      <td>9:15 - 9:30</td>
+      <td>Diaper Check/Wash Hands/Toilet Learning</td>
+    </tr>
+    <tr>
+      <td>9:30 - 10:00</td>
+      <td>Snack</td>
+    </tr>
+    <tr>
+      <td>10:00 - 10:30</td>
+      <td>Teacher Directed Activity - Science, Music, Large Motor</td>
+    </tr>
+    <tr>
+      <td>10:30 - 11:30</td>
+      <td>Outdoor Play/Indoor Free Play/Large Motor</td>
+    </tr>
+    <tr>
+      <td>11:30 - 11:45</td>
+      <td>Diaper Check/Wash Hands/Toilet Learning</td>
+    </tr>
+    <tr>
+      <td>11:45 - 12:15</td>
+      <td>Lunch</td>
+    </tr>
+    <tr>
+      <td>12:15 - 12:30</td>
+      <td>Diaper Check/Wash Hands/Toilet Learning</td>
+    </tr>
+    <tr>
+      <td>12:30 - 12:45</td>
+      <td>Story Time</td>
+    </tr>
+    <tr>
+      <td>12:45 - 2:45</td>
+      <td>Nap</td>
+    </tr>
+    <tr>
+      <td>2:45 - 3:15</td>
+      <td>Diaper Check/Wash Hands/Toilet Learning</td>
+    </tr>
+    <tr>
+      <td>3:15 - 3:30</td>
+      <td>Afternoon Snack</td>
+    </tr>
+    <tr>
+      <td>3:30 - 4:00</td>
+      <td>Afternoon Activity (open ended) - play dough etc...</td>
+    </tr>
+  </tbody>
+</table>`
+let preschoolDescription: string = " Your preschooler will thrive in our comprehensive educational environment, promoting physical, social, emotional, and language development. Our curriculum revolves around monthly themes and emergent learning concepts, encouraging diverse experiences and self-expression. Weekly activities include English Language Arts, Science and Technology, History and Social Science, Comprehensive Health, The Arts, Music, Creative Movement, Pre-reading, and Mathematics. Indoor and outdoor gross motor play are integral, fostering self-help skills, independence, and self-regulation for your preschooler. Parents provide snacks and lunch- keep in mind we don't have microwaves, we do provide fridge space."
 interface GetStateParams {
   getStore: () => any;
   getActions: () => any;
@@ -42,24 +126,20 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
           dropdownData: [
             {
               title: "Price",
-              description: "$15/hr",
+              description: "5 Days Starting at $345.00 WK",
               color: "carrot",
             },
             {
               title: "Description",
-              description: "We take care of infants",
+              description: infantDescription,
               color: "sky",
             },
             {
               title: "Schedule",
-              description: "Monday - Friday, 7:40am - 5pm",
+              description: "During intake, parents and the infant’s educator will write up a schedule altered to that particular infant. Infant schedules are individual and may change as the needs of the infant changes",
               color: "grass",
             },
-            {
-              title: "Staff",
-              description: "infant staff",
-              color: "tree",
-            },
+            
           ],
         },
         // Toddler
@@ -73,24 +153,20 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
           dropdownData: [
             {
               title: "Price",
-              description: "$17/hr",
+              description: "5 Days Starting at $320.00 Wk",
               color: "carrot",
             },
             {
               title: "Description",
-              description: "We take care of toddlers",
+              description: toddlerDescription,
               color: "sky",
             },
             {
               title: "Schedule",
-              description: "Monday - Friday, 7:40am - 5pm",
+              description: "toddler schedule",
               color: "grass",
             },
-            {
-              title: "Staff",
-              description: "toddler staff",
-              color: "tree",
-            },
+            
           ],
         },
         // Pre-schooler
@@ -104,24 +180,20 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
           dropdownData: [
             {
               title: "Price",
-              description: "$18/hr",
+              description: "5 Days starting at $245.00 Wk, 3 Days starting at $159.00 Wk, 2 Days starting at $113.00 Wk",
               color: "carrot",
             },
             {
               title: "Description",
-              description: "We take care of pre-schoolers",
+              description: preschoolDescription,
               color: "sky",
             },
             {
               title: "Schedule",
-              description: "Monday - Friday, 7:40am - 5pm",
+              description: "preschool schedule",
               color: "grass",
             },
-            {
-              title: "Staff",
-              description: "pre-schooler staff",
-              color: "tree",
-            },
+            
           ],
         },
       ],
@@ -192,7 +264,6 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
             );
           }
         );
-        console.log(matchingProgram, "matchedProgram to kidsAgeInMonths");
 
         // Updating inputkidprogram
         const updatedInputKidProgram = {
@@ -200,7 +271,6 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
           childName: firstName,
           kidsAge: kidAgeInMonths,
         };
-
         const availablePrices: { age: string; price: any }[] =
           store.availablePrograms.map((program: AccordionDataType) => {
             const priceItem = program.dropdownData.find(
@@ -214,6 +284,8 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
 
         // FINDING THE PRICE FOR THE CURRENT PROGRAM BASED ON THE AGE
         const currentProgramAge = updatedInputKidProgram.age;
+        const updatedDescriptionText :string = updatedInputKidProgram.accordion_title.includes("Infant") ? infantDescription : updatedInputKidProgram.accordion_title.includes("Toddler") ? toddlerDescription : updatedInputKidProgram.accordion_title.includes("Pre") ? preschoolDescription : "";
+
         const currentProgramPrice = availablePrices.find(
           (item: { age: string; price: any }) => item.age === currentProgramAge
         )?.price;
@@ -236,7 +308,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
             },
             {
               title: `${updatedInputKidProgram.childName}'s Description`,
-              description: `We take care of ${updatedInputKidProgram.childName}`,
+              description:  generateDescription(updatedInputKidProgram.childName, updatedDescriptionText),
               color: "sky",
             },
             {
@@ -244,11 +316,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
               description: "Monday - Friday, 7:40am - 5pm",
               color: "grass",
             },
-            {
-              title: `Staff caring for ${updatedInputKidProgram.childName}`,
-              description: `${updatedInputKidProgram.childName}'s staff`,
-              color: "tree",
-            },
+            
           ],
         };
 
