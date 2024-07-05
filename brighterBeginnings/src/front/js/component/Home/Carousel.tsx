@@ -34,7 +34,7 @@ const Carousel = () => {
             style={{ transform: "scale(1)" }}
             alt="playground"
           />
-          <span id="playground-caption" className="carousel-caption carousel-caption-bg  ">
+          <span id="playground-caption" className="carousel-caption">
             <h1 className="text-white text-bold ">Playground paradise</h1>
             <h6 className=" d-none d-md-block">
               5 large fenced in play areas designated for different age groups
