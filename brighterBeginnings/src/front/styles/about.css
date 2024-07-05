@@ -14,7 +14,7 @@
   margin-bottom: 8rem !important;
 }
 .about-staff-img-container {
-  height: 47vh;
+  height: 57vh;
   overflow: hidden;
   position: relative;
 }
@@ -106,23 +106,30 @@
 
 @media screen and (min-width: 315px) and (max-width: 365px) {
   #about-staff-caption {
-    top: 41%;
+    top: 38%;
     left: 14%;
-}
+    background: #80808063;
+    padding: 0.2rem;
+
+  }
 }
 
 
 @media screen and (min-width: 370px) and (max-width: 415px) {
   #about-staff-caption {
-    top: 46%;
+    top: 42%;
     left: 16%;
+    background: #80808063;
+    padding: 0.2rem;
 }
 }
 
 @media screen and (min-width: 420px) and (max-width: 760px) {
   #about-staff-caption {
-    top: 50%;
+    top: 43%;
     left: 17%;
+    background: #80808063;
+    padding: 0.2rem;
 }
 }
 
@@ -130,24 +137,35 @@
 @media screen and (min-width: 765px) and (max-width: 1020px) {
   #about-staff-caption {
     position: absolute;
-    top: 25%;
+    top: 38%;
     left: 39%;
+
   }
+
+  .about-staff-img-container {
+    height: 53vh;
+}
 }
 
 @media screen and (min-width: 1022px) and (max-width: 1430px) {
   #about-staff-caption {
     position: absolute;
-    top: 25%;
-    left: 35%;
+    top: 27%;
+    left: 40%;
+
   }
+
+  .about-staff-img-container {
+    height: 68vh;
+}
 }
 
 @media screen and (min-width: 1435px) and (max-width: 2550px) {
   #about-staff-caption {
     position: absolute;
-    top: 25%;
+    top: 28%;
     left: 41%;
+
 }
 }
 @media screen and (min-width: 2555px) and (max-width: 2565px) {
@@ -155,14 +173,15 @@
     position: absolute;
     top: 25%;
     left: 41%;
+  
 }
 
 .about-staff-caption {
-  font-size: 3.5rem;
+  font-size: 3.5rem !important;
 }
 
 .about-staff-caption-btn {
-  font-size: 2.5rem;
+  font-size: 2.5rem !important;
 }
 }
 

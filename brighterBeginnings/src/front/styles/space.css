@@ -34,7 +34,7 @@
 }
 
 .carousel-container {
-  margin: 8rem 0;
+  margin: 6rem 0;
 }
 
 .carousel-btn-container {
@@ -45,12 +45,12 @@
 }
 
 .carousel-card-content {
-  width: 28rem;
+  width: 24rem;
 }
 
 .carousel-card-container {
   width: 35rem;
-  height: 33rem;
+  height: 31rem;
 }
 
 .carousel-btn {
@@ -80,7 +80,7 @@
 
   .carousel-card-container {
     width: 21rem;
-    height: 29rem;
+    height: 26rem;
   }
 
   .carousel-container {
