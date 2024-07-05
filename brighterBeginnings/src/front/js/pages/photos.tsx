@@ -88,18 +88,21 @@ const Photos = () => {
   console.log(lightboxIndex);
   return (
     <div className="photos-container">
-      <div className="photos-description-container w-50 m-auto mb-5 fs-5">
+      <div className="photos-description-container w-75 m-auto mb-0 mb-md-5 mb-lg-5 fs-5">
         <div className="photos-description-title-container mb-3">
            <h1>Photo Gallery</h1>
         </div>
-        <div className="photos-description mb-5">
+        <div className="photos-description d-none  d-md-block d-lg-block mb-5">
           <p>
-          With over an acre of land the children have a unique opportunity to experience the open beauty of New England. Fruit, Vegetable, and flower gardens are tended by the children, and provide a natural habitat for wildlife. the small gardens provide a lovely extension of the classroom. Expansive lawns encourage vigorous outdoor activity. play structures are strategically scattered throughout the school grounds, small courtyards, and a bike path encourage imaginative outdoor play
-          </p>
+          The children have a unique opportunity to explore over an acre of New England's open beauty. They tend fruit, vegetable, and flower gardens, creating natural habitats for wildlife and extending their classroom learning. Expansive lawns, strategically placed play structures, courtyards, and a bike path encourage vigorous and imaginative outdoor play.          </p>
+        </div>
+        <div className="photos-description d-block  d-md-none d-lg-none ">
+          <p>
+          Children explore over an acre of New England's beauty, tending gardens and enjoying expansive lawns, play structures, courtyards, and a bike path for outdoor play.            </p>
         </div>
         <hr/>
       </div>
-      <div className="photo-album-container mx-auto mt-5 mb-5 ">
+      <div className="photo-album-container mx-auto mt-0 mt-md-5 mt-lg-5  mb-5 ">
         <PhotoAlbum
           layout="rows"
           padding={5}

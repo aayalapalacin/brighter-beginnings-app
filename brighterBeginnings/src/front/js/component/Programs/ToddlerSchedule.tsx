@@ -8,7 +8,7 @@ const ToddlerSchedule = () =>{
     <div className="table-container">
       <table>
         <thead>
-        <tr className="bg-sky">
+        <tr className="bg-gradient-grass ">
             <th>Time</th>
             <th>Activity</th>
           </tr>
