@@ -29,7 +29,7 @@ const Reviews = () => {
   return (
     <div className="reviews-container w-100 mx-auto">
       <div className="row reviews-page-img-container w-100 position-relative">
-        <img src="/reviews_images/ceo.jpeg" alt="Banner" className="w-100 reviews-page-img" />
+        <img src="/staff_images/Lilly.jpg" alt="Banner" className="w-100 reviews-page-img" />
         <div className="img-text-overlay">
           <h1 className="img-text-overlay-title ">Lily Smith</h1>
           <p className="img-overlay-subtitle mt-1">Brighter Beginnings Director</p>
@@ -37,7 +37,7 @@ const Reviews = () => {
       </div>
       <div className="row reviews-paragraph-container">
         <div className="col reviews-paragraphs">
-          <p className='reviews-p-1'>We know placing your child in someone else's care is a big and hard decision. That's why it's important to us that you have an honest and unbiased idea of what our services are like for other families.</p>
+          <p className='reviews-p-1'>We know placing your child in someone else's care is a hard decision. That's why it's important to us that you have an honest and unbiased idea of what our services are like for other families.</p>
           <p className='reviews-p-2 d-none d-md-block'>Please carefully review our public reviews that we do not manage in any way so you can make the best decision for your family.</p>
           <p className='reviews-p-3 d-none d-md-block'>We believe our program has a lot to offer and hope it aligns with you and your little ones' best interest.</p>
           <p className='reviews-p-4'> -Brighter Beginnings </p>

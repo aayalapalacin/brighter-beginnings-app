@@ -44,7 +44,7 @@ const Accordion = ({
                 alt={accordianData.img}
               />
               <h3 className="accordion-title text-shadow my-auto ps-3 fs-1">
-                {accordianData.accordion_title}
+                {accordianData.accordion_title} 
               </h3>
             </div>
           </div>
@@ -101,7 +101,7 @@ const Accordion = ({
                         <ToddlerSchedule />
                         : accordionContent.description === "preschool schedule" ?
                         <PreSchoolSchedule /> :
-                        accordionContent.description}
+                        accordionContent.description} 1
                     </div>
                   </div>
                 </div>

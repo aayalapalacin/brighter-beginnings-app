@@ -5,7 +5,7 @@
 }
 
 .reviews-page-img-container {
-    height: 56vh;
+    height: 64vh;
     overflow: hidden;
     position: relative;
 }
@@ -21,8 +21,8 @@
 
 .img-text-overlay {
     position: absolute;
-    top: 20%;
-    right: 11%;
+    top: 59%;
+    right: 2%;
     color: white;
     text-align: right;
 }
@@ -46,7 +46,7 @@
 
 .reviews-paragraphs {
     max-width: 50%;
-    font-size: 1.7rem;
+    font-size: 1.2rem;
 }
 
 .reviews-scroll-container {
@@ -94,7 +94,7 @@
 
     .img-text-overlay {
         position: absolute;
-        top: 65%;
+        top: 59%;
         right: 0%;
         color: white;
         text-align: right;
@@ -174,7 +174,7 @@
 @media only screen and (min-width: 766px)  and (max-width: 800px) {
 
     .img-text-overlay {
-        top: 73%;
+        top: 55%;
         right: 0%;
     }
     .reviews-paragraphs {
