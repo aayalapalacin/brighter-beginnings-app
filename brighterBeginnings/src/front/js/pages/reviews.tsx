@@ -1,30 +1,33 @@
 import React from 'react';
 import "../../styles/reviews.css";
 
+const reviewData = [
+  {
+    imgSrc: "/reviews_images/facebook.png",
+    link: "https://www.facebook.com/Brighter.Beginnings.Child.Care/reviews",
+    mobileLink: "https://www.facebook.com/Brighter.Beginnings.Child.Care/reviews", // Add mobile link
+    alt: "facebook_img"
+  },
+  {
+    imgSrc: "/reviews_images/google.webp",
+    link: "https://www.google.com/search?q=brighter+beginnings+day+care+south+hadley&sca_esv=7535fa7457e2bb3a&sxsrf=ADLYWILxm_baF3wdYEAH0rshjwBYgTv-wA%3A1720301189061&ei=hbaJZq6rA9D-p84Pj5CKkAg&oq=brighter+beginnings&gs_lp=Egxnd3Mtd2l6LXNlcnAiE2JyaWdodGVyIGJlZ2lubmluZ3MqAggAMgcQIxiwAxgnMgcQIxiwAxgnMgcQIxiwAxgnMgoQABiwAxjWBBhHMgoQABiwAxjWBBhHMgoQABiwAxjWBBhHMgoQABiwAxjWBBhHMgoQABiwAxjWBBhHMgoQABiwAxjWBBhHMhkQLhiABBiwAxhDGMcBGMgDGIoFGK8B2AEBMhkQLhiABBiwAxhDGMcBGMgDGIoFGK8B2AEBSIYQUABYAHADeAGQAQCYAQCgAQCqAQC4AQHIAQCYAgOgAheYAwCIBgGQBgu6BgQIARgIkgcBM6AHAA&sclient=gws-wiz-serp#lrd=0x89e6db75dd2dd64d:0xecbc9c8277fd7644,1,,,,",
+    mobileLink: "https://maps.app.goo.gl/iHnP5yC4VH1zTrcf7?g_st=com.google.maps.preview.copy",
+    alt: "google_img"
+  },
+  {
+    imgSrc: "/reviews_images/yelp.webp",
+    link: "https://www.yelp.com/biz/brighter-beginnings-preschool-child-care-south-hadley#reviews",
+    mobileLink: "https://www.yelp.com/biz/brighter-beginnings-preschool-child-care-south-hadley#reviews", // Add mobile link
+    alt: "yelp_img"
+  },
+  {
+    imgSrc: "/reviews_images/care.png",
+    link: "https://www.care.com/b/l/brighter-beginnings-child-care-llc/south-hadley-ma",
+    mobileLink: "https://www.care.com/b/l/brighter-beginnings-child-care-llc/south-hadley-ma", // Add mobile link
+    alt: "care_img"
+  },
+];
 
-const reviewData :{imgSrc:string ;link: string; alt:string;}[] =
-[
-    {
-      imgSrc: "/reviews_images/facebook.png",
-      link: "https://www.facebook.com/Brighter.Beginnings.Child.Care/reviews",
-      alt:"facebook_img" 
-    },
-    {
-      imgSrc: "/reviews_images/google.webp",
-      link: "https://www.google.com/search?q=brighter+beginnings&oq=brighter+beginnings&gs_lcrp=EgZjaHJvbWUqDAgAECMYJxiABBiKBTIMCAAQIxgnGIAEGIoFMhYIARAuGIMBGK8BGMcBGLEDGIAEGI4FMgYIAhBFGEAyBwgDEAAYgAQyBwgEEAAYgAQyBggFEEUYPDIGCAYQRRg8MgYIBxBFGDyoAgCwAgA&sourceid=chrome&ie=UTF-8#lrd=0x89e6db75dd2dd64d:0xecbc9c8277fd7644,1,,,,", 
-      alt:"google_img"
-    },
-    {
-      imgSrc: "/reviews_images/yelp.webp",
-      link: "https://www.yelp.com/biz/brighter-beginnings-preschool-child-care-south-hadley#reviews", 
-      alt:"yelp_img"
-    },
-    {
-      imgSrc: "/reviews_images/care.png",
-      link: "https://www.care.com/b/l/brighter-beginnings-child-care-llc/south-hadley-ma", 
-      alt:"care_img"
-    },
-]
 const Reviews = () => {
   return (
     <div className="reviews-container w-100 mx-auto">
@@ -45,20 +48,19 @@ const Reviews = () => {
       </div>
       <div className="row reviews-scroll-container my-5">
         <div className="col d-flex reviews-scroll">
-          {reviewData.length > 0 ? reviewData.map((reviewContent, reviewContentIndex)=>{
-            return(
-              <div className="review-item-container mx-1">
+          {reviewData.length > 0 ? reviewData.map((reviewContent, reviewContentIndex) => {
+            return (
+              <div className="review-item-container mx-1" key={reviewContentIndex}>
                 <img src={reviewContent.imgSrc} alt={reviewContent.alt} className="review-item-image mb-3" />
-                <button onClick={() => window.open(reviewContent.link, "_blank")} className="review-item-button">Visit Reviews</button>
+                <button className="review-item-button d-block d-md-none d-lg-none" onClick={() => window.open(reviewContent.mobileLink, "_blank")}>Visit Reviews</button>
+                <button className="review-item-button d-none d-md-block d-lg-block" onClick={() => window.open(reviewContent.link, "_blank")}>Visit Reviews</button>
               </div>
-            )
-            
-          })
-        :
-        <div className='no-reviews m-auto'>
-            <h1 className='reviews-title'>Reviews did not load properly</h1>
-        </div>
-        }
+            );
+          }) :
+            <div className='no-reviews m-auto'>
+              <h1 className='reviews-title'>Reviews did not load properly</h1>
+            </div>
+          }
         </div>
       </div>
     </div>
