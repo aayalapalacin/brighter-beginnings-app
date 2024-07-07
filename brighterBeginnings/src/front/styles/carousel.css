@@ -1,6 +1,6 @@
 .carousel-item {
   width: 100%;
-  height: 42rem;
+  height: 30rem;
 }
 
 .carousel-caption-bg{
@@ -33,7 +33,7 @@
 
 #staff-caption {
   text-align: start;
-  bottom: 26rem;
+  bottom: 17rem;
   left: 25rem;
   width: 34%;
 }
@@ -103,14 +103,14 @@
     text-align: center;
     bottom: 6rem;
     left: 17rem;
-    width: 30%;
+    width: 43%;
   }
 }
 
 @media screen and (min-width: 1020px) and (max-width: 1030px) {
   #staff-caption {
     text-align: start;
-    bottom: 25rem;
+    bottom: 18rem;
     left: 21rem;
     width: 36%;
   }
@@ -119,7 +119,7 @@
 @media screen and (min-width: 1435px) and (max-width: 1445px) {
   #staff-caption {
     text-align: start;
-    bottom: 25rem;
+    bottom: 18rem;
     left: 35rem;
     width: 26%;
   }
@@ -131,6 +131,9 @@
     bottom: 25rem;
     left: 65rem;
     width: 26%;
+  }
+  .carousel-item{
+    height: 47rem;
   }
 }
 
@@ -145,7 +148,7 @@
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
   #playground-caption {
     text-align: start;
-    bottom: 9rem;
+    bottom: 5rem;
     left: 16rem;
     width: 36%;
   }
