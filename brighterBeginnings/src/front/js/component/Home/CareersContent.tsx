@@ -8,7 +8,7 @@ interface CareersContentProps {
 }
 function CareersContent({mobileButtonCenter, innerContainerMx5, blockImage }:CareersContentProps) {
   return (
-    <div className="careers-container container">
+    <div data-testid="careers-content" className="careers-container container">
       <div className={`career-inner-container ${innerContainerMx5 ? "mobile-margin" : ""}`}>
         <div className="careers-title-container w-100  color-carrot text-bold mt-5 mb-3">
           <h1 className="careers-title-text text-shadow">

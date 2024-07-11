@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "../../../styles/space.css";
 
-const spaceCarouselData = [
+const playLearnCarouselData = [
   {
-    carouselImg: "/about_images/the_space/infant_classroom.jpeg",
+    carouselImg: "/about_images/play_learn_areas/infant_classroom.jpeg",
     carouselTitle: "Infant Classroom",
     carouselDescrtiption: (
       <ul>
@@ -14,7 +14,7 @@ const spaceCarouselData = [
     ),
   },
   {
-    carouselImg: "/about_images/the_space/outdoor.jpeg",
+    carouselImg: "/about_images/play_learn_areas/outdoor.jpeg",
     carouselTitle: "Outdoor Area",
     carouselDescrtiption: (
       <ul>
@@ -26,7 +26,7 @@ const spaceCarouselData = [
     ),
   },
   {
-    carouselImg: "/about_images/the_space/toddler_classroom.jpeg",
+    carouselImg: "/about_images/play_learn_areas/toddler_classroom.jpeg",
     carouselTitle: "Todddler Classroom",
     carouselDescrtiption: (
       <ul>
@@ -37,7 +37,7 @@ const spaceCarouselData = [
     ),
   },
   {
-    carouselImg: "/about_images/the_space/preschool_classroom.jpeg",
+    carouselImg: "/about_images/play_learn_areas/preschool_classroom.jpeg",
     carouselTitle: "Preschool Classroom",
     carouselDescrtiption: (
       <ul>
@@ -49,7 +49,7 @@ const spaceCarouselData = [
   },
 ];
 
-const Space = () => {
+const PlayLearnAreas = () => {
   const [carouselSlide, setCarouselSlide] = useState<number>(0);
   const [enlarged, setEnlarged] = useState<boolean>(false);
 
@@ -78,9 +78,9 @@ const Space = () => {
 
 
   return (
-    <div className="carousel-container  position-relative">
+    <div data-testid="play-and-learn" className="carousel-container  position-relative">
       <div className="position-relative carousel-card-container">
-        {spaceCarouselData.map((carouselData, carouselDataIndex: number) => {
+        {playLearnCarouselData.map((carouselData, carouselDataIndex: number) => {
           // if carouselDataIndex together with the value of carouselSlide if X, the converted value should be Y:
 
           //    X    Y
@@ -164,4 +164,4 @@ const Space = () => {
   );
 };
 
-export default Space;
+export default PlayLearnAreas;

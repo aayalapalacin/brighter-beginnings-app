@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import Accordion from "../component/Programs/Accordian";
-import Space from "../component/About/Space";
+import PlayLearnAreas from "../component/About/PlayLearnAreas";
 import "../../styles/about.css";
 import "../../styles/accordian.css";
 
@@ -23,12 +23,12 @@ const About = () => {
           alt="children_reading"
         />
       </div>
-      <div className=" about-space-container mt-5  w-100">
+      <div className=" about-play-container mt-5  w-100">
         <div className="carousel-title-container w-50 mx-auto">
           <h1 className="carousel-title text-shadow text-start">Play and Learn Areas</h1>
         </div>
-        <div className="space-carousel-container d-flex justify-content-center">
-          <Space />
+        <div className="play-carousel-container d-flex justify-content-center">
+          <PlayLearnAreas />
         </div>
         <hr className="m-auto w-75"/>
 

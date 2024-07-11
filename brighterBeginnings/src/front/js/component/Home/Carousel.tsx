@@ -3,7 +3,7 @@ import "../../../styles/carousel.css";
 import { Link } from "react-router-dom";
 const Carousel = () => {
   return (
-    <div id="carouselExample" className="carousel slide"  data-bs-ride="carousel"
+    <div id="carouselExample" data-testid="carousel" className="carousel slide"  data-bs-ride="carousel"
     data-bs-interval="2500" >
       <div className="carousel-indicators">
         <button

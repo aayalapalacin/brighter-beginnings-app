@@ -32,7 +32,7 @@ const Accordion = ({
 
   // Rendering dessired accordion
   return (
-    <div className="accordion mx-auto text-center pt-5 pb-5" id="accordion2">
+    <div data-testid="accordian"  className="accordion mx-auto text-center pt-5 pb-5" id="accordion2">
       <div className="accordion-item w-100 mx-auto text-center">
         {imgFirst ? (
           // IMAGE FIRST

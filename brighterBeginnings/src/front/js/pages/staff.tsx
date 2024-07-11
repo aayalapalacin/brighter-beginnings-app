@@ -87,7 +87,7 @@ const Staff = () => {
                             
                             <div className="staff-page-fun-container mb-2 d-flex">    
                                 <div className="staff-page-fun-title fw-bold me-2">    
-                                    Fun Fact: 
+                                    Language: 
                                 </div>
                                 <div className="staff-page-fun">    
                                     {staffDataContent.language}
