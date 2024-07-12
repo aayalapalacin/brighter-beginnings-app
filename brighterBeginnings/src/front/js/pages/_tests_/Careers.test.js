@@ -6,8 +6,8 @@ import Careers from '../careers';
 
 
 
-describe('Home component rendering', () => {
-  test("renders Home component and it's sub components", () => {
+describe('Career component rendering', () => {
+  test("renders Careers sub component ", () => {
     render(
           <Careers />
     );

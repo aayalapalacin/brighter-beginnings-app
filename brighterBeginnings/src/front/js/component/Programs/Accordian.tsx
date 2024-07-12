@@ -50,7 +50,7 @@ const Accordion = ({
           </div>
         ) : (
           // TITLE FIRST
-          <div className="accordion-img-title-first-content w-75 d-flex my-auto justify-content-start">
+          <div data-testid="accordian-title-first" className="accordion-img-title-first-content w-75 d-flex my-auto justify-content-start">
             <div className="accordion-title-content  my-auto">
               <h3 className="accordion-title text-shadow fs-1">
                 {accordianData.accordion_title} 
