@@ -4,7 +4,10 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import About from '../js/pages/about'; 
 import { Context } from '../js/store/appContext';
-import { BrowserRouter, } from "react-router-dom";
+import { BrowserRouter,MemoryRouter, Routes, Route } from "react-router-dom";
+import userEvent from '@testing-library/user-event';
+import { createMemoryHistory } from 'history';
+import Staff from "../js/pages/staff";
 
 const mockContextValue = {
   store: {
@@ -59,7 +62,7 @@ describe("About sub components", ()=>{
 });
 
 describe("images rendering in about component",()=>{
-  test("all images rendering",()=>{
+  test("children reading and staff images rendering",()=>{
 
     render(
       <BrowserRouter>
@@ -79,4 +82,30 @@ describe("images rendering in about component",()=>{
     expect(staffImg).toHaveAttribute('src', '/home_images/staff.jpeg');
   });
 })
+
+describe("About Link", () => {
+  test("onClick to staff page working", () => {
+    const history = createMemoryHistory();
+      render(
+        <MemoryRouter initialEntries={['/']}>
+          <Context.Provider value={mockContextValue}>
+            <Routes>
+              <Route path="/" element={<About />} />
+              <Route path="/staff" element={<Staff />} />
+            </Routes>
+          </Context.Provider>
+        </MemoryRouter>
+      );
+  
+      const staffLink = screen.getByRole('link', { name: /Go!/i });
+      expect(staffLink).toBeInTheDocument();
+      expect(staffLink).toHaveAttribute('href', '/staff');
+  
+      userEvent.click(staffLink);
+  
+      // Check if the navigation happened and the staff component is rendered
+      expect(screen.getByTestId('staff')).toBeInTheDocument();
+    
+ });
+});
 

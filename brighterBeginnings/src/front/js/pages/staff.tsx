@@ -16,7 +16,7 @@ const Staff = () => {
     const filteredStaffData :staffDataInterface[] = dropdownTitle === "All Staff" ? staffData : staffData.filter(staff => staff.category === dropdownTitle);
 
     
-  return <div className="staff-page-container w-50 m-auto">
+  return <div  data-testid="staff" className="staff-page-container w-50 m-auto">
             <div className="staff-page-dropdown-container ">
                 <div className="staff-page-dropdown dropdown m-5 ">
                     <a 
