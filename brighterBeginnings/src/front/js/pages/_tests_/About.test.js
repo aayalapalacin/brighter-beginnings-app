@@ -2,12 +2,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import About from '../js/pages/about'; 
-import { Context } from '../js/store/appContext';
+import About from '../../pages/about'; 
+import { Context } from '../../store/appContext';
 import { BrowserRouter,MemoryRouter, Routes, Route } from "react-router-dom";
 import userEvent from '@testing-library/user-event';
-import { createMemoryHistory } from 'history';
-import Staff from "../js/pages/staff";
+import Staff from "../../pages/staff";
 
 const mockContextValue = {
   store: {
@@ -85,7 +84,6 @@ describe("images rendering in about component",()=>{
 
 describe("About Link", () => {
   test("onClick to staff page working", () => {
-    const history = createMemoryHistory();
       render(
         <MemoryRouter initialEntries={['/']}>
           <Context.Provider value={mockContextValue}>

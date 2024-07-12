@@ -2,9 +2,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import Home from '../js/pages/home'; 
-import { Context } from '../js/store/appContext';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from '../../pages/home'; 
+import { Context } from '../../store/appContext';
+import { BrowserRouter } from "react-router-dom";
 
 const mockContextValue = {
   store: {

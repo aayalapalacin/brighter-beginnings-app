@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import Accordion from "../component/Programs/Accordian";
 import "../../styles/forms.css";
-// import "../../../styles/accordion.css";
 import { AccordionDataType } from "../pages/programs";
 
 const accordionContent: AccordionDataType[] = [
