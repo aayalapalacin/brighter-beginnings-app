@@ -55,7 +55,7 @@ const accordionContent: AccordionDataType[] = [
 const Forms = () => {
   const contextValue = useContext(Context);
 
-  if (!contextValue) {
+  if (!contextValue || !contextValue.store || !contextValue.store.availablePrograms || contextValue.store.availablePrograms.length === 0) {
     return <div>Loading...</div>;
   }
 
