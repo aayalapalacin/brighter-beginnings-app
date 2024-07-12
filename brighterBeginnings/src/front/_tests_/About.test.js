@@ -2,8 +2,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import About from '../front/js/pages/about'; 
-import { Context } from '../front/js/store/appContext';
+import About from '../js/pages/about'; 
+import { Context } from '../js/store/appContext';
 import { BrowserRouter, } from "react-router-dom";
 
 const mockContextValue = {
@@ -57,4 +57,26 @@ describe("About sub components", ()=>{
 
   });
 });
+
+describe("images rendering in about component",()=>{
+  test("all images rendering",()=>{
+
+    render(
+      <BrowserRouter>
+            <Context.Provider value={mockContextValue}>
+          <About />
+        </Context.Provider>
+      </BrowserRouter>
+    );
+
+
+    const readingImg = screen.getByRole('img', { name: /children_reading/i });
+    expect(readingImg).toBeInTheDocument();
+    expect(readingImg).toHaveAttribute('src', '/about_images/children-reading-books.webp');
+
+    const staffImg = screen.getByRole('img', { name: /staff/i });
+    expect(staffImg).toBeInTheDocument();
+    expect(staffImg).toHaveAttribute('src', '/home_images/staff.jpeg');
+  });
+})
 
