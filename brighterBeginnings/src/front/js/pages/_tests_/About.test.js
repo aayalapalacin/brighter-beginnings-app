@@ -107,3 +107,16 @@ describe("About Link", () => {
  });
 });
 
+describe('About renders loading when store is empty', () => {
+  test("renders loading", () => {
+    render(
+      <BrowserRouter>
+        <Context.Provider value={{ store: {}, actions: {} }}>
+          <About />
+        </Context.Provider>
+      </BrowserRouter>
+    );
+
+    expect(screen.getByText('Loading...')).toBeInTheDocument();
+  });
+});

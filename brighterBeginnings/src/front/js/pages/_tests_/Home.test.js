@@ -45,3 +45,17 @@ describe('Home component rendering', () => {
   });
 }
 );
+describe('Home renders loading when store is empty', () => {
+  test("renders loading", () => {
+    render(
+      <BrowserRouter>
+        <Context.Provider value={{ store: {}, actions: {} }}>
+          <Home />
+        </Context.Provider>
+      </BrowserRouter>
+    );
+
+    expect(screen.getByText('Loading...')).toBeInTheDocument();
+  });
+});
+
