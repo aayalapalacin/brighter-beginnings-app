@@ -30,7 +30,7 @@ const reviewData = [
 
 const Reviews = () => {
   return (
-    <div className="reviews-container w-100 mx-auto">
+    <div data-testid="reviews" className="reviews-container w-100 mx-auto">
       <div className="row reviews-page-img-container w-100 position-relative">
         <img src="/staff_images/Lilly.jpg" alt="Banner" className="w-100 reviews-page-img" />
         <div className="img-text-overlay">
