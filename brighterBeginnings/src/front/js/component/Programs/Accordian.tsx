@@ -101,7 +101,7 @@ const Accordion = ({
                         <ToddlerSchedule />
                         : accordionContent.description === "preschool schedule" ?
                         <PreSchoolSchedule /> :
-                        accordionContent.description} 1
+                        accordionContent.description} 
                     </div>
                   </div>
                 </div>

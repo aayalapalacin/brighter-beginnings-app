@@ -1,6 +1,6 @@
 export const staffData = [
     {
-        name: "Lillian Krause Ely",
+        name: "Lilly",
         role: "Owner/Director II",
         category: "Admin",
         language: "English",
@@ -8,7 +8,7 @@ export const staffData = [
             { state_req: " MA State Requirement: Director II certification", staff_cred: " Staff Credential: Meets Director I education requirements plus an additional 2 college credits or 3 CEU’s in other administration topics" },
             { state_req: " MA State Requirement: No additional work experience requirements for Director II", staff_cred: " Staff Credential: Over 40 years of teaching experience" }
         ],
-        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Lilly.jpg" alt="Lillian"/>
+        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Lilly.jpg" alt="Lilly"/>
     },
     {
         name: "Melissa",
@@ -85,7 +85,7 @@ export const staffData = [
             { state_req: " MA State Requirement: Infant/Toddler Lead Teacher Certification", staff_cred: " Staff Credential: Associates in Early Childhood Education, working towards BA" },
             { state_req: " MA State Requirement: 36 months of experience with a high school diploma or G.E.D.", staff_cred: " Staff Credential: 8 years teaching experience" }
         ],
-        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Sam.jpg" alt="Samantha"/>
+        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Sam.jpg" alt="Sam"/>
     },
     {
         name: "Virgen",
@@ -118,7 +118,7 @@ export const staffData = [
             { state_req: " MA State Requirement: Infant/Toddler or Preschool Teacher Certification", staff_cred: " Staff Credential: Working towards Associates in Early Childhood Education" },
             { state_req: " MA State Requirement: 9 months of supervised work experience", staff_cred: " Staff Credential: 5 years teaching experience" }
         ],
-        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Yami.jpg" alt="Yamileyshka"/>
+        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Yami.jpg" alt="Yami"/>
     },
     {
         name: "McKayla",
@@ -151,6 +151,6 @@ export const staffData = [
             { state_req: " MA State Requirement: Infant/Toddler or Preschool Teacher Certification", staff_cred: " Staff Credential: Graduated from Lower Pioneer Valley Educational Collaborative in Early Education and Care Program" },
             { state_req: " MA State Requirement: 9 months of supervised work experience", staff_cred: " Staff Credential: 4 years teaching experience" }
         ],
-        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/employee_1.jpeg" alt="Zuleyma"/>
+        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Zuleyma.jpeg" alt="Zuleyma"/>
     }
 ]
