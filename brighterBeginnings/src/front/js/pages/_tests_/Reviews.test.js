@@ -14,7 +14,7 @@ const mockContextValue = {
       {
         accordion_title: "Program 1",
         age: "Age Range",
-        img: "/program1.png",
+        img: "/programstaff.png",
         dropdownData: [
           { title: "Price", description: "Program 1 Price", color: "color1" },
           { title: "Description", description: "Program 1 Description", color: "color2" },

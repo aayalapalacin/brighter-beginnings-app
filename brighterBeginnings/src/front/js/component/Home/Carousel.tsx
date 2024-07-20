@@ -66,7 +66,7 @@ const Carousel = () => {
         <div className="carousel-item active staff-container">
           <img
             id="staff_photo"
-            src="/home_images/1.png"
+            src="/home_images/staff.png"
             className="w-100 h-100"
             alt="staff"
           />

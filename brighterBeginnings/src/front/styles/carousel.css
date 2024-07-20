@@ -39,6 +39,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .carousel-title{
+    font-size: 1.3rem;
+    width: 133%;
+  }
   .carousel-item {
     width: 100%;
     height: 19rem;

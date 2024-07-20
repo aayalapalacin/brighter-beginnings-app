@@ -78,7 +78,7 @@ describe("images rendering in about component",()=>{
 
     const staffImg = screen.getByRole('img', { name: /staff/i });
     expect(staffImg).toBeInTheDocument();
-    expect(staffImg).toHaveAttribute('src', '/home_images/1.png');
+    expect(staffImg).toHaveAttribute('src', '/home_images/staff.png');
   });
 })
 
