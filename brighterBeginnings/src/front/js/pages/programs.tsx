@@ -27,9 +27,10 @@ const Programs = () => {
 
 
   const contextValue = useContext(Context);
-  if (!contextValue) {
+  if (!contextValue || !contextValue.store || !contextValue.store.availablePrograms || contextValue.store.availablePrograms.length === 0) {
     return <div>Loading...</div>;
   }
+
   const { store, actions } = contextValue;
 
 
@@ -59,14 +60,15 @@ const Programs = () => {
     );
   }
   return (
-    <div className="program-types-container">
+    <div data-testid="programs" className="program-types-container">
       <div
         className={`program-info-container row w-50 mx-auto justify-content-center pb-5`}>
         {store.availablePrograms.map((kid, index) => {
           const splitAccordionTitle =
             kid.accordion_title.split("Program Details");
-
-          return (
+            const altValueArray = kid.img ? kid.img.split("/") : "";
+            const altValue = altValueArray[altValueArray.length-1].replace(".png","");
+            return (
             <div
               className={`program-info-cards btn bg-gradient-${kid.bg_color} col-sm-5`}
               key={index}
@@ -79,7 +81,7 @@ const Programs = () => {
               <img
                 src={kid.img}
                 className="program-info-card-img pb-4"
-                alt="programs type"
+                alt={altValue}
               />
             </div>
           );

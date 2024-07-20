@@ -3,8 +3,13 @@ import "../../../styles/carousel.css";
 import { Link } from "react-router-dom";
 const Carousel = () => {
   return (
-    <div id="carouselExample" className="carousel slide"  data-bs-ride="carousel"
-    data-bs-interval="2500" >
+    <div 
+      id="carouselExample" 
+      data-testid="carousel" 
+      className="carousel slide"  
+      // data-bs-ride="carousel"
+      // data-bs-interval="2500" 
+    >
       <div className="carousel-indicators">
         <button
           type="button"
@@ -28,7 +33,7 @@ const Carousel = () => {
         />
       </div>
       <div className="carousel-inner">
-        <div className="carousel-item active playground-container">
+        <div className="carousel-item  playground-container">
           <img
             src="/home_images/playground_photo.jpeg"
             className="h-100 w-100"
@@ -58,10 +63,10 @@ const Carousel = () => {
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen></iframe>
         </div>
-        <div className="carousel-item  staff-container">
+        <div className="carousel-item active staff-container">
           <img
             id="staff_photo"
-            src="/home_images/staff.jpeg"
+            src="/home_images/staff.png"
             className="w-100 h-100"
             alt="staff"
           />

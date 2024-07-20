@@ -19,7 +19,6 @@ const SubmitForm = () => {
   const navigate = useNavigate();
   const { firstName, yearsOld, monthsOld } = formState;
   let sumAge = (parseFloat(yearsOld) || 0) * 12 + (parseFloat(monthsOld) || 0);
-  console.log(sumAge, "sumAge value");
 
   const contextValue: ContextValue | null = useContext(Context);
   if (!contextValue) {
@@ -70,7 +69,7 @@ const SubmitForm = () => {
   };
 
   return (
-    <div className=" submit-form-container color-tree text-start fs-4">
+    <div data-testid="submit-form" className=" submit-form-container color-tree text-start fs-4">
       <form
         className=" submit-form-tag-container w-100"
         onSubmit={(e) => {

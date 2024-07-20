@@ -9,31 +9,31 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 const photos = [
   {
     key: `photo-0`,
-    src: "/staff_images/smilling_staff.jpg",
+    src: "/staff_images/smilling_staff.png",
     width: 800,
     height: 600,
   },
   {
     key: `photo-1`,
-    src: "/about_images/the_space/infant_classroom.jpeg",
+    src: "/about_images/play_learn_areas/infant_classroom.jpeg",
     width: 1800,
     height: 1000,
   },
   {
     key: `photo-10`,
-    src: "/about_images/the_space/outdoor.jpeg",
+    src: "/about_images/play_learn_areas/outdoor.jpeg",
     width: 800,
     height: 600,
   },
   {
     key: `photo-2`,
-    src: "/about_images/the_space/preschool_classroom.jpeg",
+    src: "/about_images/play_learn_areas/preschool_classroom.jpeg",
     width: 1800,
     height: 1000,
   },
   {
     key: `photo-3`,
-    src: "/about_images/the_space/toddler_classroom.jpeg",
+    src: "/about_images/play_learn_areas/toddler_classroom.jpeg",
     width: 800,
     height: 600,
   },
@@ -51,7 +51,7 @@ const photos = [
   },
   {
     key: `photo-6`,
-    src: "/home_images/staff.jpeg",
+    src: "/home_images/staff.png",
     width: 1800,
     height: 1000,
   },
@@ -85,7 +85,6 @@ const Photos = () => {
     setOpen(true);
   };
 
-  console.log(lightboxIndex);
   return (
     <div className="photos-container">
       <div className="photos-description-container w-75 m-auto mb-0 mb-md-5 mb-lg-5 fs-5">

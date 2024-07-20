@@ -1,6 +1,6 @@
 .carousel-item {
   width: 100%;
-  height: 30rem;
+  height: 36rem;
 }
 
 .carousel-caption-bg{
@@ -33,12 +33,16 @@
 
 #staff-caption {
   text-align: start;
-  bottom: 17rem;
-  left: 25rem;
+  bottom: 7rem;
+  left: 74rem;
   width: 34%;
 }
 
 @media screen and (max-width: 768px) {
+  .carousel-title{
+    font-size: 1.3rem;
+    width: 133%;
+  }
   .carousel-item {
     width: 100%;
     height: 19rem;
@@ -53,7 +57,7 @@
 
   #staff-caption {
     text-align: center;
-    bottom: 11rem;
+    bottom: 1rem;
     left: 6rem;
     width: 56%;
   }
@@ -74,7 +78,7 @@
 
   #staff-caption {
     text-align: center;
-    bottom: 11rem;
+    bottom: 1rem;
     left: 4rem;
     width: 64%;
   }
@@ -101,7 +105,7 @@
 @media screen and (min-width: 760px) and (max-width: 770px) {
   #staff-caption {
     text-align: center;
-    bottom: 6rem;
+    bottom: 1rem;
     left: 17rem;
     width: 43%;
   }
@@ -110,7 +114,7 @@
 @media screen and (min-width: 1020px) and (max-width: 1030px) {
   #staff-caption {
     text-align: start;
-    bottom: 18rem;
+    bottom: 1rem;
     left: 21rem;
     width: 36%;
   }
@@ -119,8 +123,8 @@
 @media screen and (min-width: 1435px) and (max-width: 1445px) {
   #staff-caption {
     text-align: start;
-    bottom: 18rem;
-    left: 35rem;
+    bottom: 3rem;
+    left: 47rem;
     width: 26%;
   }
 }
@@ -128,8 +132,8 @@
 @media screen and (min-width: 2560px) and (max-width: 2565px) {
   #staff-caption {
     text-align: start;
-    bottom: 25rem;
-    left: 65rem;
+    bottom: 14rem;
+    left: 105rem;
     width: 26%;
   }
   .carousel-item{
