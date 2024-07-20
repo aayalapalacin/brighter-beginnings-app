@@ -1,6 +1,5 @@
 //import react into the bundle
 import React from "react";
-import ReactDOM from "react-dom";
 import { createRoot } from "react-dom/client";
 //include your index.scss file into the bundle
 import "./front/styles/globals.css";

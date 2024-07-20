@@ -16,7 +16,7 @@ const Staff = () => {
     const filteredStaffData :staffDataInterface[] = dropdownTitle === "All Staff" ? staffData : staffData.filter(staff => staff.category === dropdownTitle);
 
     
-  return <div className="staff-page-container w-50 m-auto">
+  return <div  data-testid="staff" className="staff-page-container w-50 m-auto">
             <div className="staff-page-dropdown-container ">
                 <div className="staff-page-dropdown dropdown m-5 ">
                     <a 
@@ -60,7 +60,7 @@ const Staff = () => {
             <div className="staff-page-results-container">
               {filteredStaffData.map((staffDataContent: staffDataInterface,staffDataContentIndex: number) =>{
                 return(
-                  <div className="staff-page-profile-container " style={{marginBottom:"5.3rem"}}>
+                  <div key={`staffDataIndex${staffDataContentIndex}`} className="staff-page-profile-container " style={{marginBottom:"5.3rem"}}>
                     <div className="staff-page-profile-header-container d-flex">
                         <div className="staff-page-img-container me-2 w-25">
                                   {staffDataContent.img}
@@ -87,7 +87,7 @@ const Staff = () => {
                             
                             <div className="staff-page-fun-container mb-2 d-flex">    
                                 <div className="staff-page-fun-title fw-bold me-2">    
-                                    Fun Fact: 
+                                    Language: 
                                 </div>
                                 <div className="staff-page-fun">    
                                     {staffDataContent.language}
@@ -105,8 +105,8 @@ const Staff = () => {
                           <div className="staff-page-footer-credential-data-container ms-4 overflow-auto " style={{height:"9rem"}}>
                                 {staffDataContent.credentials.map((credentialData,credentialDataIndex)=>{
                                     return(
-                                      <>
-                                      <ul className="staff-page-footer-credential-data-ul mb-1">
+                                      <div key={`credentialData${credentialDataIndex}`}>
+                                      <ul  className="staff-page-footer-credential-data-ul mb-1">
                                         <li className="staff-page-footer-credential-state-li mb-2" >
                                             <span className="staff-page-footer-credential-txt p-1" style={{backgroundColor:"#8080804d"}}>
                                             {credentialData.state_req}
@@ -119,7 +119,7 @@ const Staff = () => {
                                         </li>
                                         </ul>
                                         <hr />
-                                      </>
+                                      </div>
                                         
                                     )
                                 }) }

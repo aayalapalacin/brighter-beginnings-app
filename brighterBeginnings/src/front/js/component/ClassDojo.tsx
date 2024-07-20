@@ -3,7 +3,7 @@ import "../../styles/class_dojo.css";
 
 const ClassDojo = () => {
   return (
-    <div className="class-dojo-container align-items-center row">
+    <div data-testid="class-dojo" className="class-dojo-container align-items-center row">
       <div className="class-dojo-description-container col-md-6 col-12 pb-5">
         <h1 className=" class-dojo-description-title text-shadow color-tree mb-3">
           Stay Informed with Class Dojo

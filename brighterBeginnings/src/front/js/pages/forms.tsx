@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import Accordion from "../component/Programs/Accordian";
 import "../../styles/forms.css";
-// import "../../../styles/accordion.css";
 import { AccordionDataType } from "../pages/programs";
 
 const accordionContent: AccordionDataType[] = [
@@ -56,7 +55,7 @@ const accordionContent: AccordionDataType[] = [
 const Forms = () => {
   const contextValue = useContext(Context);
 
-  if (!contextValue) {
+  if (!contextValue || !contextValue.store || !contextValue.store.availablePrograms || contextValue.store.availablePrograms.length === 0) {
     return <div>Loading...</div>;
   }
 

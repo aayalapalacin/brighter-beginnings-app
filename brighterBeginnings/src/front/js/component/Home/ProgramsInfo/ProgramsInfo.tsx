@@ -15,7 +15,7 @@ const ProgramsInfo = () => {
 
   return (
     
-    <div >
+    <div data-testid="programs-info" >
       <div
         style={{ display: isShown ? "none" : "inline-block" }}
         className={`programs-into-container paragraph p-md-5 p-0 container m-md-6 m-5 mx-auto`}

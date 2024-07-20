@@ -32,7 +32,7 @@ const Accordion = ({
 
   // Rendering dessired accordion
   return (
-    <div className="accordion mx-auto text-center pt-5 pb-5" id="accordion2">
+    <div data-testid="accordian"  className="accordion mx-auto text-center pt-5 pb-5" id="accordion2">
       <div className="accordion-item w-100 mx-auto text-center">
         {imgFirst ? (
           // IMAGE FIRST
@@ -50,7 +50,7 @@ const Accordion = ({
           </div>
         ) : (
           // TITLE FIRST
-          <div className="accordion-img-title-first-content w-75 d-flex my-auto justify-content-start">
+          <div data-testid="accordian-title-first" className="accordion-img-title-first-content w-75 d-flex my-auto justify-content-start">
             <div className="accordion-title-content  my-auto">
               <h3 className="accordion-title text-shadow fs-1">
                 {accordianData.accordion_title} 
@@ -101,7 +101,7 @@ const Accordion = ({
                         <ToddlerSchedule />
                         : accordionContent.description === "preschool schedule" ?
                         <PreSchoolSchedule /> :
-                        accordionContent.description} 1
+                        accordionContent.description} 
                     </div>
                   </div>
                 </div>
