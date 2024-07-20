@@ -78,7 +78,7 @@
   }
 
   .about-staff-img {
-    width: 75%;
+    width: 100%;
   }
 
   .about-staff-caption {
@@ -134,8 +134,8 @@
 @media screen and (min-width: 765px) and (max-width: 1020px) {
   #about-staff-caption {
     position: absolute;
-    top: 38%;
-    left: 39%;
+    top: 70%;
+    left: 46%;
 
   }
 
@@ -147,8 +147,8 @@
 @media screen and (min-width: 1022px) and (max-width: 1430px) {
   #about-staff-caption {
     position: absolute;
-    top: 27%;
-    left: 40%;
+    top: 74%;
+    left: 50%;
 
   }
 
@@ -160,15 +160,15 @@
 @media screen and (min-width: 1435px) and (max-width: 2550px) {
   #about-staff-caption {
     position: absolute;
-    top: 28%;
-    left: 41%;
+    top: 77%;
+    left: 43%;
 
 }
 }
 @media screen and (min-width: 2555px) and (max-width: 2565px) {
   #about-staff-caption {
     position: absolute;
-    top: 25%;
+    top: 69%;
     left: 41%;
   
 }

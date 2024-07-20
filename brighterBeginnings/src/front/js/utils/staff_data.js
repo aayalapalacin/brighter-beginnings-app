@@ -76,17 +76,7 @@ export const staffData = [
         ],
         img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Allie.jpg" alt="Allie"/>
     },
-    {
-        name: "Sam",
-        role: "Toddler Teacher",
-        category: "Toddler",
-        language: "English",
-        credentials: [
-            { state_req: " MA State Requirement: Infant/Toddler Lead Teacher Certification", staff_cred: " Staff Credential: Associates in Early Childhood Education, working towards BA" },
-            { state_req: " MA State Requirement: 36 months of experience with a high school diploma or G.E.D.", staff_cred: " Staff Credential: 8 years teaching experience" }
-        ],
-        img: <img className="staff-page-img rounded-circle w-100" src="staff_images/Sam.jpg" alt="Sam"/>
-    },
+   
     {
         name: "Virgen",
         role: "Infant Teacher",

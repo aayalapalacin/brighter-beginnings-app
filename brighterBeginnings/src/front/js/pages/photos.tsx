@@ -9,7 +9,7 @@ import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 const photos = [
   {
     key: `photo-0`,
-    src: "/staff_images/smilling_staff.jpg",
+    src: "/staff_images/smilling_1.png",
     width: 800,
     height: 600,
   },
@@ -51,7 +51,7 @@ const photos = [
   },
   {
     key: `photo-6`,
-    src: "/home_images/staff.jpeg",
+    src: "/home_images/1.png",
     width: 1800,
     height: 1000,
   },
