@@ -1,15 +1,17 @@
 // src/__tests__/Home.test.js
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen} from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import ProgramsInfo from '../ProgramsInfo'; 
 import { Context } from '../../../../store/appContext';
-import { BrowserRouter } from "react-router-dom";
-
+import { BrowserRouter,MemoryRouter, Routes, Route } from "react-router-dom";
+import Programs from '../../../../pages/programs';
 const mockContextValue = {
   store: {
+    childProgram: { firstName: "Alex", yearsOld: "2", monthsOld: "" },
     availablePrograms: [
       {
+         img: "/programs_images/infant.png",
         accordion_title: "Program 1",
         age: "Age Range",
         dropdownData: [
@@ -65,3 +67,24 @@ describe("images rendering in programs info component",()=>{
     
   });
 })
+
+describe("Programs Link", () => {
+  test("onClick All Programs to staff page working", () => {
+      render(
+        <MemoryRouter initialEntries={['/']}>
+          <Context.Provider value={mockContextValue}>
+            <Routes>
+              <Route path="/" element={<ProgramsInfo />} />
+              <Route path="/programs" element={<Programs />} />
+            </Routes>
+          </Context.Provider>
+        </MemoryRouter>
+      );
+      const allProgramsButton = screen.getByRole('button', { name: /All Programs/i });
+      fireEvent.click(allProgramsButton);
+    
+      expect(screen.getByTestId('programs')).toBeInTheDocument();
+    
+ });
+});
+
