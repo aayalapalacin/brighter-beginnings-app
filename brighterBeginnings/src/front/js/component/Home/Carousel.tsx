@@ -100,10 +100,14 @@ const Carousel = () => {
               Get to our Staff!
             </h1>
 
-            <h6 className=" d-none d-md-block  ">
+            <h6 id="staff-description-1" className="d-none">
               Get to know a little more about our highly qualified and caring
               staff!
             </h6>
+            <h4 id="staff-description-2" className=" d-none d-md-block  ">
+              Get to know a little more about our highly qualified and caring
+              staff!
+            </h4>
             <Link to={"/staff"}>
               <h6 className="btn border border-2 rounded-pill text-white float-end me-5">
                 Learn More!

@@ -35,8 +35,8 @@
 #staff-caption {
   text-align: start;
   bottom: 7rem;
-  left: 74rem;
-  width: 34%;
+  left: 75rem;
+  width: 25%;
 }
 
 .video.video-full {
@@ -120,8 +120,15 @@
   #staff-caption {
     text-align: center;
     bottom: 1rem;
-    left: 17rem;
-    width: 43%;
+    left: 11rem;
+    width: 32%;
+}
+  #staff-description-1 {
+    display: block !important;
+  }
+  
+  #staff-description-2 {
+    display: none !important;
   }
 }
 
@@ -129,7 +136,7 @@
   #staff-caption {
     text-align: start;
     bottom: 1rem;
-    left: 21rem;
+    left: 31rem;
     width: 36%;
   }
 }
@@ -137,8 +144,7 @@
 @media screen and (min-width: 1435px) and (max-width: 1445px) {
   #staff-caption {
     text-align: start;
-    bottom: 3rem;
-    left: 47rem;
+    left: 56rem;
     width: 26%;
   }
 }
@@ -148,7 +154,7 @@
     text-align: start;
     bottom: 14rem;
     left: 105rem;
-    width: 26%;
+    width: 18%;
   }
   .carousel-item{
     height: 47rem;
