@@ -3,6 +3,7 @@
   height: 36rem;
 }
 
+
 .carousel-caption-bg{
   background: #80808063;
   padding: 0.2rem;
@@ -36,6 +37,19 @@
   bottom: 7rem;
   left: 74rem;
   width: 34%;
+}
+
+.video.video-full {
+  opacity: 1;
+  transition: opacity .85s ease-out;
+  -moz-transition: opacity .85s ease-out;
+  -webkit-transition: opacity .85s ease-out;
+  -o-transition: opacity .85s ease-out;
+}
+
+.video {
+
+  opacity: 0;
 }
 
 @media screen and (max-width: 768px) {

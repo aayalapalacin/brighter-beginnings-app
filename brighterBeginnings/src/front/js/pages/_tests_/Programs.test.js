@@ -14,7 +14,7 @@ const mockContextValue = {
       {
         accordion_title: "Program 1",
         age: "Age Range",
-        img: "/programstaff.png",
+        img: "/programstaff2.png",
         dropdownData: [
           { title: "Price", description: "Program 1 Price", color: "color1" },
           { title: "Description", description: "Program 1 Description", color: "color2" },
@@ -84,7 +84,7 @@ describe("images rendering in programs component",()=>{
 
     const programs1 = screen.getByRole('img', { name: /program1/i });
     expect(programs1).toBeInTheDocument();
-    expect(programs1).toHaveAttribute('src', '/programstaff.png');
+    expect(programs1).toHaveAttribute('src', '/programstaff2.png');
 
     const programs2 = screen.getByRole('img', { name: /program2/i });
     expect(programs2).toBeInTheDocument();

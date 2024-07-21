@@ -28,7 +28,7 @@ const mockContextValue = {
 };
 
 describe('Programs component rendering', () => {
-  test("renders Home component and it's sub components", () => {
+  test("renders Programs component and it's sub components", () => {
     render(
       <BrowserRouter>
         <Context.Provider value={mockContextValue}>
@@ -69,7 +69,7 @@ describe("images rendering in programs info component",()=>{
 })
 
 describe("Programs Link", () => {
-  test("onClick All Programs to staff page working", () => {
+  test("onClick All Programs to program page working", () => {
       render(
         <MemoryRouter initialEntries={['/']}>
           <Context.Provider value={mockContextValue}>

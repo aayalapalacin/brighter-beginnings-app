@@ -66,6 +66,10 @@ body {
 .bg-sky {
   background-color: #89c9d0 !important;
 }
+
+.bg-light-sky{
+  background-color:#71fffe8c !important;
+}
 .color-sky {
   color: #89c9d0 !important;
 }
