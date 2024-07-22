@@ -18,8 +18,8 @@ const Carousel = () => {
       id="carouselExample" 
       data-testid="carousel" 
       className="carousel slide"  
-      // data-bs-ride="carousel"
-      // data-bs-interval="2500" 
+      data-bs-ride="carousel"
+      data-bs-interval="3000" 
     >
       <div className="carousel-indicators">
         <button
@@ -44,7 +44,7 @@ const Carousel = () => {
         />
       </div>
       <div className="carousel-inner">
-        <div className="carousel-item active playground-container">
+        <div className="carousel-item  playground-container">
           <img
             src="/home_images/playground_photo.jpeg"
             className="h-100 w-100"
@@ -67,7 +67,7 @@ const Carousel = () => {
           <div 
               className={`clickOnVideoContainer ${showVideo ? "d-none" : "  d-flex justify-content-center align-items-end h-100" }`} 
               style={{  
-                paddingBottom: "5rem",
+                paddingBottom: "3rem",
               }}
               >
             <div onClick={()=> setShowVideo(true)}  className="clickOnVideoBtnContainer">
@@ -85,7 +85,7 @@ const Carousel = () => {
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen></iframe>
         </div>
-        <div className="carousel-item   staff-container">
+        <div className="carousel-item active  staff-container">
           <img
             id="staff_photo"
             src="/home_images/staff2.png"
