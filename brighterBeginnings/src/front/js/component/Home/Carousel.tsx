@@ -97,7 +97,7 @@ const Carousel = () => {
               Get to know us!
             </h1>
             <h1 className="text-white text-bold d-block d-md-none ">
-              Get to our Staff!
+              Get to know our Staff!
             </h1>
 
             <h6 id="staff-description-1" className="d-none">
