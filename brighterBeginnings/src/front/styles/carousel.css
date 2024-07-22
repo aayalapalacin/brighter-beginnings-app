@@ -3,6 +3,7 @@
   height: 36rem;
 }
 
+
 .carousel-caption-bg{
   background: #80808063;
   padding: 0.2rem;
@@ -34,8 +35,21 @@
 #staff-caption {
   text-align: start;
   bottom: 7rem;
-  left: 74rem;
-  width: 34%;
+  left: 75rem;
+  width: 25%;
+}
+
+.video.video-full {
+  opacity: 1;
+  transition: opacity .85s ease-out;
+  -moz-transition: opacity .85s ease-out;
+  -webkit-transition: opacity .85s ease-out;
+  -o-transition: opacity .85s ease-out;
+}
+
+.video {
+
+  opacity: 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -82,40 +96,106 @@
     left: 4rem;
     width: 64%;
   }
+
+  .clickOnVideoContainer {
+    padding-bottom: 4rem !important;
+  }
+
+  .clickOnVideoBtnContainer {
+    width: 61%;
+  }
+
+  .clickOnVideoBtn{
+    font-size: 1rem !important;
+    padding: 0.1rem 0rem !important;
 }
 
-@media screen and (min-width: 370px) and (max-width: 375px) {
-  #staff-caption {
+}
+
+@media screen and (min-width: 370px) and (max-width: 376px) {
+  /* #staff-caption {
     text-align: center;
     bottom: 11rem;
     left: 6rem;
     width: 54%;
+  } */
+
+  
+  .clickOnVideoContainer {
+    padding-bottom: 3rem !important;
   }
+
+  .clickOnVideoBtnContainer {
+    width: 41%;
+  }
+
+  .clickOnVideoBtn {
+    font-size: 1rem !important;
+    padding: 0.1rem 0.2rem !important;
 }
 
-@media screen and (min-width: 420px) and (max-width: 425px) {
-  #staff-caption {
+}
+
+@media screen and (min-width: 420px) and (max-width: 426px) {
+  /* #staff-caption {
     text-align: center;
     bottom: 11rem;
     left: 7rem;
     width: 50%;
+  } */
+
+  
+  .clickOnVideoContainer {
+    padding-bottom: 3rem !important;
   }
+
+  .clickOnVideoBtnContainer {
+    width: 47%;
+  }
+
+  .clickOnVideoBtn{
+    font-size: 1rem !important;
+    padding: 0.1rem 0.1rem !important;
+}
+
 }
 
 @media screen and (min-width: 760px) and (max-width: 770px) {
   #staff-caption {
     text-align: center;
     bottom: 1rem;
-    left: 17rem;
-    width: 43%;
+    left: 11rem;
+    width: 32%;
+}
+  #staff-description-1 {
+    display: block !important;
   }
+  
+  #staff-description-2 {
+    display: none !important;
+  }
+
+  
+  .clickOnVideoContainer {
+    padding-bottom: 3rem !important;
+  }
+
+  .clickOnVideoBtnContainer {
+    width: 27%;
+  }
+
+  .clickOnVideoBtn{
+    font-size: 1rem !important;
+    padding: 0.1rem 0.1rem !important;
+}
+
 }
 
 @media screen and (min-width: 1020px) and (max-width: 1030px) {
   #staff-caption {
     text-align: start;
     bottom: 1rem;
-    left: 21rem;
+    left: 31rem;
     width: 36%;
   }
 }
@@ -123,8 +203,7 @@
 @media screen and (min-width: 1435px) and (max-width: 1445px) {
   #staff-caption {
     text-align: start;
-    bottom: 3rem;
-    left: 47rem;
+    left: 56rem;
     width: 26%;
   }
 }
@@ -134,7 +213,7 @@
     text-align: start;
     bottom: 14rem;
     left: 105rem;
-    width: 26%;
+    width: 18%;
   }
   .carousel-item{
     height: 47rem;

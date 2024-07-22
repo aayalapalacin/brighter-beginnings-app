@@ -1,7 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import "../../../styles/carousel.css";
 import { Link } from "react-router-dom";
 const Carousel = () => {
+  const [showVideo, setShowVideo]=useState<boolean>(false)
+  const backgroundImageStyle = {
+    backgroundImage: 'url("/home_images/HeggertyLogo.png")', // Image on top of the gradient
+    backgroundSize: '50%', // Adjust image size to fit the container
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center', // Center the image within the container
+    width: '100%',
+  };
+
+    
+
   return (
     <div 
       id="carouselExample" 
@@ -52,21 +63,32 @@ const Carousel = () => {
             </Link>
           </span>
         </div>
-        <div className="carousel-item curriculum-container">
+        <div style={backgroundImageStyle} className="carousel-item active bg-light-sky   curriculum-container">
+          <div 
+              className={`clickOnVideoContainer ${showVideo ? "d-none" : "  d-flex justify-content-center align-items-end h-100" }`} 
+              style={{  
+                paddingBottom: "5rem",
+              }}
+              >
+            <div onClick={()=> setShowVideo(true)}  className="clickOnVideoBtnContainer">
+              <button type="button" className=" clickOnVideoBtn btn bg-sun p-3 fs-4 text-white image-shadow">Get to know our Curriculum</button>
+            </div>
+
+          </div>
           <iframe
-            className=""
+            className={ `iframe video ${showVideo ? " video-full" : "" }`}
             width="100%"
             height={"100%"}
-            src="https://www.youtube.com/embed/5TDz4j8NvnU?si=hXaf9j-t9T7g1l2L"
+            src="https://www.youtube.com/embed/79qPYOTdrUE?si=tyWvN9XQiMmgSdqC"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen></iframe>
         </div>
-        <div className="carousel-item active staff-container">
+        <div className="carousel-item   staff-container">
           <img
             id="staff_photo"
-            src="/home_images/staff.png"
+            src="/home_images/staff2.png"
             className="w-100 h-100"
             alt="staff"
           />
@@ -78,10 +100,14 @@ const Carousel = () => {
               Get to our Staff!
             </h1>
 
-            <h6 className=" d-none d-md-block  ">
+            <h6 id="staff-description-1" className="d-none">
               Get to know a little more about our highly qualified and caring
               staff!
             </h6>
+            <h4 id="staff-description-2" className=" d-none d-md-block  ">
+              Get to know a little more about our highly qualified and caring
+              staff!
+            </h4>
             <Link to={"/staff"}>
               <h6 className="btn border border-2 rounded-pill text-white float-end me-5">
                 Learn More!
