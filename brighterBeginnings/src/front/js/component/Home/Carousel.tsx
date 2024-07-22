@@ -44,7 +44,7 @@ const Carousel = () => {
         />
       </div>
       <div className="carousel-inner">
-        <div className="carousel-item  playground-container">
+        <div className="carousel-item active playground-container">
           <img
             src="/home_images/playground_photo.jpeg"
             className="h-100 w-100"
@@ -63,7 +63,7 @@ const Carousel = () => {
             </Link>
           </span>
         </div>
-        <div style={backgroundImageStyle} className="carousel-item active bg-light-sky   curriculum-container">
+        <div style={backgroundImageStyle} className="carousel-item  bg-light-sky   curriculum-container">
           <div 
               className={`clickOnVideoContainer ${showVideo ? "d-none" : "  d-flex justify-content-center align-items-end h-100" }`} 
               style={{  
