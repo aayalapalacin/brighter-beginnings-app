@@ -222,13 +222,20 @@
 @media screen and (min-width: 1550px) and (max-width: 2555px) {
   #staff-caption {
     text-align: start;
-    left: 58rem;
+    left: 64rem;
     bottom: 4rem;
     width: 26%;
 }
 
   .carousel-item {
-    height: 28rem;
+    height: 30rem;
+}
+
+#playground-caption {
+  text-align: start;
+  bottom: 3rem;
+  left: 16rem;
+  width: 36%;
 }
 }
 
