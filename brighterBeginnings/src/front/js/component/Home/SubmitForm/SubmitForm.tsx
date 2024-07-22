@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Context, ContextValue } from "../../../store/appContext";
-import "../../../../styles/submit-form.css";
+import "./submit-form.css";
 
 type FormState = {
   firstName: string;
@@ -136,9 +136,9 @@ const SubmitForm = () => {
         </div>
         <div className="submit-form-btn-container w-100 text-end mt-5 d-flex justify-content-end">
           <Link to="/programs">
-            <p className="programs-info-button col-lg-4 my-auto  btn bg-sky rounded-pill text-white">
+            <button data-testid="all-programs-submit" type="button" className="programs-info-button col-lg-4 my-auto  btn bg-sky rounded-pill text-white">
               All Programs
-            </p>
+            </button>
           </Link>
 
           <button

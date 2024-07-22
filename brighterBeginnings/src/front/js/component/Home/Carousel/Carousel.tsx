@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import "../../../styles/carousel.css";
+import "./carousel.css";
 import { Link } from "react-router-dom";
 const Carousel = () => {
   const [showVideo, setShowVideo]=useState<boolean>(false)
@@ -57,7 +57,9 @@ const Carousel = () => {
               5 large fenced in play areas designated for different age groups
             </h6>
             <Link to={"/about"}>
-              <h6 className="btn border border-2 rounded-pill text-white float-end me-5">
+              <h6
+              data-testid="see-more" 
+              className="btn border border-2 rounded-pill text-white float-end me-5">
                 See More!
               </h6>
             </Link>
@@ -109,7 +111,7 @@ const Carousel = () => {
               staff!
             </h4>
             <Link to={"/staff"}>
-              <h6 className="btn border border-2 rounded-pill text-white float-end me-5">
+              <h6 data-testid="learn-more-staff" className="btn border border-2 rounded-pill text-white float-end me-5">
                 Learn More!
               </h6>
             </Link>

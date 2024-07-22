@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import SubmitForm from "./SubmitForm";
+import SubmitForm from "../SubmitForm/SubmitForm";
 import { Link } from "react-router-dom";
-import "../../../../styles/programs-info.css";
+import "./programs-info.css";
 const ProgramsInfo = () => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const [isShown, setShown] = useState(false);
@@ -37,6 +37,7 @@ const ProgramsInfo = () => {
                 <Link to="/programs">
                   <button
                     type="button"
+                    data-testid="all-programs-programs-info"
                     className=" btn programs-info-button col-lg-4 my-auto me-md-2 me-0 btn bg-sky rounded-pill text-white"
                   >
                     All Programs

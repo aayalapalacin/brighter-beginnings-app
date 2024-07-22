@@ -1,8 +1,7 @@
-// src/__tests__/Home.test.js
 import React from 'react';
 import { fireEvent, render, screen} from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import ProgramsInfo from '../ProgramsInfo'; 
+import SubmitForm from '../SubmitForm'; 
 import { Context } from '../../../../store/appContext';
 import { BrowserRouter,MemoryRouter, Routes, Route } from "react-router-dom";
 import Programs from '../../../../pages/programs';
@@ -27,18 +26,17 @@ const mockContextValue = {
   },
 };
 
-describe('Programs component rendering', () => {
-  test("renders Programs component and it's sub components", () => {
+describe('SubmitForm component rendering', () => {
+  test("renders SubmitForm component ", () => {
     render(
       <BrowserRouter>
         <Context.Provider value={mockContextValue}>
-          <ProgramsInfo />
+          <SubmitForm />
         </Context.Provider>
       </BrowserRouter>
     );
 
 
-    expect(screen.getByTestId('programs-info')).toBeInTheDocument();
 
     expect(screen.getByTestId('submit-form')).toBeInTheDocument();
 
@@ -47,40 +45,19 @@ describe('Programs component rendering', () => {
 );
 
 
-describe("images rendering in programs info component",()=>{
-  test("rendering backpack imge",()=>{
-
-    render(
-      <BrowserRouter>
-            <Context.Provider value={mockContextValue}>
-          <ProgramsInfo />
-        </Context.Provider>
-      </BrowserRouter>
-    );
-
-    const backpackImg = screen.getAllByRole('img', { name: /Backpack/i });
-    backpackImg.forEach((img)=>{
-      expect(img).toBeInTheDocument();
-      expect(img).toHaveAttribute('src', '/home_images/backpack.webp');
-  
-    })
-    
-  });
-})
-
-describe("Programs Link", () => {
+describe("SubmitForm Link", () => {
   test("onClick All Programs to program page working", () => {
       render(
         <MemoryRouter initialEntries={['/']}>
           <Context.Provider value={mockContextValue}>
             <Routes>
-              <Route path="/" element={<ProgramsInfo />} />
+              <Route path="/" element={<SubmitForm />} />
               <Route path="/programs" element={<Programs />} />
             </Routes>
           </Context.Provider>
         </MemoryRouter>
       );
-      const allProgramsButton = screen.getByTestId('all-programs-programs-info');
+      const allProgramsButton = screen.getByTestId('all-programs-submit');
       fireEvent.click(allProgramsButton);
     
       expect(screen.getByTestId('programs')).toBeInTheDocument();

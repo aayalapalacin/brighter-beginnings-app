@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../styles/careers.css";
+import "./careers.css";
 
 interface CareersContentProps {
   mobileButtonCenter: boolean;
