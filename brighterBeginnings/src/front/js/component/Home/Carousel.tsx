@@ -63,15 +63,15 @@ const Carousel = () => {
             </Link>
           </span>
         </div>
-        <div style={backgroundImageStyle} className="carousel-item bg-light-sky   curriculum-container">
+        <div style={backgroundImageStyle} className="carousel-item active bg-light-sky   curriculum-container">
           <div 
               className={`clickOnVideoContainer ${showVideo ? "d-none" : "  d-flex justify-content-center align-items-end h-100" }`} 
               style={{  
                 paddingBottom: "5rem",
               }}
               >
-            <div onClick={()=> setShowVideo(true)}  className="clickOnVideoBtn">
-              <button type="button" className="btn bg-sun p-3 fs-4 text-white image-shadow">Get to know our Curriculum</button>
+            <div onClick={()=> setShowVideo(true)}  className="clickOnVideoBtnContainer">
+              <button type="button" className=" clickOnVideoBtn btn bg-sun p-3 fs-4 text-white image-shadow">Get to know our Curriculum</button>
             </div>
 
           </div>
@@ -85,7 +85,7 @@ const Carousel = () => {
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen></iframe>
         </div>
-        <div className="carousel-item  active staff-container">
+        <div className="carousel-item   staff-container">
           <img
             id="staff_photo"
             src="/home_images/staff2.png"
