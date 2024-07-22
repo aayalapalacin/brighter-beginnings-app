@@ -82,7 +82,7 @@
   }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 365px) {
   #playground-caption {
     text-align: start;
     bottom: 1rem;
@@ -112,7 +112,7 @@
 
 }
 
-@media screen and (min-width: 370px) and (max-width: 376px) {
+@media screen and (min-width: 370px) and (max-width: 415px) {
   /* #staff-caption {
     text-align: center;
     bottom: 11rem;
@@ -136,7 +136,7 @@
 
 }
 
-@media screen and (min-width: 420px) and (max-width: 426px) {
+@media screen and (min-width: 420px) and (max-width: 755px) {
   /* #staff-caption {
     text-align: center;
     bottom: 11rem;
@@ -160,7 +160,7 @@
 
 }
 
-@media screen and (min-width: 760px) and (max-width: 770px) {
+@media screen and (min-width: 760px) and (max-width: 1115px) {
   #staff-caption {
     text-align: center;
     bottom: 1rem;
