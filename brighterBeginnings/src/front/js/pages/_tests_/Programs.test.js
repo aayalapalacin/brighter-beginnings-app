@@ -82,7 +82,7 @@ describe("images rendering in programs component",()=>{
     );
 
 
-    const programs1 = screen.getByRole('img', { name: /program1/i });
+    const programs1 = screen.getByRole('img', { name: /programstaff2/i });
     expect(programs1).toBeInTheDocument();
     expect(programs1).toHaveAttribute('src', '/programstaff2.png');
 

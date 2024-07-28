@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/class_dojo.css";
+import "../ClassDojo/class_dojo.css";
 
 const ClassDojo = () => {
   return (

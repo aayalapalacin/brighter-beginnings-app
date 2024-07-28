@@ -11,8 +11,6 @@ const Carousel = () => {
     width: '100%',
   };
 
-    
-
   return (
     <div 
       id="carouselExample" 

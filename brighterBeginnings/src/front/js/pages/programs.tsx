@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
-import Accordian from "../component/Programs/Accordian";
+import Accordian from "../component/Programs/Accordian/Accordian";
 import "../../styles/programs.css";
 export interface AccordionDataType {
   accordion_title: string;

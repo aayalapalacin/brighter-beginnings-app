@@ -4,7 +4,7 @@ import Carousel from "../component/Home/Carousel/Carousel";
 import ProgramsInfo from "../component/Home/ProgramsInfo/ProgramsInfo";
 import CareersContent from "../component/Home/CareersContent/CareersContent";
 import "../../styles/home.css";
-import ClassDojo from "../component/ClassDojo";
+import ClassDojo from "../component/Programs/ClassDojo/ClassDojo";
 
 const Home = () => {
   const contextValue = useContext(Context);

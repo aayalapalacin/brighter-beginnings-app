@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../styles/schedule.css";
+import "../../../../styles/schedule.css";
 
 
 

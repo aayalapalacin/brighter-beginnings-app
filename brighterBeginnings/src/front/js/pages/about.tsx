@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-import Accordion from "../component/Programs/Accordian";
+import Accordion from "../component/Programs/Accordian/Accordian";
 import PlayLearnAreas from "../component/About/PlayLearnAreas";
 
 
 import "../../styles/about.css";
-import "../../styles/accordian.css";
+import "../../js/component/Programs/Accordian/accordian.css"
+
 
 const About = () => {
   const contextValue = useContext(Context);

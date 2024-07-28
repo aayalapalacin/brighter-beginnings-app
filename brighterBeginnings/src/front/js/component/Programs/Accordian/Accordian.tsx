@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
-import { Context } from "../../store/appContext";
-import { AccordionDataType } from "../../pages/programs";
-import "../../../styles/accordian.css";
-import ToddlerSchedule from "./ToddlerSchedule";
-import PreSchoolSchedule from "./PreSchoolSchedule";
+import { Context } from "../../../store/appContext";
+import { AccordionDataType } from "../../../pages/programs";
+import "./accordian.css";
+import ToddlerSchedule from "../ToddlerSchedule/ToddlerSchedule";
+import PreSchoolSchedule from "../PreSchoolSchedule/PreSchoolSchedule";
 
 interface Accordion2Props {
   accordianData: AccordionDataType | null;
