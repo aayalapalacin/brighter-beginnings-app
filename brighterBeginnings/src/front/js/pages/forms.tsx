@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import Accordion from "../component/Programs/Accordian/Accordian";
+import Accordion from "../component/Programs/Accordion/Accordion";
 import "../../styles/forms.css";
 import { AccordionDataType } from "../pages/programs";
 
@@ -61,7 +61,7 @@ const Forms = () => {
 
   return (
     <div className="forms-container m-auto w-100">
-      <Accordion accordianData={accordionContent[0]} imgFirst={false} />
+      <Accordion accordionData={accordionContent[0]} imgFirst={false} />
     </div>
   );
 };

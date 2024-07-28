@@ -34,7 +34,7 @@ describe('Forms component rendering', () => {
       </BrowserRouter>
     );
 
-    expect(screen.getByTestId('accordian-title-first')).toBeInTheDocument();
+    expect(screen.getByTestId('accordion-title-first')).toBeInTheDocument();
 
     
   });

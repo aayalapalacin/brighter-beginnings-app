@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
-import Accordian from "../component/Programs/Accordian/Accordian";
+import Accordion from "../component/Programs/Accordion/Accordion";
 import "../../styles/programs.css";
 export interface AccordionDataType {
   accordion_title: string;
@@ -19,7 +19,7 @@ export interface AccordionDataType {
 }
 
 const Programs = () => {
-  const [accordianData, setAccordianData] = useState<AccordionDataType | null>(
+  const [accordionData, setAccordionData] = useState<AccordionDataType | null>(
     null
   );
   const [isProgramClicked, setIsProgramClicked] = useState<boolean>(false);
@@ -36,7 +36,7 @@ const Programs = () => {
 
 
   const handleClick = (kid: AccordionDataType) => {
-    setAccordianData(kid);
+    setAccordionData(kid);
     setIsProgramClicked(true);
   };
 
@@ -45,18 +45,18 @@ const Programs = () => {
   };
 
 
-  let renderedAccordian: JSX.Element | null = null;
+  let renderedAccordion: JSX.Element | null = null;
 
   if (isProgramClicked) {
-    renderedAccordian = (
-      <Accordian accordianData={accordianData} imgFirst={true} />
+    renderedAccordion = (
+      <Accordion accordionData={accordionData} imgFirst={true} />
     );
   } else if (store.childProgram.firstName === "") {
     // DELETE IF YOU WOULDN'T LIKE THIS FUNCTIONALITY IN THE PAGE
-    renderedAccordian = null;
+    renderedAccordion = null;
   } else if (store.childProgram) {
-    renderedAccordian = (
-      <Accordian accordianData={store.inputKidProgram} imgFirst={true} />
+    renderedAccordion = (
+      <Accordion accordionData={store.inputKidProgram} imgFirst={true} />
     );
   }
   return (
@@ -95,7 +95,7 @@ const Programs = () => {
         style={{ marginBottom: "6rem" }}>
         <div className="programs-info-program-clicked-content text-center">
           <div className="programs-info-program-clicked-accordion-container">
-            {renderedAccordian}
+            {renderedAccordion}
           </div>
           {(isProgramClicked || store.childProgram.firstName.length >= 3) && (
             <div

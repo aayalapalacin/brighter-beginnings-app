@@ -55,7 +55,7 @@ describe("About sub components", ()=>{
     );
 
     expect(screen.getByTestId('play-and-learn')).toBeInTheDocument();
-    expect(screen.getByTestId('accordian')).toBeInTheDocument();
+    expect(screen.getByTestId('accordion')).toBeInTheDocument();
 
   });
 });

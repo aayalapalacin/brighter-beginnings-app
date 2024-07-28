@@ -5,7 +5,7 @@ import "../../../../styles/schedule.css";
 
 const PreSchoolSchedule = () =>{
   return (
-    <div className="table-container">
+    <div data-testid="preschool-schedule" className="table-container">
           <table>
         <thead>
           <tr className="bg-gradient-grass ">

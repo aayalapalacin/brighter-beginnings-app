@@ -1,17 +1,17 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../../../store/appContext";
 import { AccordionDataType } from "../../../pages/programs";
-import "./accordian.css";
+import "./accordion.css";
 import ToddlerSchedule from "../ToddlerSchedule/ToddlerSchedule";
 import PreSchoolSchedule from "../PreSchoolSchedule/PreSchoolSchedule";
 
 interface Accordion2Props {
-  accordianData: AccordionDataType | null;
+  accordionData: AccordionDataType | null;
   imgFirst?: boolean;
 }
 
 const Accordion = ({
-  accordianData,
+  accordionData,
   imgFirst,
 }: Accordion2Props): JSX.Element | null => {
   const contextValue = useContext(Context);
@@ -22,51 +22,54 @@ const Accordion = ({
   }
 
   // This is needed because accordionData may be null
-  if (!accordianData) {
-    return null;
+  if (!accordionData) {
+    return <div>Data...</div>;
   }
 
   // Not rendering any accordion
-  if (accordianData.accordion_title === "") return null;
+  if (accordionData.accordion_title === "") return <div>Title...</div>;
   // handleRotate from arrow
 
   // Rendering dessired accordion
+  const imgAltArray: string[] | "" = accordionData.img ? accordionData.img.split("/") : "";
+  const imgFileName: string = accordionData.img ? imgAltArray[imgAltArray.length-1].split(".")[0]: "";
+
   return (
-    <div data-testid="accordian"  className="accordion mx-auto text-center pt-5 pb-5" id="accordion2">
+    <div data-testid="accordion"  className="accordion mx-auto text-center pt-5 pb-5" id="accordion2">
       <div className="accordion-item w-100 mx-auto text-center">
         {imgFirst ? (
           // IMAGE FIRST
           <div className="accordion-img-title-content w-100 mx-auto d-flex text-center justify-content-center">
             <div className="accordion-img-content d-flex justify-content-center">
               <img
-                src={accordianData.img}
+                src={accordionData.img}
                 className="accordion-img-first pb-2"
-                alt={accordianData.img}
+                alt={imgFileName}
               />
               <h3 className="accordion-title text-shadow my-auto ps-3 fs-1">
-                {accordianData.accordion_title} 
+                {accordionData.accordion_title} 
               </h3>
             </div>
           </div>
         ) : (
           // TITLE FIRST
-          <div data-testid="accordian-title-first" className="accordion-img-title-first-content w-75 d-flex my-auto justify-content-start">
+          <div data-testid="accordion-title-first" className="accordion-img-title-first-content w-75 d-flex my-auto justify-content-start">
             <div className="accordion-title-content  my-auto">
               <h3 className="accordion-title text-shadow fs-1">
-                {accordianData.accordion_title} 
+                {accordionData.accordion_title} 
               </h3>
             </div>
             <div className="accordion-img-content text-start my-auto">
               <img
-                src={accordianData.img}
+                src={accordionData.img}
                 className="accordion-img pb-2"
-                alt={accordianData.img}
+                alt={accordionData.img}
               />
             </div>
           </div>
         )}
         <div className="accordion-items-container">
-          {accordianData.dropdownData.map(
+          {accordionData.dropdownData.map(
             (accordionContent, accordionContentIndex: number) => {
               return (
                 <div className="accordion-item p-1" key={accordionContentIndex}>

@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
-import Accordion from "../component/Programs/Accordian/Accordian";
+import Accordion from "../component/Programs/Accordion/Accordion";
 import PlayLearnAreas from "../component/About/PlayLearnAreas";
 
 
 import "../../styles/about.css";
-import "../../js/component/Programs/Accordian/accordian.css"
+import "../../js/component/Programs/Accordion/accordion.css"
 
 
 const About = () => {
@@ -37,7 +37,7 @@ const About = () => {
 
       </div>
       <div className="about-accordion-container">
-        <Accordion accordianData={store.philosophyData[0]} imgFirst={false} />
+        <Accordion accordionData={store.philosophyData[0]} imgFirst={false} />
       </div>
       <hr className="w-75 mx-auto" />
 
