@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Home from "./pages/home";
 import injectContext from "./store/appContext";
-import Navbar from "./component/Navbar";
+import Navbar from "./component/Navbar/Navbar";
 import Programs from "./pages/programs";
 import Staff from "./pages/staff";
 // import Contact from "./pages/contact";
@@ -12,7 +12,7 @@ import Reviews from "./pages/reviews";
 import Photos from "./pages/photos";
 import Careers from "./pages/careers";
 import Forms from "./pages/forms";
-import Footer from "./component/Footer";
+import Contact from "./component/Contact/Contact";
 
 import '../styles/layout.css';
 
@@ -24,7 +24,7 @@ const Layout = () => {
           pages={["About", "Programs", "Staff", "Reviews", "Photos", "Careers", "Forms"]}
         />
         <div className="test d-none">
-          <Footer />
+          <Contact />
         </div>
         <Routes>
           <Route element={<Home />} path="/" />
