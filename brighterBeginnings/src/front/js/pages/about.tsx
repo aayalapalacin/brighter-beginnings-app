@@ -45,7 +45,8 @@ const About = () => {
         <div className="about-staff-img-container w-100 m-auto text-center pt-5">
           <img
             src="/home_images/staff2.png"
-            className="about-staff-img m-auto "
+            className="about-staff-img m-auto"
+            style={{boxShadow:"0rem 0rem 0.5rem 0.2rem #0000009e"}}
             alt="staff"
           />
         </div>
