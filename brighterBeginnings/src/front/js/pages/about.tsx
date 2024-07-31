@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import Accordion from "../component/Programs/Accordion/Accordion";
-import PlayLearnAreas from "../component/About/PlayLearnAreas";
+import PlayLearnAreas from "../component/About/PlayLearnAreas/PlayLearnAreas";
 
 
 import "../../styles/about.css";

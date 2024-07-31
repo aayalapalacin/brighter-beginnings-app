@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import "../../../styles/space.css";
+import "../../../../styles/play-and-learn.css";
+import {zeroTo3} from "../../../utils/zeroTo3";
+import {zeroToNegative3} from "../../../utils/zeroToNegative3";
 
 const playLearnCarouselData = [
   {
@@ -53,23 +55,7 @@ const PlayLearnAreas = () => {
   const [carouselSlide, setCarouselSlide] = useState<number>(0);
   const [enlarged, setEnlarged] = useState<boolean>(false);
 
-  const handleCarouselSlideRight = () => {
-    // function to make sure carousel slide index stays within [0] and [3]
-    if (carouselSlide + 1 < 4) {
-      return carouselSlide + 1;
-    } else {
-      return 0;
-    }
-  };
-
-  const handleCarouselSlideLeft = () => {
-    // function to make sure carousel slide index stays within [0] and [-3]
-    if (carouselSlide - 1 > -4) {
-      return carouselSlide - 1;
-    } else {
-      return 0;
-    }
-  };
+  
 
   const handleBtnAnimation = () => {
     setEnlarged(true);
@@ -81,10 +67,14 @@ const PlayLearnAreas = () => {
     <div data-testid="play-and-learn" className="carousel-container  position-relative">
       <div className="position-relative carousel-card-container">
         {playLearnCarouselData.map((carouselData, carouselDataIndex: number) => {
-          // if carouselDataIndex together with the value of carouselSlide if X, the converted value should be Y:
-
+          // we want to dyanimcally create class names carousel-0 carousel-1 carousel-2 carousel-3
+          // because those are the corresponsing css classes
+          
+          // we need to take the of X and convert it to Y
+          // where X is the value of carouselDataIndex together with the value of carouselSlide
+          // Y is the output
           //    X    Y
-          //   -3 |  1
+          //   -3 |  1 
           //   -2 |  2
           //   -1 |  3
           //    0 |  0
@@ -95,6 +85,7 @@ const PlayLearnAreas = () => {
           //    5 |  1
           //    6 |  2
           //
+           
           let carouselClassConversion =
             carouselDataIndex + carouselSlide >= 0 &&
             carouselDataIndex + carouselSlide < 4
@@ -116,8 +107,8 @@ const PlayLearnAreas = () => {
           return (
             <div
               key={carouselDataIndex}
-              className={`carousel-card-container position-absolute carousel-${carouselClassConversion}
-        }`}>
+              className={`carousel-card-container position-absolute carousel-${carouselClassConversion}`}
+              >
               <div className="carousel-card-content card ">
                 <img
                   src={carouselData.carouselImg}
@@ -141,7 +132,7 @@ const PlayLearnAreas = () => {
           type="button"
           className={`carousel-btn ${enlarged ? 'englarged2' : ''} color-sky border-sky-2 me-5`}
           onClick={() => {
-            setCarouselSlide(handleCarouselSlideLeft());
+            setCarouselSlide(zeroToNegative3(carouselSlide));
             handleBtnAnimation();
           }}>
           <i className="fa-solid fa-arrow-left"></i>
@@ -151,7 +142,7 @@ const PlayLearnAreas = () => {
           type="button"
           className={`carousel-btn ${enlarged ? 'englarged1' : ''} color-sky border-sky-2 `}
           onClick={() => {
-            setCarouselSlide(handleCarouselSlideRight())
+            setCarouselSlide(zeroTo3(carouselSlide))
           
             handleBtnAnimation();
           }
