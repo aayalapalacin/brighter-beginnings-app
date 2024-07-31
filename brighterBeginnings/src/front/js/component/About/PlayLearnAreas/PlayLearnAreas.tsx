@@ -15,6 +15,7 @@ const playLearnCarouselData = [
       </ul>
     ),
   },
+  
   {
     carouselImg: "/about_images/play_learn_areas/outdoor.jpeg",
     carouselTitle: "Outdoor Area",
