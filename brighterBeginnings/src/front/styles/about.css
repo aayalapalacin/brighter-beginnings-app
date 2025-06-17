@@ -13,11 +13,7 @@
   position: relative;
   margin-bottom: 8rem !important;
 }
-.about-staff-img-container {
-  height: 57vh;
-  overflow: hidden;
-  position: relative;
-}
+
 .about-staff-img {
   width: 51%;
 }
@@ -35,7 +31,15 @@
   margin-top: 13rem ;
   margin-bottom: 30rem ;
 }
-
+.staff-img-banner {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 51%; 
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
+}
 
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
   .about-page-img {
@@ -47,9 +51,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .about-staff-caption-btn {
-    font-size: 1.4rem;
-  }
+  
 
   .about-page-img {
     top: -5rem;
@@ -58,10 +60,12 @@
   .about-staff-img {
     width: 75%;
   }
+  .staff-img-banner {
+    width: 75%;
 
-  .about-staff-img-container {
-    height: 43vh;
-}
+  }
+
+  
 }
 
 @media screen and (max-width: 765px) {
@@ -80,13 +84,10 @@
   .about-staff-img {
     width: 100%;
   }
-
-  .about-staff-caption {
-    font-size: 1rem;
+  .staff-img-banner {
+  width: 100%;
   }
-  .about-staff-caption-btn {
-    font-size: 0.7rem;
-  }
+  
 
   .about-staff-container {
     margin-bottom: 0rem !important;
@@ -104,83 +105,16 @@
   }
 }
 
-@media screen and (min-width: 315px) and (max-width: 365px) {
-  #about-staff-caption {
-    top: 38%;
-    left: 14%;
-   
-
-  }
-}
 
 
-@media screen and (min-width: 370px) and (max-width: 415px) {
-  #about-staff-caption {
-    top: 42%;
-    left: 16%;
-   
-}
-}
-
-@media screen and (min-width: 420px) and (max-width: 760px) {
-  #about-staff-caption {
-    top: 43%;
-    left: 17%;
-   
-}
-}
 
 
-@media screen and (min-width: 765px) and (max-width: 1020px) {
-  #about-staff-caption {
-    position: absolute;
-    top: 70%;
-    left: 46%;
 
-  }
 
-  .about-staff-img-container {
-    height: 53vh;
-}
-}
 
-@media screen and (min-width: 1022px) and (max-width: 1430px) {
-  #about-staff-caption {
-    position: absolute;
-    top: 74%;
-    left: 50%;
 
-  }
 
-  .about-staff-img-container {
-    height: 68vh;
-}
-}
 
-@media screen and (min-width: 1435px) and (max-width: 2550px) {
-  #about-staff-caption {
-    position: absolute;
-    top: 77%;
-    left: 43%;
-
-}
-}
-@media screen and (min-width: 2555px) and (max-width: 2565px) {
-  #about-staff-caption {
-    position: absolute;
-    top: 69%;
-    left: 41%;
-  
-}
-
-.about-staff-caption {
-  font-size: 3.5rem !important;
-}
-
-.about-staff-caption-btn {
-  font-size: 2.5rem !important;
-}
-}
 
 
 

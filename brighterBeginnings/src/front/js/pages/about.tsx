@@ -17,8 +17,8 @@ const About = () => {
 
   const { store } = contextValue;
   return (
-    <div data-testid="about" className="about-container w-100 mx-auto">
-      <div className="about-page-img-container w-100">
+    <div data-testid="about" className="about-container w-100 mx-auto mb-5">
+      <div className="about-page-img-container w-100 ">
         <img
           src="/about_images/children-reading-books.webp"
           className="w-100 about-page-img"
@@ -40,28 +40,21 @@ const About = () => {
       </div>
       <hr className="w-75 mx-auto" />
 
-      <div className="about-staff-container pt-5">
-        <div className="about-staff-img-container w-100 m-auto text-center pt-5">
+     <div className="about-staff-img-container w-100 m-auto text-center pt-5 position-relative">
           <img
             src="/home_images/staff2.png"
-            className="about-staff-img m-auto "
+            className="about-staff-img m-auto"
             alt="staff"
           />
-        </div>
 
-        <span
-          id="about-staff-caption"
-          className="about-staff-caption-container">
-          <div className="about-staff-caption text-white text-bold fs-4 ">
-            Meet our staff
+          <div className="staff-img-banner px-4 py-2 d-flex justify-content-between align-items-center text-white">
+            <div className="fs-5 fw-bold">Meet our staff</div>
+            <Link to="/staff" className="btn btn-outline-light rounded-pill fw-bold">
+              Go!
+            </Link>
           </div>
-          <Link to="/staff">
-            <div className="about-staff-caption-btn btn border border-3 rounded-pill text-white float-start ms-5 fs-6">
-              <strong>Go!</strong>
-            </div>
-          </Link>
-        </span>
-      </div>
+    </div>
+
       
     </div>
   );
