@@ -71,10 +71,7 @@ const PlayLearnAreas = () => {
     }
   };
 
-  const handleBtnAnimation = () => {
-    setEnlarged(true);
-    setTimeout(() => setEnlarged(false), 300); // Return to normal size after 300ms
-  };
+
 
 
   return (
@@ -139,21 +136,21 @@ const PlayLearnAreas = () => {
       <span className="carousel-btn-container">
         <button
           type="button"
-          className={`carousel-btn ${enlarged ? 'englarged2' : ''} color-sky border-sky-2 me-5`}
+          className={`carousel-btn carouse-btn-animation boxShadow ${enlarged ? 'englarged2' : ''} color-sky border-sky-2 me-5`}
           onClick={() => {
             setCarouselSlide(handleCarouselSlideLeft());
-            handleBtnAnimation();
+           
           }}>
           <i className="fa-solid fa-arrow-left"></i>
         </button>
       
         <button
           type="button"
-          className={`carousel-btn ${enlarged ? 'englarged1' : ''} color-sky border-sky-2 `}
+          className={`carousel-btn carouse-btn-animation boxShadow ${enlarged ? 'englarged1' : ''} color-sky border-sky-2 `}
           onClick={() => {
             setCarouselSlide(handleCarouselSlideRight())
           
-            handleBtnAnimation();
+          
           }
             }
             >
