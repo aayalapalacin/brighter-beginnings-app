@@ -47,8 +47,8 @@ const About = () => {
             alt="staff"
           />
 
-          <div className="staff-img-banner px-4 py-2 d-flex justify-content-between align-items-center text-white">
-            <div className="fs-5 fw-bold">Meet our staff</div>
+          <div className="staff-img-banner px-4 py-2 d-flex justify-content-center align-items-center text-white">
+            <div className="fs-5 fw-bold me-4">Meet our staff</div>
             <Link to="/staff" className="btn btn-outline-light rounded-pill fw-bold">
               Go!
             </Link>
