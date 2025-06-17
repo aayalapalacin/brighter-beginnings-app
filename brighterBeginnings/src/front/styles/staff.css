@@ -28,3 +28,10 @@
         width: 86% !important;
     }
 }
+
+.staff-page-results-container{
+   background: #f0d8494f;
+    padding: 2rem;
+    border: 0.1px solid #0000002b;
+    border-radius: 102px;
+}

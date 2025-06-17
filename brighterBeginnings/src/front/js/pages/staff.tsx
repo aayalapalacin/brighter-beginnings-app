@@ -20,7 +20,7 @@ const Staff = () => {
             <div className="staff-page-dropdown-container ">
                 <div className="staff-page-dropdown dropdown m-5 ">
                     <a 
-                    className="btn border dropdown-toggle fs-4 fw-bold color-sky px-4 "  
+                    className="btn border border-dark dropdown-toggle fs-4 fw-bold color-sky px-4 "  
                     role="button"
                      data-bs-toggle="dropdown" 
                      aria-expanded="false"
