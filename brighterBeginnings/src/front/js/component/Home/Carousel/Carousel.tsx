@@ -11,37 +11,98 @@ const Carousel = () => {
     width: '100%',
   };
 
+  const [slideNumber, setSlideNumber] = useState<number>(0);
     
+  interface carouselData{
+    title:string;
+    subTitle:string;
+    linkPath:string;
+    linkText:string;
+  } 
 
+  const courselIndicatorData:carouselData[] = [
+    {
+    title:"Get to know our Staff!",
+    subTitle:"Get to know a little more about our highly qualified and caringstaff!",
+    linkPath:"/staff",
+    linkText:"Learn More!"
+    },
+    {
+    title:"Playground paradise",
+    subTitle:"5 large fenced in play areas designated for different age groups",
+    linkPath:"/staff",
+    linkText:"See More!"
+    },
+    {
+    title:"",
+    subTitle:"",
+    linkPath:"",
+    linkText:""
+    },
+  
+  ]
+  
   return (
     <div 
-      id="carouselExample" 
+      id="mainPageCarousel" 
       data-testid="carousel" 
-      className="carousel slide"  
-      data-bs-ride="carousel"
-      data-bs-interval="3000" 
+      className="carousel  slide w-75 m-auto"  
+      // data-bs-ride="carousel"
+      // data-bs-interval="3000" 
     >
-      <div className="carousel-indicators">
-        <button
+  
+     <div className="carousel-indicators  w-100 m-auto" style={{backgroundColor:slideNumber == 0 || slideNumber == 1 ? "#716b6b99": ""}}>
+      <button
           type="button"
           data-bs-target="#carouselExampleIndicators"
           data-bs-slide-to="0"
-          className="active"
+          className="active d-none"
           aria-current="true"
           aria-label="Slide 1"
         />
         <button
+        className="d-none"
           type="button"
           data-bs-target="#carouselExampleIndicators"
           data-bs-slide-to="1"
           aria-label="Slide 2"
         />
         <button
+        className="d-none"
+
           type="button"
           data-bs-target="#carouselExampleIndicators"
           data-bs-slide-to="2"
           aria-label="Slide 3"
         />
+            {
+            slideNumber == 0 || slideNumber == 1 ?
+              <div  className="carousel-indicator-text-content  ">
+               
+                  <h3 className=" carousel-indicator-text-title text-white text-bold ">
+                    {courselIndicatorData[slideNumber].title}
+                  </h3>
+                  <div className="carousel-indicator-subtitle-btn-container d-flex align-items-center">
+                      
+                      <p  className="carousel-indicator-text-subtitle text-white">
+                         {courselIndicatorData[slideNumber].subTitle}
+                      </p>
+                      <Link to={courselIndicatorData[slideNumber].linkPath}>
+                        <h6 
+                        data-testid="learn-more-staff" 
+                        className=" carousel-indicator-text-btn btn border border-2 rounded-pill text-white ms-3  "
+                        >
+                          {courselIndicatorData[slideNumber].linkText}
+                        </h6>
+                      </Link>
+
+                  </div>
+                
+          </div> 
+          : ""
+            
+          }
+        
       </div>
       <div className="carousel-inner">
         <div className="carousel-item  playground-container">
@@ -51,19 +112,7 @@ const Carousel = () => {
             style={{ transform: "scale(1)" }}
             alt="playground"
           />
-          <span id="playground-caption" className="carousel-caption">
-            <h1 className="text-white text-bold ">Playground paradise</h1>
-            <h6 className=" d-none d-md-block">
-              5 large fenced in play areas designated for different age groups
-            </h6>
-            <Link to={"/about"}>
-              <h6
-              data-testid="see-more" 
-              className="btn border border-2 rounded-pill text-white float-end me-5">
-                See More!
-              </h6>
-            </Link>
-          </span>
+        
         </div>
         <div style={backgroundImageStyle} className="carousel-item  bg-light-sky   curriculum-container">
           <div 
@@ -90,39 +139,29 @@ const Carousel = () => {
         <div className="carousel-item active  staff-container">
           <img
             id="staff_photo"
-            src="/home_images/staff2.png"
+            src="/home_images/staff.png"
             className="w-100 h-100"
             alt="staff"
           />
-          <span id="staff-caption" className="carousel-caption   ">
-            <h1 className="text-white text-bold d-none d-md-block  ">
-              Get to know us!
-            </h1>
-            <h1 className="text-white text-bold d-block d-md-none ">
-              Get to know our Staff!
-            </h1>
-
-            <h6 id="staff-description-1" className="d-none">
-              Get to know a little more about our highly qualified and caring
-              staff!
-            </h6>
-            <h4 id="staff-description-2" className=" d-none d-md-block  ">
-              Get to know a little more about our highly qualified and caring
-              staff!
-            </h4>
-            <Link to={"/staff"}>
-              <h6 data-testid="learn-more-staff" className="btn border border-2 rounded-pill text-white float-end me-5">
-                Learn More!
-              </h6>
-            </Link>
-          </span>
+          
         </div>
       </div>
       <button
         className="carousel-control-prev my-auto"
         type="button"
-        data-bs-target="#carouselExample"
-        data-bs-slide="prev">
+        data-bs-target="#mainPageCarousel"
+        data-bs-slide="prev"
+        onClick={
+          ()=>{
+            if(slideNumber == 0){
+              setSlideNumber(2)
+            }
+            else{
+              setSlideNumber(slideNumber - 1)
+            }
+            }
+          }
+        >
         <span
           className="fa-solid fa-arrow-left fs-1 text-white"
           aria-hidden="true"></span>
@@ -131,8 +170,20 @@ const Carousel = () => {
       <button
         className="carousel-control-next my-auto"
         type="button"
-        data-bs-target="#carouselExample"
-        data-bs-slide="next">
+        data-bs-target="#mainPageCarousel"
+        data-bs-slide="next"
+         onClick={
+          ()=>{
+            if(slideNumber == 2){
+              setSlideNumber(0)
+            }
+            else{
+              setSlideNumber(slideNumber + 1)
+            }
+            }
+          }
+        >
+         
         <span
           className="fa-solid fa-arrow-right fs-1 text-white"
           aria-hidden="true"></span>
