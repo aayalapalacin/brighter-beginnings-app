@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import SubmitForm from "../SubmitForm/SubmitForm";
+import { Context } from "../../../store/appContext";
+
 import { Link } from "react-router-dom";
 import "./programs-info.css";
 const ProgramsInfo = () => {
@@ -11,6 +13,13 @@ const ProgramsInfo = () => {
     setShown(true);
 
   };
+    const contextValue = useContext(Context);
+  if (!contextValue || !contextValue.store || !contextValue.store.availablePrograms || contextValue.store.availablePrograms.length === 0) {
+    return <div>Loading...</div>;
+  }
+
+  const { actions } = contextValue;
+
 
 
   return (
@@ -39,6 +48,7 @@ const ProgramsInfo = () => {
                     type="button"
                     data-testid="all-programs-programs-info"
                     className=" btn programs-info-button col-lg-4 my-auto me-md-2 me-0 btn bg-sky rounded-pill text-white"
+                    onClick={()=> actions.clearChildProgram()}
                   >
                     All Programs
                   </button>

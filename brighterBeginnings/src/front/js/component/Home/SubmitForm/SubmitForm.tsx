@@ -16,6 +16,7 @@ const SubmitForm = () => {
     monthsOld: "",
   });
   const [formValid, setFormValid] = useState<boolean>(true);
+
   const navigate = useNavigate();
   const { firstName, yearsOld, monthsOld } = formState;
   let sumAge = (parseFloat(yearsOld) || 0) * 12 + (parseFloat(monthsOld) || 0);
@@ -25,7 +26,7 @@ const SubmitForm = () => {
     return null;
   }
 
-  const { actions } = contextValue;
+  const { actions,store } = contextValue;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -54,8 +55,11 @@ const SubmitForm = () => {
       setFormValid(false);
     } else {
       setFormValid(true);
+ 
+          navigate("/programs")
+
       actions.handleChildProgramSubmit(e, firstName, yearsOld, monthsOld);
-      navigate("/programs");
+     
     }
   };
 
@@ -68,6 +72,7 @@ const SubmitForm = () => {
     return completionPercentage;
   };
 
+ 
   return (
     <div data-testid="submit-form" className=" submit-form-container color-tree text-start fs-4">
       <form
@@ -136,7 +141,12 @@ const SubmitForm = () => {
         </div>
         <div className="submit-form-btn-container w-100 text-end mt-5 d-flex justify-content-end">
           <Link to="/programs">
-            <button data-testid="all-programs-submit" type="button" className="programs-info-button col-lg-4 my-auto  btn bg-sky rounded-pill text-white">
+            <button 
+              data-testid="all-programs-submit"
+               type="button" 
+               className="programs-info-button col-lg-4 my-auto  btn bg-sky rounded-pill text-white"
+               onClick={()=> actions.clearChildProgram()}
+               >
               All Programs
             </button>
           </Link>

@@ -146,8 +146,15 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
           
         },
       ],
+ 
     },
     actions: {
+     clearChildProgram: () => {
+      const store = getStore();
+        setStore({ childProgram: { firstName: "", yearsOld: "", monthsOld: "" }});
+    
+}
+,
       handleChildProgramSubmit: async (
         e: React.FormEvent<HTMLFormElement>,
         firstName: string,
@@ -252,16 +259,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         setStore(updatedStore);
       },
 
-      deleteChildProgramInfo: () => {
-        const store = getStore;
-
-        const updatedStore = {
-          ...store,
-          childProgram: { firstName: "", yearsOld: "", monthsOld: "" },
-        };
-
-        setStore(updatedStore);
-      },
+      
     },
   };
 };

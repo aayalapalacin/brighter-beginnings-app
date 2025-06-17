@@ -10,6 +10,7 @@ let preschoolDescription: string = " Your preschooler will thrive in our compreh
 
 interface Store {
   users: any[];
+ 
   childProgram: {
     firstName: string;
     yearsOld: string;
@@ -41,6 +42,7 @@ const injectContext = (PassedComponent: PassedComponentType) => {
       store: {
         users: [],
         childProgram: { firstName: "", yearsOld: "", monthsOld: "" },
+      
         inputKidProgram: {
           accordion_title: "",
           childName: "",
@@ -50,6 +52,7 @@ const injectContext = (PassedComponent: PassedComponentType) => {
           end: 0,
           img: "",
           bg_color: "",
+         
           dropdownData: [
             {
               title: "",

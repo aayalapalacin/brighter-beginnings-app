@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "./carousel.css";
 import { Link } from "react-router-dom";
+
 const Carousel = () => {
   const [showVideo, setShowVideo]=useState<boolean>(false)
   const backgroundImageStyle = {

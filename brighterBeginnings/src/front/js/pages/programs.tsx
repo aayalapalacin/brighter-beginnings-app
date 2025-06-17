@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext,useEffect } from "react";
 import { Context } from "../store/appContext";
 import Accordian from "../component/Programs/Accordian";
 import "../../styles/programs.css";
@@ -22,6 +22,7 @@ const Programs = () => {
   const [accordianData, setAccordianData] = useState<AccordionDataType | null>(
     null
   );
+  const [hide,setHide]=useState<boolean>(false);
   const [isProgramClicked, setIsProgramClicked] = useState<boolean>(false);
   const [enlarged, setEnlarged] = useState<boolean>(false);
 
@@ -36,6 +37,7 @@ const Programs = () => {
 
 
   const handleClick = (kid: AccordionDataType) => {
+    setHide(true)
     setAccordianData(kid);
     setIsProgramClicked(true);
   };
@@ -48,22 +50,34 @@ const Programs = () => {
   let renderedAccordian: JSX.Element | null = null;
 
   if (isProgramClicked) {
+  
     renderedAccordian = (
       <Accordian accordianData={accordianData} imgFirst={true} />
     );
   } else if (store.childProgram.firstName === "") {
-    // DELETE IF YOU WOULDN'T LIKE THIS FUNCTIONALITY IN THE PAGE
+
     renderedAccordian = null;
   } else if (store.childProgram) {
     renderedAccordian = (
       <Accordian accordianData={store.inputKidProgram} imgFirst={true} />
     );
   }
+  useEffect(()=>{
+    if(store.childProgram.firstName.length > 1){
+
+      setHide(true)
+    }
+    else{
+      setHide(false)
+    }
+
+},[store.childProgram])
   return (
     <div data-testid="programs" className="program-types-container">
+ 
       <div
         className={`program-info-container row w-50 mx-auto justify-content-center pb-5`}>
-        {store.availablePrograms.map((kid, index) => {
+        {store.availablePrograms && !hide  ? store.availablePrograms.map((kid, index) => {
           const splitAccordionTitle =
             kid.accordion_title.split("Program Details");
             const altValueArray = kid.img ? kid.img.split("/") : "";
@@ -75,7 +89,7 @@ const Programs = () => {
               onClick={() => handleClick(kid)}
               style={{ display: isProgramClicked ? "none" : "inline-block" }}>
               <h3 className="program-info-card-title">
-                <strong>{splitAccordionTitle[0]}</strong>
+                <strong>{splitAccordionTitle[0]} yo</strong>
               </h3>
               <p className="program-info-card-age">{kid.age}</p>
               <img
@@ -85,7 +99,7 @@ const Programs = () => {
               />
             </div>
           );
-        })}
+        }):""}
       </div>
 
       <div
@@ -95,7 +109,7 @@ const Programs = () => {
         style={{ marginBottom: "6rem" }}>
         <div className="programs-info-program-clicked-content text-center">
           <div className="programs-info-program-clicked-accordion-container">
-            {renderedAccordian}
+            {renderedAccordian} 
           </div>
           {(isProgramClicked || store.childProgram.firstName.length >= 3) && (
             <div
@@ -107,7 +121,7 @@ const Programs = () => {
                 onClick={() => {
                   setIsProgramClicked(false);
                   handleBtnAnimation();
-                  actions.deleteChildProgramInfo(); // DELETING childProgram information from the store.
+                  actions.clearChildProgram();
                 }}>
                 All programs
               </button>
