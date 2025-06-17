@@ -78,7 +78,7 @@ const Carousel = () => {
         />
             {
             slideNumber == 0 || slideNumber == 1 ?
-              <div  className="carousel-indicator-text-content  ">
+              <div  className="carousel-indicator-text-content p-1 ">
                
                   <h3 className=" carousel-indicator-text-title text-white text-bold ">
                     {courselIndicatorData[slideNumber].title}
