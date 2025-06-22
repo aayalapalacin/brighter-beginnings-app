@@ -24,7 +24,7 @@ const Layout = () => {
           pages={["About", "Programs", "Staff", "Reviews", "Photos", "Careers", "Forms"]}
         />
         <div className="test d-none">
-          <Footer copywright={true} />
+          <Footer copywright={false} />
         </div>
         <Routes>
           <Route element={<Home />} path="/" />
@@ -38,7 +38,7 @@ const Layout = () => {
           <Route element={<Careers />} path="/careers" />
           <Route element={<Forms />} path="/forms" />
         </Routes>
-        <Footer />
+        <Footer copywright={true} />
       </BrowserRouter>
     </div>
   );
