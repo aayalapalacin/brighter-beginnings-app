@@ -50,30 +50,20 @@
 }
 
 .reviews-scroll-container {
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
+
     padding: 2rem 0;
     width: 100%;
-    max-width: 40%;
     margin: 0 auto;
  
   position: relative;
   padding: 2rem;
   border-radius: 1rem;
-  /* background-color: #111;  */
-  box-shadow:
-    0 0 4px rgba(255, 254, 0, 0.5),
-    0 0 7px rgba(255, 254, 0, 0.4),
-    0 0 63px rgba(255, 254, 0, 0.3)
+ 
 }
 
 
 
-.reviews-scroll {
-    display: flex;
-    align-items: center;
-}
+
 
 .review-item-container {
     flex: 0 0 15rem;
@@ -83,7 +73,7 @@
 }
 
 .review-item-image {
-    width: 12.5rem;
+    width: 7.5rem;
 }
 
 .review-item-button {

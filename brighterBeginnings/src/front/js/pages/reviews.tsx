@@ -47,7 +47,7 @@ const Reviews = () => {
         </div>
       </div>
       <div className="row reviews-scroll-container my-5">
-        <div className="col d-flex reviews-scroll">
+        <div className="col d-flex reviews-scroll align-items-center justify-content-center">
           {reviewData.length > 0 ? reviewData.map((reviewContent, reviewContentIndex) => {
             return (
               <div className="review-item-container mx-1" key={reviewContentIndex}>
