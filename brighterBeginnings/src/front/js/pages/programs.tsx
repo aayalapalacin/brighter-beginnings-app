@@ -62,16 +62,16 @@ const Programs = () => {
       <Accordian accordianData={store.inputKidProgram} imgFirst={true} />
     );
   }
-  useEffect(()=>{
-    if(store.childProgram.firstName.length > 1){
+//   useEffect(()=>{
+//     if(store.childProgram.firstName.length > 1){
 
-      setHide(true)
-    }
-    else{
-      setHide(false)
-    }
+//       setHide(true)
+//     }
+//     else{
+//       setHide(false)
+//     }
 
-},[store.childProgram])
+// },[store.childProgram])
   return (
     <div data-testid="programs" className="program-types-container">
  
