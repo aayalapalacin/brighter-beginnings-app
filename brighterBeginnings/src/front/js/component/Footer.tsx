@@ -7,7 +7,8 @@ const Footer = () => {
 
   return (
     <div className="footer-container mb-lg-0 mb-md-0 mb-3  w-100 pt-2">
-      <div className="footer-content d-flex text-center container">
+      <hr/>
+      <div className="footer-content d-flex justify-content-center  container">
         <div className="footer-phone-container d-md-flex d-lg-flex d-block border-3 border-end pe-md-3 pe-lg-3 pe-2">
           <span className="footer-phone fa fa-phone my-auto p-2 " />
           <a className="footer-phone-tag footer-descriptions " href="tel:(413)5325303">
@@ -24,16 +25,16 @@ const Footer = () => {
             411 Granby Rd, South Hadley, MA 01075
           </a>
         </div>
-        <div className="footer-email-container d-md-flex d-lg-flex d-block px-md-3 px-lg-3 px-2">
+        <div className="footer-email-container d-md-flex d-lg-flex d-block  px-md-3 px-lg-3 px-2">
           <span className="footer-email fa fa-envelope my-auto p-2 " />
           <a className="footer-email-tag footer-descriptions" href="mailto:Lilbbcc2@aol.com">
             Lilbbcc2@aol.com
           </a>
         </div>
       </div>
-      {/* <div className="footer-copyright-container col-12 text-center pt-4">
-        <p className="footer-copyright" >Brighter Beginnings LLC, Inc.</p>
-      </div> */}
+      <div className="footer-copyright-container col-12 text-center pt-4">
+        <p className="footer-copyright" >Brighter Beginnings LLC, Inc. ©</p>
+      </div>
     </div>
   );
 };

@@ -38,6 +38,7 @@ const Layout = () => {
           <Route element={<Careers />} path="/careers" />
           <Route element={<Forms />} path="/forms" />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
