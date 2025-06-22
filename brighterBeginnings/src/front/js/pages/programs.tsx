@@ -26,14 +26,27 @@ const Programs = () => {
   const [isProgramClicked, setIsProgramClicked] = useState<boolean>(false);
   const [enlarged, setEnlarged] = useState<boolean>(false);
 
-
+  
+  
   const contextValue = useContext(Context);
+  useEffect(()=>{
+     if(contextValue && contextValue.store.childProgram.firstName.length > 1){
+ 
+       setHide(true)
+     }
+     else{
+       setHide(false)
+     }
+ 
+ },[contextValue?.store?.childProgram.firstName])
+ 
+
   if (!contextValue || !contextValue.store || !contextValue.store.availablePrograms || contextValue.store.availablePrograms.length === 0) {
     return <div>Loading...</div>;
   }
-
   const { store, actions } = contextValue;
-
+  
+  
 
 
   const handleClick = (kid: AccordionDataType) => {
@@ -62,16 +75,7 @@ const Programs = () => {
       <Accordian accordianData={store.inputKidProgram} imgFirst={true} />
     );
   }
-//   useEffect(()=>{
-//     if(store.childProgram.firstName.length > 1){
-
-//       setHide(true)
-//     }
-//     else{
-//       setHide(false)
-//     }
-
-// },[store.childProgram])
+  
   return (
     <div data-testid="programs" className="program-types-container">
  
