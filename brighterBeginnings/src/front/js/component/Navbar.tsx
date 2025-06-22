@@ -72,7 +72,7 @@ const Navbar: React.FC<NavbarProps> = ({ pages }) => {
               ))}
             </ul>
             <div className="navbar-footer-container d-none d-sm-none d-md-none d-lg-block">
-              <Footer />
+              <Footer copywright={false}/>
             </div>
             {/* <div className="navbar-paragraph-container fs-5 ms-2 mt-2  text-start">
               <p>"Quality Child Care at Affordable Prices"</p>

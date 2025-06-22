@@ -24,7 +24,7 @@ const Layout = () => {
           pages={["About", "Programs", "Staff", "Reviews", "Photos", "Careers", "Forms"]}
         />
         <div className="test d-none">
-          <Footer />
+          <Footer copywright={true} />
         </div>
         <Routes>
           <Route element={<Home />} path="/" />
