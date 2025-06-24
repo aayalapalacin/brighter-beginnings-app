@@ -97,21 +97,53 @@ const Staff = () => {
                   </div>
                   <div className="staff-page-footer-credential-data-container">
                     <table
-                      className="table table-sm table-borderless mb-0"
-                      style={{ backgroundColor: "#89c9d0" }}
+                      className="table table-sm mb-0"
+                      style={{
+                        backgroundColor: "#89c9d0",
+                        borderCollapse: "collapse",
+                        width: "100%",
+                      }}
                     >
                       <thead>
                         <tr>
-                          <th>State Requirement</th>
-                          <th>Staff Credential</th>
+                          <th
+                            style={{
+                              border: "1px solid #ccc",
+                              padding: "0.5rem",
+                            }}
+                          >
+                            State Requirement
+                          </th>
+                          <th
+                            style={{
+                              border: "1px solid #ccc",
+                              padding: "0.5rem",
+                            }}
+                          >
+                            Staff Credential
+                          </th>
                         </tr>
                       </thead>
                       <tbody>
                         {staffDataContent.credentials.map(
-                          (credentialData, credentialDataIndex) => (
-                            <tr key={`credentialData${credentialDataIndex}`}>
-                              <td>{credentialData.state_req}</td>
-                              <td>{credentialData.staff_cred}</td>
+                          (credentialData, index) => (
+                            <tr key={`credentialData${index}`}>
+                              <td
+                                style={{
+                                  border: "1px solid #ccc",
+                                  padding: "0.5rem",
+                                }}
+                              >
+                                {credentialData.state_req}
+                              </td>
+                              <td
+                                style={{
+                                  border: "1px solid #ccc",
+                                  padding: "0.5rem",
+                                }}
+                              >
+                                {credentialData.staff_cred}
+                              </td>
                             </tr>
                           )
                         )}
