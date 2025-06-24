@@ -35,3 +35,18 @@
     border: 0.1px solid #0000002b;
     border-radius: 102px;
 }
+
+.staff-page-container table {
+  background: none;
+  border: none;
+}
+
+.staff-page-container table th,
+.staff-page-container table td {
+  border: none;
+  padding: 0.4rem 0.75rem;
+}
+
+.staff-page-container table thead tr {
+  border-bottom: 1px solid #ccc;
+}
