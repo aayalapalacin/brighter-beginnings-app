@@ -150,7 +150,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
     },
     actions: {
      clearChildProgram: () => {
-      const store = getStore();
+      
         setStore({ childProgram: { firstName: "", yearsOld: "", monthsOld: "" }});
     
 }

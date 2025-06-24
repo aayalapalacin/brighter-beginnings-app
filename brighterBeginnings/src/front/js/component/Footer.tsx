@@ -4,7 +4,6 @@ interface FooterProps{
   copywright: boolean;
 }
 const Footer = ({copywright}: FooterProps) => {
-  console.log("copy",copywright)
   const navigationLink: string =
     "https://www.google.com/maps/place/Brighter+Beginnings+Child+Care/@42.2325078,-72.5689313,16z/data=!3m1!4b1!4m6!3m5!1s0x89e6db75dd2dd64d:0xecbc9c8277fd7644!8m2!3d42.2325078!4d-72.5663564!16s%2Fg%2F1tgw619r?entry=ttu";
 
