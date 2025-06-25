@@ -14,10 +14,10 @@ const Staff = () => {
     const[dropdownTitle, setDropdownTitle]= useState<string>("All Staff");
 
     const filteredStaffData :staffDataInterface[] = dropdownTitle === "All Staff" ? staffData : staffData.filter(staff => staff.category === dropdownTitle);
-  useEffect(() => {
+//   useEffect(() => {
 
-    window.scrollTo(0, 0); // Always scroll to top on filter change, regardless of image load
-  }, [dropdownTitle]);
+//     window.scrollTo(0, 0); // Always scroll to top on filter change, regardless of image load
+//   }, [dropdownTitle]);
     
   return <div  data-testid="staff" className="staff-page-container w-50 m-auto">
             <div className="staff-page-dropdown-container ">

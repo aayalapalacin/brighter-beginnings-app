@@ -1,13 +1,8 @@
 .about-page-img {
-  position: absolute;
-  top: -17rem;
+  height: 37rem;
 }
 
-.about-page-img-container {
-  height: 56vh;
-  overflow: hidden;
-  position: relative;
-}
+
 
 .about-staff-container {
   position: relative;
