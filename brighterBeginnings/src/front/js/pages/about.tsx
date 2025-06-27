@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import Accordion from "../component/Programs/Accordian";
 import PlayLearnAreas from "../component/About/PlayLearnAreas";
 
+import { HashLink  } from 'react-router-hash-link';
 
 import "../../styles/about.css";
 import "../../styles/accordian.css";
@@ -18,11 +19,12 @@ const About = () => {
   const { store } = contextValue;
   return (
     <div data-testid="about" className="about-container w-100 mx-auto mb-5">
-      <div className="about-page-img-container w-100 ">
+      <div className="about-page-img-container mt-5 d-flex justify-content-center">
         <img
-          src="/about_images/children-reading-books.webp"
-          className="w-100 about-page-img"
+          src="/about_images/children-reading-books.jpg"
+          className=" about-page-img"
           alt="children_reading"
+          
         />
       </div>
       <div className=" about-play-container mt-5  w-100">
@@ -49,14 +51,20 @@ const About = () => {
 
           <div className="staff-img-banner px-4 py-2 d-flex justify-content-center align-items-center text-white">
             <div className="fs-5 fw-bold me-4">Meet our staff</div>
-            <Link to="/staff" className="btn btn-outline-light rounded-pill fw-bold">
+           <HashLink
+              onClick={() => {
+          
+              }}
+              to="/staff#staff-top" 
+              className="btn  btn-outline-light rounded-pill fw-bold" 
+            >
               Go!
-            </Link>
+            </HashLink>
           </div>
     </div>
 
       
-    </div>
+     </div>
   );
 };
 

@@ -1,11 +1,23 @@
+/* Ensure html and body take up full viewport height by default */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+}
+
 .layout {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+  justify-content: space-between; 
 }
-@media screen and (min-width: 315px) and (max-width: 1000px) {
-.test{
-    display: block !important;
+
+
+.main-content-wrapper {
+  flex-grow: 1; 
 }
+
+.test {
+  display: none !important; 
 }
