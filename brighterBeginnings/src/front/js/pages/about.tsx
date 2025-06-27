@@ -1,16 +1,16 @@
 import React, { useContext } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import Accordion from "../component/Programs/Accordian";
 import PlayLearnAreas from "../component/About/PlayLearnAreas";
 
+import { HashLink  } from 'react-router-hash-link';
 
 import "../../styles/about.css";
 import "../../styles/accordian.css";
 
 const About = () => {
   const contextValue = useContext(Context);
-  const navigate = useNavigate();
 
   if (!contextValue || !contextValue.store || !contextValue.store.availablePrograms || contextValue.store.availablePrograms.length === 0) {
     return <div>Loading...</div>;
@@ -51,14 +51,15 @@ const About = () => {
 
           <div className="staff-img-banner px-4 py-2 d-flex justify-content-center align-items-center text-white">
             <div className="fs-5 fw-bold me-4">Meet our staff</div>
-            <button 
-            onClick={()=>{
-                navigate("/staff")
-              }} 
-              className="btn text-dark btn-outline-light rounded-pill fw-bold"
-              >
+           <HashLink
+              onClick={() => {
+          
+              }}
+              to="/staff#staff-top" 
+              className="btn  btn-outline-light rounded-pill fw-bold" 
+            >
               Go!
-            </button>
+            </HashLink>
           </div>
     </div>
 

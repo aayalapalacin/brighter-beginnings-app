@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { staffData } from "../utils/staff_data";
 import "../../styles/staff.css";
 const Staff = () => {
@@ -17,8 +17,14 @@ const Staff = () => {
       ? staffData
       : staffData.filter((staff) => staff.category === dropdownTitle);
 
+       useEffect(() => {
+    // This will scroll the window to the very top (0, 0)
+    // whenever the Staff component mounts (i.e., when you navigate to it).
+    window.scrollTo(0, 0);
+  }, []); // Empty dependency array means this effect runs only once after the initial render
+
   return (
-    <div data-testid="staff" className="staff-page-container w-50 m-auto">
+    <div data-testid="staff" id="staff-top" className="staff-page-container w-50 m-auto">
       <div className="staff-page-dropdown-container ">
         <div className="staff-page-dropdown dropdown m-5 d-flex justify-content-center">
           <a

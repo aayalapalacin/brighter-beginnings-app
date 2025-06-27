@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../../styles/space.css";
+import "../../../styles/play-learn-areas.css";
 
 const playLearnCarouselData = [
   {
