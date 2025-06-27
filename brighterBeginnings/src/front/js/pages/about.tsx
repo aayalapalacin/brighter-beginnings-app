@@ -15,7 +15,7 @@ const About = () => {
   if (!contextValue || !contextValue.store || !contextValue.store.availablePrograms || contextValue.store.availablePrograms.length === 0) {
     return <div>Loading...</div>;
   }
-const path = "/";
+
   const { store } = contextValue;
   return (
     <div data-testid="about" className="about-container w-100 mx-auto mb-5">
@@ -32,7 +32,7 @@ const path = "/";
           <h1 className="carousel-title text-shadow text-start">Play and Learn Areas</h1>
         </div>
         <div className="play-carousel-container d-flex justify-content-center">
-          {/* <PlayLearnAreas /> */}
+          <PlayLearnAreas />
         </div>
         <hr className="m-auto w-75"/>
 
@@ -55,7 +55,7 @@ const path = "/";
             onClick={()=>{
                 navigate("/staff")
               }} 
-              className="btn btn-outline-light rounded-pill fw-bold"
+              className="btn text-dark btn-outline-light rounded-pill fw-bold"
               >
               Go!
             </button>
@@ -63,7 +63,7 @@ const path = "/";
     </div>
 
       
-    </div>
+     </div>
   );
 };
 
