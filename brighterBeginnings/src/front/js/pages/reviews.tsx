@@ -109,19 +109,7 @@ const Reviews = () => {
                   <span className="visually-hidden">Next</span>
                 </button>
               </div>
-          {/* {reviewData.length > 0 ? reviewData.map((reviewContent, reviewContentIndex) => {
-            return (
-              <div className="review-item-container mx-1" key={reviewContentIndex}>
-                <img src={reviewContent.imgSrc} alt={reviewContent.alt} className="review-item-image mb-3" />
-                <button className="review-item-button d-block d-md-none d-lg-none" onClick={() => window.open(reviewContent.mobileLink, "_blank")}>Visit Reviews</button>
-                <button className="review-item-button d-none d-md-block d-lg-block" onClick={() => window.open(reviewContent.link, "_blank")}>Visit Reviews</button>
-              </div>
-            );
-          }) :
-            <div className='no-reviews m-auto'>
-              <h1 className='reviews-title'>Reviews did not load properly</h1>
-            </div>
-          } */}
+         
         </div>
       </div>
     </div>
