@@ -68,6 +68,7 @@ const Reviews = () => {
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                   <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
                 </div>
                 <div className="carousel-inner">
                   <div className="carousel-item active">
@@ -89,6 +90,13 @@ const Reviews = () => {
                         <img src={reviewData[2].imgSrc} alt={reviewData[2].alt} className="review-item-image mb-3" />
                         <button className="review-item-button d-block d-md-none d-lg-none" onClick={() => window.open(reviewData[2].mobileLink, "_blank")}>Visit Reviews</button>
                         <button className="review-item-button d-none d-md-block d-lg-block" onClick={() => window.open(reviewData[2].link, "_blank")}>Visit Reviews</button>
+                      </div>
+                  </div>
+                  <div className="carousel-item">
+                   <div className="review-item-container  mx-1" >
+                        <img src={reviewData[3].imgSrc} alt={reviewData[3].alt} className="review-item-image mb-3" />
+                        <button className="review-item-button d-block d-md-none d-lg-none" onClick={() => window.open(reviewData[3].mobileLink, "_blank")}>Visit Reviews</button>
+                        <button className="review-item-button d-none d-md-block d-lg-block" onClick={() => window.open(reviewData[3].link, "_blank")}>Visit Reviews</button>
                       </div>
                   </div>
                 </div>
