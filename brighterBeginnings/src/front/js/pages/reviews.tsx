@@ -46,8 +46,8 @@ const Reviews = () => {
           <p className='reviews-p-4'> -Brighter Beginnings </p>
         </div>
       </div>
-      <div className="row reviews-scroll-container my-5">
-        <div className="col d-flex reviews-scroll align-items-center justify-content-center">
+      <div className="row reviews-container my-5">
+        <div className="col d-flex review align-items-center justify-content-center">
           {reviewData.length > 0 ? reviewData.map((reviewContent, reviewContentIndex) => {
             return (
               <div className="review-item-container mx-1" key={reviewContentIndex}>
@@ -61,6 +61,59 @@ const Reviews = () => {
               <h1 className='reviews-title'>Reviews did not load properly</h1>
             </div>
           }
+        </div>
+        <div className="col d-none review-mobile align-items-center justify-content-center">
+            <div id="carouselExampleIndicators" className="carousel slide bg-gradient-sky ">
+                <div className="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div className="carousel-inner">
+                  <div className="carousel-item active">
+                     <div className="review-item-container  mx-1" >
+                        <img src={reviewData[0].imgSrc} alt={reviewData[0].alt} className="review-item-image mb-3" />
+                        <button className="review-item-button d-block d-md-none d-lg-none" onClick={() => window.open(reviewData[0].mobileLink, "_blank")}>Visit Reviews</button>
+                        <button className="review-item-button d-none d-md-block d-lg-block" onClick={() => window.open(reviewData[0].link, "_blank")}>Visit Reviews</button>
+                      </div>
+                  </div>
+                  <div className="carousel-item">
+                   <div className="review-item-container  mx-1" >
+                        <img src={reviewData[1].imgSrc} alt={reviewData[1].alt} className="review-item-image mb-3" />
+                        <button className="review-item-button d-block d-md-none d-lg-none" onClick={() => window.open(reviewData[1].mobileLink, "_blank")}>Visit Reviews</button>
+                        <button className="review-item-button d-none d-md-block d-lg-block" onClick={() => window.open(reviewData[1].link, "_blank")}>Visit Reviews</button>
+                      </div>
+                  </div>
+                  <div className="carousel-item">
+                   <div className="review-item-container  mx-1" >
+                        <img src={reviewData[2].imgSrc} alt={reviewData[2].alt} className="review-item-image mb-3" />
+                        <button className="review-item-button d-block d-md-none d-lg-none" onClick={() => window.open(reviewData[2].mobileLink, "_blank")}>Visit Reviews</button>
+                        <button className="review-item-button d-none d-md-block d-lg-block" onClick={() => window.open(reviewData[2].link, "_blank")}>Visit Reviews</button>
+                      </div>
+                  </div>
+                </div>
+                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span className="visually-hidden">Previous</span>
+                </button>
+                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span className="visually-hidden">Next</span>
+                </button>
+              </div>
+          {/* {reviewData.length > 0 ? reviewData.map((reviewContent, reviewContentIndex) => {
+            return (
+              <div className="review-item-container mx-1" key={reviewContentIndex}>
+                <img src={reviewContent.imgSrc} alt={reviewContent.alt} className="review-item-image mb-3" />
+                <button className="review-item-button d-block d-md-none d-lg-none" onClick={() => window.open(reviewContent.mobileLink, "_blank")}>Visit Reviews</button>
+                <button className="review-item-button d-none d-md-block d-lg-block" onClick={() => window.open(reviewContent.link, "_blank")}>Visit Reviews</button>
+              </div>
+            );
+          }) :
+            <div className='no-reviews m-auto'>
+              <h1 className='reviews-title'>Reviews did not load properly</h1>
+            </div>
+          } */}
         </div>
       </div>
     </div>
