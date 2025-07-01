@@ -60,7 +60,7 @@ body {
 
 .bg-gradient-sky {
   background-color: #89c9d0 !important;
-  background-image: linear-gradient(to bottom, #c6f9f6, #89c9d0) !important;
+  background-image: linear-gradient(to bottom, #ffffff, #89c9d0) !important;
 }
 
 .bg-sky {

@@ -49,9 +49,8 @@
     font-size: 1.2rem;
 }
 
-.reviews-scroll-container {
+.reviews-container {
 
-    padding: 2rem 0;
     width: 100%;
     margin: 0 auto;
  
@@ -88,6 +87,15 @@
     margin-top: 0.625rem;
 }
 
+.carousel-control-next, .carousel-control-prev {
+    top: 12rem !important;
+    bottom: 0rem !important;
+}
+@media only screen and (min-width: 761px) and (max-width: 945px) {
+    .review-item-container {
+        flex: 0 0 10rem;
+    }
+}
 @media only screen and (max-width: 760px) {
     .reviews-page-img{
         height: 89%;
@@ -151,27 +159,7 @@
     }
 }
 
-@media only screen and (min-width: 315px)  and (max-width: 365px) {
 
-    .reviews-scroll-container {
-        max-width: 80%;
-    }
-}
-
-
-@media only screen and (min-width: 366px)  and (max-width: 380px) {
-
-    .reviews-scroll-container {
-        max-width: 70%;
-    }
-}
-
-@media only screen and (min-width: 381px)  and (max-width: 430px) {
-
-    .reviews-scroll-container {
-        max-width: 60%;
-    }
-}
 @media only screen and (min-width: 766px)  and (max-width: 800px) {
 
     .img-text-overlay {
@@ -181,31 +169,38 @@
     .reviews-paragraphs {
         max-width: 70%;
     }
-    .reviews-scroll-container {
-        max-width: 56%;
-    }
+  
 }
 @media only screen and (min-width: 1020px)  and (max-width: 1030px) {
     .reviews-paragraphs {
         max-width: 65%;
     }
-
-    .reviews-scroll-container {
-        max-width: 63%;
-    }
+    
+    
 }
 
-
-@media only screen and (min-width: 1435px)  and (max-width: 1445px) {
-  
-    .reviews-scroll-container {
-        max-width: 43%;
+@media only screen  and (max-width: 620px) {
+    .review{
+        display:none !important; 
     }
+    .review-mobile{
+        display:block !important; 
+    }
+    .review-item-container{
+        margin-top:5rem;
+    }
+    .carousel{
+        border-radius: 6rem;
+    }
+    
 }
 
-@media only screen and (min-width: 2550px)  and (max-width: 2565px) {
-  
-    .reviews-scroll-container {
-        max-width: 25%;
+@media only screen  and (max-width: 450px) {
+        .reviews-container{
+            padding:0.5rem !important;
+            }
+                .review-item-container {
+                margin-top: 7rem;
+                }
+
     }
-}
