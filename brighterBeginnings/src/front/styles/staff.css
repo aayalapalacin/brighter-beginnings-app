@@ -1,11 +1,6 @@
 @media screen and (min-width: 320px) and (max-width: 765px) {
-    .staff-page-profile-header-container {
-       display: block !important;
-    }
-    .staff-page-container{
-        margin:1rem!important;
-        width:100% !important;
-    }
+  
+   
     .staff-page-name-role-fun-container{
         font-size:1rem !important;
     }
@@ -15,18 +10,9 @@
     .staff-page-footer-credential-title{
         font-size:1rem !important;
     }
-    .staff-page-footer-credential-title-container{
-        width: 81% !important;
-    }
-}
-
-
-
-@media screen and (min-width: 767px) and (max-width: 800px) {
-    .staff-page-container {
-        margin: 2rem !important;
-        width: 86% !important;
-    }
+  
+    
+    
 }
 
 .staff-page-results-container{
@@ -50,3 +36,20 @@
 .staff-page-container table thead tr {
   border-bottom: 1px solid #ccc;
 }
+
+
+
+@media screen and (min-width: 601px) and (max-width: 1001px) {
+    .staff-page-container {
+        width: 75% !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .staff-page-container {
+        width: 75% !important;
+    }
+}
+
+
+
