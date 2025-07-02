@@ -52,7 +52,7 @@ const Carousel = () => {
       // data-bs-interval="3000" 
     >
   
-     <div className="carousel-indicators  w-100 m-auto" style={{backgroundColor:slideNumber == 0 || slideNumber == 1 ? "#716b6b99": ""}}>
+     <div className="carousel-indicators  w-100 m-auto" style={{backgroundColor:slideNumber === 0 || slideNumber === 1 ? "#716b6b99": ""}}>
       <button
           type="button"
           data-bs-target="#carouselExampleIndicators"
@@ -77,7 +77,7 @@ const Carousel = () => {
           aria-label="Slide 3"
         />
             {
-            slideNumber == 0 || slideNumber == 1 ?
+            slideNumber === 0 || slideNumber === 1 ?
               <div  className="carousel-indicator-text-content p-1 ">
                
                   <h3 className=" carousel-indicator-text-title text-white text-bold ">
@@ -154,7 +154,7 @@ const Carousel = () => {
         data-bs-slide="prev"
         onClick={
           ()=>{
-            if(slideNumber == 0){
+            if(slideNumber === 0){
               setSlideNumber(2)
             }
             else{
@@ -175,7 +175,7 @@ const Carousel = () => {
         data-bs-slide="next"
          onClick={
           ()=>{
-            if(slideNumber == 2){
+            if(slideNumber === 2){
               setSlideNumber(0)
             }
             else{

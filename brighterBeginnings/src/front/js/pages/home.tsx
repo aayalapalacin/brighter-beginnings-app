@@ -13,7 +13,6 @@ const Home = () => {
     return <div>Loading...</div>;
   }
 
-  const { store, actions } = contextValue;
   return (
     <div className="">
       <Carousel />

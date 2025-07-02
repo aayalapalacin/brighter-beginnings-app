@@ -51,7 +51,6 @@ const playLearnCarouselData = [
 
 const PlayLearnAreas = () => {
   const [carouselSlide, setCarouselSlide] = useState<number>(0);
-  const [enlarged, setEnlarged] = useState<boolean>(false);
 
   const handleCarouselSlideRight = () => {
     // function to make sure carousel slide index stays within [0] and [3]
@@ -136,7 +135,7 @@ const PlayLearnAreas = () => {
       <span className="carousel-btn-container">
         <button
           type="button"
-          className={`carousel-btn carouse-btn-animation boxShadow ${enlarged ? 'englarged2' : ''} color-sky border-sky-2 me-5`}
+          className={`carousel-btn carouse-btn-animation boxShadow  color-sky border-sky-2 me-5`}
           onClick={() => {
             setCarouselSlide(handleCarouselSlideLeft());
            
@@ -146,7 +145,7 @@ const PlayLearnAreas = () => {
       
         <button
           type="button"
-          className={`carousel-btn carouse-btn-animation boxShadow ${enlarged ? 'englarged1' : ''} color-sky border-sky-2 `}
+          className={`carousel-btn carouse-btn-animation boxShadow  color-sky border-sky-2 `}
           onClick={() => {
             setCarouselSlide(handleCarouselSlideRight())
           

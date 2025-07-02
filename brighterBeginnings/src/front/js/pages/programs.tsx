@@ -38,7 +38,7 @@ const Programs = () => {
        setHide(false)
      }
  
- },[contextValue?.store?.childProgram.firstName])
+ },[contextValue?.store?.childProgram.firstName, contextValue])
  
 
   if (!contextValue || !contextValue.store || !contextValue.store.availablePrograms || contextValue.store.availablePrograms.length === 0) {

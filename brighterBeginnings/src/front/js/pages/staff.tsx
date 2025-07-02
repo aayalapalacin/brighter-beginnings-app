@@ -27,7 +27,7 @@ const Staff = () => {
     <div data-testid="staff" id="staff-top" className="staff-page-container w-50 m-auto">
       <div className="staff-page-dropdown-container ">
         <div className="staff-page-dropdown dropdown m-5 d-flex justify-content-center">
-          <a
+          <span
             className="btn border border-dark dropdown-toggle fs-4 fw-bold color-sky px-4"
             role="button"
             data-bs-toggle="dropdown"
@@ -35,7 +35,7 @@ const Staff = () => {
             style={{ boxShadow: "0px 2px 3px 0px #000000a3" }}
           >
             {dropdownTitle}
-          </a>
+          </span>
 
           <ul className="dropdown-menu">
             {[
@@ -47,7 +47,7 @@ const Staff = () => {
               "Floater",
             ].map((category) => (
               <li key={category} onClick={() => setDropdownTitle(category)}>
-                <a className="dropdown-item">{category}</a>
+                <span className="dropdown-item">{category}</span>
               </li>
             ))}
           </ul>

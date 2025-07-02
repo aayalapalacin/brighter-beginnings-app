@@ -26,7 +26,7 @@ const SubmitForm = () => {
     return null;
   }
 
-  const { actions,store } = contextValue;
+  const { actions } = contextValue;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
