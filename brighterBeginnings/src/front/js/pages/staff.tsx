@@ -101,14 +101,18 @@ const Staff = () => {
                   <div className="staff-page-footer-credential-title fw-bold fs-5 mb-3">
                     Credentials:
                   </div>
+
+
                   <div className="staff-page-footer-credential-data-container">
+                    
                     <table
-                      className="table table-sm mb-0"
+                      className=" staff-table table table-sm mb-0"
                       style={{
                         backgroundColor: "#89c9d0",
                         borderCollapse: "collapse",
                         width: "100%",
                       }}
+                      
                     >
                       <thead>
                         <tr>
@@ -133,7 +137,12 @@ const Staff = () => {
                       <tbody>
                         {staffDataContent.credentials.map(
                           (credentialData, index) => (
-                            <tr key={`credentialData${index}`}>
+                            <tr 
+                            key={`credentialData${index}`}
+                            style={{
+                                  background: "#F9F9F9"
+                                }}
+                            >
                               <td
                                 style={{
                                   border: "1px solid #ccc",
@@ -155,7 +164,8 @@ const Staff = () => {
                         )}
                       </tbody>
                     </table>
-                  </div>
+                  
+                </div>
                 </div>
               </div>
             </div>

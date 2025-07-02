@@ -1,33 +1,5 @@
-@media screen and (min-width: 320px) and (max-width: 765px) {
-    .staff-page-profile-header-container {
-       display: block !important;
-    }
-    .staff-page-container{
-        margin:1rem!important;
-        width:100% !important;
-    }
-    .staff-page-name-role-fun-container{
-        font-size:1rem !important;
-    }
-    .staff-page-profile-footer-container{
-        margin-left: 0rem !important;
-    }
-    .staff-page-footer-credential-title{
-        font-size:1rem !important;
-    }
-    .staff-page-footer-credential-title-container{
-        width: 81% !important;
-    }
-}
 
 
-
-@media screen and (min-width: 767px) and (max-width: 800px) {
-    .staff-page-container {
-        margin: 2rem !important;
-        width: 86% !important;
-    }
-}
 
 .staff-page-results-container{
    background: #f0d8494f;
@@ -36,17 +8,151 @@
     border-radius: 102px;
 }
 
-.staff-page-container table {
-  background: none;
-  border: none;
+.staff-table {
+  background-color: #89c9d0; 
+  border-collapse: collapse;
+  width: 100%;
 }
 
-.staff-page-container table th,
-.staff-page-container table td {
-  border: none;
-  padding: 0.4rem 0.75rem;
+.staff-table th,
+.staff-table td {
+  border: 1px solid #ccc; 
+  padding: 0.5rem; 
+  text-align: left; 
 }
 
-.staff-page-container table thead tr {
-  border-bottom: 1px solid #ccc;
+.staff-table thead tr {
+  border-bottom: 1px solid #ccc; 
 }
+
+*/
+.staff-table tbody tr {
+  background: #F9F9F9;
+}
+
+@media screen and (min-width: 601px) and (max-width: 1001px) {
+    .staff-page-container {
+        width: 75% !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .staff-page-container {
+        width: 75% !important;
+    }
+}
+
+
+
+@media screen and (min-width: 454px) and (max-width: 765px) {
+  .staff-table{
+      font-size: 1rem !important;
+
+  }
+     
+    .staff-page-name-role-fun-container{
+        font-size: 1rem !important;
+        margin: 0px 0px 0px 1rem !important;
+    }
+ .staff-page-img-container{
+    width: 30% !important;
+ }
+  
+    .staff-page-profile-footer-container{
+        margin-left: 0rem !important;
+    }
+    .staff-page-footer-credential-title{
+        font-size:1rem !important;
+    }
+  
+}
+@media screen and (min-width: 423px) and (max-width: 453px) {
+  
+     .staff-table{
+      font-size: 0.9rem !important;
+
+  }
+    .staff-page-name-role-fun-container{
+        font-size: 0.9rem !important;
+        margin: 0px 0px 0px 1rem !important;
+    }
+ .staff-page-img-container{
+    width: 30% !important;
+ }
+  
+    .staff-page-profile-footer-container{
+        margin-left: 0rem !important;
+    }
+    .staff-page-footer-credential-title{
+        font-size:1rem !important;
+    }
+  
+}
+@media screen and (min-width: 363px) and (max-width: 422px) {
+  .staff-table{
+      font-size: 0.7rem !important;
+
+  }
+     
+    .staff-page-name-role-fun-container{
+        font-size: 0.7rem !important;
+        margin: 0px 0px 0px 1rem !important;
+    }
+ .staff-page-img-container{
+    width: 30% !important;
+ }
+  
+    .staff-page-profile-footer-container{
+        margin-left: 0rem !important;
+    }
+    .staff-page-footer-credential-title{
+        font-size:1rem !important;
+    }
+  
+}
+
+@media screen and (min-width: 332px) and (max-width: 362px) {
+  .staff-table{
+      font-size: 0.6rem !important;
+
+  }
+     
+    .staff-page-name-role-fun-container{
+        font-size: 0.6rem !important;
+        margin: 0px 0px 0px 1rem !important;
+    }
+ .staff-page-img-container{
+    width: 30% !important;
+ }
+  
+    .staff-page-profile-footer-container{
+        margin-left: 0rem !important;
+    }
+    .staff-page-footer-credential-title{
+        font-size:1rem !important;
+    }
+  
+}
+@media screen and (max-width: 331px) {
+  .staff-table{
+      font-size: 0.5rem !important;
+
+  }
+     
+    .staff-page-name-role-fun-container{
+        font-size: 0.5rem !important;
+        margin: 0px 0px 0px 1rem !important;
+    }
+ .staff-page-img-container{
+    width: 30% !important;
+ }
+  
+    .staff-page-profile-footer-container{
+        margin-left: 0rem !important;
+    }
+    .staff-page-footer-credential-title{
+        font-size:1rem !important;
+    }
+  
+}
+
