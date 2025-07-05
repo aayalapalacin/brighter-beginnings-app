@@ -88,7 +88,7 @@
 }
 
 .carousel-control-next, .carousel-control-prev {
-    top: 12rem !important;
+    top: 0rem !important;
     bottom: 0rem !important;
 }
 @media only screen and (min-width: 761px) and (max-width: 945px) {
