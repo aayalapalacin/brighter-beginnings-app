@@ -8,7 +8,7 @@ public_folder: /uploads
 collections:
   - name: "programs" # The "slug" for your collection. Used internally.
     label: "Programs" # The name displayed in the CMS UI.
-    folder: "content/programs" # Where the content files will be stored in your Git repo. (We'll create this folder later)
+    folder: "brighterBeginnings/content/programs" # Where the content files will be stored in your Git repo. (We'll create this folder later)
     create: true # Allow users to create new program entries
     slug: "{{slug}}" # Automatically generate slugs based on the title
     fields: # The fields for each program item (we'll expand this significantly in the next step)
