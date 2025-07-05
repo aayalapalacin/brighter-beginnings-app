@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef  } from "react";
 import getState from "./flux";
 import { AccordionDataType } from "../pages/programs";
-import availableProgram from "../../../data/programs.js"
+import availablePrograms from "../../../data/programs.js"
 
 let infantDescription :string = "Your infant's experience at Brighter Beginnings Child Care L.L.C. is tailored to their unique needs and development. We provide personalized nap schedules and cozy cribs equipped with your provided sleep sack and bedding (no blankets). Infants typically enjoy two naps a day and have designated times for snacks and breakfast at an infant table with secure seating. You're encouraged to bring your infants's snacks and lunch- keep in mind we don't use microwaves, we do provide fridge space. Whole milk is provided. Your infant will love daily outdoor strolls, engaging books, and stimulating toys. Our caregivers also read to them, fostering early language development in our nurturing environment."
 
@@ -63,7 +63,7 @@ const injectContext = (PassedComponent: PassedComponentType) => {
           ],
         },
 
-        availablePrograms: availableProgram,
+        availablePrograms: availablePrograms,
         philosophyData: [
           {
             accordion_title: "Philosophy",
