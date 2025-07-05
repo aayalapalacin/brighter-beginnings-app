@@ -1,104 +1,154 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import "../../styles/reviews.css";
 
-const reviewData = [
-  {
-    imgSrc: "/reviews_images/facebook.png",
-    link: "https://www.facebook.com/Brighter.Beginnings.Child.Care/reviews",
-    mobileLink: "https://www.facebook.com/Brighter.Beginnings.Child.Care/reviews", // Add mobile link
-    alt: "facebook_img"
-  },
-  {
-    imgSrc: "/reviews_images/google.webp",
-    link: "https://www.google.com/search?q=brighter+beginnings+day+care+south+hadley&sca_esv=7535fa7457e2bb3a&sxsrf=ADLYWILxm_baF3wdYEAH0rshjwBYgTv-wA%3A1720301189061&ei=hbaJZq6rA9D-p84Pj5CKkAg&oq=brighter+beginnings&gs_lp=Egxnd3Mtd2l6LXNlcnAiE2JyaWdodGVyIGJlZ2lubmluZ3MqAggAMgcQIxiwAxgnMgcQIxiwAxgnMgcQIxiwAxgnMgoQABiwAxjWBBhHMgoQABiwAxjWBBhHMgoQABiwAxjWBBhHMgoQABiwAxjWBBhHMgoQABiwAxjWBBhHMgoQABiwAxjWBBhHMhkQLhiABBiwAxhDGMcBGMgDGIoFGK8B2AEBMhkQLhiABBiwAxhDGMcBGMgDGIoFGK8B2AEBSIYQUABYAHADeAGQAQCYAQCgAQCqAQC4AQHIAQCYAgOgAheYAwCIBgGQBgu6BgQIARgIkgcBM6AHAA&sclient=gws-wiz-serp#lrd=0x89e6db75dd2dd64d:0xecbc9c8277fd7644,1,,,,",
-    mobileLink: "https://maps.app.goo.gl/iHnP5yC4VH1zTrcf7?g_st=com.google.maps.preview.copy",
-    alt: "google_img"
-  },
-  {
-    imgSrc: "/reviews_images/yelp.webp",
-    link: "https://www.yelp.com/biz/brighter-beginnings-preschool-child-care-south-hadley#reviews",
-    mobileLink: "https://www.yelp.com/biz/brighter-beginnings-preschool-child-care-south-hadley#reviews", // Add mobile link
-    alt: "yelp_img"
-  },
-  {
-    imgSrc: "/reviews_images/care.png",
-    link: "https://www.care.com/b/l/brighter-beginnings-child-care-llc/south-hadley-ma",
-    mobileLink: "https://www.care.com/b/l/brighter-beginnings-child-care-llc/south-hadley-ma", // Add mobile link
-    alt: "care_img"
-  },
-];
+// --- Define TypeScript Interfaces for your data ---
 
-const Reviews = () => {
+// Interface for a single review platform item from the CMS
+interface ReviewPlatform {
+  platform_name: string;
+  icon_key: string; // Used to lookup the hardcoded image path
+  desktop_link: string;
+  mobile_link: string;
+  icon_alt_text: string;
+}
+
+// Interface for the entire reviews page data structure from reviews.json
+interface ReviewsPageData {
+  title: string;
+  banner_image: string;
+  banner_title: string;
+  banner_subtitle: string;
+  paragraph_1: string;
+  paragraph_2_desktop?: string; // Optional, as per your config.yml (required: false)
+  paragraph_3_desktop?: string; // Optional
+  sign_off_text: string;
+  review_platforms: ReviewPlatform[]; // Array of ReviewPlatform objects
+}
+
+// --- End TypeScript Interfaces ---
+
+const Reviews: React.FC = () => { // Use React.FC for functional components
+  const [reviewsPageData, setReviewsPageData] = useState<ReviewsPageData | null>(null); // Type the state
+
+  // Hardcoded map for review platform icons (these are NOT in CMS)
+  const reviewIconMap: { [key: string]: string } = { // Type the map
+    "facebook": "/reviews_images/facebook.png",
+    "google": "/reviews_images/google.webp",
+    "yelp": "/reviews_images/yelp.webp",
+    "care": "/reviews_images/care.png",
+    // Add more if you introduce new platforms
+  };
+
+  useEffect(() => {
+    // Fetch the data for the Reviews page from your generated content
+    // Assuming it's processed and available via a simple fetch from the public folder
+    fetch('../../../../content/pages/reviews.json') // Adjust path if your build process changes it
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        // Explicitly type the JSON response
+        return res.json() as Promise<ReviewsPageData>;
+      })
+      .then(data => setReviewsPageData(data))
+      .catch(error => {
+        console.error("Error fetching reviews page data:", error);
+        // You might set an error state here to show a message to the user
+      });
+  }, []);
+
+  if (!reviewsPageData) {
+    return (
+      <div className='no-reviews m-auto'>
+        <h1 className='reviews-title'>Loading Reviews...</h1>
+      </div>
+    );
+  }
+
+  // Destructure data for easier use
+  const {
+    banner_image,
+    banner_title,
+    banner_subtitle,
+    paragraph_1,
+    paragraph_2_desktop,
+    paragraph_3_desktop,
+    sign_off_text,
+    review_platforms // This is your array of review platforms from CMS
+  } = reviewsPageData; // TypeScript infers types from ReviewsPageData interface
+
   return (
     <div data-testid="reviews" className="reviews-container w-100 mx-auto">
       <div className="row reviews-page-img-container w-100 position-relative">
-        <img src="/staff_images/Lilly.jpg" alt="Banner" className="w-100 reviews-page-img" />
+        <img src={banner_image} alt={banner_title} className="w-100 reviews-page-img" /> {/* Dynamic Banner Image */}
         <div className="img-text-overlay">
-          <h1 className="img-text-overlay-title ">Lily Smith</h1>
-          <p className="img-overlay-subtitle mt-1">Brighter Beginnings Director</p>
+          <h1 className="img-text-overlay-title ">{banner_title}</h1> {/* Dynamic Title */}
+          <p className="img-overlay-subtitle mt-1">{banner_subtitle}</p> {/* Dynamic Subtitle */}
         </div>
       </div>
       <div className="row reviews-paragraph-container">
         <div className="col reviews-paragraphs">
-          <p className='reviews-p-1'>We know placing your child in someone else's care is a hard decision. That's why it's important to us that you have an honest and unbiased idea of what our services are like for other families.</p>
-          <p className='reviews-p-2 d-none d-md-block'>Please carefully review our public reviews that we do not manage in any way so you can make the best decision for your family.</p>
-          <p className='reviews-p-3 d-none d-md-block'>We believe our program has a lot to offer and hope it aligns with you and your little ones' best interest.</p>
-          <p className='reviews-p-4'> -Brighter Beginnings </p>
+          <p className='reviews-p-1'>{paragraph_1}</p> {/* Dynamic Paragraph 1 */}
+          {/* Use optional chaining or checks for optional paragraphs */}
+          {paragraph_2_desktop && <p className='reviews-p-2 d-none d-md-block'>{paragraph_2_desktop}</p>} {/* Dynamic Paragraph 2 */}
+          {paragraph_3_desktop && <p className='reviews-p-3 d-none d-md-block'>{paragraph_3_desktop}</p>} {/* Dynamic Paragraph 3 */}
+          <p className='reviews-p-4'> {sign_off_text} </p> {/* Dynamic Sign-off */}
         </div>
       </div>
       <div className="row reviews-container my-5">
         <div className="col d-flex review align-items-center justify-content-center">
-          {reviewData.length > 0 ? reviewData.map((reviewContent, reviewContentIndex) => {
-            return (
-              <div className="review-item-container mx-1" key={reviewContentIndex}>
-                <img src={reviewContent.imgSrc} alt={reviewContent.alt} className="review-item-image mb-3" />
-                <button className="review-item-button d-block d-md-none d-lg-none" onClick={() => window.open(reviewContent.mobileLink, "_blank")}>Visit Reviews</button>
-                <button className="review-item-button d-none d-md-block d-lg-block" onClick={() => window.open(reviewContent.link, "_blank")}>Visit Reviews</button>
-              </div>
-            );
-          }) :
+          {review_platforms && review_platforms.length > 0 ? (
+            review_platforms.map((platform: ReviewPlatform, index: number) => { // Type 'platform' and 'index'
+              const iconSrc = reviewIconMap[platform.icon_key]; // Lookup hardcoded icon path
+              if (!iconSrc) {
+                console.warn(`Missing icon path for key: ${platform.icon_key}`);
+                return null; // Don't render if icon path isn't found
+              }
+              return (
+                <div className="review-item-container mx-1" key={index}>
+                  <img src={iconSrc} alt={platform.icon_alt_text} className="review-item-image mb-3" /> {/* Icon from map, alt from CMS */}
+                  {/* Buttons use links from CMS */}
+                  <button className="review-item-button d-block d-md-none d-lg-none" onClick={() => window.open(platform.mobile_link, "_blank")}>Visit Reviews</button>
+                  <button className="review-item-button d-none d-md-block d-lg-block" onClick={() => window.open(platform.desktop_link, "_blank")}>Visit Reviews</button>
+                </div>
+              );
+            })
+          ) : (
             <div className='no-reviews m-auto'>
-              <h1 className='reviews-title'>Reviews did not load properly</h1>
+              <h1 className='reviews-title'>No reviews data loaded.</h1>
             </div>
-          }
+          )}
         </div>
+        {/* Mobile carousel remains */}
         <div className="col d-none review-mobile align-items-center justify-content-center">
             <div id="carouselExampleIndicators" className="carousel slide bg-gradient-sky ">
                 <div className="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    {review_platforms && review_platforms.map((_, index) => (
+                        <button
+                            type="button"
+                            data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide-to={index.toString()}
+                            className={index === 0 ? "active" : ""}
+                            aria-current={index === 0 ? "true" : "false"}
+                            aria-label={`Slide ${index + 1}`}
+                            key={`indicator-${index}`}
+                        ></button>
+                    ))}
                 </div>
                 <div className="carousel-inner">
-                  <div className="carousel-item active">
-                     <div className="review-item-container  mx-1" >
-                        <img src={reviewData[0].imgSrc} alt={reviewData[0].alt} className="review-item-image mb-3" />
-                        <button className="review-item-button d-block d-md-none d-lg-none" onClick={() => window.open(reviewData[0].mobileLink, "_blank")}>Visit Reviews</button>
-                        <button className="review-item-button d-none d-md-block d-lg-block" onClick={() => window.open(reviewData[0].link, "_blank")}>Visit Reviews</button>
-                      </div>
-                  </div>
-                  <div className="carousel-item">
-                   <div className="review-item-container  mx-1" >
-                        <img src={reviewData[1].imgSrc} alt={reviewData[1].alt} className="review-item-image mb-3" />
-                        <button className="review-item-button d-block d-md-none d-lg-none" onClick={() => window.open(reviewData[1].mobileLink, "_blank")}>Visit Reviews</button>
-                        <button className="review-item-button d-none d-md-block d-lg-block" onClick={() => window.open(reviewData[1].link, "_blank")}>Visit Reviews</button>
-                      </div>
-                  </div>
-                  <div className="carousel-item">
-                   <div className="review-item-container  mx-1" >
-                        <img src={reviewData[2].imgSrc} alt={reviewData[2].alt} className="review-item-image mb-3" />
-                        <button className="review-item-button d-block d-md-none d-lg-none" onClick={() => window.open(reviewData[2].mobileLink, "_blank")}>Visit Reviews</button>
-                        <button className="review-item-button d-none d-md-block d-lg-block" onClick={() => window.open(reviewData[2].link, "_blank")}>Visit Reviews</button>
-                      </div>
-                  </div>
-                  <div className="carousel-item">
-                   <div className="review-item-container  mx-1" >
-                        <img src={reviewData[3].imgSrc} alt={reviewData[3].alt} className="review-item-image mb-3" />
-                        <button className="review-item-button d-block d-md-none d-lg-none" onClick={() => window.open(reviewData[3].mobileLink, "_blank")}>Visit Reviews</button>
-                        <button className="review-item-button d-none d-md-block d-lg-block" onClick={() => window.open(reviewData[3].link, "_blank")}>Visit Reviews</button>
-                      </div>
-                  </div>
+                    {review_platforms && review_platforms.map((platform: ReviewPlatform, index: number) => { // Type 'platform' and 'index'
+                        const iconSrc = reviewIconMap[platform.icon_key];
+                        if (!iconSrc) return null;
+                        return (
+                            <div className={`carousel-item ${index === 0 ? "active" : ""}`} key={`carousel-item-${index}`}>
+                                <div className="review-item-container mx-1" >
+                                    <img src={iconSrc} alt={platform.icon_alt_text} className="review-item-image mb-3" />
+                                    <button className="review-item-button d-block d-md-none d-lg-none" onClick={() => window.open(platform.mobile_link, "_blank")}>Visit Reviews</button>
+                                    <button className="review-item-button d-none d-md-block d-lg-block" onClick={() => window.open(platform.desktop_link, "_blank")}>Visit Reviews</button>
+                                </div>
+                            </div>
+                        );
+                    })}
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                   <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -108,8 +158,7 @@ const Reviews = () => {
                   <span className="carousel-control-next-icon" aria-hidden="true"></span>
                   <span className="visually-hidden">Next</span>
                 </button>
-              </div>
-         
+            </div>
         </div>
       </div>
     </div>

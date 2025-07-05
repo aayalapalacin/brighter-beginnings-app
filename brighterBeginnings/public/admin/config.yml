@@ -31,3 +31,40 @@ collections:
         fields: # These are the fields for EACH item within the dropdownData list (color removed)
           - {label: "Dropdown Title", name: "title", widget: "string", required: true, hint: "e.g., Price, Description, Schedule"}
           - {label: "Dropdown Description", name: "description", widget: "markdown", required: true, hint: "Detailed text for this dropdown item"} # markdown widget for rich text
+  - name: "pages" # Your existing 'Website Pages' collection
+    label: "Website Pages"
+    files:
+      # ... your existing files like home.json, about.json, contact.json ...
+
+      # --- NEW: Reviews Page Content ---
+      - file: "brighterBeginnings/content/pages/reviews.json" # Path to the content file for your Reviews page
+        label: "Reviews Page" # Label in the CMS UI for this specific file
+        fields:
+          # Banner Section (Lilly Smith image and text)
+          - {label: "Banner Image", name: "banner_image", widget: "image", required: false, hint: "Upload the main banner image for the Reviews page."}
+          - {label: "Banner Title", name: "banner_title", widget: "string", required: true, hint: "e.g., Lily Smith"}
+          - {label: "Banner Subtitle", name: "banner_subtitle", widget: "string", required: true, hint: "e.g., Brighter Beginnings Director"}
+
+          # Introductory Paragraphs
+          - {label: "Intro Paragraph 1", name: "paragraph_1", widget: "markdown", required: true}
+          - {label: "Intro Paragraph 2 (Desktop)", name: "paragraph_2_desktop", widget: "markdown", required: false}
+          - {label: "Intro Paragraph 3 (Desktop)", name: "paragraph_3_desktop", widget: "markdown", required: false}
+          - {label: "Sign-off Text", name: "sign_off_text", widget: "string", required: true}
+
+          # Review Platform Links (Repeatable List)
+          - label: "Review Platforms" # Label for the list in CMS
+            name: "review_platforms" # Key in the JSON
+            widget: "list"
+            collapsed: false
+            summary: "{{fields.platform_name}}" # Show the platform name in the list summary
+            fields:
+              # Platform Name (e.g., "Facebook", "Google") - for display/lookup
+              - {label: "Platform Name", name: "platform_name", widget: "string", required: true, hint: "e.g., Facebook, Google"}
+              # Icon Key (e.g., "facebook", "google") - used to lookup hardcoded image in React
+              - {label: "Icon Key", name: "icon_key", widget: "string", required: true, hint: "e.g., facebook, google, yelp, care (must match hardcoded names)"}
+              # Desktop Link
+              - {label: "Desktop Review Link", name: "desktop_link", widget: "string", required: true, pattern: ["^https?:\/\/.+", "Must be a valid URL starting with http:// or https://"], hint: "Full URL for desktop reviews"}
+              # Mobile Link
+              - {label: "Mobile Review Link", name: "mobile_link", widget: "string", required: true, pattern: ["^https?:\/\/.+", "Must be a valid URL starting with http:// or https://"], hint: "Full URL for mobile reviews"}
+              # Alt Text for the icon
+              - {label: "Icon Alt Text", name: "icon_alt_text", widget: "string", required: true, hint: "e.g., Facebook icon"}

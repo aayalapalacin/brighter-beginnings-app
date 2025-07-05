@@ -1,0 +1,40 @@
+{
+  "title": "Customer Reviews",
+  "banner_image": "/staff_images/Lilly.jpg",
+  "banner_title": "Lily Smith",
+  "banner_subtitle": "Brighter Beginnings Director",
+  "paragraph_1": "We know placing your child in someone else's care is a hard decision. That's why it's important to us that you have an honest and unbiased idea of what our services are like for other families.",
+  "paragraph_2_desktop": "Please carefully review our public reviews that we do not manage in any way so you can make the best decision for your family.",
+  "paragraph_3_desktop": "We believe our program has a lot to offer and hope it aligns with you and your little ones' best interest.",
+  "sign_off_text": " -Brighter Beginnings ",
+  "review_platforms": [
+    {
+      "platform_name": "Facebook",
+      "icon_key": "facebook",
+      "desktop_link": "https://www.facebook.com/Brighter.Beginnings.Child.Care/reviews",
+      "mobile_link": "https://www.facebook.com/Brighter.Beginnings.Child.Care/reviews",
+      "icon_alt_text": "Facebook Reviews Icon"
+    },
+    {
+      "platform_name": "Google",
+      "icon_key": "google",
+      "desktop_link": "https://www.google.com/search?q=brighter+beginnings+day+care+south+hadley&sca_esv=7535fa7457e2bb3a&sxsrf=ADLYWILxm_baF3wdYEAH0rshjwBYgTv-wA%3A1720301189061&ei=hbaJZq6rA9D-p84Pj5CKkAg&oq=brighter+beginnings&gs_lp=Egxnd3Mtd2l6LXNlcnAiE2JyaWdodGVyIGJlZ2lubmlngs_lp=Egxnd3Mtd2l6LXNlcnAiE2JyaWdodGVyIGJlZ2lubmlngs_lp=Egxnd3Mtd2l6LXNlcnAiE2JyaWdodGVyIGJlZ2lubmlngs_lp=Egxnd3Mtd2l6LXNlcnAiE2JyaWdodGVyIGJlZ2lubmlngs_lp=Egxnd3Mtd2l6LXNlcnAiE2JyaWdodGVyIGJlZ2lubmlngs_lp=Egxnd3Mtd2l6LXNlcnAiE2JyaWdodGVyIGJlZ2lubmlngs_lp=Egxnd3Mtd2l6LXNlcnAiE2JyaWdodGVyIGJlZ2lubmlngs_lp=Egxnd3Mtd2l6LXNlcnAiE2JyaWdodGVyIGJlZ2lubmlngs_lp=Egxnd3Mtd2l6LXNlcnAiE2JyaWdodGVyIGJlZ2lubmlngs_lp=Egxnd3Mtd2l6LXNlcnAiE2JyaWdodGVyIGJlZ2lubmlngs_lp=Egxnd3Mtd2l6LXNlcnAiE2JyaWdodGVyIGJlZybGcw=0x89e6db75dd2dd64d:0xecbc9c8277fd7644,1,,,,",
+      "mobile_link": "https://maps.app.goo.gl/iHnP5yC4VH1zTrcf7?g_st=com.google.maps.preview.copy",
+      "icon_alt_text": "Google Reviews Icon"
+    },
+    {
+      "platform_name": "Yelp",
+      "icon_key": "yelp",
+      "desktop_link": "https://www.yelp.com/biz/brighter-beginnings-preschool-child-care-south-hadley#reviews",
+      "mobile_link": "https://www.yelp.com/biz/brighter-beginnings-preschool-child-care-south-hadley#reviews",
+      "icon_alt_text": "Yelp Reviews Icon"
+    },
+    {
+      "platform_name": "Care.com",
+      "icon_key": "care",
+      "desktop_link": "https://www.care.com/b/l/brighter-beginnings-child-care-llc/south-hadley-ma",
+      "mobile_link": "https://www.care.com/b/l/brighter-beginnings-child-care-llc/south-hadley-ma",
+      "icon_alt_text": "Care.com Reviews Icon"
+    }
+  ]
+}
