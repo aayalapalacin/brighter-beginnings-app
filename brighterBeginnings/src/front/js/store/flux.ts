@@ -162,6 +162,9 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         monthsOld: string | any
       ) => {
         const store = getStore();
+          const firstCharUpper = firstName[0].toUpperCase()
+          const allOtherChar = firstName.split(firstName[0])[1]
+          const updatedFirstName = firstCharUpper + allOtherChar;
 
         e.preventDefault();
         // HANDLING WHEN INPUT FIELDS ARE EMPTY
@@ -177,7 +180,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         const parsedMonthsOld = parseFloat(monthsOld);
 
         const updatedChildProgram = {
-          firstName: firstName,
+          firstName: updatedFirstName,
           yearsOld: parsedYearsOld,
           monthsOld: parsedMonthsOld,
         };
@@ -186,7 +189,6 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         //
         const matchingProgram = store.availablePrograms.find(
           (program: AccordionDataType) => {
-            console.log(kidAgeInMonths, "kidsAge");
             return (
               kidAgeInMonths <= program.end && kidAgeInMonths >= program.start
             );
@@ -196,7 +198,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         // Updating inputkidprogram
         const updatedInputKidProgram = {
           ...matchingProgram,
-          childName: firstName,
+          childName: updatedFirstName,
           kidsAge: kidAgeInMonths,
         };
         const availablePrices: { age: string; price: any }[] =
@@ -222,7 +224,7 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
         const updatedInputKidProgramData = {
           ...updatedInputKidProgram,
           accordion_title: `${
-            updatedInputKidProgram.childName
+            updatedFirstName
           }'s Program Details (${
             updatedInputKidProgram.accordion_title.includes("Toddler")
               ? "Toddler"
@@ -237,12 +239,12 @@ const getState = ({ getStore, getActions, setStore }: GetStateParams) => {
               color: "carrot",
             },
             {
-              title: `${updatedInputKidProgram.childName}'s Description`,
-              description:  generateDescription(updatedInputKidProgram.childName, updatedDescriptionText),
+              title: `${updatedFirstName}'s Description`,
+              description:  generateDescription(updatedFirstName, updatedDescriptionText),
               color: "sky",
             },
             {
-              title: `${updatedInputKidProgram.childName}'s Schedule`,
+              title: `${updatedFirstName}'s Schedule`,
               description: updatedProgramSchedule,
               color: "grass",
             },

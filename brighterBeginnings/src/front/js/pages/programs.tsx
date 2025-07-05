@@ -2,6 +2,8 @@ import React, { useState, useContext,useEffect } from "react";
 import { Context } from "../store/appContext";
 import Accordian from "../component/Programs/Accordian";
 import "../../styles/programs.css";
+import { useLocation } from 'react-router-dom';
+
 export interface AccordionDataType {
   accordion_title: string;
   childName?: string;
@@ -26,7 +28,7 @@ const Programs = () => {
   const [isProgramClicked, setIsProgramClicked] = useState<boolean>(false);
   const [enlarged, setEnlarged] = useState<boolean>(false);
 
-  
+      const location = useLocation(); 
   
   const contextValue = useContext(Context);
   useEffect(()=>{
@@ -40,7 +42,20 @@ const Programs = () => {
  
  },[contextValue?.store?.childProgram.firstName, contextValue])
  
+useEffect(() => {
+        // Check if there's a hash in the URL and try to scroll to it
+        if (location.hash) {
+            const element = document.getElementById(location.hash.substring(1)); // Get element by ID (remove the #)
+            if (element) {
+                // Optional: Add a slight delay to ensure content is fully rendered
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }, 0); // 0ms timeout means it runs after current render cycle
+            }
+        }
+    }, [location]);
 
+    
   if (!contextValue || !contextValue.store || !contextValue.store.availablePrograms || contextValue.store.availablePrograms.length === 0) {
     return <div>Loading...</div>;
   }
@@ -75,10 +90,11 @@ const Programs = () => {
       <Accordian accordianData={store.inputKidProgram} imgFirst={true} />
     );
   }
+
+    
   
   return (
-    <div data-testid="programs" className="program-types-container">
- 
+    <div data-testid="programs" id="childProgram" className="program-types-container">
       <div
         className={`program-info-container row w-50 mx-auto justify-content-center pb-5`}>
         {store.availablePrograms && !hide  ? store.availablePrograms.map((kid, index) => {
@@ -93,7 +109,7 @@ const Programs = () => {
               onClick={() => handleClick(kid)}
               style={{ display: isProgramClicked ? "none" : "inline-block" }}>
               <h3 className="program-info-card-title">
-                <strong>{splitAccordionTitle[0]} yo</strong>
+                <strong>{splitAccordionTitle[0]} </strong>
               </h3>
               <p className="program-info-card-age">{kid.age}</p>
               <img

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef  } from "react";
 import getState from "./flux";
 import { AccordionDataType } from "../pages/programs";
 
@@ -176,30 +176,38 @@ const injectContext = (PassedComponent: PassedComponentType) => {
       },
       actions: {},
     });
-    
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
+    // Create a ref to hold the latest 'state' object
+    const stateRef = useRef(state); // Initialize with current state
+
+    // Update the ref whenever 'state' changes
     useEffect(() => {
-      const fetchInitialState = async () => {
-        const initialState = getState({
-          getStore: () => state?.store,
-          getActions: () => state?.actions,
-          setStore: (updatedStore) =>
-            setState((prevState) => ({
-              ...prevState!,
-              store: {
-                ...prevState!.store,
-                ...updatedStore,
-                philosophyData: updatedStore.philosophyData || [],
-              },
-              actions: { ...prevState!.actions },
-            })),
-        });
+        stateRef.current = state;
+    }, [state]); // This useEffect depends on 'state' and keeps the ref up-to-date
 
-        setState(initialState);
-      };
-      fetchInitialState();
-    }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+     useEffect(() => {
+      const fetchInitialState = async () => {
+        const initialState = getState({
+          // Now, use the ref to get the *latest* state and actions
+          getStore: () => stateRef.current?.store,
+          getActions: () => stateRef.current?.actions,
+          setStore: (updatedStore) =>
+            setState((prevState) => ({
+              ...prevState!,
+              store: {
+                ...prevState!.store,
+                ...updatedStore,
+                philosophyData: updatedStore.philosophyData || [],
+              },
+              actions: { ...prevState!.actions },
+            })),
+        });
 
+        setState(initialState);
+      };
+      fetchInitialState();
+    }, []);
     return (
       <Context.Provider value={state}>
         <PassedComponent {...props} />

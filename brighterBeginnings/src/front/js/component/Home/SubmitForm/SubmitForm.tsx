@@ -51,13 +51,12 @@ const SubmitForm = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+     const targetHash = "#childProgram";
     if (sumAge <= 1.4 || firstName.length < 2 || sumAge > 60) {
       setFormValid(false);
     } else {
       setFormValid(true);
- 
-          navigate("/programs")
-
+      navigate(`/programs${targetHash}`);
       actions.handleChildProgramSubmit(e, firstName, yearsOld, monthsOld);
      
     }
