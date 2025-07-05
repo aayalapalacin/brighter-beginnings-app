@@ -1,0 +1,25 @@
+{
+  "accordion_title": "Pre-School Program Details",
+  "age": "2.9 Yrs - 5 Yrs",
+  "start": 34.1,
+  "end": 59,
+  "img": "/programs_images/toddler.png",
+  "bg_color": "sky",
+  "dropdownData": [
+    {
+      "title": "Price",
+      "description": "5 Days starting at $245.00 Wk, 3 Days starting at $159.00 Wk, 2 Days starting at $113.00 Wk",
+      "color": "carrot"
+    },
+    {
+      "title": "Description",
+      "description": "preschoolDescription",
+      "color": "sky"
+    },
+    {
+      "title": "Schedule",
+      "description": "preschool schedule",
+      "color": "grass"
+    }
+  ]
+}
