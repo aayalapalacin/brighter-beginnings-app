@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import SubmitForm from "../SubmitForm/SubmitForm";
 import { Context } from "../../../store/appContext";
+import ErrorNotification from "../../ErrorNotification";
 
 import { Link } from "react-router-dom";
 import "./programs-info.css";
@@ -15,7 +16,7 @@ const ProgramsInfo = () => {
   };
     const contextValue = useContext(Context);
   if (!contextValue || !contextValue.store || !contextValue.store.availablePrograms || contextValue.store.availablePrograms.length === 0) {
-    return <div>Loading...</div>;
+    return <ErrorNotification />;
   }
 
   const { actions } = contextValue;

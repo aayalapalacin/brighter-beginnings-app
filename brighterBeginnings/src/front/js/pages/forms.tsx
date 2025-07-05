@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import Accordion from "../component/Programs/Accordian";
 import "../../styles/forms.css";
 import { AccordionDataType } from "../pages/programs";
-
+import ErrorNotification from "../component/ErrorNotification";
 const accordionContent: AccordionDataType[] = [
   {
     accordion_title: "Available Forms",
@@ -55,8 +55,8 @@ const accordionContent: AccordionDataType[] = [
 const Forms = () => {
   const contextValue = useContext(Context);
 
-  if (!contextValue || !contextValue.store || !contextValue.store.availablePrograms || contextValue.store.availablePrograms.length === 0) {
-    return <div>Loading...</div>;
+    if (!contextValue || !contextValue.store || !contextValue.store.availablePrograms || contextValue.store.availablePrograms.length === 0) {
+    return <ErrorNotification />;
   }
 
   return (

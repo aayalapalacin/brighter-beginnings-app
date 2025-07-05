@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import Accordion from "../component/Programs/Accordian";
 import PlayLearnAreas from "../component/About/PlayLearnAreas";
-
+import ErrorNotification from "../component/ErrorNotification";
 import { HashLink  } from 'react-router-hash-link';
 
 import "../../styles/about.css";
@@ -11,8 +11,8 @@ import "../../styles/accordian.css";
 const About = () => {
   const contextValue = useContext(Context);
 
-  if (!contextValue || !contextValue.store || !contextValue.store.availablePrograms || contextValue.store.availablePrograms.length === 0) {
-    return <div>Loading...</div>;
+   if (!contextValue || !contextValue.store || !contextValue.store.availablePrograms || contextValue.store.availablePrograms.length === 0) {
+    return <ErrorNotification />;
   }
 
   const { store } = contextValue;

@@ -5,12 +5,12 @@ import ProgramsInfo from "../component/Home/ProgramsInfo/ProgramsInfo";
 import CareersContent from "../component/Home/CareersContent/CareersContent";
 import "../../styles/home.css";
 import ClassDojo from "../component/ClassDojo";
-
+import ErrorNotification from "../component/ErrorNotification";
 const Home = () => {
   const contextValue = useContext(Context);
 
-  if (!contextValue || !contextValue.store || !contextValue.store.availablePrograms || contextValue.store.availablePrograms.length === 0) {
-    return <div>Loading...</div>;
+   if (!contextValue || !contextValue.store || !contextValue.store.availablePrograms || contextValue.store.availablePrograms.length === 0) {
+    return <ErrorNotification />;
   }
 
   return (

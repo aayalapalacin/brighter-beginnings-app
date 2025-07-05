@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import Accordian from "../component/Programs/Accordian";
 import "../../styles/programs.css";
 import { useLocation } from 'react-router-dom';
+import ErrorNotification from "../component/ErrorNotification";
 
 export interface AccordionDataType {
   accordion_title: string;
@@ -57,7 +58,7 @@ useEffect(() => {
 
     
   if (!contextValue || !contextValue.store || !contextValue.store.availablePrograms || contextValue.store.availablePrograms.length === 0) {
-    return <div>Loading...</div>;
+    return <ErrorNotification />;
   }
   const { store, actions } = contextValue;
   
