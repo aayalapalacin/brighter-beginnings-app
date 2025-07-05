@@ -176,7 +176,8 @@ const injectContext = (PassedComponent: PassedComponentType) => {
       },
       actions: {},
     });
-
+    
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
       const fetchInitialState = async () => {
         const initialState = getState({
