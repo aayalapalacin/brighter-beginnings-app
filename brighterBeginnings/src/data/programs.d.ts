@@ -1,4 +1,3 @@
-// BrighterBeginnings/src/data/programs.d.ts
 
 // Import the type definition for a single program entry
 import { AccordionDataType } from "../pages/programs";
