@@ -1,15 +1,32 @@
 backend:
   name: git-gateway
-  branch: main # <-- CONFIRM THIS IS CORRECT (main or master)
+  branch: main # <-- IMPORTANT: Confirm this matches your GitHub repo's default branch (e.g., 'main' or 'master')
 
-media_folder: public/uploads
+media_folder: public/uploads # All general media (like images for blog posts, etc.) will go here
 public_folder: /uploads
 
 collections:
-  - name: "programs" # The "slug" for your collection. Used internally.
-    label: "Programs" # The name displayed in the CMS UI.
-    folder: "brighterBeginnings/content/programs" # Where the content files will be stored in your Git repo. (We'll create this folder later)
-    create: true # Allow users to create new program entries
-    slug: "{{slug}}" # Automatically generate slugs based on the title
-    fields: # The fields for each program item (we'll expand this significantly in the next step)
-      - {label: "Title", name: "title", widget: "string"} # Simple text field for a title
+  - name: "programs" # The internal name for this collection
+    label: "Programs" # What editors see in the CMS sidebar
+    folder: "BrighterBeginnings/content/programs" # Where the content files will be stored in your Git repo
+    create: true # Allows editors to create new program entries
+    slug: "{{slug}}" # Automatically generates filename from the title
+    extension: "json" # Save content as .json files for easier parsing in React
+    format: "json" # Use JSON format for the content
+
+    fields:
+      # Top-level fields for each program object (img and bg_color removed)
+      - {label: "Accordion Title", name: "accordion_title", widget: "string", required: true, hint: "e.g., Infant Program Details"}
+      - {label: "Age Range Text", name: "age", widget: "string", hint: "e.g., 6 Weeks - 15 Mo"}
+      - {label: "Age Start (Months)", name: "start", widget: "number", value_type: "float", min: 0, hint: "Starting age in months (e.g., 1.5 for 1 month, 2 weeks)"} # Updated hint
+      - {label: "Age End (Months)", name: "end", widget: "number", value_type: "float", min: 0, hint: "Ending age in months (e.g., 15 for 1 year, 3 months)"} # Updated hint
+
+      # Nested array of objects: dropdownData
+      - label: "Program Details (Dropdowns)" # Label for this list in the CMS UI
+        name: "dropdownData" # The key name for this array in your content file
+        widget: "list" # This tells Netlify CMS it's an array of items
+        collapsed: false # Keep the list open by default in the CMS
+        summary: "{{fields.title}}" # Show the title of each dropdown item in the list summary
+        fields: # These are the fields for EACH item within the dropdownData list (color removed)
+          - {label: "Dropdown Title", name: "title", widget: "string", required: true, hint: "e.g., Price, Description, Schedule"}
+          - {label: "Dropdown Description", name: "description", widget: "markdown", required: true, hint: "Detailed text for this dropdown item"} # markdown widget for rich text
