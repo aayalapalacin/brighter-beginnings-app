@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef  } from "react";
 import getState from "./flux";
 import { AccordionDataType } from "../pages/programs";
+import availableProgram from "../../../data/programs.js"
 
 let infantDescription :string = "Your infant's experience at Brighter Beginnings Child Care L.L.C. is tailored to their unique needs and development. We provide personalized nap schedules and cozy cribs equipped with your provided sleep sack and bedding (no blankets). Infants typically enjoy two naps a day and have designated times for snacks and breakfast at an infant table with secure seating. You're encouraged to bring your infants's snacks and lunch- keep in mind we don't use microwaves, we do provide fridge space. Whole milk is provided. Your infant will love daily outdoor strolls, engaging books, and stimulating toys. Our caregivers also read to them, fostering early language development in our nurturing environment."
 
@@ -62,89 +63,7 @@ const injectContext = (PassedComponent: PassedComponentType) => {
           ],
         },
 
-        availablePrograms: [
-          // Infant
-          {
-            accordion_title: "Infant Program Details",
-            age: "6 Weeks - 15 Mo",
-            start: 1.5,
-            end: 15,
-            img: "/programs_images/infant.png",
-            bg_color: "grass",
-            dropdownData: [
-              {
-                title: "Price",
-                description: "5 Days Starting at $345.00 WK",
-                color: "carrot",
-              },
-              {
-                title: "Description",
-                description: infantDescription,
-                color: "sky",
-              },
-              {
-                title: "Schedule",
-                description: "During intake, parents and the infant’s educator will write up a schedule altered to that particular infant. Infant schedules are individual and may change as the needs of the infant changes",
-                color: "grass",
-              },
-              
-            ],
-          },
-          // Toddler
-          {
-            accordion_title: "Toddler Program Details",
-            age: "16 Mo - 2.9 Yrs",
-            start: 16,
-            end: 34,
-            img: "/programs_images/toddler.png",
-            bg_color: "sky",
-            dropdownData: [
-              {
-                title: "Price",
-                description: "5 Days Starting at $320.00 Wk",
-                color: "carrot",
-              },
-              {
-                title: "Description",
-                description: toddlerDescription,
-                color: "sky",
-              },
-              {
-                title: "Schedule",
-                description: "toddler schedule",
-                color: "grass",
-              },
-              
-            ],
-          },
-          // Pre-schooler
-          {
-            accordion_title: "Pre-School Program Details",
-            age: "2.9 Yrs - 5 Yrs",
-            start: 34.1,
-            end: 60,
-            img: "/programs_images/pre_school.png",
-            bg_color: "sun",
-            dropdownData: [
-              {
-                title: "Price",
-                description: "5 Days starting at $245.00 Wk, 3 Days starting at $159.00 Wk, 2 Days starting at $113.00 Wk",
-                color: "carrot",
-              },
-              {
-                title: "Description",
-                description: preschoolDescription,
-                color: "sky",
-              },
-              {
-                title: "Schedule",
-                description: "preschool schedule",
-                color: "grass",
-              },
-              
-            ],
-          },
-        ],
+        availablePrograms: availableProgram,
         philosophyData: [
           {
             accordion_title: "Philosophy",
