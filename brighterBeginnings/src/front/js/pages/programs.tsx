@@ -102,7 +102,7 @@ useEffect(() => {
           const splitAccordionTitle =
             kid.accordion_title.split("Program Details");
             const altValueArray = kid.img ? kid.img.split("/") : "";
-            const altValue = altValueArray[altValueArray.length-1].replace(".png","");
+            const altValue = altValueArray[altValueArray.length-1];
             return (
             <div
               className={`program-info-cards btn bg-gradient-${kid.bg_color} col-sm-5`}

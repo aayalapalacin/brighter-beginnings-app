@@ -1,0 +1,1 @@
+import "../public/programs_images/infant.png"

@@ -17,6 +17,7 @@ collections:
     fields:
       # Top-level fields for each program object (img and bg_color removed)
       - {label: "Accordion Title", name: "accordion_title", widget: "string", required: true, hint: "e.g., Infant Program Details"}
+      - {label: "Program Image Path", name: "img", widget: "string", disabled: true, required: true, hint: "Path to the program's image (e.g., /img/infant.png). Not editable in CMS."} 
       - {label: "Age Range Text", name: "age", widget: "string", hint: "e.g., 6 Weeks - 15 Mo"}
       - {label: "Age Start (Months)", name: "start", widget: "number", value_type: "float", min: 0, hint: "Starting age in months (e.g., 1.5 for 1 month, 2 weeks)"} # Updated hint
       - {label: "Age End (Months)", name: "end", widget: "number", value_type: "float", min: 0, hint: "Ending age in months (e.g., 15 for 1 year, 3 months)"} # Updated hint
