@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "../../styles/reviews.css";
-
+import ErrorNotification from '../component/ErrorNotification';
 // --- Define TypeScript Interfaces for your data ---
 
 // Interface for a single review platform item from the CMS
@@ -41,7 +41,7 @@ const Reviews: React.FC = () => { // Use React.FC for functional components
   useEffect(() => {
     // Fetch the data for the Reviews page from your generated content
     // Assuming it's processed and available via a simple fetch from the public folder
-    fetch('../../../../public/content/pages/reviews.json') // Adjust path if your build process changes it
+    fetch('/content/pages/reviews.json') // Adjust path if your build process changes it
       .then(res => {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
@@ -58,9 +58,7 @@ const Reviews: React.FC = () => { // Use React.FC for functional components
 
   if (!reviewsPageData) {
     return (
-      <div className='no-reviews m-auto'>
-        <h1 className='reviews-title'>Loading Reviews...</h1>
-      </div>
+      <ErrorNotification />
     );
   }
 
