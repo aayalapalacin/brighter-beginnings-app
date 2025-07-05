@@ -1,9 +1,15 @@
 backend:
   name: git-gateway
-  branch: main # <-- IMPORTANT: YOU MUST CHANGE THIS to match your GitHub repository's default branch (e.g., 'master' or 'main'). Check your GitHub repo!
+  branch: main # <-- CONFIRM THIS IS CORRECT (main or master)
 
-media_folder: public/uploads # Uploaded images will be saved here relative to your project root.
-public_folder: /uploads # When accessed on your live site, images will be served from this URL path.
+media_folder: public/uploads
+public_folder: /uploads
 
 collections:
-  # This section will be filled in with your content types (Programs, Philosophy, etc.) later.
+  - name: "programs" # The "slug" for your collection. Used internally.
+    label: "Programs" # The name displayed in the CMS UI.
+    folder: "content/programs" # Where the content files will be stored in your Git repo. (We'll create this folder later)
+    create: true # Allow users to create new program entries
+    slug: "{{slug}}" # Automatically generate slugs based on the title
+    fields: # The fields for each program item (we'll expand this significantly in the next step)
+      - {label: "Title", name: "title", widget: "string"} # Simple text field for a title
