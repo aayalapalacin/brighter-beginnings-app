@@ -1,0 +1,20 @@
+{
+  "accordion_title": "Infant Program Details",
+  "age": "6 Weeks - 15 Mo",
+  "start": 1.5,
+  "end": 14,
+  "dropdownData": [
+    {
+      "title": "Price",
+      "description": "<!--StartFragment-->\n\n**5 Days Starting at $345.00 WK**\n\n<!--EndFragment-->"
+    },
+    {
+      "title": "Description",
+      "description": "<!--StartFragment-->\n\n**Your infant's experience at Brighter Beginnings Child Care L.L.C. is tailored to their unique needs and development. We provide personalized nap schedules and cozy cribs equipped with your provided sleep sack and bedding (no blankets). Infants typically enjoy two naps a day and have designated times for snacks and breakfast at an infant table with secure seating. You're encouraged to bring your infants's snacks and lunch- keep in mind we don't use microwaves, we do provide fridge space. Whole milk is provided. Your infant will love daily outdoor strolls, engaging books, and stimulating toys. Our caregivers also read to them, fostering early language development in our nurturing environment.**\n\n<!--EndFragment-->"
+    },
+    {
+      "title": "Schedule",
+      "description": "<!--StartFragment-->\n\n**During intake, parents and the infant’s educator will write up a schedule altered to that particular infant. Infant schedules are individual and may change as the needs of the infant changes**\n\n<!--EndFragment-->"
+    }
+  ]
+}
