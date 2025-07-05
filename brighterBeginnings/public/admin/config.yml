@@ -34,11 +34,11 @@ collections:
   - name: "pages" # Your existing 'Website Pages' collection
     label: "Website Pages"
     files:
-      # ... your existing files like home.json, about.json, contact.json ...
 
       # --- NEW: Reviews Page Content ---
       - file: "brighterBeginnings/content/pages/reviews.json" # Path to the content file for your Reviews page
         label: "Reviews Page" # Label in the CMS UI for this specific file
+        name: "Reviews Page"
         fields:
           # Banner Section (Lilly Smith image and text)
           - {label: "Banner Image", name: "banner_image", widget: "image", required: false, hint: "Upload the main banner image for the Reviews page."}
