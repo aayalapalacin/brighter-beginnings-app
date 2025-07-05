@@ -3,8 +3,8 @@
   "age": "2.9 Yrs - 5 Yrs",
   "start": 34.1,
   "end": 59,
-  "img": "/programs_images/toddler.png",
-  "bg_color": "sky",
+  "img": "/programs_images/pre_school.png",
+  "bg_color": "sun",
   "dropdownData": [
     {
       "title": "Price",
