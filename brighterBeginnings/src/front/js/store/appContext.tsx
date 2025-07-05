@@ -1,11 +1,9 @@
 import React, { useState, useEffect, useRef  } from "react";
 import getState from "./flux";
 import { AccordionDataType } from "../pages/programs";
-import availablePrograms from "../../../data/programs.js"
+import availablePrograms from "../../../data/programs"
 
 
-
-const programData :AccordionDataType[] = availablePrograms;
 interface Store {
   users: any[];
  
@@ -60,7 +58,7 @@ const injectContext = (PassedComponent: PassedComponentType) => {
           ],
         },
 
-        availablePrograms: programData ,
+        availablePrograms: availablePrograms ,
         philosophyData: [
           {
             accordion_title: "Philosophy",
