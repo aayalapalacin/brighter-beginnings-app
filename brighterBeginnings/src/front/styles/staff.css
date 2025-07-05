@@ -93,7 +93,10 @@
       font-size: 0.7rem !important;
 
   }
-     
+     .staff-page-results-container {
+    border-radius: 38px;
+    padding: 1rem;
+}
     .staff-page-name-role-fun-container{
         font-size: 0.7rem !important;
         margin: 0px 0px 0px 1rem !important;
@@ -131,7 +134,12 @@
     .staff-page-footer-credential-title{
         font-size:1rem !important;
     }
-  
+  .staff-page-results-container {
+    background: #f0d8494f;
+    border: .1px solid #0000002b;
+    border-radius: 38px;
+    padding: 1rem;
+}
 }
 @media screen and (max-width: 331px) {
   .staff-table{
@@ -153,6 +161,12 @@
     .staff-page-footer-credential-title{
         font-size:1rem !important;
     }
+    .staff-page-results-container {
+    background: #f0d8494f;
+    border: .1px solid #0000002b;
+    border-radius: 38px;
+    padding: 1rem;
+}
   
 }
 
