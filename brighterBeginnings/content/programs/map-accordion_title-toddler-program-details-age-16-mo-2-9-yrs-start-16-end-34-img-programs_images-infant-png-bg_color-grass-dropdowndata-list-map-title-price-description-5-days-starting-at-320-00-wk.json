@@ -3,8 +3,8 @@
   "age": "16 Mo - 2.9 Yrs",
   "start": 16,
   "end": 34,
-  "img": "/programs_images/infant.png",
-  "bg_color": "grass",
+  "img": "/programs_images/toddler.png",
+  "bg_color": "sky",
   "dropdownData": [
     {
       "title": "Price",
