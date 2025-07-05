@@ -1,0 +1,9 @@
+backend:
+  name: git-gateway
+  branch: main # <-- IMPORTANT: YOU MUST CHANGE THIS to match your GitHub repository's default branch (e.g., 'master' or 'main'). Check your GitHub repo!
+
+media_folder: public/uploads # Uploaded images will be saved here relative to your project root.
+public_folder: /uploads # When accessed on your live site, images will be served from this URL path.
+
+collections:
+  # This section will be filled in with your content types (Programs, Philosophy, etc.) later.
