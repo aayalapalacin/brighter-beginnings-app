@@ -48,8 +48,8 @@ const Carousel = () => {
       id="mainPageCarousel" 
       data-testid="carousel" 
       className="carousel  slide w-75 m-auto"  
-      // data-bs-ride="carousel"
-      // data-bs-interval="3000" 
+      data-bs-ride="carousel"
+      data-bs-interval="3000" 
     >
   
      <div className="carousel-indicators  w-100 m-auto" style={{backgroundColor:slideNumber === 0 || slideNumber === 1 ? "#716b6b99": ""}}>
