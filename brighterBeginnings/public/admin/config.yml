@@ -8,7 +8,7 @@ public_folder: /uploads
 collections:
   - name: "programs" # The internal name for this collection
     label: "Programs" # What editors see in the CMS sidebar
-    folder: "brighterBeginnings/content/programs" # Where the content files will be stored in your Git repo
+    folder: "brighterBeginnings/public/content/programs" # Where the content files will be stored in your Git repo
     create: true # Allows editors to create new program entries
     slug: "{{slug}}" # Automatically generates filename from the title
     extension: "json" # Save content as .json files for easier parsing in React
@@ -36,7 +36,7 @@ collections:
     files:
 
       # --- NEW: Reviews Page Content ---
-      - file: "brighterBeginnings/content/pages/reviews.json" # Path to the content file for your Reviews page
+      - file: "brighterBeginnings/public/content/pages/reviews.json" # Path to the content file for your Reviews page
         label: "Reviews Page" # Label in the CMS UI for this specific file
         name: "Reviews Page"
         fields:

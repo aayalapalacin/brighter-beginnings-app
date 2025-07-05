@@ -38,11 +38,10 @@ const Reviews: React.FC = () => { // Use React.FC for functional components
     "care": "/reviews_images/care.png",
     // Add more if you introduce new platforms
   };
-
   useEffect(() => {
     // Fetch the data for the Reviews page from your generated content
     // Assuming it's processed and available via a simple fetch from the public folder
-    fetch('../../../../content/pages/reviews.json') // Adjust path if your build process changes it
+    fetch('../../../../public/content/pages/reviews.json') // Adjust path if your build process changes it
       .then(res => {
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
