@@ -1,12 +1,9 @@
 {
-  "title": "Customer Reviews",
-  "banner_image": "/staff_images/Lilly.jpg",
-  "banner_title": "Lily Smith",
-  "banner_subtitle": "Brighter Beginnings Director",
   "paragraph_1": "We know placing your child in someone else's care is a hard decision. That's why it's important to us that you have an honest and unbiased idea of what our services are like for other families.",
-  "paragraph_2_desktop": "Please carefully review our public reviews that we do not manage in any way so you can make the best decision for your family.",
-  "paragraph_3_desktop": "We believe our program has a lot to offer and hope it aligns with you and your little ones' best interest.",
-  "sign_off_text": " -Brighter Beginnings ",
+  "banner_title": "Lily Smith",
+  "banner_image": "/uploads/profile.png",
+  "banner_subtitle": "Brighter Beginnings Director",
+  "title": "Customer Reviews",
   "review_platforms": [
     {
       "platform_name": "Facebook",
@@ -36,5 +33,8 @@
       "mobile_link": "https://www.care.com/b/l/brighter-beginnings-child-care-llc/south-hadley-ma",
       "icon_alt_text": "Care.com Reviews Icon"
     }
-  ]
+  ],
+  "paragraph_2_desktop": "Please carefully review our public reviews that we do not manage in any way so you can make the best decision for your family.",
+  "sign_off_text": " -Brighter Beginnings ",
+  "paragraph_3_desktop": "We believe our program has a lot to offer and hope it aligns with you and your little ones' best interest."
 }
