@@ -1,9 +1,9 @@
 {
   "accordion_title": "Infant Program Details",
-  "age": "6 Weeks - 15 Mo",
+  "age": "6 Weeks - 19 Mo",
   "start": 1.5,
   "end": 15,
-  "img":"/programs_images/infant.png",
+  "img": "/programs_images/infant.png",
   "bg_color": "grass",
   "dropdownData": [
     {
@@ -19,8 +19,7 @@
     {
       "title": "Schedule",
       "description": "During intake, parents and the infant’s educator will write up a schedule altered to that particular infant. Infant schedules are individual and may change as the needs of the infant changes",
-      "color": "grass" 
+      "color": "grass"
     }
-    
   ]
 }
