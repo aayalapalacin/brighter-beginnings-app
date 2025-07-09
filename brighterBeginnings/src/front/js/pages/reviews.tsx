@@ -32,7 +32,6 @@ const Reviews: React.FC = () => {
 
   // --- Destructure ALL data directly from the imported object ---
   const {
-    title, // Now includes the 'title' field
     banner_image,
     banner_title,
     banner_subtitle,
@@ -45,8 +44,7 @@ const Reviews: React.FC = () => {
 
   return (
     <div data-testid="reviews" className="reviews-container w-100 mx-auto">
-      {/* --- NEW: Display the main page title --- */}
-      {title && <h1 className="page-main-title text-center my-4">{title}</h1>}
+     
 
       <div className="row reviews-page-img-container w-100 position-relative">
         {banner_image && <img src={banner_image} alt={banner_title} className="w-100 reviews-page-img" />}
