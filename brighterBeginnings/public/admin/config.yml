@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: main # <-- IMPORTANT: Confirm this matches your GitHub repo's default branch (e.g., 'main' or 'master')
 
-media_folder: public/uploads # All general media (like images for blog posts, etc.) will go here
+media_folder: ../uploads # All general media (like images for blog posts, etc.) will go here
 public_folder: /uploads
 
 collections:
