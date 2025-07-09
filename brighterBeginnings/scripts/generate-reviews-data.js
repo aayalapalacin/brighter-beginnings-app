@@ -1,31 +1,43 @@
 const fs = require('fs');
 const path = require('path');
 
-// Path where Netlify CMS saves your reviews.json
-const reviewsJsonPath = path.join(__dirname, 'content', 'pages', 'reviews.json');
-// Path where the generated JavaScript file will be saved for your React app to import
-const outputFilePath = path.join(__dirname, 'src', 'data', 'reviews.js');
+// --- CORRECTED PATHS ---
+
+// Path to the reviews.json content file
+// From the 'scripts' folder (__dirname), go up one level (..) to the project root ('brighterBeginnings'),
+// then navigate into 'content/pages/reviews.json'.
+const REVIEWS_JSON_PATH = path.resolve(__dirname, '..', 'content', 'pages', 'reviews.json');
+
+// Directory where the generated JavaScript file will be saved for your React app to import.
+// From the 'scripts' folder (__dirname), go up one level (..) to the project root,
+// then navigate into 'src/data'.
+const OUTPUT_DIR = path.resolve(__dirname, '..', 'src', 'data');
+
+// Full path for the output reviews.js file
+const OUTPUT_FILE = path.join(OUTPUT_DIR, 'reviews.js');
+
+// --- END CORRECTED PATHS ---
+
 
 // Ensure the output directory exists
-const outputDir = path.dirname(outputFilePath);
-if (!fs.existsSync(outputDir)) {
-  fs.mkdirSync(outputDir, { recursive: true });
+if (!fs.existsSync(OUTPUT_DIR)) { // Changed to use OUTPUT_DIR
+  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 }
 
 let reviewsData = {};
 
 // Read the reviews.json file
-if (fs.existsSync(reviewsJsonPath)) {
-  const fileContent = fs.readFileSync(reviewsJsonPath, 'utf8');
+if (fs.existsSync(REVIEWS_JSON_PATH)) { // Changed to use REVIEWS_JSON_PATH
+  const fileContent = fs.readFileSync(REVIEWS_JSON_PATH, 'utf8'); // Changed to use REVIEWS_JSON_PATH
   try {
     reviewsData = JSON.parse(fileContent);
   } catch (error) {
-    console.error(`Error parsing JSON from ${reviewsJsonPath}:`, error);
+    console.error(`Error parsing JSON from ${REVIEWS_JSON_PATH}:`, error);
     // Fallback to empty object if parsing fails, to avoid breaking the build
     reviewsData = {};
   }
 } else {
-  console.warn(`Warning: '${reviewsJsonPath}' not found. Reviews data will be empty.`);
+  console.warn(`Warning: '${REVIEWS_JSON_PATH}' not found. Reviews data will be empty.`); // Changed to use REVIEWS_JSON_PATH
   // If the file doesn't exist, ensure reviewsData is an empty object
   reviewsData = {};
 }
@@ -38,6 +50,6 @@ const reviewsPageData = ${JSON.stringify(reviewsData, null, 2)};
 export default reviewsPageData;
 `;
 
-fs.writeFileSync(outputFilePath, jsContent, 'utf8');
+fs.writeFileSync(OUTPUT_FILE, jsContent, 'utf8'); // Changed to use OUTPUT_FILE
 
-console.log(`Generated reviews page data to ${outputFilePath}`);
+console.log(`Generated reviews page data to ${OUTPUT_FILE}`); // Changed to use OUTPUT_FILE

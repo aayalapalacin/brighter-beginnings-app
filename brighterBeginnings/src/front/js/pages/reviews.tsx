@@ -5,7 +5,7 @@ import ErrorNotification from '../component/ErrorNotification'; // Adjust path i
 // --- Import the generated data and its interfaces ---
 // Assuming your reviews.d.ts is located in src/data/reviews.d.ts
 import reviewsPageData from '../../../data/reviews';
-import { ReviewsPageData, ReviewPlatform } from '../../../data/reviews'; 
+import { ReviewPlatform } from '../../../data/reviews'; 
 
 // --- End TypeScript Interfaces ---
 
