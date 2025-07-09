@@ -17,10 +17,10 @@ collections:
     fields:
       # Top-level fields for each program object (img and bg_color removed)
       - {label: "Accordion Title", name: "accordion_title", widget: "string", required: true, hint: "e.g., Infant Program Details"}
-      - {label: "Program Image Path", name: "img", widget: "string", disabled: true, required: true, hint: "Path to the program's image (e.g., /img/infant.png). Not editable in CMS."} 
+      - {label: "Program Image Path", name: "img", widget: "string", disabled: true, required: true, hint: "Path to the program's image (e.g., /img/infant.png). Not editable in CMS."}
       - {label: "Age Range Text", name: "age", widget: "string", hint: "e.g., 6 Weeks - 15 Mo"}
-      - {label: "Age Start (Months)", name: "start", widget: "number", value_type: "float", min: 0, hint: "Starting age in months (e.g., 1.5 for 1 month, 2 weeks)"} # Updated hint
-      - {label: "Age End (Months)", name: "end", widget: "number", value_type: "float", min: 0, hint: "Ending age in months (e.g., 15 for 1 year, 3 months)"} # Updated hint
+      - {label: "Age Start (Months)", name: "start", widget: "number", value_type: "float", min: 0, hint: "Starting age in months (e.g., 1.5 for 1 month, 2 weeks)"}
+      - {label: "Age End (Months)", name: "end", widget: "number", value_type: "float", min: 0, hint: "Ending age in months (e.g., 15 for 1 year, 3 months)"}
 
       # Nested array of objects: dropdownData
       - label: "Program Details (Dropdowns)" # Label for this list in the CMS UI
@@ -30,41 +30,40 @@ collections:
         summary: "{{fields.title}}" # Show the title of each dropdown item in the list summary
         fields: # These are the fields for EACH item within the dropdownData list (color removed)
           - {label: "Dropdown Title", name: "title", widget: "string", required: true, hint: "e.g., Price, Description, Schedule"}
-          - {label: "Dropdown Description", name: "description", widget: "markdown", required: true, hint: "Detailed text for this dropdown item"} # markdown widget for rich text
+          - {label: "Dropdown Description", name: "description", widget: "markdown", required: true, hint: "Detailed text for this dropdown item"}
+
   - name: "pages" # Your existing 'Website Pages' collection
     label: "Website Pages"
     files:
-
       # --- NEW: Reviews Page Content ---
       - file: "brighterBeginnings/content/pages/reviews.json" # Path to the content file for your Reviews page
         label: "Reviews Page" # Label in the CMS UI for this specific file
         name: "Reviews Page"
         fields:
-          # Banner Section (Lilly Smith image and text)
+          # --- This field allows the user to edit the main page title in CMS ---
+          - {label: "Page Title", name: "title", widget: "string", required: true, hint: "The main title displayed on the Reviews page, e.g., Customer Reviews"}
+          # --- The 'image' widget for 'banner_image' specifically allows photo uploads/selection via CMS ---
           - {label: "Banner Image", name: "banner_image", widget: "image", required: false, hint: "Upload the main banner image for the Reviews page."}
+          # --- These fields allow editing the banner text ---
           - {label: "Banner Title", name: "banner_title", widget: "string", required: true, hint: "e.g., Lily Smith"}
           - {label: "Banner Subtitle", name: "banner_subtitle", widget: "string", required: true, hint: "e.g., Brighter Beginnings Director"}
 
-          # Introductory Paragraphs
+          # --- These fields allow editing the introductory paragraphs ---
           - {label: "Intro Paragraph 1", name: "paragraph_1", widget: "markdown", required: true}
           - {label: "Intro Paragraph 2 (Desktop)", name: "paragraph_2_desktop", widget: "markdown", required: false}
           - {label: "Intro Paragraph 3 (Desktop)", name: "paragraph_3_desktop", widget: "markdown", required: false}
           - {label: "Sign-off Text", name: "sign_off_text", widget: "string", required: true}
 
-          # Review Platform Links (Repeatable List)
+          # --- This section allows adding/editing/removing review platforms and their links ---
           - label: "Review Platforms" # Label for the list in CMS
             name: "review_platforms" # Key in the JSON
             widget: "list"
             collapsed: false
             summary: "{{fields.platform_name}}" # Show the platform name in the list summary
             fields:
-              # Platform Name (e.g., "Facebook", "Google") - for display/lookup
+              # Fields for each individual review platform entry:
               - {label: "Platform Name", name: "platform_name", widget: "string", required: true, hint: "e.g., Facebook, Google"}
-              # Icon Key (e.g., "facebook", "google") - used to lookup hardcoded image in React
-              - {label: "Icon Key", name: "icon_key", widget: "string", required: true, hint: "e.g., facebook, google, yelp, care (must match hardcoded names)"}
-              # Desktop Link
+              - {label: "Icon Key", name: "icon_key", widget: "string", required: true, hint: "e.g., facebook, google, yelp, care (must match hardcoded names for logos)"}
               - {label: "Desktop Review Link", name: "desktop_link", widget: "string", required: true, pattern: ["^https?:\/\/.+", "Must be a valid URL starting with http:// or https://"], hint: "Full URL for desktop reviews"}
-              # Mobile Link
               - {label: "Mobile Review Link", name: "mobile_link", widget: "string", required: true, pattern: ["^https?:\/\/.+", "Must be a valid URL starting with http:// or https://"], hint: "Full URL for mobile reviews"}
-              # Alt Text for the icon
               - {label: "Icon Alt Text", name: "icon_alt_text", widget: "string", required: true, hint: "e.g., Facebook icon"}

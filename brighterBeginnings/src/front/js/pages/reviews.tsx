@@ -1,69 +1,38 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react'; // No need for useState or useEffect anymore
 import "../../styles/reviews.css";
-import ErrorNotification from '../component/ErrorNotification';
-// --- Define TypeScript Interfaces for your data ---
+import ErrorNotification from '../component/ErrorNotification'; // Adjust path if your ErrorNotification is elsewhere
 
-// Interface for a single review platform item from the CMS
-interface ReviewPlatform {
-  platform_name: string;
-  icon_key: string; // Used to lookup the hardcoded image path
-  desktop_link: string;
-  mobile_link: string;
-  icon_alt_text: string;
-}
-
-// Interface for the entire reviews page data structure from reviews.json
-interface ReviewsPageData {
-  title: string;
-  banner_image: string;
-  banner_title: string;
-  banner_subtitle: string;
-  paragraph_1: string;
-  paragraph_2_desktop?: string; // Optional, as per your config.yml (required: false)
-  paragraph_3_desktop?: string; // Optional
-  sign_off_text: string;
-  review_platforms: ReviewPlatform[]; // Array of ReviewPlatform objects
-}
+// --- Import the generated data and its interfaces ---
+// Assuming your reviews.d.ts is located in src/data/reviews.d.ts
+import reviewsPageData from '../../../data/reviews';
+import { ReviewsPageData, ReviewPlatform } from '../../../data/reviews'; 
 
 // --- End TypeScript Interfaces ---
 
-const Reviews: React.FC = () => { // Use React.FC for functional components
-  const [reviewsPageData, setReviewsPageData] = useState<ReviewsPageData | null>(null); // Type the state
-
+const Reviews: React.FC = () => {
   // Hardcoded map for review platform icons (these are NOT in CMS)
-  const reviewIconMap: { [key: string]: string } = { // Type the map
+  const reviewIconMap: { [key: string]: string } = {
     "facebook": "/reviews_images/facebook.png",
     "google": "/reviews_images/google.webp",
     "yelp": "/reviews_images/yelp.webp",
     "care": "/reviews_images/care.png",
     // Add more if you introduce new platforms
   };
-  useEffect(() => {
-    // Fetch the data for the Reviews page from your generated content
-    // Assuming it's processed and available via a simple fetch from the public folder
-    fetch('/content/pages/reviews.json') // Adjust path if your build process changes it
-      .then(res => {
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        // Explicitly type the JSON response
-        return res.json() as Promise<ReviewsPageData>;
-      })
-      .then(data => setReviewsPageData(data))
-      .catch(error => {
-        console.error("Error fetching reviews page data:", error);
-        // You might set an error state here to show a message to the user
-      });
-  }, []);
 
-  if (!reviewsPageData) {
+  // --- UPDATED: Error / Data Check ---
+  // reviewsPageData is now directly imported, so it's never null/undefined.
+  // Check if it's an empty object (if reviews.json was missing) or if a critical field is missing.
+  if (!reviewsPageData || Object.keys(reviewsPageData).length === 0 || !reviewsPageData.banner_title) {
+    // Log for debugging if needed, but the ErrorNotification will handle the UI
+    console.error("Reviews page data is missing or incomplete:", reviewsPageData);
     return (
-      <ErrorNotification />
+      <ErrorNotification  />
     );
   }
 
-  // Destructure data for easier use
+  // --- Destructure ALL data directly from the imported object ---
   const {
+    title, // Now includes the 'title' field
     banner_image,
     banner_title,
     banner_subtitle,
@@ -71,48 +40,49 @@ const Reviews: React.FC = () => { // Use React.FC for functional components
     paragraph_2_desktop,
     paragraph_3_desktop,
     sign_off_text,
-    review_platforms // This is your array of review platforms from CMS
-  } = reviewsPageData; // TypeScript infers types from ReviewsPageData interface
+    review_platforms
+  } = reviewsPageData;
 
   return (
     <div data-testid="reviews" className="reviews-container w-100 mx-auto">
+      {/* --- NEW: Display the main page title --- */}
+      {title && <h1 className="page-main-title text-center my-4">{title}</h1>}
+
       <div className="row reviews-page-img-container w-100 position-relative">
-        <img src={banner_image} alt={banner_title} className="w-100 reviews-page-img" /> {/* Dynamic Banner Image */}
+        {banner_image && <img src={banner_image} alt={banner_title} className="w-100 reviews-page-img" />}
         <div className="img-text-overlay">
-          <h1 className="img-text-overlay-title ">{banner_title}</h1> {/* Dynamic Title */}
-          <p className="img-overlay-subtitle mt-1">{banner_subtitle}</p> {/* Dynamic Subtitle */}
+          <h2 className="img-text-overlay-title ">{banner_title}</h2> {/* Changed to h2, as page 'title' is now h1 */}
+          <p className="img-overlay-subtitle mt-1">{banner_subtitle}</p>
         </div>
       </div>
       <div className="row reviews-paragraph-container">
         <div className="col reviews-paragraphs">
-          <p className='reviews-p-1'>{paragraph_1}</p> {/* Dynamic Paragraph 1 */}
-          {/* Use optional chaining or checks for optional paragraphs */}
-          {paragraph_2_desktop && <p className='reviews-p-2 d-none d-md-block'>{paragraph_2_desktop}</p>} {/* Dynamic Paragraph 2 */}
-          {paragraph_3_desktop && <p className='reviews-p-3 d-none d-md-block'>{paragraph_3_desktop}</p>} {/* Dynamic Paragraph 3 */}
-          <p className='reviews-p-4'> {sign_off_text} </p> {/* Dynamic Sign-off */}
+          <p className='reviews-p-1'>{paragraph_1}</p>
+          {paragraph_2_desktop && <p className='reviews-p-2 d-none d-md-block'>{paragraph_2_desktop}</p>}
+          {paragraph_3_desktop && <p className='reviews-p-3 d-none d-md-block'>{paragraph_3_desktop}</p>}
+          <p className='reviews-p-4'> {sign_off_text} </p>
         </div>
       </div>
       <div className="row reviews-container my-5">
         <div className="col d-flex review align-items-center justify-content-center">
           {review_platforms && review_platforms.length > 0 ? (
-            review_platforms.map((platform: ReviewPlatform, index: number) => { // Type 'platform' and 'index'
-              const iconSrc = reviewIconMap[platform.icon_key]; // Lookup hardcoded icon path
+            review_platforms.map((platform: ReviewPlatform, index: number) => {
+              const iconSrc = reviewIconMap[platform.icon_key];
               if (!iconSrc) {
                 console.warn(`Missing icon path for key: ${platform.icon_key}`);
-                return null; // Don't render if icon path isn't found
+                return null;
               }
               return (
                 <div className="review-item-container mx-1" key={index}>
-                  <img src={iconSrc} alt={platform.icon_alt_text} className="review-item-image mb-3" /> {/* Icon from map, alt from CMS */}
-                  {/* Buttons use links from CMS */}
-                  <button className="review-item-button d-block d-md-none d-lg-none" onClick={() => window.open(platform.mobile_link, "_blank")}>Visit Reviews</button>
-                  <button className="review-item-button d-none d-md-block d-lg-block" onClick={() => window.open(platform.desktop_link, "_blank")}>Visit Reviews</button>
+                  <img src={iconSrc} alt={platform.icon_alt_text} className="review-item-image mb-3" />
+                  <a href={platform.mobile_link} target="_blank" rel="noopener noreferrer" className="review-item-button d-block d-md-none d-lg-none">Visit Reviews</a>
+                  <a href={platform.desktop_link} target="_blank" rel="noopener noreferrer" className="review-item-button d-none d-md-block d-lg-block">Visit Reviews</a>
                 </div>
               );
             })
           ) : (
             <div className='no-reviews m-auto'>
-              <h1 className='reviews-title'>No reviews data loaded.</h1>
+              <h2 className='reviews-title'>No review platforms configured.</h2>
             </div>
           )}
         </div>
@@ -120,7 +90,7 @@ const Reviews: React.FC = () => { // Use React.FC for functional components
         <div className="col d-none review-mobile align-items-center justify-content-center">
             <div id="carouselExampleIndicators" className="carousel slide bg-gradient-sky ">
                 <div className="carousel-indicators">
-                    {review_platforms && review_platforms.map((_, index) => (
+                    {review_platforms && review_platforms.map((_, index:number) => (
                         <button
                             type="button"
                             data-bs-target="#carouselExampleIndicators"
@@ -133,15 +103,15 @@ const Reviews: React.FC = () => { // Use React.FC for functional components
                     ))}
                 </div>
                 <div className="carousel-inner">
-                    {review_platforms && review_platforms.map((platform: ReviewPlatform, index: number) => { // Type 'platform' and 'index'
+                    {review_platforms && review_platforms.map((platform: ReviewPlatform, index: number) => {
                         const iconSrc = reviewIconMap[platform.icon_key];
                         if (!iconSrc) return null;
                         return (
                             <div className={`carousel-item ${index === 0 ? "active" : ""}`} key={`carousel-item-${index}`}>
                                 <div className="review-item-container mx-1" >
                                     <img src={iconSrc} alt={platform.icon_alt_text} className="review-item-image mb-3" />
-                                    <button className="review-item-button d-block d-md-none d-lg-none" onClick={() => window.open(platform.mobile_link, "_blank")}>Visit Reviews</button>
-                                    <button className="review-item-button d-none d-md-block d-lg-block" onClick={() => window.open(platform.desktop_link, "_blank")}>Visit Reviews</button>
+                                    <a href={platform.mobile_link} target="_blank" rel="noopener noreferrer" className="review-item-button d-block d-md-none d-lg-none">Visit Reviews</a>
+                                    <a href={platform.desktop_link} target="_blank" rel="noopener noreferrer" className="review-item-button d-none d-md-block d-lg-block">Visit Reviews</a>
                                 </div>
                             </div>
                         );
