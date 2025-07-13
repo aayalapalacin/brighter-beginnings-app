@@ -61,6 +61,7 @@ collections:
           # --- Placeholders for other Home page components (CareersContent, ClassDojo)
           # You'll expand these as you move more content into the CMS.
           # For now, we'll keep them as simple placeholders.
+          - {label: "We provide programs title", name: "we_provide_programs_title", widget: "string", required: false}
           - {label: "ClassDojo Title", name: "classdojo_title", widget: "string", required: false}
           - {label: "Careers Section Heading", name: "careers_heading", widget: "string", required: false}
 

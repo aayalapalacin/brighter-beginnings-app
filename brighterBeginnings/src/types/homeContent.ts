@@ -15,5 +15,6 @@ export interface homeContentType{
     "title": string;
     "carousel_slides": carouselSlideType[];
     "classdojo_title": string;
+    "we_provide_programs_title": string;
     "careers_heading": string;
 } 

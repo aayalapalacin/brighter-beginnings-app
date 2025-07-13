@@ -34,7 +34,7 @@ const Home = () => {
     <div className="">
       <Carousel slides={homeContent} />
       <div className="container w-100">
-        <ProgramsInfo />
+        <ProgramsInfo title={homeContent.title} />
         <hr />
         <ClassDojo />
         <hr />

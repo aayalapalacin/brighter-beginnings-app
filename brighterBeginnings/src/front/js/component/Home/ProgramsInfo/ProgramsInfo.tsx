@@ -5,7 +5,10 @@ import ErrorNotification from "../../ErrorNotification";
 
 import { Link } from "react-router-dom";
 import "./programs-info.css";
-const ProgramsInfo = () => {
+interface programsInfoProps{
+  title:string;
+}
+const ProgramsInfo = ({title}: programsInfoProps) => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const [isShown, setShown] = useState(false);
 
@@ -32,7 +35,7 @@ const ProgramsInfo = () => {
       >
         <div className="programs-info-title-container w-100 text-center">
               <h1 className="programs-info-title-all color-tree  text-shadow">
-                We provide programs for children from 6 Weeks - 5 yrs
+                {title}
               </h1>
             </div>
             <div className="programs-info-content-container  m-auto pt-1 row justify-content-center">
