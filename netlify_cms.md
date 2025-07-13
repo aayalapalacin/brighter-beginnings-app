@@ -113,7 +113,7 @@ Ensure your new data generation script runs before your React app builds.
   // ... other package.json content ...
   "scripts": {
     "start": "react-scripts start",
-    "build": "node scripts/generate-data.js && node scripts/generate-reviews-data.js && node scripts/generate-simple-hero-data.js && react-scripts build",
+    "build": "node scripts/generate-programs-data.js && node scripts/generate-reviews-data.js && node scripts/generate-simple-hero-data.js && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -181,7 +181,7 @@ export default SimpleHero;
     * **Check `media_folder` in `config.yml`:** Ensure it's correct and doesn't have extra slashes. It should be relative to your repository root (e.g., `brighterBeginnings/public/uploads`).
     * **Verify in Git:** After uploading via CMS, check your online Git repository to confirm the image file exists at the expected path (e.g., `brighterBeginnings/public/uploads/your-image.png`).
 * **Build Fails (e.g., "File Not Found"):**
-    * **Check Paths in Script:** Double-check `JSON_PATH` and `OUTPUT_DIR` in your `generate-data.js` script. They must correctly point to your content JSON and desired output JS file location.
+    * **Check Paths in Script:** Double-check `JSON_PATH` and `OUTPUT_DIR` in your `generate-programs-data.js` script. They must correctly point to your content JSON and desired output JS file location.
 * **Content Not Updating on Site:**
     * **Netlify Deploy:** Ensure a new build and deploy completed successfully on Netlify after your changes (CMS saves or code pushes).
     * **Browser Cache:** Perform a hard refresh (Ctrl+F5 or Cmd+Shift+R) in your browser.

@@ -1,0 +1,40 @@
+{
+  "title": "Welcome to Brighter Beginnings - Your Child's Bright Future Starts Here",
+  "carousel_slides": [
+    {
+      "background_image": "/home_images/staff.png",
+      "overlay_image": null,
+      "container_bg_color": "#FFFFFF",
+      "heading": "Get to know our Staff!",
+      "subheading": "Meet our highly qualified and caring team dedicated to your child's growth.",
+      "button_text": "Learn More!",
+      "button_link": "/staff",
+      "video_url": null,
+      "video_button_text": null
+    },
+    {
+      "background_image": "/home_images/playground_photo.jpeg",
+      "overlay_image": null,
+      "container_bg_color": "#FFFFFF",
+      "heading": "Playground Paradise",
+      "subheading": "Five large fenced-in play areas designed for different age groups to explore and have fun.",
+      "button_text": "See More!",
+      "button_link": "/facilities",
+      "video_url": null,
+      "video_button_text": null
+    },
+    {
+      "background_image": null,
+      "overlay_image": "/home_images/HeggertyLogo.png",
+      "container_bg_color": "#89c9d0",
+      "heading": null,
+      "subheading": null,
+      "button_text": null,
+      "button_link": null,
+      "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "video_button_text": "Get to know our Curriculum"
+    }
+  ],
+  "classdojo_title": "Connect with ClassDojo!",
+  "careers_heading": "Join Our Team!"
+}

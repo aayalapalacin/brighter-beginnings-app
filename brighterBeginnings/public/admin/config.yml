@@ -35,6 +35,36 @@ collections:
   - name: "pages" # Your existing 'Website Pages' collection
     label: "Website Pages"
     files:
+      - file: "brighterBeginnings/content/pages/home.json" # This will be the content file for your Home page
+        label: "Home Page" # Label in the CMS UI
+        name: "home_page_content" # Internal name for this file entry
+        fields:
+          - {label: "Page Title (SEO)", name: "title", widget: "string", required: true, hint: "The main title for SEO and internal reference, e.g., Brighter Beginnings Home"}
+
+          # --- Carousel Section ---
+          - label: "Carousel Slides"
+            name: "carousel_slides"
+            widget: "list"
+            collapsed: false
+            summary: "{{fields.image}} - {{fields.heading}}" # Use image path and heading for summary
+            fields:
+              - {label: "Background Image", name: "background_image", widget: "image", required: true, hint: "Image for the main carousel slide background."}
+              - {label: "Overlay Image (Optional)", name: "overlay_image", widget: "image", required: false, hint: "Smaller image to overlay on the background (e.g., Heggerty logo)."}
+              - {label: "Image Container Background Color", name: "container_bg_color", widget: "color", required: false, default: "#ffffff", hint: "Background color for slide if overlay image is used (e.g., #89c9d0)."} # For the Heggerty slide, use #89c9d0 for light-sky
+              - {label: "Heading", name: "heading", widget: "string", required: false, hint: "Main text for the slide, e.g., Get to know our Staff!"}
+              - {label: "Subheading", name: "subheading", widget: "string", required: false, hint: "Secondary text for the slide, e.g., 5 large fenced in play areas..."}
+              - {label: "Button Text", name: "button_text", widget: "string", required: false, hint: "Text on the call-to-action button, e.g., Learn More!"}
+              - {label: "Button Link", name: "button_link", widget: "string", required: false, hint: "Internal path (e.g., /staff) or external URL."}
+              - {label: "Video Embed URL (Optional)", name: "video_url", widget: "string", required: false, hint: "YouTube or similar embed URL (e.g., https://www.youtube.com/embed/VIDEO_ID). Only for video slides."}
+              - {label: "Video Button Text (Optional)", name: "video_button_text", widget: "string", required: false, hint: "Text for the 'Click to Play Video' button."}
+
+          # --- Placeholders for other Home page components (CareersContent, ClassDojo)
+          # You'll expand these as you move more content into the CMS.
+          # For now, we'll keep them as simple placeholders.
+          - {label: "ClassDojo Title", name: "classdojo_title", widget: "string", required: false}
+          - {label: "Careers Section Heading", name: "careers_heading", widget: "string", required: false}
+
+
       # --- NEW: Reviews Page Content ---
       - file: "brighterBeginnings/content/pages/reviews.json" # Path to the content file for your Reviews page
         label: "Reviews Page" # Label in the CMS UI for this specific file
