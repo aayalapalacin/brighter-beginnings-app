@@ -38,7 +38,24 @@
   left: 51rem;
   width: 25%;
 }
+.carousel-overlay-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 50%; /* Your specific size for the overlay */
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 5; /* Give it a base z-index, lower than the button */
+}
 
+/* Add this new rule, or add z-index to your existing .clickOnVideoContainer rule */
+.clickOnVideoContainer {
+    /* Your existing styles like display:flex, align-items-end, h-100, padding-bottom */
+    /* Make sure this is higher than the overlay image's z-index */
+    z-index: 10;
+}
 
 
 

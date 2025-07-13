@@ -43,9 +43,9 @@ const Carousel = ({ slides }: CarouselProps) => {
   }, [slides]);
 
 
-  if (!slides || !slides.carousel_slides || slides.carousel_slides.length === 0) {
-    return <div>No carousel slides configured.</div>; // Or a fallback component
-  }
+  // if (!slides || !slides.carousel_slides || slides.carousel_slides.length === 0) {
+  //   return <div>No carousel slides configured.</div>; // Or a fallback component
+  // }
 
   // Ensure currentSlide is always valid
   const currentSlide = slides.carousel_slides[activeSlideIndex] || slides.carousel_slides[0];
