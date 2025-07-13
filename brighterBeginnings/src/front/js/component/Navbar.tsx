@@ -22,7 +22,7 @@ const Navbar: React.FC<NavbarProps> = ({ pages }) => {
   };
 
   return (
-    <div className="navbar-container container mt-md-5 mt-4">
+    <div className="navbar-container container mt-md-5 mt-4 mb-5">
       <nav className="navbar-content navbar navbar-expand-lg align-items-start navbar-light">
         <div className="navbar-logo-container pb-md-5 pb-lg-5 pb-0 pe-md-3 pe-0 navbar-brand my-auto btn">
           <img
