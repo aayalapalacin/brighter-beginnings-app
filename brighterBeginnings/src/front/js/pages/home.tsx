@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import Carousel from "../component/Home/Carousel/Carousel";
 import ProgramsInfo from "../component/Home/ProgramsInfo/ProgramsInfo";
