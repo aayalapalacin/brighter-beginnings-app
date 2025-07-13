@@ -39,52 +39,11 @@
   width: 25%;
 }
 
-.video.video-full {
-  opacity: 1;
-  transition: opacity .85s ease-out;
-  -moz-transition: opacity .85s ease-out;
-  -webkit-transition: opacity .85s ease-out;
-  -o-transition: opacity .85s ease-out;
-}
-
-.video {
-
-  opacity: 0;
-}
 
 
-/* Ensure the outer carousel container has a defined height */
-#mainPageCarousel {
-  min-height: 400px; /* Adjust this value as needed for your design */
-  /* Keep your existing width, margin, etc. for #mainPageCarousel */
-}
 
-/* The inner container needs to be positioned relatively for absolute children */
-.carousel-inner {
-  position: relative;
-  height: 100%; /* Make it fill the height of #mainPageCarousel */
-  overflow: hidden; /* Hides any content overflow during transitions */
-}
 
-/* Styles for all carousel items */
-.carousel-item {
-  position: absolute; /* Crucial: This stacks items on top of each other */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; /* Makes items fill the .carousel-inner */
-  opacity: 0; /* Items are invisible by default */
-  visibility: hidden; /* Ensures they don't block interaction or screen readers when hidden */
-  transition: opacity 1s ease-in-out, visibility 1s ease-in-out; /* The fade animation */
-  z-index: 1; /* Default stacking order */
-}
 
-/* Styles for the currently active carousel item */
-.carousel-item.active {
-  opacity: 1; /* Makes the active item fully visible */
-  visibility: visible; /* Makes the active item interactive */
-  z-index: 2; /* Brings the active item to the front */
-}
 @media screen and (max-width: 768px) {
   .carousel-title{
     font-size: 1.3rem;
