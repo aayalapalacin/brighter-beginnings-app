@@ -12,7 +12,7 @@ const Carousel = ({ slides }: CarouselProps) => {
   const [activeSlideIndex, setActiveSlideIndex] = useState<number>(0);
 
   // Define the interval duration in milliseconds (e.g., 3000ms = 3 seconds)
-  const autoSlideInterval = 3000;
+  const autoSlideInterval = 4000;
 
   // Effect for automatic slide advancement
   useEffect(() => {
