@@ -2,11 +2,11 @@
   "title": "Welcome to Brighter Beginnings - Your Child's Bright Future Starts Here",
   "carousel_slides": [
     {
-      "heading": "Get to know our Staffers!",
+      "heading": "Get to know our Staff!",
       "subheading": "Meet our highly qualified and caring team dedicated to your child's growth.",
       "button_link": "/staff",
       "container_bg_color": "#FFFFFF",
-      "background_image": "/uploads/children-reading-books.jpg",
+      "background_image": "/uploads/staff.png",
       "video_url": null,
       "overlay_image": null,
       "video_button_text": null,
