@@ -62,9 +62,9 @@ collections:
             name: "class_dojo_description"
             widget: "list"
             collapsed: false
-            summary: "{{fields.class_dojo_description}}" # Use image path and heading for summary
+            summary: "{{fields.bullet_point}}" # Use image path and heading for summary
             fields:
-              - {label: "Class dojo description", name: "class_dojo_description", widget: "string", required: true, hint: "bullet point describing class dojo"}          # --- Placeholders for other Home page components (CareersContent, ClassDojo)
+              - {label: "Class dojo description", name: "bullet_point", widget: "string", required: true, hint: "bullet point describing class dojo"}          # --- Placeholders for other Home page components (CareersContent, ClassDojo)
           # You'll expand these as you move more content into the CMS.
           # For now, we'll keep them as simple placeholders.
           - {label: "We provide programs title", name: "we_provide_programs_title", widget: "string", required: false}
