@@ -35,14 +35,21 @@
       "button_text": null
     }
   ],
-  "we_provide_programs_title":"We provide programs for children from 6 Weeks - 5 yrs",
-  "class_dojo_description":[
-  {"bullet_point": "Easily communicate with teachers"},
-  {"bullet_point": "Constant real time photo updates of activities"},
-  {"bullet_point": "Important Daycare Announcements "},
-  {"bullet_point": "Only parents/guardians have access"}
-
-],
+  "we_provide_programs_title": "We provide programs for children from 6 Weeks - 5 yrs",
+  "class_dojo_description": [
+    {
+      "bullet_point": "Easily communicate with the teachers"
+    },
+    {
+      "bullet_point": "Constant real time photo updates of activities"
+    },
+    {
+      "bullet_point": "Important Daycare Announcements "
+    },
+    {
+      "bullet_point": "Only parents/guardians have access"
+    }
+  ],
   "classdojo_title": "Connect with ClassDojo!",
   "careers_heading": "Join Our Team!"
 }
