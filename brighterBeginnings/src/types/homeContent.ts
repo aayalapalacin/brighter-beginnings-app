@@ -11,11 +11,15 @@ interface carouselSlideType{
       "video_button_text": String;
 }
 
+export interface classDojoDescription{
+    "bullet_point":string
+}
+
 export interface homeContentType{  
     "title": string;
     "carousel_slides": carouselSlideType[];
     "classdojo_title": string;
     "we_provide_programs_title": string;
-    "class_dojo_description":string[];
+    "class_dojo_description":classDojoDescription[];
     "careers_heading": string;
 } 

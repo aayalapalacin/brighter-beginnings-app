@@ -1,8 +1,9 @@
 import React from "react";
 import "../../styles/class_dojo.css";
+import {classDojoDescription} from "../../../types/homeContent";
 
 interface ClassDojoProps{
-  classDojoDescription:string[];
+  classDojoDescription:classDojoDescription[];
 }
 const ClassDojo = ({classDojoDescription}: ClassDojoProps) => {
   return (
@@ -16,7 +17,7 @@ const ClassDojo = ({classDojoDescription}: ClassDojoProps) => {
             (item)=>{ 
               return(
               <li>
-                {item}
+                {item.bullet_point}
               </li>
             )}
             ) : "Something went wrong, please report to Lilly"
