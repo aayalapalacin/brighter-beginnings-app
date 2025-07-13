@@ -46,7 +46,7 @@ collections:
             name: "carousel_slides"
             widget: "list"
             collapsed: false
-            summary: "{{fields.image}} - {{fields.heading}}" # Use image path and heading for summary
+            summary: "{{fields.background_image}} - {{fields.heading}}" # Use image path and heading for summary
             fields:
               - {label: "Background Image", name: "background_image", widget: "image", required: false, hint: "Image for the main carousel slide background."}
               - {label: "Overlay Image (Optional)", name: "overlay_image", widget: "image", required: false, hint: "Smaller image to overlay on the background (e.g., Heggerty logo)."}
@@ -57,8 +57,14 @@ collections:
               - {label: "Button Link", name: "button_link", widget: "string", required: false, hint: "Internal path (e.g., /staff) or external URL."}
               - {label: "Video Embed URL (Optional)", name: "video_url", widget: "string", required: false, hint: "YouTube or similar embed URL (e.g., https://www.youtube.com/embed/VIDEO_ID). Only for video slides."}
               - {label: "Video Button Text (Optional)", name: "video_button_text", widget: "string", required: false, hint: "Text for the 'Click to Play Video' button."}
-
-          # --- Placeholders for other Home page components (CareersContent, ClassDojo)
+           # --- Carousel Section ---
+          - label: "Class Dojo Description"
+            name: "class_dojo_description"
+            widget: "list"
+            collapsed: false
+            summary: "{{fields.class_dojo_description}}" # Use image path and heading for summary
+            fields:
+              - {label: "Class dojo description", name: "class_dojo_description", widget: "string", required: true, hint: "bullet point describing class dojo"}          # --- Placeholders for other Home page components (CareersContent, ClassDojo)
           # You'll expand these as you move more content into the CMS.
           # For now, we'll keep them as simple placeholders.
           - {label: "We provide programs title", name: "we_provide_programs_title", widget: "string", required: false}

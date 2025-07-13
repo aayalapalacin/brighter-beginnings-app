@@ -36,7 +36,7 @@ const Home = () => {
       <div className="container w-100">
         <ProgramsInfo title={homeContent.title} />
         <hr />
-        <ClassDojo />
+        <ClassDojo classDojoDescription={homeContent.class_dojo_description} />
         <hr />
         <CareersContent
           mobileButtonCenter={false}

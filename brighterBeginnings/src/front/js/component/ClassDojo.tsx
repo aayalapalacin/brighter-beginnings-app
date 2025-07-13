@@ -1,7 +1,10 @@
 import React from "react";
 import "../../styles/class_dojo.css";
 
-const ClassDojo = () => {
+interface ClassDojoProps{
+  classDojoDescription:string[];
+}
+const ClassDojo = ({classDojoDescription}: ClassDojoProps) => {
   return (
     <div data-testid="class-dojo" className="class-dojo-container align-items-center row">
       <div className="class-dojo-description-container col-md-6 col-12 pb-5">
@@ -9,10 +12,15 @@ const ClassDojo = () => {
           Stay Informed with Class Dojo
         </h1>
         <ul className="class-dojo-description-text fs-4">
-          <li>Easily communicate with teachers</li>
-          <li>Constant real time photo updates of activities</li>
-          <li>Important Daycare Announcements </li>
-          <li>Only parents/guardians have access</li>
+          {classDojoDescription.length > 0 ? classDojoDescription.map(
+            (item)=>{ 
+              return(
+              <li>
+                {item}
+              </li>
+            )}
+            ) : "Something went wrong, please report to Lilly"
+          }
         </ul>
       </div>
       <div className="class-dojo-video-container col-md-6 col-12 ">
