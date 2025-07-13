@@ -2,37 +2,37 @@
   "title": "Welcome to Brighter Beginnings - Your Child's Bright Future Starts Here",
   "carousel_slides": [
     {
-      "background_image": "/home_images/staff.png",
-      "overlay_image": null,
-      "container_bg_color": "#FFFFFF",
       "heading": "Get to know our Staff!",
       "subheading": "Meet our highly qualified and caring team dedicated to your child's growth.",
-      "button_text": "Learn More!",
       "button_link": "/staff",
+      "container_bg_color": "#FFFFFF",
+      "background_image": "/uploads/children-reading-books.jpg",
       "video_url": null,
-      "video_button_text": null
+      "overlay_image": null,
+      "video_button_text": null,
+      "button_text": "Learn More!"
     },
     {
-      "background_image": "/home_images/playground_photo.jpeg",
-      "overlay_image": null,
-      "container_bg_color": "#FFFFFF",
       "heading": "Playground Paradise",
       "subheading": "Five large fenced-in play areas designed for different age groups to explore and have fun.",
-      "button_text": "See More!",
       "button_link": "/facilities",
+      "container_bg_color": "#FFFFFF",
+      "background_image": "/home_images/playground_photo.jpeg",
       "video_url": null,
-      "video_button_text": null
+      "overlay_image": null,
+      "video_button_text": null,
+      "button_text": "See More!"
     },
     {
-      "background_image": null,
-      "overlay_image": "/home_images/HeggertyLogo.png",
-      "container_bg_color": "#89c9d0",
       "heading": null,
       "subheading": null,
-      "button_text": null,
       "button_link": null,
+      "container_bg_color": "#89c9d0",
+      "background_image": null,
       "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      "video_button_text": "Get to know our Curriculum"
+      "overlay_image": "/home_images/HeggertyLogo.png",
+      "video_button_text": "Get to know our Curriculum",
+      "button_text": null
     }
   ],
   "classdojo_title": "Connect with ClassDojo!",
