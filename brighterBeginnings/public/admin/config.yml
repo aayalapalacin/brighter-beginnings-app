@@ -48,7 +48,7 @@ collections:
             collapsed: false
             summary: "{{fields.image}} - {{fields.heading}}" # Use image path and heading for summary
             fields:
-              - {label: "Background Image", name: "background_image", widget: "image", required: true, hint: "Image for the main carousel slide background."}
+              - {label: "Background Image", name: "background_image", widget: "image", required: false, hint: "Image for the main carousel slide background."}
               - {label: "Overlay Image (Optional)", name: "overlay_image", widget: "image", required: false, hint: "Smaller image to overlay on the background (e.g., Heggerty logo)."}
               - {label: "Image Container Background Color", name: "container_bg_color", widget: "color", required: false, default: "#ffffff", hint: "Background color for slide if overlay image is used (e.g., #89c9d0)."} # For the Heggerty slide, use #89c9d0 for light-sky
               - {label: "Heading", name: "heading", widget: "string", required: false, hint: "Main text for the slide, e.g., Get to know our Staff!"}
