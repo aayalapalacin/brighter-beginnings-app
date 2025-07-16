@@ -1,0 +1,18 @@
+{
+  "title": "Photo Gallery",
+  "long_description": "The children have a unique opportunity to explore over an acre of New England's open beauty. They tend fruit, vegetable, and flower gardens, creating natural habitats for wildlife and extending their classroom learning. Expansive lawns, strategically placed play structures, courtyards, and a bike path encourage vigorous and imaginative outdoor play.",
+  "short_description": "Children explore over an acre of New England's beauty, tending gardens and enjoying expansive lawns, play structures, courtyards, and a bike path for outdoor play.",
+  "gallery_photos": [
+    { "src": "/about_images/children-reading-books.jpg" },
+    { "src": "/about_images/play_learn_areas/infant_classroom.jpeg" },
+    { "src": "/about_images/play_learn_areas/outdoor.jpeg" },
+    { "src": "/about_images/play_learn_areas/preschool_classroom.jpeg" },
+    { "src": "/about_images/play_learn_areas/toddler_classroom.jpeg" },
+    { "src": "/about_images/children-reading-books.jpg" },
+    { "src": "/home_images/playground_photo.jpeg" },
+    { "src": "/home_images/staff2.png" },
+    { "src": "/staff_images/Sam.jpg" },
+    { "src": "/staff_images/Nina.jpeg" },
+    { "src": "/staff_images/Yami.jpg" }
+  ]
+}

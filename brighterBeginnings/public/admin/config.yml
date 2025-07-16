@@ -104,3 +104,30 @@ collections:
               - {label: "Desktop Review Link", name: "desktop_link", widget: "string", required: true, pattern: ["^https?:\/\/.+", "Must be a valid URL starting with http:// or https://"], hint: "Full URL for desktop reviews"}
               - {label: "Mobile Review Link", name: "mobile_link", widget: "string", required: true, pattern: ["^https?:\/\/.+", "Must be a valid URL starting with http:// or https://"], hint: "Full URL for mobile reviews"}
               - {label: "Icon Alt Text", name: "icon_alt_text", widget: "string", required: true, hint: "e.g., Facebook icon"}
+      - file: "brighterBeginnings/content/pages/photo_gallery.json" # Define the path for your new photo gallery content file
+        label: "Photo Gallery Page" # Label in the CMS UI sidebar
+        name: "photo_gallery_page_content" # Internal name for this file entry
+        fields:
+          # Page Title
+          - {label: "Gallery Page Title", name: "title", widget: "string", required: true, hint: "The main title displayed on the photo gallery page, e.g., Photo Gallery"}
+
+          # Descriptions
+          - label: "Long Description (Desktop)"
+            name: "long_description"
+            widget: "string" # Use markdown for rich text editing
+            required: true
+            hint: "Detailed introductory text for the photo gallery, typically displayed on larger screens."
+          - label: "Short Description (Mobile)"
+            name: "short_description"
+            widget: "string" # Use markdown for rich text editing
+            required: true
+            hint: "Concise introductory text for the photo gallery, typically displayed on mobile screens."
+
+          # Gallery Photos (List Widget)
+          - label: "Gallery Photos" # Label for the list in CMS UI
+            name: "gallery_photos" # This will be the array key in your JSON
+            widget: "list"
+            collapsed: false # Keep the list items expanded by default
+            summary: "{{fields.src}}" # Show the image source path in the list summary
+            fields: # Fields for EACH individual photo item in the list
+              - {label: "Image File", name: "src", widget: "image", required: true, hint: "Upload the photo for the gallery."}

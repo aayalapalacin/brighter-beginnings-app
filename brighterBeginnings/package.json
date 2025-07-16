@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/node": "^16.18.96",
     "@types/react": "^18.2.75",
+    "image-size": "^2.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-photo-album": "^2.3.1",
@@ -21,7 +22,7 @@
   },
   "scripts": {
     "start": "node scripts/generate-reviews-data.js && react-scripts start",
-    "build": "node scripts/generate-programs-data.js && node scripts/generate-home-data.js && node scripts/generate-reviews-data.js && react-scripts build", 
+    "build": "node scripts/generate-programs-data.js && node scripts/generate-home-data.js && node scripts/generate-reviews-data.js && node scripts/process-gallery-data.js && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
