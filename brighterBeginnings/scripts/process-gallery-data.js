@@ -4,7 +4,26 @@ const fs = require('fs');
 const path = require('path');
 const { imageSize } = require('image-size');
 
-// ... (keep Configuration section as is) ...
+const PROJECT_ROOT_FOR_CONTENT = path.join(__dirname, '..');
+
+// Path to your source photo_gallery.json file (relative to PROJECT_ROOT_FOR_CONTENT)
+// We remove the redundant 'brighterBeginnings' here.
+const INPUT_JSON_PATH = path.join(PROJECT_ROOT_FOR_CONTENT, 'content', 'pages', 'photo_gallery.json');
+
+// Path to your public directory where images are served from (relative to PROJECT_ROOT_FOR_CONTENT)
+// We remove the redundant 'brighterBeginnings' here.
+const PUBLIC_DIR_PATH = path.join(PROJECT_ROOT_FOR_CONTENT, 'public');
+
+// Directory where the processed JSON file will be saved (relative to PROJECT_ROOT_FOR_CONTENT)
+// We remove the redundant 'brighterBeginnings' here.
+const OUTPUT_DIR_PATH = path.join(PROJECT_ROOT_FOR_CONTENT, 'content', 'pages');
+const OUTPUT_JSON_FILENAME = 'processed_photo_gallery.json';
+const OUTPUT_JSON_PATH = path.join(OUTPUT_DIR_PATH, OUTPUT_JSON_FILENAME);
+
+console.log('--- Starting Photo Gallery Data Processing ---');
+console.log(`Input JSON: ${INPUT_JSON_PATH}`);
+console.log(`Public Image Directory: ${PUBLIC_DIR_PATH}`);
+console.log(`Output JSON: ${OUTPUT_JSON_PATH}`);
 
 try {
     const rawData = fs.readFileSync(INPUT_JSON_PATH, 'utf8');
