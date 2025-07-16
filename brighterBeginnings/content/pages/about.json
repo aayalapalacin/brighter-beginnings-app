@@ -1,0 +1,41 @@
+{
+  "title": "About Us",
+  "main_image": "/about_images/children-reading-books.jpg",
+  "play_learn_data": [
+    {
+      "carouselImg": "/about_images/play_learn_areas/infant_classroom.jpeg",
+      "carouselTitle": "Infant Classroom",
+      "carouselDescription": [
+        "8+ cribs for naptime",
+        "8+ strollers for enjoying outdoors",
+        "50+ toys promoting development"
+      ]
+    },
+    {
+      "carouselImg": "/about_images/play_learn_areas/outdoor.jpeg",
+      "carouselTitle": "Outdoor Area",
+      "carouselDescription": [
+        "5 large fenced in play areas designated for different age groups",
+        "3 playground structures"
+      ]
+    },
+    {
+      "carouselImg": "/about_images/play_learn_areas/toddler_classroom.jpeg",
+      "carouselTitle": "Todddler Classroom",
+      "carouselDescription": [
+        "10+ Art project supplies",
+        "Sanbox used for sensory motor skills",
+        "Diverse book collection"
+      ]
+    },
+    {
+      "carouselImg": "/about_images/play_learn_areas/preschool_classroom.jpeg",
+      "carouselTitle": "Preschool Classroom",
+      "carouselDescription": [
+        "Fish Tank that is regulated daily",
+        "10+ science kits",
+        "Art supplies for independent"
+      ]
+    }
+  ]
+}

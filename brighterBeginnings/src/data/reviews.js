@@ -8,11 +8,11 @@ const reviewsPageData = {
   "title": "Customer Reviews",
   "review_platforms": [
     {
-      "platform_name": "Facebook",
+      "platform_name": "Facebooook",
       "icon_key": "facebook",
       "desktop_link": "https://www.facebook.com/Brighter.Beginnings.Child.Care/reviews",
       "mobile_link": "https://www.facebook.com/Brighter.Beginnings.Child.Care/reviews",
-      "icon_alt_text": "Facebook Reviews Icon"
+      "icon_alt_text": "Facebook Reviews "
     },
     {
       "platform_name": "Google",

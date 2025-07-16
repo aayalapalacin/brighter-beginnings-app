@@ -1,129 +1,70 @@
+// src/components/PlayLearnAreas.tsx (or wherever your component is located)
+
 import React, { useState } from "react";
 import "../../../styles/play-learn-areas.css";
 
-const playLearnCarouselData = [
-  {
-    carouselImg: "/about_images/play_learn_areas/infant_classroom.jpeg",
-    carouselTitle: "Infant Classroom",
-    carouselDescrtiption: (
-      <ul>
-        <li>8+ cribs for naptime</li>
-        <li>8+ strollers for enjoying outdoors</li>
-        <li>50+ toys promoting development</li>
-      </ul>
-    ),
-  },
-  {
-    carouselImg: "/about_images/play_learn_areas/outdoor.jpeg",
-    carouselTitle: "Outdoor Area",
-    carouselDescrtiption: (
-      <ul>
-        <li>
-          5 large fenced in play areas designated for different age groups
-        </li>
-        <li>3 playground structures</li>
-      </ul>
-    ),
-  },
-  {
-    carouselImg: "/about_images/play_learn_areas/toddler_classroom.jpeg",
-    carouselTitle: "Todddler Classroom",
-    carouselDescrtiption: (
-      <ul>
-        <li>10+ Art project supplies</li>
-        <li>Sanbox used for sensory motor skills</li>
-        <li>Diverse book collection</li>
-      </ul>
-    ),
-  },
-  {
-    carouselImg: "/about_images/play_learn_areas/preschool_classroom.jpeg",
-    carouselTitle: "Preschool Classroom",
-    carouselDescrtiption: (
-      <ul>
-        <li>Fish Tank that is regulated daily</li>
-        <li>10+ science kits</li>
-        <li>Art supplies for independent </li>
-      </ul>
-    ),
-  },
-];
+// Define the shape of a single carousel item expected from CMS
+interface CarouselItem {
+  carouselImg: string;
+  carouselTitle: string;
+  // carouselDescription is now an array of strings, where each string is a "point"
+  carouselDescription: string[];
+}
 
-const PlayLearnAreas = () => {
+// Define the props for the PlayLearnAreas component
+interface PlayLearnAreasProps {
+  carouselData: CarouselItem[];
+}
+
+const PlayLearnAreas: React.FC<PlayLearnAreasProps> = ({ carouselData }) => {
   const [carouselSlide, setCarouselSlide] = useState<number>(0);
 
+  // Get the number of items dynamically from the passed data
+  const numCarouselItems = carouselData.length;
+
+  // Handles moving to the next slide, ensuring it wraps around
   const handleCarouselSlideRight = () => {
-    // function to make sure carousel slide index stays within [0] and [3]
-    if (carouselSlide + 1 < 4) {
-      return carouselSlide + 1;
-    } else {
-      return 0;
-    }
+    setCarouselSlide((prevSlide) => (prevSlide + 1) % numCarouselItems);
   };
 
+  // Handles moving to the previous slide, ensuring it wraps around
   const handleCarouselSlideLeft = () => {
-    // function to make sure carousel slide index stays within [0] and [-3]
-    if (carouselSlide - 1 > -4) {
-      return carouselSlide - 1;
-    } else {
-      return 0;
-    }
+    setCarouselSlide((prevSlide) => (prevSlide - 1 + numCarouselItems) % numCarouselItems);
   };
-
-
-
 
   return (
-    <div data-testid="play-and-learn" className="carousel-container  position-relative">
+    <div data-testid="play-and-learn" className="carousel-container position-relative">
       <div className="position-relative carousel-card-container">
-        {playLearnCarouselData.map((carouselData, carouselDataIndex: number) => {
-          // if carouselDataIndex together with the value of carouselSlide if X, the converted value should be Y:
-
-          //    X    Y
-          //   -3 |  1
-          //   -2 |  2
-          //   -1 |  3
-          //    0 |  0
-          //    1 |  1
-          //    2 |  2
-          //    3 |  3
-          //    4 |  0
-          //    5 |  1
-          //    6 |  2
-          //
-          let carouselClassConversion =
-            carouselDataIndex + carouselSlide >= 0 &&
-            carouselDataIndex + carouselSlide < 4
-              ? carouselDataIndex + carouselSlide
-              : carouselDataIndex + carouselSlide === 4
-              ? 0
-              : carouselDataIndex + carouselSlide === 5
-              ? 1
-              : carouselDataIndex + carouselSlide === 6
-              ? 2
-              : carouselDataIndex + carouselSlide === -1
-              ? 3
-              : carouselDataIndex + carouselSlide === -2
-              ? 2
-              : carouselDataIndex + carouselSlide === -3
-              ? 1
-              : carouselDataIndex + carouselSlide;
+        {carouselData.map((carouselDataItem, carouselDataIndex: number) => {
+          // Calculate the class index for positioning the carousel card.
+          // This logic now accounts for a dynamic number of items.
+          let carouselClassConversion = (carouselDataIndex + carouselSlide) % numCarouselItems;
+          if (carouselClassConversion < 0) {
+            carouselClassConversion += numCarouselItems; // Adjust for negative modulo results
+          }
 
           return (
             <div
               key={carouselDataIndex}
-              className={`carousel-card-container position-absolute carousel-${carouselClassConversion}
-        }`}>
+              className={`carousel-card-container position-absolute carousel-${carouselClassConversion}`}
+            >
               <div className="carousel-card-content card ">
                 <img
-                  src={carouselData.carouselImg}
+                  src={carouselDataItem.carouselImg}
                   className="card-img-top"
-                  alt={carouselData.carouselTitle}
+                  alt={carouselDataItem.carouselTitle}
                 />
                 <div className="card-body">
-                  <h5 className="card-title">{carouselData.carouselTitle}</h5>
+                  <h5 className="card-title">{carouselDataItem.carouselTitle}</h5>
                   <div className="card-text">
-                    {carouselData.carouselDescrtiption}
+                    {/* Render the array of description strings as an unordered list */}
+                    {carouselDataItem.carouselDescription && carouselDataItem.carouselDescription.length > 0 && (
+                      <ul>
+                        {carouselDataItem.carouselDescription.map((point, pointIndex) => (
+                          <li key={pointIndex}>{point}</li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </div>
               </div>
@@ -135,24 +76,17 @@ const PlayLearnAreas = () => {
       <span className="carousel-btn-container">
         <button
           type="button"
-          className={`carousel-btn carouse-btn-animation boxShadow  color-sky border-sky-2 me-5`}
-          onClick={() => {
-            setCarouselSlide(handleCarouselSlideLeft());
-           
-          }}>
+          className={`carousel-btn carouse-btn-animation boxShadow color-sky border-sky-2 me-5`}
+          onClick={handleCarouselSlideLeft}
+        >
           <i className="fa-solid fa-arrow-left"></i>
         </button>
-      
+
         <button
           type="button"
-          className={`carousel-btn carouse-btn-animation boxShadow  color-sky border-sky-2 `}
-          onClick={() => {
-            setCarouselSlide(handleCarouselSlideRight())
-          
-          
-          }
-            }
-            >
+          className={`carousel-btn carouse-btn-animation boxShadow color-sky border-sky-2 `}
+          onClick={handleCarouselSlideRight}
+        >
           <i className="fa-solid fa-arrow-right"></i>
         </button>
       </span>

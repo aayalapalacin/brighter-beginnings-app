@@ -7,20 +7,48 @@ import { HashLink  } from 'react-router-hash-link';
 
 import "../../styles/about.css";
 import "../../styles/accordian.css";
+import usePageContent from "../../../hooks/usePageContent";
+
+interface AboutPageContent {
+  title?: string; // Made optional as it wasn't in config.yml example, but good practice to have.
+                  // If you added it back to config.yml, make it required.
+  main_image: string; // As per your simplified generate-about-data.js, it's a plain string path
+  play_learn_data: {
+    carouselImg: string; // Plain string path
+    carouselTitle: string;
+    carouselDescription: string[]; // Array of strings for bullet points
+  }[];
+}
+
 
 const About = () => {
   const contextValue = useContext(Context);
 
-   if (!contextValue || !contextValue.store || !contextValue.store.availablePrograms || contextValue.store.availablePrograms.length === 0) {
+    const { content: aboutContent, error } = usePageContent<AboutPageContent>('about');
+
+
+   if (!contextValue || !contextValue.store || !contextValue.store.availablePrograms || contextValue.store.availablePrograms.length === 0 || error || !aboutContent) {
     return <ErrorNotification />;
   }
+  
+  const {
+    title,
+    main_image,
+    play_learn_data = [] // Default empty array for carousel data
+  } = aboutContent;
+
 
   const { store } = contextValue;
+
   return (
     <div data-testid="about" className="about-container w-100 mx-auto mb-5">
+      <div className=" container">
+
+      <h1>{title}</h1>
+      </div>
       <div className="about-page-img-container mt-5 d-flex justify-content-center">
         <img
-          src="/about_images/children-reading-books.jpg"
+          src={main_image}
           className=" about-page-img"
           alt="children_reading"
           
@@ -31,7 +59,7 @@ const About = () => {
           <h1 className="carousel-title text-shadow text-start">Play and Learn Areas</h1>
         </div>
         <div className="play-carousel-container d-flex justify-content-center">
-          <PlayLearnAreas />
+          <PlayLearnAreas carouselData={play_learn_data} />
         </div>
         <hr className="m-auto w-75"/>
 

@@ -70,6 +70,44 @@ collections:
           - {label: "We provide programs title", name: "we_provide_programs_title", widget: "string", required: false}
           - {label: "ClassDojo Title", name: "classdojo_title", widget: "string", required: false}
           - {label: "Careers Section Heading", name: "careers_heading", widget: "string", required: false}
+      - file: "content/pages/about.json" # Or about.md, if you prefer Markdown for pages
+        label: "About Page"
+        name: "about"
+        fields:
+          # Basic Page Fields
+          - label: "Page Main Image" # For the main image of the About page
+            name: "main_image"
+            widget: "image"
+            required: true # Set to true if an image is always required
+
+          # --- Play & Learn Carousel Data (Array of Objects with Nested Array) ---
+          - label: "Play & Learn Areas" # This is the main label for the carousel section in CMS
+            name: "play_learn_data"    # This will be the key in your about.json file
+            widget: "list"             # Indicates this is an array (list of items)
+            summary: "{{carouselTitle}}" # Optional: Displays the title of each carousel item in the CMS list view
+            required: false # Optional: Set to true if the carousel is always required
+
+            fields: # These fields define the structure for EACH object in the 'play_learn_data' array
+              - label: "Carousel Image"
+                name: "carouselImg"
+                widget: "image"
+                required: true
+              - label: "Carousel Title"
+                name: "carouselTitle"
+                widget: "string"
+                required: true
+              - label: "Carousel Description Points" # This is the nested array of strings (for <ul><li> items)
+                name: "carouselDescription"          # The key for this nested array
+                widget: "list"                       # Indicates this is a nested array (list of strings)
+                allow_add: false                      # Allows adding multiple bullet points
+                collapsed: true                      # Keeps the list of bullet points collapsed by default in CMS
+                required: true # Optional: If the description list can be empty
+
+                fields: # This single field defines the type of each item in the "description points" list
+                  - label: "Description Point" # Label for each individual list item in CMS
+                    name: "point"              # Key for each string item (e.g., "8+ cribs for naptime")
+                    widget: "string"           # Each item is a simple string
+                    required: true
 
 
       # --- NEW: Reviews Page Content ---
