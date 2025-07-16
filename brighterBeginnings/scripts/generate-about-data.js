@@ -4,41 +4,37 @@ const fs = require('fs');
 const path = require('path');
 
 // --- Configuration ---
-const PROJECT_ROOT = path.join(__dirname, '..');
+const PROJECT_ROOT = path.join(__dirname, '..'); // Assumes script is in a 'scripts' folder at project root
 
-const INPUT_JSON_FILENAME = 'about.json';
-const OUTPUT_JSON_FILENAME = 'processed_about.json';
+const ABOUT_JSON_FILENAME = 'about.json'; // The file is both input AND output
+const ABOUT_JSON_PATH = path.join(PROJECT_ROOT, 'content', 'pages', ABOUT_JSON_FILENAME);
 
-const INPUT_JSON_PATH = path.join(PROJECT_ROOT, 'content', 'pages', INPUT_JSON_FILENAME);
-const OUTPUT_JSON_PATH = path.join(PROJECT_ROOT, 'content', 'pages', OUTPUT_JSON_FILENAME);
-
-console.log('--- Starting About Page Data Transfer (No Image Processing) ---');
-console.log(`Input JSON: ${INPUT_JSON_PATH}`);
-console.log(`Output JSON: ${OUTPUT_JSON_PATH}`);
+console.log('--- Starting About Page Data Confirmation Script ---');
+console.log(`Target JSON File: ${ABOUT_JSON_PATH}`);
 
 try {
-    // 1. Read the input JSON file
-    if (!fs.existsSync(INPUT_JSON_PATH)) {
-        console.warn(`Warning: Input JSON file not found at ${INPUT_JSON_PATH}. ` +
-                     `Creating an empty ${OUTPUT_JSON_FILENAME} to prevent build failures.`);
-        // Create an empty processed file if input doesn't exist
-        fs.writeFileSync(OUTPUT_JSON_PATH, JSON.stringify({ title: "", main_image: "", play_learn_data: [] }, null, 2), 'utf8');
-        process.exit(0); // Exit successfully, but indicate no data was processed
+    // 1. Read the current about.json
+    if (!fs.existsSync(ABOUT_JSON_PATH)) {
+        console.warn(`Warning: '${ABOUT_JSON_FILENAME}' not found at ${ABOUT_JSON_PATH}. Creating an empty one.`);
+        // Create an empty file with a basic structure if it doesn't exist, to prevent build failures
+        fs.writeFileSync(ABOUT_JSON_PATH, JSON.stringify({ title: "", main_image: "", play_learn_data: [] }, null, 2), 'utf8');
+        console.log(`Created empty '${ABOUT_JSON_FILENAME}'.`);
+        process.exit(0); // Exit successfully, but indicate no data was found to "update"
     }
 
-    const rawData = fs.readFileSync(INPUT_JSON_PATH, 'utf8');
+    const rawData = fs.readFileSync(ABOUT_JSON_PATH, 'utf8');
     let aboutData = JSON.parse(rawData);
 
-    // No image dimension processing is done here.
-    // The data is transferred as-is.
+    // No processing (like image dimensions) is performed.
+    // The content is simply read and then written back to the same file.
+    // This action ensures the file's timestamp is updated within the build environment,
+    // making sure it's considered "fresh" for subsequent build steps or direct consumption.
+    fs.writeFileSync(ABOUT_JSON_PATH, JSON.stringify(aboutData, null, 2), 'utf8');
 
-    // 2. Write the data to the output JSON file
-    fs.writeFileSync(OUTPUT_JSON_PATH, JSON.stringify(aboutData, null, 2), 'utf8');
-
-    console.log('--- About Page Data Transfer Complete! ---');
-    console.log(`Processed data written to: ${OUTPUT_JSON_PATH}`);
+    console.log('--- About Page Data Confirmation Complete! ---');
+    console.log(`'${ABOUT_JSON_FILENAME}' was re-written to confirm its latest state.`);
 
 } catch (error) {
-    console.error(`Fatal error during about page data transfer: ${error.message}`);
+    console.error(`Fatal error during about page data confirmation: ${error.message}`);
     process.exit(1); // Exit with error code
 }
