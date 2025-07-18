@@ -74,44 +74,19 @@ collections:
         label: "About Page"
         name: "about"
         fields:
-          # Basic Page Fields
-          - label: "Page Main Image" # For the main image of the About page
+          - label: "Page Main Image"
             name: "main_image"
             widget: "image"
             required: true
-
-          # --- Play & Learn Carousel Data (Array of Objects with Nested Array) ---
-          - label: "Play & Learn Areas" # This is the main label for the carousel section in CMS
-            name: "play_learn_data"    # This will be the key in your about.json file
-            widget: "list"             # Indicates this is an array (list of items)
-            summary: "{{carouselTitle}}" # Optional: Displays the title of each carousel item in the CMS list view
+          
+          - label: "Play & Learn Areas"
+            name: "play_learn_data"
+            widget: "list"
             required: true
-            # --- START: NEW/MODIFIED FOR FIXED CAROUSEL SLIDES ---
-            min: 3 # Enforce a minimum of 3 carousel slides
-            max: 3 # Enforce a maximum of 3 carousel slides
-            allow_add: false # Explicitly remove the "Add new" button in the CMS UI
-            default: # Pre-populate with 3 default slides
-              - carouselImg: "/assets/images/default_infant_room.jpg" # Provide default image path (adjust as needed)
-                carouselTitle: "Infant Classroom" # Provide a default title
-                carouselDescription: # Default bullet points for this slide
-                  - "Safe and stimulating environment for babies"
-                  - "Dedicated space for naptime and feeding"
-                  - "Focus on early sensory development"
-              - carouselImg: "/assets/images/default_toddler_room.jpg" # Provide default image path (adjust as needed)
-                carouselTitle: "Toddler Room"
-                carouselDescription:
-                  - "Engaging activities for active toddlers"
-                  - "Opportunities for social interaction"
-                  - "Support for developing motor skills"
-              - carouselImg: "/assets/images/default_preschool_area.jpg" # Provide default image path (adjust as needed)
-                carouselTitle: "Preschool Area"
-                carouselDescription:
-                  - "Curriculum focused on pre-reading and math"
-                  - "Creative play and artistic expression"
-                  - "Preparation for kindergarten success"
-            # --- END: NEW/MODIFIED FOR FIXED CAROUSEL SLIDES ---
+            min: 3
+            max: 4
 
-            fields: # These fields define the structure for EACH object in the 'play_learn_data' array
+            fields:
               - label: "Carousel Image"
                 name: "carouselImg"
                 widget: "image"
@@ -120,23 +95,21 @@ collections:
                 name: "carouselTitle"
                 widget: "string"
                 required: true
-              - label: "Carousel Description Points" # This is the nested array of strings (for <ul><li> items)
-                name: "carouselDescription"          # The key for this nested array
-                widget: "list"                       # Indicates this is a nested array (list of strings)
-                # --- START: NEW/MODIFIED FOR FIXED DESCRIPTION POINTS ---
-                min: 3 # Enforce a minimum of 3 description points
-                max: 3 # Enforce a maximum of 3 description points
-                allow_add: false # Explicitly remove the "Add new" button for bullet points
-                default: ["Default Point 1", "Default Point 2", "Default Point 3"] # Pre-populate with 3 default points
-                # --- END: NEW/MODIFIED FOR FIXED DESCRIPTION POINTS ---
-                collapsed: true # Keeps the list of bullet points collapsed by default in CMS
-                required: true # If you always need at least 3 points, keep this true.
-
-                fields: # This single field defines the type of each item in the "description points" list
-                  - label: "Description Point" # Label for each individual list item in CMS
-                    name: "point"              # Key for each string item (e.g., "8+ cribs for naptime")
-                    widget: "string"           # Each item is a simple string
+              - label: "Carousel Description Points"
+                name: "carouselDescription"
+                widget: "list"
+                min: 2
+                max: 3
+                collapsed: false
+                required: true
+                
+                fields:
+                  - label: "Description Point"
+                    name: "point"
+                    widget: "string"
                     required: true
+
+            
 
 
       # --- NEW: Reviews Page Content ---
