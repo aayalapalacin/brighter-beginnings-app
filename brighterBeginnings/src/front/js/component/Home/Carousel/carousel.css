@@ -2,7 +2,9 @@
   width: 100%;
   height: 26rem;
 }
-
+.object-fit-cover{
+  object-fit: cover;
+}
 
 .carousel-caption-bg{
   background: #80808063;
