@@ -175,7 +175,7 @@ const Carousel = ({ slides }: CarouselProps) => {
               !slide.overlay_image && slide.background_image && (
                   <img
                     src={slide.background_image}
-                    className="h-100 w-100"
+                    className="h-100 w-100 object-fit-cover"
                     style={{ transform: "scale(1)" }}
                     alt={slide.heading || "Carousel slide image"}
                   />
