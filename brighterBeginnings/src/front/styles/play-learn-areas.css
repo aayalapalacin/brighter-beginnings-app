@@ -11,6 +11,7 @@
 .carousel-card-wrapper { /* Renamed from .carousel-card-container */
   width: 35rem; /* Still controls the individual card's *overall slot* width */
   height: 31rem; /* Still controls the individual card's *overall slot* height */
+  transform: translateX(-20%);
   transition: opacity 0.7s, top 0.7s, left 0.7s;
   /* Ensure this container's height accommodates the card-content's fixed height */
 }
@@ -46,8 +47,8 @@
 
 /* The actual card content that needs fixed dimensions and layout */
 .carousel-card-content {
-  width: 24rem; /* Fixed width as per your existing rule */
-  height: 30rem; /* <-- NEW: Set a fixed height for the entire card */
+  width: 22rem; /* Fixed width as per your existing rule */
+  height: 27rem; /* <-- NEW: Set a fixed height for the entire card */
   display: flex; /* <-- NEW: Enable flexbox for vertical layout */
   flex-direction: column; /* <-- NEW: Stack children vertically */
   overflow: hidden; /* <-- NEW: Hide any content that overflows the fixed height */
@@ -243,7 +244,7 @@
 }
 
 .carousel-placholder-spacer{
-  height:31rem;
+  height:29rem;
 }
 
 @media screen and (min-width: 1020px) and (max-width: 1035px) {
