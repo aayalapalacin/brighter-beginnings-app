@@ -16,7 +16,7 @@ interface AboutPageContent {
   play_learn_data: {
     carouselImg: string; // Plain string path
     carouselTitle: string;
-    carouselDescription: string[]; // Array of strings for bullet points
+    carouselDescription: {"point":string}[]; // Array of strings for bullet points
   }[];
 }
 
