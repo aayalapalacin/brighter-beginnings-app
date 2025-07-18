@@ -8,7 +8,7 @@ interface CarouselItem {
   carouselImg: string;
   carouselTitle: string;
   // carouselDescription is now an array of strings, where each string is a "point"
-  carouselDescription: string[];
+  carouselDescription: {"point":string}[];
 }
 
 // Define the props for the PlayLearnAreas component
@@ -61,7 +61,7 @@ const PlayLearnAreas: React.FC<PlayLearnAreasProps> = ({ carouselData }) => {
                     {carouselDataItem.carouselDescription && carouselDataItem.carouselDescription.length > 0 && (
                       <ul>
                         {carouselDataItem.carouselDescription.map((point, pointIndex) => (
-                          <li key={pointIndex}>{point}</li>
+                          <li key={pointIndex}>{point.point}</li>
                         ))}
                       </ul>
                     )}
