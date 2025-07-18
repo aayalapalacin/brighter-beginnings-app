@@ -70,7 +70,7 @@ collections:
           - {label: "We provide programs title", name: "we_provide_programs_title", widget: "string", required: false}
           - {label: "ClassDojo Title", name: "classdojo_title", widget: "string", required: false}
           - {label: "Careers Section Heading", name: "careers_heading", widget: "string", required: false}
-      - file: "content/pages/about.json" # Or about.md, if you prefer Markdown for pages
+      - file: "brighterBeginnings/content/pages/about.json" # Or about.md, if you prefer Markdown for pages
         label: "About Page"
         name: "about"
         fields:
