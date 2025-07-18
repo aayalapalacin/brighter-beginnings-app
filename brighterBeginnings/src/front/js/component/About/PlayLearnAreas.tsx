@@ -50,7 +50,7 @@ const PlayLearnAreas: React.FC<PlayLearnAreasProps> = ({ carouselData }) => {
                 <div className="carousel-image-container">
                   <img
                     src={carouselDataItem.carouselImg}
-                    className="card-img-top" // Keep this for potential Bootstrap styling if you're using it elsewhere
+                    className="card-img-top object-fit-cover" // Keep this for potential Bootstrap styling if you're using it elsewhere
                     alt={carouselDataItem.carouselTitle}
                   />
                 </div>
