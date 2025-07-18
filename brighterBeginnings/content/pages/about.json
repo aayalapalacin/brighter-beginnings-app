@@ -6,35 +6,57 @@
       "carouselImg": "/about_images/play_learn_areas/infant_classroom.jpeg",
       "carouselTitle": "Infant Classroom",
       "carouselDescription": [
-        { "point": "8+ cribs for naptime" },
-        { "point": "8+ strollers for enjoying outdoors" },
-        { "point": "50+ toys promoting development" }
+        {
+          "point": "10+ cribs for naptime"
+        },
+        {
+          "point": "8+ strollers for enjoying outdoors"
+        },
+        {
+          "point": "50+ toys promoting development"
+        }
       ]
     },
     {
       "carouselImg": "/about_images/play_learn_areas/outdoor.jpeg",
       "carouselTitle": "Outdoor Area",
       "carouselDescription": [
-        { "point": "5 large fenced in play areas designated for different age groups" },
-        { "point": "3 playground structures" }
+        {
+          "point": "5 large fenced in play areas designated for different age groups"
+        },
+        {
+          "point": "3 playground structures"
+        }
       ]
     },
     {
       "carouselImg": "/about_images/play_learn_areas/toddler_classroom.jpeg",
       "carouselTitle": "Todddler Classroom",
       "carouselDescription": [
-        { "point": "10+ Art project supplies" },
-        { "point": "Sanbox used for sensory motor skills" },
-        { "point": "Diverse book collection" }
+        {
+          "point": "10+ Art project supplies"
+        },
+        {
+          "point": "Sanbox used for sensory motor skills"
+        },
+        {
+          "point": "Diverse book collection"
+        }
       ]
     },
     {
       "carouselImg": "/about_images/play_learn_areas/preschool_classroom.jpeg",
       "carouselTitle": "Preschool Classroom",
       "carouselDescription": [
-        { "point": "Fish Tank that is regulated daily" },
-        { "point": "10+ science kits" },
-        { "point": "Art supplies for independent" }
+        {
+          "point": "Fish Tank that is regulated daily"
+        },
+        {
+          "point": "10+ science kits"
+        },
+        {
+          "point": "Art supplies for independent"
+        }
       ]
     }
   ]
