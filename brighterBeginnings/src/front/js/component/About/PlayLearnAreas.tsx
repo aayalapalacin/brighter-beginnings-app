@@ -73,23 +73,24 @@ const PlayLearnAreas: React.FC<PlayLearnAreasProps> = ({ carouselData }) => {
         })}
       </div>
 
-      <span className="carousel-btn-container">
-        <button
-          type="button"
-          className={`carousel-btn carouse-btn-animation boxShadow color-sky border-sky-2 me-5`}
-          onClick={handleCarouselSlideLeft}
-        >
-          <i className="fa-solid fa-arrow-left"></i>
-        </button>
+      <div className="carousel-placholder-spacer"> </div>
+          <span className="carousel-btn-container">
+            <button
+              type="button"
+              className={`carousel-btn carouse-btn-animation boxShadow color-sky border-sky-2 me-5`}
+              onClick={handleCarouselSlideLeft}
+            >
+              <i className="fa-solid fa-arrow-left"></i>
+            </button>
 
-        <button
-          type="button"
-          className={`carousel-btn carouse-btn-animation boxShadow color-sky border-sky-2 `}
-          onClick={handleCarouselSlideRight}
-        >
-          <i className="fa-solid fa-arrow-right"></i>
-        </button>
-      </span>
+            <button
+              type="button"
+              className={`carousel-btn carouse-btn-animation boxShadow color-sky border-sky-2 `}
+              onClick={handleCarouselSlideRight}
+            >
+              <i className="fa-solid fa-arrow-right"></i>
+            </button>
+          </span>
     </div>
   );
 };

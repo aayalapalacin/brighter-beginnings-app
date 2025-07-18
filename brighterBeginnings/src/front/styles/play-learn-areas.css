@@ -242,6 +242,10 @@
   }
 }
 
+.carousel-placholder-spacer{
+  height:31rem;
+}
+
 @media screen and (min-width: 1020px) and (max-width: 1035px) {
   .carousel-card-content {
     width: 18rem;
