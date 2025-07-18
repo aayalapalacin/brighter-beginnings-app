@@ -1,4 +1,4 @@
-// src/components/PlayLearnAreas.tsx (or wherever your component is located)
+// src/components/PlayLearnAreas.tsx
 
 import React, { useState } from "react";
 import "../../../styles/play-learn-areas.css";
@@ -7,7 +7,6 @@ import "../../../styles/play-learn-areas.css";
 interface CarouselItem {
   carouselImg: string;
   carouselTitle: string;
-  // carouselDescription is now an array of strings, where each string is a "point"
   carouselDescription: {"point":string}[];
 }
 
@@ -36,28 +35,29 @@ const PlayLearnAreas: React.FC<PlayLearnAreasProps> = ({ carouselData }) => {
     <div data-testid="play-and-learn" className="carousel-container position-relative">
       <div className="position-relative carousel-card-container">
         {carouselData.map((carouselDataItem, carouselDataIndex: number) => {
-          // Calculate the class index for positioning the carousel card.
-          // This logic now accounts for a dynamic number of items.
           let carouselClassConversion = (carouselDataIndex + carouselSlide) % numCarouselItems;
           if (carouselClassConversion < 0) {
-            carouselClassConversion += numCarouselItems; // Adjust for negative modulo results
+            carouselClassConversion += numCarouselItems;
           }
 
           return (
             <div
               key={carouselDataIndex}
-              className={`carousel-card-container position-absolute carousel-${carouselClassConversion}`}
+              className={`carousel-card-wrapper position-absolute carousel-${carouselClassConversion}`} // Renamed to wrapper for clarity
             >
-              <div className="carousel-card-content card ">
-                <img
-                  src={carouselDataItem.carouselImg}
-                  className="card-img-top"
-                  alt={carouselDataItem.carouselTitle}
-                />
+              <div className="carousel-card-content card">
+                {/* NEW: Image container div */}
+                <div className="carousel-image-container">
+                  <img
+                    src={carouselDataItem.carouselImg}
+                    className="card-img-top" // Keep this for potential Bootstrap styling if you're using it elsewhere
+                    alt={carouselDataItem.carouselTitle}
+                  />
+                </div>
+                {/* END NEW */}
                 <div className="card-body">
                   <h5 className="card-title">{carouselDataItem.carouselTitle}</h5>
                   <div className="card-text">
-                    {/* Render the array of description strings as an unordered list */}
                     {carouselDataItem.carouselDescription && carouselDataItem.carouselDescription.length > 0 && (
                       <ul>
                         {carouselDataItem.carouselDescription.map((point, pointIndex) => (
