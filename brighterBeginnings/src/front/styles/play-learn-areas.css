@@ -170,29 +170,10 @@
 
 /* Media Queries - Adjusting new fixed heights here */
 
-@media screen and (min-width: 315px) and (max-width: 800px) {
-  .carousel-card-content {
-    width: 17rem;
-    height: 25rem; /* Adjusted fixed height for smaller screens */
-  }
 
-  .carousel-image-container {
-    height: 10rem; /* Adjusted fixed height for image area */
+.carousel-placholder-spacer{
+    height:29rem;
   }
-
-  .carousel-card-wrapper {
-    width: 21rem;
-    height: 25rem; /* Match the content height */
-  }
-
-  .carousel-container {
-    margin: 5rem 0;
-  }
-
-  .card-title, .card-body {
-    font-size: .7rem;
-  }
-}
 
 @media screen and (min-width: 315px) and (max-width: 519px) {
   .carousel-container {
@@ -241,41 +222,30 @@
   .carousel-btn-container {
     left: 60%;
   }
+  
 }
 
-.carousel-placholder-spacer{
-  height:29rem;
-}
-
-@media screen and (min-width: 1020px) and (max-width: 1035px) {
+@media screen and (min-width: 520px) and (max-width: 768px) {
   .carousel-card-content {
-    width: 18rem;
-    height: 28rem; /* Adjusted fixed height */
-    margin-left: 6rem;
+    width: 25rem;
+    height: 34rem; /* Adjusted fixed height */
   }
 
-  .carousel-image-container {
-    height: 12rem; /* Adjusted fixed height for image area */
-  }
+  .carousel-btn {
+    padding: 0.5rem 2rem;
 
-  .card-body {
-    font-size: 0.9rem;
-  }
-
+    /* width: 5rem; */
+}
   .carousel-card-wrapper {
-    height: 28rem; /* Match the content height */
-  }
+    transform: translateX(-24%);
 }
 
-@media screen and (min-width: 1036px) and (max-width: 1045px) {
-  .carousel-card-content {
-    width: 18rem;
-    height: 30rem; /* Adjusted fixed height */
-    margin-left: 6rem;
-  }
+  .carousel-placholder-spacer {
+    height: 37rem;
+}
 
   .carousel-image-container {
-    height: 13rem; /* Adjusted fixed height for image area */
+    height: 23rem; /* Adjusted fixed height for image area */
   }
 
   .card-body {
@@ -287,18 +257,81 @@
   }
 }
 
-@media screen and (min-width: 2550px) and (max-width: 2565px) {
+
+
+@media screen and (min-width: 769px) and (max-width: 1045px) {
+  .carousel-card-content {
+    width: 25rem;
+    height: 36rem; /* Adjusted fixed height */
+  }
+
+  .carousel-placholder-spacer {
+    height: 37rem;
+}
+
+  .carousel-image-container {
+    height: 23rem; /* Adjusted fixed height for image area */
+  }
+
+  .card-body {
+    font-size: 0.9rem;
+  }
+
+  .carousel-card-wrapper {
+    height: 30rem; /* Match the content height */
+  }
+}
+
+@media screen and (min-width: 1045px) and (max-width: 2549px) {
   .carousel-card-content {
     width: 34rem;
-    height: 40rem; /* Adjusted fixed height for large screens */
+    height: 42rem; /* Adjusted fixed height for large screens */
   }
 
   .carousel-image-container {
-    height: 20rem; /* Adjusted fixed height for image area */
+    height: 28rem; /* Adjusted fixed height for image area */
+  }
+
+  .card-title{
+    font-size: 1.75rem;
+  }
+  .card-text{
+    font-size: 1.25rem;
+  }
+
+
+
+  
+.carousel-placholder-spacer {
+    height: 45rem;
+}
+.carousel-card-wrapper {
+ 
+    transform: translateX(-35%);
+}
+
+}
+
+@media screen and (min-width: 2550px) and (max-width: 2565px) {
+  .carousel-card-content {
+    width: 34rem;
+    height: 39rem; /* Adjusted fixed height for large screens */
+  }
+
+  .carousel-image-container {
+    height: 26rem; /* Adjusted fixed height for image area */
   }
 
   .carousel-card-wrapper {
     width: 40rem;
     height: 40rem; /* Match the content height */
   }
+.carousel-placholder-spacer {
+    height: 43rem;
+}
+.carousel-card-wrapper {
+ 
+    transform: translateX(-35%);
+}
+
 }
