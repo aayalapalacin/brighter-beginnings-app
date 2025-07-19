@@ -56,7 +56,7 @@ const About = () => {
       </div>
       <div className=" about-play-container mt-5  w-100">
         <div className="carousel-title-container w-50 mx-auto">
-          <h1 className="carousel-title text-shadow text-start">Play and Learn Areas</h1>
+          <h1 className="play-carousel-title text-shadow text-start">Play and Learn Areas</h1>
         </div>
         <div className="play-carousel-container d-flex justify-content-center">
           <PlayLearnAreas carouselData={play_learn_data} />
