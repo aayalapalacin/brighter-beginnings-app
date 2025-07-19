@@ -48,7 +48,7 @@
 /* The actual card content that needs fixed dimensions and layout */
 .carousel-card-content {
   width: 22rem; /* Fixed width as per your existing rule */
-  height: 27rem; /* <-- NEW: Set a fixed height for the entire card */
+  height: 25rem; /* <-- NEW: Set a fixed height for the entire card */
   display: flex; /* <-- NEW: Enable flexbox for vertical layout */
   flex-direction: column; /* <-- NEW: Stack children vertically */
   overflow: hidden; /* <-- NEW: Hide any content that overflows the fixed height */
