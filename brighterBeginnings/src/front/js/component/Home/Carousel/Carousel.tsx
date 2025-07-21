@@ -9,38 +9,38 @@ interface CarouselProps {
 
 const Carousel = ({ slides }: CarouselProps) => {
   const [showVideo, setShowVideo] = useState<boolean>(false);
-  const [activeSlideIndex, setActiveSlideIndex] = useState<number>(2);
+  const [activeSlideIndex, setActiveSlideIndex] = useState<number>(0);
 
   // Define the interval duration in milliseconds (e.g., 3000ms = 3 seconds)
-  const autoSlideInterval = 4000;
+  const autoSlideInterval = 6000;
 
   // Effect for automatic slide advancement
-  // useEffect(() => {
-  //   // Only set up interval if there are slides
-  //   if (slides && slides.carousel_slides.length > 0) {
-  //     const intervalId = setInterval(() => {
-  //       setActiveSlideIndex((prevIndex) => {
-  //         const nextIndex = (prevIndex + 1) % slides.carousel_slides.length;
-  //         // You might want to reset showVideo here if the auto slide lands on a video slide
-  //         setShowVideo(false);
-  //         return nextIndex;
-  //       });
-  //     }, autoSlideInterval);
+  useEffect(() => {
+    // Only set up interval if there are slides
+    if (slides && slides.carousel_slides.length > 0) {
+      const intervalId = setInterval(() => {
+        setActiveSlideIndex((prevIndex) => {
+          const nextIndex = (prevIndex + 1) % slides.carousel_slides.length;
+          // You might want to reset showVideo here if the auto slide lands on a video slide
+          setShowVideo(false);
+          return nextIndex;
+        });
+      }, autoSlideInterval);
 
   //     // Cleanup function to clear the interval when the component unmounts
   //     // or when the slides data changes (to restart the interval)
-  //     return () => clearInterval(intervalId);
-  //   }
-  // }, [slides, autoSlideInterval]); // Depend on slides and interval to re-run if they change
+      return () => clearInterval(intervalId);
+    }
+  }, [slides, autoSlideInterval]); // Depend on slides and interval to re-run if they change
 
   // Initial setup: ensure first slide is active when component mounts or slides change
   // This is technically redundant now with the auto-slide useEffect starting at 0,
   // but good for explicit initial state if the interval hadn't started yet.
-  useEffect(() => {
-    if (slides && slides.carousel_slides.length > 0) {
-      setActiveSlideIndex(2);
-    }
-  }, [slides]);
+  // useEffect(() => {
+  //   if (slides && slides.carousel_slides.length > 0) {
+  //     setActiveSlideIndex(2);
+  //   }
+  // }, [slides]);
 
 
   // if (!slides || !slides.carousel_slides || slides.carousel_slides.length === 0) {
@@ -87,7 +87,7 @@ const Carousel = ({ slides }: CarouselProps) => {
     <div
       id="mainPageCarousel"
       data-testid="carousel"
-      className="carousel slide w-75 m-auto"
+      className=" slide w-75 m-auto position-relative"
       // REMOVED Bootstrap's data-bs-ride and data-bs-interval
     >
       <div className="carousel-indicators w-100 m-auto" style={{ backgroundColor: (currentSlide.heading || currentSlide.subheading) ? "#716b6b99" : "" }}>
@@ -95,12 +95,15 @@ const Carousel = ({ slides }: CarouselProps) => {
           <button
             key={index}
             type="button"
-            data-bs-target="#mainPageCarousel"
-            data-bs-slide-to={index}
+            // data-bs-interval="false"
+            // data-bs-target="#mainPageCarousel"
+            // data-bs-slide-to={index}
             className={index === activeSlideIndex ? "active" : ""}
             aria-current={index === activeSlideIndex ? "true" : "false"}
             aria-label={`Slide ${index + 1}`}
             style={{ display: 'none' }}
+            onClick={() => handleSlideChange(index)}
+
           />
         ))}
 
@@ -191,8 +194,8 @@ const Carousel = ({ slides }: CarouselProps) => {
       <button
         className="carousel-control-prev my-auto"
         type="button"
-        data-bs-target="#mainPageCarousel"
-        data-bs-slide="prev"
+        // data-bs-target="#mainPageCarousel"
+        // data-bs-slide="prev"
         onClick={() => handleSlideChange(activeSlideIndex - 1)}
       >
         <span className="fa-solid fa-arrow-left fs-1 text-white" aria-hidden="true"></span>
@@ -201,8 +204,8 @@ const Carousel = ({ slides }: CarouselProps) => {
       <button
         className="carousel-control-next my-auto"
         type="button"
-        data-bs-target="#mainPageCarousel"
-        data-bs-slide="next"
+        // data-bs-target="#mainPageCarousel"
+        // data-bs-slide="next"
         onClick={() => handleSlideChange(activeSlideIndex + 1)}
       >
         <span className="fa-solid fa-arrow-right fs-1 text-white" aria-hidden="true"></span>
