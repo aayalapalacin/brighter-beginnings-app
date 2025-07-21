@@ -9,36 +9,36 @@ interface CarouselProps {
 
 const Carousel = ({ slides }: CarouselProps) => {
   const [showVideo, setShowVideo] = useState<boolean>(false);
-  const [activeSlideIndex, setActiveSlideIndex] = useState<number>(0);
+  const [activeSlideIndex, setActiveSlideIndex] = useState<number>(2);
 
   // Define the interval duration in milliseconds (e.g., 3000ms = 3 seconds)
   const autoSlideInterval = 4000;
 
   // Effect for automatic slide advancement
-  useEffect(() => {
-    // Only set up interval if there are slides
-    if (slides && slides.carousel_slides.length > 0) {
-      const intervalId = setInterval(() => {
-        setActiveSlideIndex((prevIndex) => {
-          const nextIndex = (prevIndex + 1) % slides.carousel_slides.length;
-          // You might want to reset showVideo here if the auto slide lands on a video slide
-          setShowVideo(false);
-          return nextIndex;
-        });
-      }, autoSlideInterval);
+  // useEffect(() => {
+  //   // Only set up interval if there are slides
+  //   if (slides && slides.carousel_slides.length > 0) {
+  //     const intervalId = setInterval(() => {
+  //       setActiveSlideIndex((prevIndex) => {
+  //         const nextIndex = (prevIndex + 1) % slides.carousel_slides.length;
+  //         // You might want to reset showVideo here if the auto slide lands on a video slide
+  //         setShowVideo(false);
+  //         return nextIndex;
+  //       });
+  //     }, autoSlideInterval);
 
-      // Cleanup function to clear the interval when the component unmounts
-      // or when the slides data changes (to restart the interval)
-      return () => clearInterval(intervalId);
-    }
-  }, [slides, autoSlideInterval]); // Depend on slides and interval to re-run if they change
+  //     // Cleanup function to clear the interval when the component unmounts
+  //     // or when the slides data changes (to restart the interval)
+  //     return () => clearInterval(intervalId);
+  //   }
+  // }, [slides, autoSlideInterval]); // Depend on slides and interval to re-run if they change
 
   // Initial setup: ensure first slide is active when component mounts or slides change
   // This is technically redundant now with the auto-slide useEffect starting at 0,
   // but good for explicit initial state if the interval hadn't started yet.
   useEffect(() => {
     if (slides && slides.carousel_slides.length > 0) {
-      setActiveSlideIndex(0);
+      setActiveSlideIndex(2);
     }
   }, [slides]);
 
@@ -137,14 +137,14 @@ const Carousel = ({ slides }: CarouselProps) => {
       <div className="carousel-inner">
         {slides.carousel_slides.map((slide, index) => (
           <div
-            key={index}
-            className={`carousel-item ${index === activeSlideIndex ? "active" : ""}`}
-            style={slide.background_image ? slideBackgroundStyle : { backgroundColor: slide.container_bg_color || '' }}
+          key={index}
+          className={`carousel-item ${index === activeSlideIndex ? "active" : ""}`}
+          style={slide.background_image ? slideBackgroundStyle : { backgroundColor: slide.container_bg_color || '' }}
           >
             {slide.overlay_image && (
               <div
                 style={overlayImageStyle}
-                className="carousel-overlay-image"
+                className={`carousel-overlay-image pe-none ${showVideo ? 'd-none' : ""}`}
               ></div>
             )}
 
@@ -154,7 +154,10 @@ const Carousel = ({ slides }: CarouselProps) => {
                   className={`clickOnVideoContainer ${showVideo ? "d-none" : "d-flex justify-content-center align-items-end h-100"}`}
                   style={{ paddingBottom: "3rem" }}
                 >
-                  <div onClick={() => setShowVideo(true)} className="clickOnVideoBtnContainer">
+                  <div onClick={() => {
+                    setShowVideo(true)
+                    }} 
+                    className="clickOnVideoBtnContainer">
                     <button type="button" className="clickOnVideoBtn btn bg-sun p-3 fs-4 text-white image-shadow">
                       {slide.video_button_text || "Watch Video"}
                     </button>
