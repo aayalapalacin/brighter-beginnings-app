@@ -11,46 +11,13 @@ const Carousel = ({ slides }: CarouselProps) => {
   const [showVideo, setShowVideo] = useState<boolean>(false);
   const [activeSlideIndex, setActiveSlideIndex] = useState<number>(0);
 
-  // Define the interval duration in milliseconds (e.g., 3000ms = 3 seconds)
-  const autoSlideInterval = 6000;
-
-  // Effect for automatic slide advancement
-  useEffect(() => {
-    // Only set up interval if there are slides
-    if (slides && slides.carousel_slides.length > 0) {
-      const intervalId = setInterval(() => {
-        setActiveSlideIndex((prevIndex) => {
-          const nextIndex = (prevIndex + 1) % slides.carousel_slides.length;
-          // You might want to reset showVideo here if the auto slide lands on a video slide
-          setShowVideo(false);
-          return nextIndex;
-        });
-      }, autoSlideInterval);
-
-  //     // Cleanup function to clear the interval when the component unmounts
-  //     // or when the slides data changes (to restart the interval)
-      return () => clearInterval(intervalId);
-    }
-  }, [slides, autoSlideInterval]); // Depend on slides and interval to re-run if they change
-
-  // Initial setup: ensure first slide is active when component mounts or slides change
-  // This is technically redundant now with the auto-slide useEffect starting at 0,
-  // but good for explicit initial state if the interval hadn't started yet.
-  // useEffect(() => {
-  //   if (slides && slides.carousel_slides.length > 0) {
-  //     setActiveSlideIndex(2);
-  //   }
-  // }, [slides]);
-
-
-  // if (!slides || !slides.carousel_slides || slides.carousel_slides.length === 0) {
-  //   return <div>No carousel slides configured.</div>; // Or a fallback component
-  // }
+ 
 
   // Ensure currentSlide is always valid
   const currentSlide = slides.carousel_slides[activeSlideIndex] || slides.carousel_slides[0];
 
   const handleSlideChange = (newIndex: number) => {
+    setShowVideo(false)
     let nextIndex = newIndex;
     if (nextIndex < 0) {
       nextIndex = slides.carousel_slides.length - 1;
