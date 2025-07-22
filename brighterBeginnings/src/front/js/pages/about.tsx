@@ -17,7 +17,21 @@ interface AboutPageContent {
     carouselImg: string; // Plain string path
     carouselTitle: string;
     carouselDescription: {"point":string}[]; // Array of strings for bullet points
-  }[];
+   }[];
+    philosophyData: {
+          "accordion_title": string;
+          "age": string;
+          "start": number;
+          "end": number;
+          "img": string;
+          "bg_color": string;
+          "dropdownData": {
+              "title": string;
+              "description": string;
+              "color": string;
+            }[];
+          }
+            
 }
 
 
@@ -34,11 +48,11 @@ const About = () => {
   const {
     title,
     main_image,
+    philosophyData,
     play_learn_data = [] // Default empty array for carousel data
   } = aboutContent;
 
 
-  const { store } = contextValue;
 
   return (
     <div data-testid="about" className="about-container w-100 mx-auto mb-5">
@@ -65,7 +79,7 @@ const About = () => {
 
       </div>
       <div className="about-accordion-container">
-        <Accordion accordianData={store.philosophyData[0]} imgFirst={false} />
+        <Accordion accordianData={philosophyData} imgFirst={false} />
       </div>
       <hr className="w-75 mx-auto" />
 

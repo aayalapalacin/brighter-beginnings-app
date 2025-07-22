@@ -108,9 +108,27 @@ collections:
                     name: "point"
                     widget: "string"
                     required: true
-
-            
-
+          - label: "Philosophy Data"
+            name: "philosophyData"
+            widget: "object"
+            required: true
+            collapsed: false
+            # Only 'dropdownData' is editable within philosophyData
+            fields:
+              - label: "Dropdown Data"
+                name: "dropdownData"
+                widget: "list"
+                required: true
+                collapsed: false
+                fields:
+                  - label: "Title"
+                    name: "title"
+                    widget: "string"
+                    required: true
+                  - label: "Description"
+                    name: "description"
+                    widget: "text" # Using 'text' widget for potentially longer descriptions
+                    required: true
 
       # --- NEW: Reviews Page Content ---
       - file: "brighterBeginnings/content/pages/reviews.json" # Path to the content file for your Reviews page
