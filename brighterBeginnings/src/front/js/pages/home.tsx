@@ -11,11 +11,9 @@ import {homeContentType} from "../../../types/homeContent"
 
 const Home = () => {
   const contextValue = useContext(Context);
-  const { content: homeContent, loading, error } = usePageContent<homeContentType>('home');
+  const { content: homeContent,  error } = usePageContent<homeContentType>('home');
 
-   if (loading) {
-    return <div>Loading homepage content...</div>; // Or a spinner/loading component
-  }
+ 
 
    if (
     error || // If there was an error fetching the home page content

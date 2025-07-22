@@ -22,4 +22,6 @@ export interface homeContentType{
     "we_provide_programs_title": string;
     "class_dojo_description":classDojoDescription[];
     "careers_heading": string;
+    "careers_text": string;
+    "careers_link": string;
 } 

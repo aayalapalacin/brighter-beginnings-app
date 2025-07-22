@@ -69,7 +69,11 @@ collections:
           # For now, we'll keep them as simple placeholders.
           - {label: "We provide programs title", name: "we_provide_programs_title", widget: "string", required: false}
           - {label: "ClassDojo Title", name: "classdojo_title", widget: "string", required: false}
-          - {label: "Careers Section Heading", name: "careers_heading", widget: "string", required: false}
+          - {label: "Careers Section Heading", name: "careers_heading", widget: "string", required: true}
+          - {label: "Careers Section Text", name: "careers_text", widget: "string", required: true}
+          - {label: "Careers Section Link", name: "careers_link", widget: "string", required: true}
+
+
       - file: "brighterBeginnings/content/pages/about.json" # Or about.md, if you prefer Markdown for pages
         label: "About Page"
         name: "about"

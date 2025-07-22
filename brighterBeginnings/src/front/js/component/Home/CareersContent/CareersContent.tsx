@@ -1,5 +1,8 @@
 import React from "react";
 import "./careers.css";
+import usePageContent from "../../../../../hooks/usePageContent";
+import {homeContentType} from "../../../../../types/homeContent"
+import ErrorNotification from "../../ErrorNotification";
 
 interface CareersContentProps {
   mobileButtonCenter: boolean;
@@ -7,12 +10,19 @@ interface CareersContentProps {
   blockImage: boolean;
 }
 function CareersContent({mobileButtonCenter, innerContainerMx5, blockImage }:CareersContentProps) {
+    const { content: homeContent } = usePageContent<homeContentType>('home');
+    if(!homeContent){
+      return <ErrorNotification />
+    }
+
+    const {careers_heading, careers_text, careers_link }= homeContent;
+
   return (
     <div data-testid="careers-content" className="careers-container container">
       <div className={`career-inner-container ${innerContainerMx5 ? "mobile-margin" : ""}`}>
         <div className="careers-title-container w-100  color-carrot text-bold mt-5 mb-3">
           <h1 className="careers-title-text text-shadow">
-            Join the Brighter Beginnings family!
+            {careers_heading}
           </h1>
         </div>
         <div className="careers-content">
@@ -25,11 +35,10 @@ function CareersContent({mobileButtonCenter, innerContainerMx5, blockImage }:Car
           </div>
           <div className="careers-text-btn-container">
             <div className="careers-text color-tree fs-4 mb-4">
-              Help transform lives of children’s and their family while
-              receiving professional development and competitive wages.
+             {careers_text}
             </div>
             <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdNd-QZ7aDwPNJqG575EkBNh3eUl3Xt3AMUfW7xZE16Ano6Ww/viewform?usp=sf_link"
+              href={careers_link}
               target="_blank"
               className="careers-google-forms text-decoration-none"
               rel="noreferrer">
