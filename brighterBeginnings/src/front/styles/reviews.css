@@ -200,7 +200,11 @@
             padding:0.5rem !important;
             }
                 .review-item-container {
-                margin-top: 7rem;
+                margin-top: 2rem;
                 }
-
+    .carousel-item
+ {
+    
+        height: 18rem;
+    }
     }
