@@ -9,6 +9,7 @@ interface carouselSlideType{
       "button_link": string;
       "video_url": string;
       "video_button_text": String;
+      "object_fit"?: boolean;
 }
 
 export interface classDojoDescription{

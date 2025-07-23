@@ -10,7 +10,8 @@
       "video_url": null,
       "overlay_image": null,
       "video_button_text": null,
-      "button_text": "Learn More!"
+      "button_text": "Learn More!",
+      "object_fit":false
     },
     {
       "heading": "Playground Paradise",
@@ -21,7 +22,8 @@
       "video_url": null,
       "overlay_image": null,
       "video_button_text": null,
-      "button_text": "See More!"
+      "button_text": "See More!",
+      "object_fit":true
     },
     {
       "heading": null,
@@ -33,6 +35,7 @@
       "overlay_image": "/home_images/HeggertyLogo.png",
       "video_button_text": "Get to know our Curriculum",
       "button_text": null
+      
     }
   ],
   "we_provide_programs_title": "We provide programs for children from 6 Weeks - 5 yrs",
