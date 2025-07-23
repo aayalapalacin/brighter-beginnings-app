@@ -209,7 +209,7 @@ collections:
               
               # This is the nested list for the individual links within each dropdown
               - label: "Links List"
-                name: "links"
+                name: "description"
                 widget: "list"
                 collapsed: true # Keep this collapsed by default for cleaner UI
                 summary: "{{fields.text}}" # How each link is labeled in the CMS list
