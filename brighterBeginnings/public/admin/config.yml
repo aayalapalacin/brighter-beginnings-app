@@ -193,3 +193,29 @@ collections:
             summary: "{{fields.src}}" # Show the image source path in the list summary
             fields: # Fields for EACH individual photo item in the list
               - {label: "Image File", name: "src", widget: "image", required: true, hint: "Upload the photo for the gallery."}
+      - file: "brighterBeginnings/content/pages/forms.json" # Define the path for your new photo gallery content file
+        label: "Forms Page" # Label in the CMS UI sidebar
+        name: "forms_page_content" # Internal name for this file entry
+        fields:
+          # Page Title
+          - {label: "Accordion Title", name: "accordion_title", widget: "string", required: true, default: "Available Forms"}
+          - label: "Dropdown Sections"
+            name: "dropdownData"
+            widget: "list"
+            collapsed: false
+            summary: "{{fields.title}}" # How each dropdown item is labeled in the CMS list
+            fields:
+              - {label: "Dropdown Title", name: "title", widget: "string", required: true}
+              
+              # This is the nested list for the individual links within each dropdown
+              - label: "Links List"
+                name: "links"
+                widget: "list"
+                collapsed: true # Keep this collapsed by default for cleaner UI
+                summary: "{{fields.text}}" # How each link is labeled in the CMS list
+                fields:
+                  - {label: "Link Text", name: "text", widget: "string", required: true, hint: "The visible text for the link"}
+                  - {label: "Link URL", name: "url", widget: "string", required: true, pattern: ["^https?:\/\/.+", "Must be a valid URL starting with http:// or https://"], hint: "The full URL to the PDF or web page"}
+              
+
+      

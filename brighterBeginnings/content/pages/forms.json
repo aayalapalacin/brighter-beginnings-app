@@ -1,0 +1,90 @@
+{
+  "accordion_title": "Available Forms",
+  "bg_color": "grass",
+  "dropdownData": [
+    {
+      "title": "Enrollment and Registration",
+      "description": [
+        {
+          "text": "Welcome to our Class",
+          "url": "https://www.brighterbeginningcc.com/Forms_files/Welcome%20to%20our%20Class.pdf"
+        },
+        {
+          "text": "Student Handbook",
+          "url": "https://www.brighterbeginningcc.com/Welcome_files/Student%20Handbook.pdf"
+        },
+        {
+          "text": "Application",
+          "url": "https://www.brighterbeginningcc.com/Forms_files/Application_1.pdf"
+        },
+        {
+          "text": "Enrollment Form",
+          "url": "https://drive.google.com/file/d/1xTbSMVY4FoE0shvI68h5PufZzADXY8Xt/view?usp=sharing"
+        },
+        {
+          "text": "Parent Information Form Page 1",
+          "url": "https://www.brighterbeginningcc.com/Forms_files/Parent%20Information%20Form%20Page%201.pdf"
+        },
+        {
+          "text": "Parent Information Form Page 2",
+          "url": "https://www.brighterbeginningcc.com/Forms_files/Parent%20Information%20Form%20Page%202.pdf"
+        }
+      ],
+      "color": "tree"
+    },
+    {
+      "title": "Medical and Emergency Information",
+      "description": [
+        {
+          "text": "First Aid and Emergency Medical Care Consent Form Page 2",
+          "url": "https://drive.google.com/file/d/1esYqQ_mt1HXAY4HaZHSKhh0AOq5-qG83/view?usp=sharing"
+        },
+        {
+          "text": "Medical Administration Record",
+          "url": "https://www.brighterbeginningcc.com/Forms_files/Medical%20Administration%20Record.pdf"
+        },
+        {
+          "text": "Medication Consent Form",
+          "url": "https://www.brighterbeginningcc.com/Forms_files/Medication%20Consent%20Form.pdf"
+        },
+        {
+          "text": "Physical Page 1",
+          "url": "https://www.brighterbeginningcc.com/Forms_files/Physical%20page%201.pdf"
+        },
+        {
+          "text": "Physical Page 2",
+          "url": "https://www.brighterbeginningcc.com/Forms_files/Physical%20page%202.pdf"
+        }
+      ],
+      "color": "sun"
+    },
+    {
+      "title": "Child Development and Background",
+      "description": [
+        {
+          "text": "Developmental History and Background Page 3",
+          "url": "https://drive.google.com/file/d/1WnBSBJsMuMsBTFfXaNTh6e8MfdzXQ3wk/view?usp=sharing"
+        }
+      ],
+      "color": "sky"
+    },
+    {
+      "title": "Additional Information and Authorization",
+      "description": [
+        {
+          "text": "School Supply List",
+          "url": "https://www.brighterbeginningcc.com/Forms_files/School%20Supply%20List.pdf"
+        },
+        {
+          "text": "Family Involvement Plan",
+          "url": "https://drive.google.com/file/d/1yYF719u4x2OdspIZ3n-TlqzUWkSqmhJk/view?usp=sharing"
+        },
+        {
+          "text": "Transportation and Authorization Plan",
+          "url": "https://drive.google.com/file/d/1USQgJgbkifAtOWwHHHq1wZwtR5O43EIV/view?usp=sharing"
+        }
+      ],
+      "color": "carrot"
+    }
+  ]
+}
