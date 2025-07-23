@@ -177,8 +177,8 @@
 
 @media screen and (min-width: 320px) and (max-width: 398px) {
      .carousel-card-content {
-        width: 15rem;
-        height: 27rem;
+        width: 16rem;
+        height: 24rem;
     }
 
   .carousel-btn {
