@@ -105,7 +105,7 @@ const Reviews: React.FC = () => {
                         const iconSrc = reviewIconMap[platform.icon_key];
                         if (!iconSrc) return null;
                         return (
-                            <div className={`carousel-item ${index === 0 ? "active" : ""}`} key={`carousel-item-${index}`}>
+                            <div className={`review-carousel-item ${index === 0 ? "active" : ""}`} key={`review-carousel-item-${index}`}>
                                 <div className="review-item-container mx-1" >
                                     <img src={iconSrc} alt={platform.icon_alt_text} className="review-item-image mb-3" />
                                     <a href={platform.mobile_link} target="_blank" rel="noopener noreferrer" className="review-item-button d-block d-md-none d-lg-none">Visit Reviews</a>
