@@ -11,7 +11,7 @@
       "overlay_image": null,
       "video_button_text": null,
       "button_text": "Learn More!",
-      "object_fit":false
+      "object_fit":true
     },
     {
       "heading": "Playground Paradise",
