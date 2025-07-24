@@ -2,16 +2,16 @@
   "title": "Welcome to Brighter Beginnings - Your Child's Bright Future Starts Here",
   "carousel_slides": [
     {
-      "heading": "Get to know our Staff!",
+      "heading": "Get to know our Staff!!",
       "subheading": "Meet our highly qualified and caring team dedicated to your child's growth.",
       "button_link": "/staff",
       "container_bg_color": "#FFFFFF",
-      "background_image": "/uploads/staff.png",
+      "background_image": "/uploads/children-reading-books.jpg",
       "video_url": null,
       "overlay_image": null,
+      "object_fit": true,
       "video_button_text": null,
-      "button_text": "Learn More!",
-      "object_fit":true
+      "button_text": "Learn More!"
     },
     {
       "heading": "Playground Paradise",
@@ -21,9 +21,9 @@
       "background_image": "/home_images/playground_photo.jpeg",
       "video_url": null,
       "overlay_image": null,
+      "object_fit": true,
       "video_button_text": null,
-      "button_text": "See More!",
-      "object_fit":true
+      "button_text": "See More!"
     },
     {
       "heading": null,
@@ -35,7 +35,6 @@
       "overlay_image": "/home_images/HeggertyLogo.png",
       "video_button_text": "Get to know our Curriculum",
       "button_text": null
-      
     }
   ],
   "we_provide_programs_title": "We provide programs for children from 6 Weeks - 5 yrs",
